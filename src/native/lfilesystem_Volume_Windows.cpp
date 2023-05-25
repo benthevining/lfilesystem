@@ -22,9 +22,9 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
-#include "lfilesystem_Volume.h"
-#include "lfilesystem_Misc.h"
-#include "lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_Volume.h"
+#include "lfilesystem/lfilesystem_Misc.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
 
 namespace limes::files
 {

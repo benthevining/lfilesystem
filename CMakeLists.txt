@@ -39,7 +39,7 @@ set (private_headers
 	include/lfilesystem/lfilesystem_SymLink.h
 	include/lfilesystem/lfilesystem_Volume.h)
 
-set (export_header "${CMAKE_CURRENT_BINARY_DIR}/generated/lfilesystem_Export.h")
+set (export_header "${CMAKE_CURRENT_BINARY_DIR}/generated/lfilesystem/lfilesystem_Export.h")
 
 include (GenerateExportHeader)
 
@@ -49,7 +49,7 @@ generate_export_header (limes_filesystem
 						EXPORT_FILE_NAME "${export_header}")
 
 target_sources (limes_filesystem
-	PUBLIC "${public_header}" "${export_header}"
+	#PUBLIC "${public_header}" "${export_header}"
 	PRIVATE ${private_headers})
 
 target_include_directories (limes_filesystem PUBLIC
@@ -58,7 +58,7 @@ target_include_directories (limes_filesystem PUBLIC
 	$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 install (FILES "${public_header}" "${export_header}" ${private_headers}
-		 TYPE INCLUDE
+		 DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/lfilesystem"
 		 COMPONENT lfilesystem_dev)
 
 if(APPLE)
@@ -98,6 +98,8 @@ return 0;
 	endif ()
 
 endif()
+
+target_link_libraries (limes_filesystem PRIVATE ${CMAKE_DL_LIBS})
 
 add_subdirectory (src)
 

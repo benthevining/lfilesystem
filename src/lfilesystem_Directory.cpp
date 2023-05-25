@@ -18,12 +18,12 @@
 #include <vector>		// for vector
 #include <string>		// for string
 #include <algorithm>
-#include "lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
-#include "lfilesystem_File.h"				// for File
-#include "lfilesystem_SymLink.h"			// for SymLink
-#include "lfilesystem_Misc.h"		// for PATHseparator
-#include "lfilesystem_Directory.h"
-#include "lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
+#include "lfilesystem/lfilesystem_File.h"				// for File
+#include "lfilesystem/lfilesystem_SymLink.h"			// for SymLink
+#include "lfilesystem/lfilesystem_Misc.h"		// for PATHseparator
+#include "lfilesystem/lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
 
 namespace limes::files
 {
@@ -62,8 +62,13 @@ bool Directory::contains (const FilesystemEntry& entry, std::size_t depthLimit) 
 
 bool Directory::contains (const std::string_view& childName) const
 {
-	return alg::contains_if (getAllChildren (false), [&childName] (const FilesystemEntry& e)
-							 { return e.getName() == childName; });
+	const auto children = getAllChildren (false);
+
+	return std::find_if (std::begin (children),
+						 std::end (children),
+						 [&childName] (const FilesystemEntry& e)
+						 { return e.getName() == childName; })
+			!= std::end (children);
 }
 
 bool Directory::createIfDoesntExist() const noexcept
@@ -74,8 +79,14 @@ bool Directory::createIfDoesntExist() const noexcept
 	if (exists())
 		return false;
 
-	return func::try_call ([p = getAbsolutePath()]
-						   { return std::filesystem::create_directories (p); });
+	try
+	{
+		return std::filesystem::create_directories (getAbsolutePath());
+	}
+	catch(...)
+	{
+		return false;
+	}
 }
 
 Path Directory::getRelativePath (const Path& inputPath) const

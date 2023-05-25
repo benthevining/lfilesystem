@@ -13,7 +13,7 @@
  */
 
 #include <utility>
-#include "lfilesystem_SimpleWatcher.h"
+#include "lfilesystem/lfilesystem_SimpleWatcher.h"
 
 namespace limes::files
 {

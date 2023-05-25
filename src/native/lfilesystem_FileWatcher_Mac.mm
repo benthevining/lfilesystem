@@ -18,8 +18,9 @@
 
 #import <Foundation/Foundation.h>
 #include <stdexcept>
-#include "lfilesystem_FileWatcher.h"
-#include "lfilesystem_FilesystemEntry.h"
+#include <sstream>
+#include "lfilesystem/lfilesystem_FileWatcher.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
 
 namespace limes::files
 {

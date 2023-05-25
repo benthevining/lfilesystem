@@ -26,9 +26,9 @@
 #include <string>
 #include <algorithm>
 #include <optional>
-#include "lfilesystem_Misc.h"
-#include "lfilesystem_Directory.h"
-#include "lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_Misc.h"
+#include "lfilesystem/lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
 
 namespace limes::files::dirs
 {
@@ -99,7 +99,7 @@ static inline bool setEnvironmentVariable (std::string_view variableName, std::s
 
 #else
 
-	return std::setenv (variableName.data(), newValue.data(), 1) == 0;
+	return setenv (variableName.data(), newValue.data(), 1) == 0;
 
 #endif
 }
@@ -174,7 +174,7 @@ Directory android_home();  // defined in SpecialDirs_Android.cpp
 
 Directory home()
 {
-	if (const auto h = system::env::get ("HOME"))
+	if (const auto h = getEnvironmentVariable ("HOME"))
 		return Directory { *h };
 
 #if LIMES_WINDOWS

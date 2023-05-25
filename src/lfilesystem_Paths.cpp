@@ -12,19 +12,74 @@
  * ======================================================================================
  */
 
-#include "lfilesystem_Paths.h"
+#include "lfilesystem/lfilesystem_Paths.h"
 
 #if ! LIMES_WINDOWS
 #	include <sys/types.h>
 #	include <pwd.h>
-#	include "lfilesystem_SpecialDirectories.h"
+#	include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #endif
 
 #include <algorithm>
-#include "lfilesystem_Misc.h"
+#include <vector>
+#include "lfilesystem/lfilesystem_Misc.h"
 
 namespace limes::files
 {
+
+static inline bool stringContains (std::string_view string, std::string_view substringToFind)
+{
+	return string.find (substringToFind) != std::string_view::npos;
+}
+
+[[nodiscard]] static inline std::string upToFirstOccurrenceOf (std::string input,
+															   std::string_view stringToFind)
+{
+	const auto pos = input.find (stringToFind);
+
+	if (pos == std::string::npos)
+		return input;
+
+	return input.substr (0, pos);
+}
+
+[[nodiscard]] static inline std::string upToLastOccurrenceOf (std::string input,
+															  std::string_view stringToFind)
+{
+	const auto pos = input.rfind (stringToFind);
+
+	if (pos == std::string::npos)
+		return input;
+
+	return input.substr (0, pos);
+}
+
+[[nodiscard]] static inline std::string fromFirstOccurrenceOf (std::string input,
+															   std::string_view stringToFind)
+{
+	const auto pos = input.find (stringToFind);
+
+	if (pos == std::string::npos)
+		return input;
+
+	return input.substr (pos + stringToFind.length(), input.length());
+}
+
+[[nodiscard]] static inline std::string replaceInString (std::string input,
+														 std::string_view stringToReplace,
+														 std::string_view replaceWith)
+{
+	std::size_t pos = 0;
+
+	while ((pos = input.find (stringToReplace, pos)) != std::string::npos)
+	{
+		input.erase (pos, stringToReplace.length());
+		input.insert (pos, replaceWith);
+		pos += replaceWith.length();
+	}
+
+	return input;
+}
 
 bool isValidPath (const Path& path)
 {
@@ -33,7 +88,7 @@ bool isValidPath (const Path& path)
 
 	const auto str = path.string();
 
-	if (str::contains (str, "::"))
+	if (stringContains (str, "::"))
 		return false;
 
 	if (str.length() > maxPathLength())
@@ -60,8 +115,8 @@ bool isValidPath (const Path& path)
 	// the path is in the form "~user/abc"
 
 	const auto afterTilde	 = path.substr (1, std::string::npos);
-	const auto userName		 = str::upToFirstOccurrenceOf (afterTilde, "/");
-	const auto afterUsername = str::fromFirstOccurrenceOf (afterTilde, "/");
+	const auto userName		 = upToFirstOccurrenceOf (afterTilde, "/");
+	const auto afterUsername = fromFirstOccurrenceOf (afterTilde, "/");
 
 	if (const auto* userInfo = getpwnam (userName.c_str()))
 	{
@@ -80,20 +135,20 @@ static inline void normalizeDoubleDot (std::string& path)
 	if (path == std::string { ".." })
 		return;
 
-	while (str::contains (path, ".."))
+	while (stringContains (path, ".."))
 	{
 		// normalize dir separators to / to make this operation easier
-		const auto canonical = str::replace (path, "\\", "/");
+		const auto canonical = replaceInString (path, "\\", "/");
 
-		auto	   before = str::upToFirstOccurrenceOf (canonical, "..");
-		const auto after  = str::fromFirstOccurrenceOf (canonical, "..");
+		auto	   before = upToFirstOccurrenceOf (canonical, "..");
+		const auto after  = fromFirstOccurrenceOf (canonical, "..");
 
 		if (! after.empty() && ! after.starts_with ('/'))
 			return;
 
 		// do this twice, because we want the second-to-last directory separator
-		before = str::upToLastOccurrenceOf (before, "/");
-		before = str::upToLastOccurrenceOf (before, "/");
+		before = upToLastOccurrenceOf (before, "/");
+		before = upToLastOccurrenceOf (before, "/");
 
 		const auto firstPart  = path.substr (0, before.length());
 		const auto secondPart = path.substr (path.length() - after.length(), std::string::npos);
@@ -115,10 +170,10 @@ static inline void removeTrailingDirSeparators (std::string& path)
 
 static inline void normalizeSlashDotSlash (std::string& path)
 {
-	path = str::replace (path, "/./", "/");
+	path = replaceInString (path, "/./", "/");
 
 #if LIMES_WINDOWS
-	path = str::replace (path, "\\.\\", "\\");
+	path = replaceInString (path, "\\.\\", "\\");
 #endif
 }
 
@@ -194,6 +249,43 @@ Path normalizePath (const Path& path)
 	return str;
 }
 
+[[nodiscard]] static inline std::vector<std::string> splitString (std::string_view stringToSplit,
+																  std::string_view delimiter,
+																  bool			 includeDelimiterInResults)
+{
+	const auto delimiterStartChar = delimiter.front();
+
+	std::vector<std::string> tokens;
+
+	auto tokenStart = stringToSplit.begin();
+	auto pos		= tokenStart;
+
+	while (pos != stringToSplit.end())
+	{
+		if (*pos == delimiterStartChar)
+		{
+			auto delimiterStart = pos++;
+
+			while (pos != stringToSplit.end() && delimiter.find (*pos) != std::string_view::npos)
+				++pos;
+
+			if (pos != stringToSplit.begin())
+				tokens.push_back ({ tokenStart, includeDelimiterInResults ? pos : delimiterStart });
+
+			tokenStart = pos;
+		}
+		else
+		{
+			++pos;
+		}
+	}
+
+	if (pos != stringToSplit.begin())
+		tokens.push_back ({ tokenStart, pos });
+
+	return tokens;
+}
+
 Path largestCommonPrefix (const Path& path1, const Path& path2)
 {
 	const auto a = normalizePath (path1);
@@ -209,8 +301,8 @@ Path largestCommonPrefix (const Path& path1, const Path& path2)
 	const auto bStr = b.string();
 
 	// TODO: support \ on Windows
-	const auto aChunks = str::split (aStr, "/", false);
-	const auto bChunks = str::split (bStr, "/", false);
+	const auto aChunks = splitString (aStr, "/", false);
+	const auto bChunks = splitString (bStr, "/", false);
 
 	Path result;
 

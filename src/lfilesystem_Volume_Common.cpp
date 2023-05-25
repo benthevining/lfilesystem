@@ -12,13 +12,11 @@
  * ======================================================================================
  */
 
-#include <limes_namespace.h>
-#include <limes_platform.h>
 #include <filesystem>
 #include <optional>
-#include "./Volume.h"
-#include "../entries/FilesystemEntry.h"
-#include "../misc/misc.h"
+#include "lfilesystem/lfilesystem_Volume.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_Misc.h"
 
 namespace limes::files
 {

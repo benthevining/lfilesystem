@@ -40,7 +40,7 @@
 
 #include <algorithm>
 #include <string>
-#include "lfilesystem_DynamicLibrary.h"
+#include "lfilesystem/lfilesystem_DynamicLibrary.h"
 
 namespace limes::files
 {
@@ -119,7 +119,7 @@ bool DynamicLibrary::reload()
 
 [[nodiscard]] static inline std::string formatLibraryName (const std::string_view& input)
 {
-	auto result = str::trimmed (input);
+	auto result = std::string { input };
 
 	// TODO: detect if input is probably a path, don't do name transforms if so
 

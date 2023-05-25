@@ -17,7 +17,7 @@
 #endif
 
 #import <Foundation/Foundation.h>
-#include "lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
 
 namespace limes::files::dirs
 {

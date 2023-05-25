@@ -18,9 +18,9 @@
 
 #include <algorithm>
 #include <cctype>
-#include "lfilesystem_SpecialDirectories.h"
-#include "lfilesystem_Directory.h"
-#include "lfilesystem_File.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_File.h"
 
 namespace limes::files::dirs
 {

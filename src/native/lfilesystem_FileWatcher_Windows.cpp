@@ -26,8 +26,8 @@
 #include <chrono>
 #include <memory>
 #include <thread>
-#include "lfilesystem_FileWatcher.h"
-#include "lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_FileWatcher.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
 
 namespace limes::files
 {

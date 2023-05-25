@@ -21,10 +21,10 @@
 #include <cstdio>
 #include <atomic>
 #include <mutex>
-#include "lfilesystem_File.h"
-#include "lfilesystem_SpecialDirectories.h"
-#include "lfilesystem_Directory.h"		// for Directory
-#include "lfilesystem_FilesystemEntry.h"	// for Path
+#include "lfilesystem/lfilesystem_File.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_Directory.h"		// for Directory
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for Path
 
 /** The following functions are implemented in the platform specific sources in the native/ folder:
 
@@ -121,13 +121,20 @@ bool File::write_data (const char* const data, std::size_t numBytes, bool overwr
 	if (numBytes == 0)
 		return deleteIfExists();
 
-	return func::try_call ([data, numBytes, overwrite, p = getAbsolutePath()]
-						   {
-			const auto mode = overwrite ? std::ios::trunc : std::ios::app;
+	try
+	{
+		const auto mode = overwrite ? std::ios::trunc : std::ios::app;
 
-			std::ofstream stream { p.c_str(), mode };
+		std::ofstream stream { getAbsolutePath().c_str(), mode };
 
-			stream.write (data, static_cast<std::streamsize> (numBytes)); });
+		stream.write (data, static_cast<std::streamsize> (numBytes));
+
+		return true;
+	}
+	catch(...)
+	{
+		return false;
+	}
 }
 
 bool File::overwrite (const char* const data, std::size_t numBytes) const noexcept

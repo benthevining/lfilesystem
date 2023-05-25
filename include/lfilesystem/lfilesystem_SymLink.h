@@ -16,8 +16,8 @@
 
 #include <functional>  // for std::hash
 #include <optional>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
 
 /** @file
 	This file defines the files::SymLink class.

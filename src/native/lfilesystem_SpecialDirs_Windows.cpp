@@ -20,8 +20,8 @@
 #include <shtypes.h>
 #include <Knownfolders.h>
 #include <shlobj_core.h>
-#include "lfilesystem_SpecialDirectories.h"
-#include "lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_Directory.h"
 
 namespace limes::files::dirs
 {

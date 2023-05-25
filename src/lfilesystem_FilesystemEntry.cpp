@@ -17,14 +17,14 @@
 #include <filesystem>	  // for path, copy, operator/, absolute, cera...
 #include <fstream>		  // for string, ofstream
 #include <string>		  // for operator<, operator>
-#include "lfilesystem_Directory.h"  // for Directory
-#include "lfilesystem_File.h"		  // for File
-#include "lfilesystem_SymLink.h"	  // for SymLink
-#include "lfilesystem_SpecialDirectories.h"
-#include "lfilesystem_Volume.h"
-#include "lfilesystem_FilesystemEntry.h"
-#include "lfilesystem_Misc.h"
-#include "lfilesystem_Paths.h"
+#include "lfilesystem/lfilesystem_Directory.h"  // for Directory
+#include "lfilesystem/lfilesystem_File.h"		  // for File
+#include "lfilesystem/lfilesystem_SymLink.h"	  // for SymLink
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_Volume.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_Misc.h"
+#include "lfilesystem/lfilesystem_Paths.h"
 
 #if LIMES_WINDOWS
 #	include <cctype>
@@ -84,6 +84,16 @@ FilesystemEntry& FilesystemEntry::changeName (const std::string_view& newName)
 	return *this;
 }
 
+static inline bool areSameIgnoringCase (const std::string_view& lhs, const std::string_view& rhs)
+{
+	return std::equal (lhs.begin(), lhs.end(),
+					   rhs.begin(), rhs.end(),
+					   [] (char a, char b)
+					   {
+		return std::tolower (static_cast<unsigned char> (a)) == std::tolower (static_cast<unsigned char> (b));
+	});
+}
+
 bool FilesystemEntry::operator== (const FilesystemEntry& other) const noexcept
 {
 	// std::filesystem::equivalent can only be used if both paths exist
@@ -126,7 +136,7 @@ bool FilesystemEntry::operator== (const FilesystemEntry& other) const noexcept
 			otherPath = other.getAbsolutePath().string();
 		}
 
-		return str::areSameIgnoringCase (thisPath, otherPath);
+		return areSameIgnoringCase (thisPath, otherPath);
 	}
 }
 

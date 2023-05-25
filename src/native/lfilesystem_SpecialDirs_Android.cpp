@@ -16,8 +16,8 @@
 #	error
 #endif
 
-#include "lfilesystem_SpecialDirectories.h"
-#include "lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_Directory.h"
 
 // Android implementations are currently TODO!
 

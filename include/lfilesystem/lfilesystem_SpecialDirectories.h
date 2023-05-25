@@ -15,8 +15,8 @@
 #pragma once
 
 #include <vector>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_Directory.h"
 
 /** @defgroup special_dirs Special directories
 	Utility functions for finding some common directory locations.

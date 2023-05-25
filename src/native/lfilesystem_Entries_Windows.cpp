@@ -16,7 +16,7 @@
 #	error
 #endif
 
-#ifdef(_MSC_VER)
+#ifdef _MSC_VER
 #	include <intrin.h>
 #endif
 
@@ -27,10 +27,10 @@
 #include <string>
 #include <array>
 #include <atomic>
-#include "lfilesystem_Misc.h"
-#include "lfilesystem_FilesystemEntry.h"
-#include "lfilesystem_File.h"
-#include "lfilesystem_DynamicLibrary.h"
+#include "lfilesystem/lfilesystem_Misc.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_File.h"
+#include "lfilesystem/lfilesystem_DynamicLibrary.h"
 
 namespace limes::files
 {
@@ -183,7 +183,7 @@ namespace module_path
 
 [[nodiscard]] LIMES_EXPORT std::string get_impl()
 {
-#ifdef(_MSC_VER)
+#ifdef _MSC_VER
 #	define limes_get_return_address() _ReturnAddress()	 // NOLINT
 #elif defined(__GNUC__)
 #	define limes_get_return_address() __builtin_extract_return_addr (__builtin_return_address (0))	 // NOLINT

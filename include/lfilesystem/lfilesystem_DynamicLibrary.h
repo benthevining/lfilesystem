@@ -22,9 +22,9 @@
 #include <string>
 #include <atomic>
 #include <vector>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_FileWatcher.h"
-#include "lfilesystem_File.h"
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_FileWatcher.h"
+#include "lfilesystem/lfilesystem_File.h"
 
 /** @file
 	This file defines the DynamicLibrary class.

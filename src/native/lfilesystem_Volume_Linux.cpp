@@ -40,9 +40,9 @@
 #include <vector>
 #include <cctype>
 #include <algorithm>
-#include "lfilesystem_Directory.h"
-#include "lfilesystem_File.h"
-#include "lfilesystem_Volume.h"
+#include "lfilesystem/lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_File.h"
+#include "lfilesystem/lfilesystem_Volume.h"
 
 #ifndef LFILE_IMPL_USE_PATHCONF
 #	define LFILE_IMPL_USE_PATHCONF 0
@@ -51,7 +51,7 @@
 #if LFILE_IMPL_USE_PATHCONF
 #	include <unistd.h>
 #else
-#	include "lfilesystem_Misc.h"
+#	include "lfilesystem/lfilesystem_Misc.h"
 #endif
 
 namespace limes::files

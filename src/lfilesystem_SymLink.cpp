@@ -14,9 +14,9 @@
 
 #include <filesystem>	 // for create_directory_symlink, create_...
 #include <stdexcept>
-#include "lfilesystem_Directory.h"
-#include "lfilesystem_SymLink.h"
-#include "lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
+#include "lfilesystem/lfilesystem_Directory.h"
+#include "lfilesystem/lfilesystem_SymLink.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
 
 namespace limes::files
 {
@@ -173,8 +173,9 @@ size_t hash<limes::files::SymLink>::operator() (const limes::files::SymLink& l) 
 
 	// combine the hash values using the Szudzik pair method
 
-	const auto A = a >= T (0) ? T (2) * a : T (-2) * a - T (1);	 // NOLINT
-	const auto B = b >= T (0) ? T (2) * b : T (-2) * b - T (1);	 // NOLINT
+	// TODO: deal with the -2 here...
+	const auto A = a >= 0UL ? 2UL * a : -2UL * a - 1UL;	 // NOLINT
+	const auto B = b >= 0UL ? 2UL * b : -2UL * b - 1UL;	 // NOLINT
 
 	if (A >= B)
 		return A * A + A + B;

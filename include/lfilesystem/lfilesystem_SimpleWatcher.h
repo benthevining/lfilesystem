@@ -15,8 +15,8 @@
 #pragma once
 
 #include <functional>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_FileWatcher.h"
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_FileWatcher.h"
 
 /** @file
 	This file defines the SimpleFileWatcher class.

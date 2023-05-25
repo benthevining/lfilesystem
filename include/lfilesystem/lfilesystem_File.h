@@ -23,9 +23,9 @@
 #include <fstream>
 #include <memory>
 #include <iterator>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
-#include "lfilesystem_CFile.h"
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
+#include "lfilesystem/lfilesystem_CFile.h"
 
 /** @file
 	This file defines the File and TempFile classes.

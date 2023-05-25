@@ -20,8 +20,8 @@
 #include <vector>
 #include <optional>
 #include <ostream>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_SpecialDirectories.h"
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_SpecialDirectories.h"
 
 /** @file
 	This file defines the files::Volume class.

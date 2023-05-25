@@ -32,8 +32,8 @@
 #include <sstream>
 #include <stdexcept>
 #include <string_view>
-#include "lfilesystem_Volume.h"
-#include "lfilesystem_Misc.h"
+#include "lfilesystem/lfilesystem_Volume.h"
+#include "lfilesystem/lfilesystem_Misc.h"
 
 namespace limes::files
 {
@@ -57,17 +57,19 @@ static inline Path findMountPath (const Path& inputPath)
 
 	struct statfs* mounts { nullptr };
 
-	const auto defer = func::defer_call ([mounts]
-										 { delete[] mounts; });
-
 	const auto numMounts = getmntinfo (&mounts, MNT_WAIT);
 
 	if (numMounts < 1)
 		throwError (inputPath);
 
 	for (auto i = 0; i < numMounts; ++i)
+	{
 		if (fileStat.st_dev == mounts[i].f_fsid.val[0])
+		{
+			delete[] mounts;
 			return Path { mounts[i].f_mntonname };
+		}
+	}
 
 	throwError (inputPath);
 }

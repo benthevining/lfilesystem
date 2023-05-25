@@ -15,8 +15,8 @@
 #pragma once
 
 #include <memory>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
 
 /** @file
 	This file defines the files::FileWatcher class.

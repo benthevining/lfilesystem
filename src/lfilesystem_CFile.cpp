@@ -12,7 +12,7 @@
  * ======================================================================================
  */
 
-#include "lfilesystem_CFile.h"
+#include "lfilesystem/lfilesystem_CFile.h"
 #include <stdio.h>
 #include <cstdio>
 #include <string_view>
@@ -27,8 +27,8 @@
 #	include <unistd.h>
 #endif
 
-#include "lfilesystem_File.h"
-#include "lfilesystem_Paths.h"
+#include "lfilesystem/lfilesystem_File.h"
+#include "lfilesystem/lfilesystem_Paths.h"
 
 namespace limes::files
 {
@@ -95,7 +95,6 @@ CFile::operator std::FILE*() const noexcept
 		case (CFile::Mode::ReadExtended) : return "r+";
 		case (CFile::Mode::WriteExtended) : return "w+";
 		case (CFile::Mode::AppendExtended) : return "a+";
-		default : LIMES_UNREACHABLE; return "";
 	}
 }
 

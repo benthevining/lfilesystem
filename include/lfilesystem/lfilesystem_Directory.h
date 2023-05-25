@@ -20,10 +20,10 @@
 #include <vector>	   
 #include <memory>
 #include <iterator>
-#include "lfilesystem_Export.h"
-#include "lfilesystem_FilesystemEntry.h"
-#include "lfilesystem_File.h"				
-#include "lfilesystem_Sym_Link.h"			
+#include "lfilesystem/lfilesystem_Export.h"
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"
+#include "lfilesystem/lfilesystem_File.h"				
+#include "lfilesystem/lfilesystem_SymLink.h"
 
 /** @file
 	This file defines the Directory class.
