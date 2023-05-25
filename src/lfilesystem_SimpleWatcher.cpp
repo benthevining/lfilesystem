@@ -13,6 +13,7 @@
  */
 
 #include <utility>
+#include <stdexcept>
 #include "lfilesystem/lfilesystem_SimpleWatcher.h"
 
 namespace limes::files
@@ -22,7 +23,8 @@ SimpleFileWatcher::SimpleFileWatcher (const FilesystemEntry& fileToWatch,
 									  Callback&&			 callbackToUse)
 	: FileWatcher (fileToWatch), callback (std::move (callbackToUse))
 {
-	LIMES_ASSERT (callback != nullptr);
+	if (callback == nullptr)
+		throw std::runtime_error { "SimpleFileWatcher given a null callback function" };
 }
 
 void SimpleFileWatcher::fileAccessed (const FilesystemEntry& f)

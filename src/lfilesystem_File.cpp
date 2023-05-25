@@ -169,11 +169,9 @@ bool File::append (const std::string_view& text) const noexcept
 
 bool File::prepend (const char* const data, std::size_t numBytes) const noexcept
 {
-	auto dataObj = loadAsData();
+	const std::string_view str { data, numBytes };
 
-	dataObj.append (data, numBytes);
-
-	return overwrite (dataObj);
+	return prepend (str);
 }
 
 bool File::prepend (const std::string_view& text) const noexcept
@@ -219,12 +217,13 @@ std::optional<File> File::duplicate() const noexcept
 	// there's an error in the filename selecting code
 	// above, or this file was created between that code
 	// and this assertion
-	LIMES_ASSERT (! newFile.exists());
+	if (newFile.exists())
+		return std::nullopt;
 
 	if (! newFile.createIfDoesntExist())
 		return std::nullopt;
 
-	if (! newFile.overwrite (loadAsData()))
+	if (! newFile.overwrite (loadAsString()))
 	{
 		newFile.deleteIfExists();
 		return std::nullopt;
@@ -235,8 +234,8 @@ std::optional<File> File::duplicate() const noexcept
 
 bool File::resize (std::uintmax_t newSizeInBytes, bool allowTruncation, bool allowIncreasing) const noexcept
 {
-	// why call this function if you don't want to change the file size?
-	LIMES_ASSERT (allowTruncation || allowIncreasing);
+	if (! (allowTruncation || allowIncreasing))
+		return false; // should this return true?
 
 	if (! exists())
 		return false;
@@ -553,10 +552,6 @@ TempFile::TempFile (const Path& filepath, bool destroyOnDelete)
 	: File (createTmpFilepath (filepath)), shouldDelete (destroyOnDelete)
 {
 	[[maybe_unused]] const auto created = createIfDoesntExist();
-
-	// you've created a TempFile referring to a filepath that
-	// already existed!
-	LIMES_ASSERT (created);
 }
 
 TempFile::~TempFile()
@@ -612,7 +607,6 @@ TempFile TempFile::getNextFile()
 			return TempFile { filename, true };
 	}
 
-	LIMES_ASSERT (false);
 	lastCount.store (0);
 
 	return TempFile { Path {}, false };

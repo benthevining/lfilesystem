@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <cstdio>
 #include <string_view>
+#include <stdexcept>
 
 #if defined(_WIN32) || defined(WIN32)
 #	include <Windows.h>
@@ -76,7 +77,9 @@ std::FILE* CFile::operator->() const noexcept
 
 std::FILE& CFile::operator*() const
 {
-	LIMES_ASSERT (ptr != nullptr);
+	if (ptr == nullptr)
+		throw std::runtime_error { "CFile: internal handle was NULL" };
+
 	return *ptr;
 }
 
