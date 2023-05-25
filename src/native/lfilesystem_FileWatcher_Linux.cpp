@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_LINUX
-#	error
-#endif
-
 #include <sys/inotify.h>
 #include <sys/types.h>
 #include <sys/select.h>

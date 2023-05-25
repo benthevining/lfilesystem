@@ -8,17 +8,17 @@ project (lfilesystem
 include (GNUInstallDirs)
 
 set (LFILE_INSTALL_DEST 
-	 "${CMAKE_INSTALL_LIBDIR}/cmake/Limes" CACHE STRING 
+	 "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem" CACHE STRING 
 	 "Path where package files will be installed, relative to the install prefix")
 
 mark_as_advanced (LFILE_INSTALL_DEST)
 
-add_library (limes_filesystem)
-add_library (limes::filesystem ALIAS limes_filesystem)
+add_library (lfilesystem)
+add_library (limes::lfilesystem ALIAS lfilesystem)
 
-target_compile_features (limes_filesystem PUBLIC cxx_std_20)
+target_compile_features (lfilesystem PUBLIC cxx_std_20)
 
-set_target_properties (limes_filesystem PROPERTIES
+set_target_properties (lfilesystem PROPERTIES
 						CXX_VISIBILITY_PRESET hidden
 						VISIBILITY_INLINES_HIDDEN ON)
 
@@ -43,16 +43,16 @@ set (export_header "${CMAKE_CURRENT_BINARY_DIR}/generated/lfilesystem/lfilesyste
 
 include (GenerateExportHeader)
 
-generate_export_header (limes_filesystem
+generate_export_header (lfilesystem
 						EXPORT_MACRO_NAME LFILE_EXPORT
 						NO_EXPORT_MACRO_NAME LFILE_NO_EXPORT
 						EXPORT_FILE_NAME "${export_header}")
 
-target_sources (limes_filesystem
-	#PUBLIC "${public_header}" "${export_header}"
-	PRIVATE ${private_headers})
+target_sources (lfilesystem
+	#PUBLIC "${public_header}"
+	PRIVATE ${private_headers} "${export_header}")
 
-target_include_directories (limes_filesystem PUBLIC
+target_include_directories (lfilesystem PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/generated>
 	$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
@@ -65,10 +65,10 @@ if(APPLE)
 
 	enable_language (OBJCXX)
 
-	target_link_libraries (limes_filesystem PRIVATE "-framework Foundation")
+	target_link_libraries (lfilesystem PRIVATE "-framework Foundation")
 
 	if (NOT IOS)
-		target_link_libraries (limes_filesystem PRIVATE "-framework AppKit")
+		target_link_libraries (lfilesystem PRIVATE "-framework AppKit")
 	endif ()
 
 elseif(LINUX)
@@ -92,26 +92,26 @@ return 0;
 		limes_files_can_use_pathconf)
 
 	if (limes_files_can_use_pathconf)
-		target_compile_definitions (limes_filesystem PRIVATE LFILE_IMPL_USE_PATHCONF=1)
+		target_compile_definitions (lfilesystem PRIVATE LFILE_IMPL_USE_PATHCONF=1)
 	else ()
-		target_compile_definitions (limes_filesystem PRIVATE LFILE_IMPL_USE_PATHCONF=0)
+		target_compile_definitions (lfilesystem PRIVATE LFILE_IMPL_USE_PATHCONF=0)
 	endif ()
 
 endif()
 
-target_link_libraries (limes_filesystem PRIVATE ${CMAKE_DL_LIBS})
+target_link_libraries (lfilesystem PRIVATE ${CMAKE_DL_LIBS})
 
 add_subdirectory (src)
 
-install (TARGETS limes_filesystem
-		 EXPORT limes_filesystem
+install (TARGETS lfilesystem
+		 EXPORT lfilesystem
 		 LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT lfilesystem
 		 NAMELINK_COMPONENT lfilesystem_dev
 		 ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT lfilesystem_dev
 		 RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" COMPONENT lfilesystem
 		 INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
 
-install (EXPORT limes_filesystem
+install (EXPORT lfilesystem
 		 NAMESPACE limes::
 		 DESTINATION "${LFILE_INSTALL_DEST}"
 		 COMPONENT lfilesystem_dev)

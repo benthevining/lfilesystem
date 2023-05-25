@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_LINUX
-#	error
-#endif
-
 #include <sys/stat.h>
 #include <sys/statfs.h>
 #include <sys/statvfs.h>

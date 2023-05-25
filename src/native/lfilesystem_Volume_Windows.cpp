@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_WINDOWS
-#	error
-#endif
-
 #include <windows.h>
 #include <pathcch.h>
 #include <fileapi.h>

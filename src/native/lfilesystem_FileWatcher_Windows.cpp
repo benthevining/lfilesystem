@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_WINDOWS
-#	error
-#endif
-
 #include <windows.h>
 #include <stdexcept>
 #include <cstring>

@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_WINDOWS
-#	error
-#endif
-
 #include <windows.h>
 #include <shtypes.h>
 #include <Knownfolders.h>
@@ -58,7 +54,7 @@ Directory commonDocuments()
 
 Directory apps()
 {
-	// ??
+	// TODO - ??
 //#if LIMES_32BIT
 //	return getWinFolderPath (FOLDERID_ProgramFiles);
 //#else

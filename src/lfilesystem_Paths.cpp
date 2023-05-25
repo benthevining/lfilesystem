@@ -14,7 +14,7 @@
 
 #include "lfilesystem/lfilesystem_Paths.h"
 
-#if ! LIMES_WINDOWS
+#if ! (defined(_WIN32) || defined(WIN32))
 #	include <sys/types.h>
 #	include <pwd.h>
 #	include "lfilesystem/lfilesystem_SpecialDirectories.h"
@@ -97,7 +97,7 @@ bool isValidPath (const Path& path)
 	return true;
 }
 
-#if ! LIMES_WINDOWS
+#if ! (defined(_WIN32) || defined(WIN32))
 
 [[nodiscard]] static inline Path expandTilde (const std::string& path)
 {
@@ -128,7 +128,7 @@ bool isValidPath (const Path& path)
 	return homePath / afterUsername;
 }
 
-#endif /* ! LIMES_WINDOWS */
+#endif /* ! Windows */
 
 static inline void normalizeDoubleDot (std::string& path)
 {
@@ -162,7 +162,7 @@ static inline void removeTrailingDirSeparators (std::string& path)
 	while (path.ends_with ('/'))
 		path.pop_back();
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	while (path.ends_with ('\\'))
 		path.pop_back();
 #endif
@@ -172,7 +172,7 @@ static inline void normalizeSlashDotSlash (std::string& path)
 {
 	path = replaceInString (path, "/./", "/");
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	path = replaceInString (path, "\\.\\", "\\");
 #endif
 }
@@ -188,7 +188,7 @@ static inline void normalizeDotSlash (std::string& path)
 	if (path.starts_with ("./"))
 		path = path.substr (2, std::string::npos);
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	if (path == std::string { ".\\" })
 	{
 		path = '.';
@@ -202,7 +202,7 @@ static inline void normalizeDotSlash (std::string& path)
 
 [[nodiscard]] static inline bool isOnlyDirectorySeparator (const std::string& path)
 {
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	if (path == std::string { '\\' })
 		return true;
 #endif
@@ -239,7 +239,7 @@ Path normalizePath (const Path& path)
 
 	normalizeDoubleDot (str);
 
-#if ! LIMES_WINDOWS
+#if ! (defined(_WIN32) || defined(WIN32))
 	if (str.starts_with ('~'))
 		return expandTilde (str);
 #endif

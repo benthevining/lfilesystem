@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_LINUX
-#	error
-#endif
-
 #include <algorithm>
 #include <cctype>
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"

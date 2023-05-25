@@ -12,14 +12,14 @@
  * ======================================================================================
  */
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 #	include <windows.h>
 #	include <locale>  // for wstring_convert
 #	include <codecvt>
 #else
 #	include <dlfcn.h>
 
-#	if LIMES_LINUX
+#	if defined(__linux__) || defined(__gnu_linux__) || defined(linux) || defined(__linux) || defined(__EMSCRIPTEN__)
 #		include <link.h>
 
 #		if defined(__EMSCRIPTEN__)
@@ -29,10 +29,9 @@
 #			include <linux/limits.h>
 #		endif
 
-#	elif LIMES_APPLE
+#	elif defined(__APPLE__)
 #		include <mach-o/dyld.h>
 #		include <mach-o/nlist.h>
-#		include <limes_core.h>
 #		include <cstdint>
 #		include <cstring>
 #	endif
@@ -123,7 +122,7 @@ bool DynamicLibrary::reload()
 
 	// TODO: detect if input is probably a path, don't do name transforms if so
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	if (! result.ends_with (".dll"))
 		result += ".dll";
 #else
@@ -145,7 +144,7 @@ bool DynamicLibrary::open (const std::string_view& nameOrPath) noexcept
 			if (nameOrPath.empty())
 				return false;
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 			const auto newHandle = ::LoadLibraryA (formatLibraryName (nameOrPath).c_str());
 // #elif defined(__EMSCRIPTEN__)
 // TODO: use emscripten_dlopen
@@ -181,7 +180,7 @@ void DynamicLibrary::close()
 	if (h == nullptr)
 		return;
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	::FreeLibrary (h);
 #else
 	::dlclose (h);
@@ -203,7 +202,7 @@ void* DynamicLibrary::findFunction (const std::string_view& functionName) noexce
 		if (h == nullptr || functionName.empty())
 			return nullptr;
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 		return reinterpret_cast<void*> (::GetProcAddress (h, functionName.data()));
 #else
 		return ::dlsym (h, functionName.data());
@@ -216,7 +215,7 @@ void* DynamicLibrary::findFunction (const std::string_view& functionName) noexce
 }
 
 // This takes some ugly code on Apple, which is in this file down below...
-#if LIMES_APPLE
+#if defined(__APPLE__)
 [[nodiscard]] static const char* pathname_for_handle (void* handle) noexcept;
 #endif
 
@@ -233,7 +232,7 @@ File DynamicLibrary::getFile() const
 	if (h == nullptr)
 		return {};
 
-#	if LIMES_WINDOWS
+#	if defined(_WIN32) || defined(WIN32)
 
 	char buffer[MAX_PATH];
 
@@ -246,7 +245,7 @@ File DynamicLibrary::getFile() const
 
 	return File { path };
 
-#	elif LIMES_APPLE
+#	elif defined(__APPLE__)
 
 	const std::string path { pathname_for_handle (h) };
 
@@ -281,7 +280,7 @@ std::string DynamicLibrary::getName() const
 #pragma mark Ugly Apple code
 
 // all this ugly code below is the implementation of getFile() for Apple platforms
-#if LIMES_APPLE
+#if defined(__APPLE__)
 
 #	ifdef __LP64__
 using mach_header_t		= mach_header_64;
@@ -381,7 +380,7 @@ using nlist_t			= struct nlist;
 	}
 }
 
-#endif /* LIMES_APPLE */
+#endif /* __APPLE__ */
 
 #pragma mark Reloader
 

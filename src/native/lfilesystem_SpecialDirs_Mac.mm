@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_APPLE
-#	error
-#endif
-
 #import <Foundation/Foundation.h>
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 

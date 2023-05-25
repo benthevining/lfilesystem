@@ -21,10 +21,15 @@
 #include <cstdio>
 #include <atomic>
 #include <mutex>
+#include <algorithm>
 #include "lfilesystem/lfilesystem_File.h"
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Directory.h"		// for Directory
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for Path
+
+#ifdef __APPLE__
+#	include <TargetConditionals.h>
+#endif
 
 /** The following functions are implemented in the platform specific sources in the native/ folder:
 
@@ -98,7 +103,7 @@ bool File::hasFileExtension() const
 }
 
 // see native/mac.mm for the OSX implementation
-#if ! LIMES_OSX
+#if ((! defined(__APPLE__)) || TARGET_OS_IPHONE)
 bool File::isMacOSBundle() const noexcept
 {
 	return false;
@@ -341,9 +346,58 @@ std::string File::loadAsString() const noexcept
 	}
 }
 
+static inline std::vector<std::string> splitString (std::string_view stringToSplit,
+													std::string_view delimiter,
+													bool			 includeDelimiterInResults)
+{
+	const auto delimiterStartChar = delimiter.front();
+
+	std::vector<std::string> tokens;
+
+	auto tokenStart = stringToSplit.begin();
+	auto pos		= tokenStart;
+
+	while (pos != stringToSplit.end())
+	{
+		if (*pos == delimiterStartChar)
+		{
+			auto delimiterStart = pos++;
+
+			while (pos != stringToSplit.end() && delimiter.find (*pos) != std::string_view::npos)
+				++pos;
+
+			if (pos != stringToSplit.begin())
+				tokens.push_back ({ tokenStart, includeDelimiterInResults ? pos : delimiterStart });
+
+			tokenStart = pos;
+		}
+		else
+		{
+			++pos;
+		}
+	}
+
+	if (pos != stringToSplit.begin())
+		tokens.push_back ({ tokenStart, pos });
+
+	return tokens;
+}
+
 std::vector<std::string> File::loadAsLines() const
 {
-	return str::splitAtNewlines (loadAsString());
+	auto tokens = splitString (loadAsString(), "\n", false);
+
+	// if the newline char was \r\n, then strings will now end with \r
+	std::transform (tokens.begin(), tokens.end(), tokens.begin(),
+					[] (auto str)
+					{
+		if (str.ends_with ('\r'))
+			return str.substr (0, str.length() - 1);
+
+		return str;
+	});
+
+	return tokens;
 }
 
 std::unique_ptr<std::ofstream> File::getOutputStream() const

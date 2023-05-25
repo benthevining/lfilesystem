@@ -14,7 +14,7 @@
 
 #pragma once
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 #	include <windows.h>
 #endif
 
@@ -81,7 +81,7 @@ public:
 	DynamicLibrary (const DynamicLibrary&) = delete;
 	DynamicLibrary& operator= (const DynamicLibrary&) = delete;
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	using Handle = HMODULE;
 #else
 	using Handle = void*;

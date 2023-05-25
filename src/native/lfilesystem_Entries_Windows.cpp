@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_WINDOWS
-#	error
-#endif
-
 #ifdef _MSC_VER
 #	include <intrin.h>
 #endif

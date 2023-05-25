@@ -26,7 +26,7 @@
 #include "lfilesystem/lfilesystem_Misc.h"
 #include "lfilesystem/lfilesystem_Paths.h"
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 #	include <cctype>
 #endif
 
@@ -364,7 +364,7 @@ bool FilesystemEntry::isAbsolutePath() const noexcept
 	// on Windows, path.is_absolute() seems to be incorrect
 	// so do some checks ourselves, for leading directory
 	// separators, and for a leading drive letter
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	const auto str = path.string();
 
 	if (str.starts_with ('/') || str.starts_with ('\\'))

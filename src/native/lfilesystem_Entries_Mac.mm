@@ -12,20 +12,15 @@
  * ======================================================================================
  */
 
-#if ! LIMES_APPLE
-#	error
-#endif
-
 #include <dlfcn.h>		  // for dladdr, Dl_info
 #include <mach-o/dyld.h>  // for _NSGetExecutablePath
 #include <limits.h>		  // for PATH_MAX
 
 #import <Foundation/Foundation.h>
+#include <TargetConditionals.h>
 
-#if LIMES_OSX
+#if ! TARGET_OS_IPHONE
 #	import <AppKit/AppKit.h>
-#else
-#	include <TargetConditionals.h>
 #endif
 
 #include <cstdint>	// for uint32_t
@@ -53,7 +48,9 @@ namespace limes::files
 
 bool FilesystemEntry::isHidden() const
 {
-#if LIMES_OSX
+#if TARGET_OS_IPHONE
+	return filenameBeginsWithDot();
+#else
 	if (! exists())
 		return filenameBeginsWithDot();
 
@@ -68,8 +65,6 @@ bool FilesystemEntry::isHidden() const
 
 		return filenameBeginsWithDot();
 	}
-#else
-	return filenameBeginsWithDot();
 #endif
 }
 
@@ -78,7 +73,7 @@ bool FilesystemEntry::moveToTrash() noexcept
 	if (! exists())
 		return false;
 
-#ifndef TARGET_OS_TV
+#if ! TARGET_OS_TV
 	@autoreleasepool
 	{
 		if (@available (macOS 10.8, iOS 11.0, *))
@@ -98,7 +93,7 @@ bool FilesystemEntry::moveToTrash() noexcept
 
 bool FilesystemEntry::revealToUserInFileBrowser() const
 {
-#if LIMES_IOS
+#if TARGET_OS_IPHONE
 	return false;
 #else
 	if (! exists())
@@ -110,7 +105,7 @@ bool FilesystemEntry::revealToUserInFileBrowser() const
 #endif
 }
 
-#if LIMES_OSX
+#if ! TARGET_OS_IPHONE
 bool File::isMacOSBundle() const noexcept
 {
 	@autoreleasepool

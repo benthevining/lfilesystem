@@ -14,7 +14,7 @@
 
 #pragma once
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 #	include <windows.h>
 #elif __has_include(<linux/limits.h>)
 #	include <linux/limits.h>
@@ -51,7 +51,7 @@ namespace limes::files
  */
 [[nodiscard]] LFILE_EXPORT consteval char PATHseparator() noexcept
 {
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	return ';';
 #else
 	return ':';
@@ -68,7 +68,7 @@ namespace limes::files
  */
 [[nodiscard]] LFILE_EXPORT consteval bool filesystemIsCaseSensitive() noexcept
 {
-#if LIMES_LINUX
+#if defined(__linux__) || defined(__gnu_linux__) || defined(linux) || defined(__linux)
 	return true;
 #else
 	return false;
@@ -82,7 +82,7 @@ namespace limes::files
  */
 [[nodiscard]] LFILE_EXPORT constexpr std::uintmax_t maxPathLength() noexcept
 {
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	return static_cast<std::uintmax_t> (MAX_PATH);
 #elif defined(NAME_MAX)
 	return static_cast<std::uintmax_t> (NAME_MAX);

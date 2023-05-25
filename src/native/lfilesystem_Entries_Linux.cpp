@@ -12,11 +12,7 @@
  * ======================================================================================
  */
 
-#if ! (LIMES_LINUX || LIMES_ANDROID)
-#	error
-#endif
-
-#if LIMES_ANDROID
+#if defined(__ANDROID__)
 #	include <fcntl.h>
 #	include <sys/mman.h>
 #endif
@@ -153,7 +149,7 @@ namespace module_path
 		{
 			auto length = static_cast<int> (std::strlen (resolved));
 
-#	if LIMES_ANDROID
+#	if defined(__ANDROID__)
 			if (length > 4
 				&& buffer[length - 1] == 'k'
 				&& buffer[length - 2] == 'p'
@@ -195,7 +191,7 @@ namespace module_path
 				munmap (begin, offset);
 				close (fd);
 			}
-#	endif /* LIMES_ANDROID */
+#	endif /* __ANDROID__ */
 
 			return { resolved, static_cast<std::string::size_type> (length) };
 		}

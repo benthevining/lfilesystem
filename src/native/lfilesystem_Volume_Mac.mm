@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_APPLE
-#	error
-#endif
-
 #include <Foundation/Foundation.h>
 #include <sys/stat.h>
 #include <sys/statvfs.h>
@@ -24,8 +20,9 @@
 #include <sys/attr.h>
 #include <sys/mount.h>
 #include <unistd.h>
+#include <TargetConditionals.h>
 
-#if LIMES_OSX
+#if ! TARGET_OS_IPHONE
 #	import <AppKit/AppKit.h>
 #endif
 
@@ -81,7 +78,7 @@ Volume::Volume (const Path& path)
 
 std::string Volume::getLabel() const
 {
-#if ! LIMES_IOS
+#if ! TARGET_OS_IPHONE
 	struct VolAttrBuf
 	{
 		u_int32_t		length;
@@ -115,7 +112,7 @@ int Volume::getSerialNumber() const
 // essentially a backup function for getType() if stat fails
 static inline bool isRemovableVolume ([[maybe_unused]] const Path& path)
 {
-#if LIMES_IOS
+#if TARGET_OS_IPHONE
 	return false;  // is it possible for this to be true on iOS, tvOS, or watchOS?
 #else
 	@autoreleasepool
@@ -138,7 +135,7 @@ static inline bool isRemovableVolume ([[maybe_unused]] const Path& path)
 // TODO: detect network & RAM types
 Volume::Type Volume::getType() const
 {
-#if LIMES_IOS
+#if TARGET_OS_IPHONE
 	static constexpr auto defaultUnknownType = Type::HardDisk;	// assume hard disk if we're on iOS
 #else
 	static constexpr auto defaultUnknownType = Type::Unknown;  // can't make any assumptions if we're on desktop

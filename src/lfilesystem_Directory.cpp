@@ -106,7 +106,7 @@ bool Directory::isEmpty() const
 	while (str.starts_with ("./"))
 		str = str.substr (2, std::string::npos);
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	while (str.starts_with (".\\"))
 		str = str.substr (2, std::string::npos);
 #endif

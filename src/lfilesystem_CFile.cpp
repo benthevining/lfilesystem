@@ -17,11 +17,11 @@
 #include <cstdio>
 #include <string_view>
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 #	include <Windows.h>
 #	include <io.h>
 #	include <string>
-#elif LIMES_APPLE
+#elif defined(__APPLE__)
 #	include <sys/fcntl.h>
 #else
 #	include <unistd.h>
@@ -152,7 +152,7 @@ Path CFile::getPath() const
 	if (ptr == nullptr)
 		return {};
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 
 	char buf[MAX_PATH] = {};
 
@@ -174,7 +174,7 @@ Path CFile::getPath() const
 
 	return normalizePath (path);
 
-#elif LIMES_APPLE
+#elif defined(__APPLE__)
 
 	char buf[PATH_MAX];
 

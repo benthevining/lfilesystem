@@ -12,10 +12,6 @@
  * ======================================================================================
  */
 
-#if ! LIMES_ANDROID
-#	error
-#endif
-
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Directory.h"
 

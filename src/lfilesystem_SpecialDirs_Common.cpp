@@ -12,7 +12,7 @@
  * ======================================================================================
  */
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 #	include <Windows.h>
 #else
 #	include <unistd.h>
@@ -72,7 +72,7 @@ static inline std::optional<std::string> getEnvironmentVariable (std::string_vie
 	if (const auto* v = std::getenv (variableName.data()))
 		return std::string { v };
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 
 	static constexpr auto bufSize = DWORD (1024);
 
@@ -93,7 +93,7 @@ static inline bool setEnvironmentVariable (std::string_view variableName, std::s
 	if (variableName.empty())
 		return false;
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 
 	return SetEnvironmentVariableA (variableName.data(), newValue.data()) == TRUE;
 
@@ -166,9 +166,9 @@ bool appendToPATH (const Directory& dir)
 	return setEnvironmentVariable ("PATH", newPATH);
 }
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 Directory win_home();  // defined in SpecialDirs_Windows.cpp
-#elif LIMES_ANDROID
+#elif defined(__ANDROID__)
 Directory android_home();  // defined in SpecialDirs_Android.cpp
 #endif
 
@@ -177,9 +177,9 @@ Directory home()
 	if (const auto h = getEnvironmentVariable ("HOME"))
 		return Directory { *h };
 
-#if LIMES_WINDOWS
+#if defined(_WIN32) || defined(WIN32)
 	return win_home();
-#elif LIMES_ANDROID
+#elif defined(__ANDROID__)
 	return android_home();
 #else
 	if (auto* pw = getpwuid (getuid()))
