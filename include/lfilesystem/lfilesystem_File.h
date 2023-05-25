@@ -145,19 +145,14 @@ public:
 	/** @name Loading the file */
 	///@{
 
-	/** Loads the file's contents as a \c memory::RawData object.
-		@see loadAsString(), loadAsLines()
-	 */
-	[[nodiscard]] memory::RawData loadAsData() const noexcept;
-
 	/** Loads the file's contents as a string.
-		@see loadAsData(), loadAsLines()
+		@see loadAsLines()
 	 */
 	[[nodiscard]] std::string loadAsString() const noexcept;
 
 	/** Loads the file's contents as a vector of strings, with each string containing the contents of one line of the %file.
 
-		@see loadAsData(), loadAsString(), text::splitAtNewlines()
+		@see loadAsString()
 	 */
 	[[nodiscard]] std::vector<std::string> loadAsLines() const;
 
@@ -174,7 +169,6 @@ public:
 	/** Replaces the file's contents with the given data.
 		@returns True if writing the data was successful
 	 */
-	bool overwrite (const memory::RawData& data) const noexcept;  /// @todo test coverage
 	bool overwrite (const char* const data, std::size_t numBytes) const noexcept;
 	bool overwrite (const std::string_view& text) const noexcept;
 
@@ -196,7 +190,6 @@ public:
 
 		@returns True if writing the data was successful
 	 */
-	bool append (const memory::RawData& data) const noexcept;
 	bool append (const char* const data, std::size_t numBytes) const noexcept;
 	bool append (const std::string_view& text) const noexcept;
 	///@}
@@ -206,7 +199,6 @@ public:
 	/** Prepends the given data to the file's current contents.
 		@returns True if writing the data was successful
 	 */
-	bool prepend (const memory::RawData& data) const noexcept;
 	bool prepend (const char* const data, std::size_t numBytes) const noexcept;
 	bool prepend (const std::string_view& text) const noexcept;
 	///@}

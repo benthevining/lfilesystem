@@ -147,11 +147,6 @@ bool File::overwrite (const char* const data, std::size_t numBytes) const noexce
 	return write_data (data, numBytes, true);
 }
 
-bool File::overwrite (const memory::RawData& data) const noexcept
-{
-	return write_data (data.getData(), data.getSize(), true);
-}
-
 bool File::overwrite (const std::string_view& text) const noexcept
 {
 	return overwrite (text.data(), text.size());
@@ -167,19 +162,9 @@ bool File::append (const char* const data, std::size_t numBytes) const noexcept
 	return write_data (data, numBytes, false);
 }
 
-bool File::append (const memory::RawData& data) const noexcept
-{
-	return write_data (data.getData(), data.getSize(), false);
-}
-
 bool File::append (const std::string_view& text) const noexcept
 {
 	return write_data (text.data(), text.size(), false);
-}
-
-bool File::prepend (const memory::RawData& data) const noexcept
-{
-	return prepend (data.getData(), data.getSize());
 }
 
 bool File::prepend (const char* const data, std::size_t numBytes) const noexcept
@@ -313,20 +298,6 @@ std::uintmax_t File::getHardLinkCount() const noexcept
 	catch (...)
 	{
 		return error;
-	}
-}
-
-memory::RawData File::loadAsData() const noexcept
-{
-	try
-	{
-		std::ifstream stream { getAbsolutePath().c_str() };
-
-		return memory::RawData { stream };
-	}
-	catch (...)
-	{
-		return {};
 	}
 }
 
