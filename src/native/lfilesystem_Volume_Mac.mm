@@ -60,13 +60,8 @@ static inline Path findMountPath (const Path& inputPath)
 		throwError (inputPath);
 
 	for (auto i = 0; i < numMounts; ++i)
-	{
 		if (fileStat.st_dev == mounts[i].f_fsid.val[0])
-		{
-			delete[] mounts;
 			return Path { mounts[i].f_mntonname };
-		}
-	}
 
 	throwError (inputPath);
 }

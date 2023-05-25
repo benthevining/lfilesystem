@@ -1,0 +1,11 @@
+This file is one string that will be loaded by a unit test and
+ compared for
+
+\equality to $%this document.
+
+^}
+
+I want to use some special \\\ characters \r\n to try to trip up
+the code I'm testing.
+
+¯\_(ツ)_/¯

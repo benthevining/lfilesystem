@@ -523,6 +523,8 @@ bool FilesystemEntry::rename (const Path& newPath) noexcept
 		path = pathBefore;
 		return false;
 	}
+
+	return true;
 }
 
 bool FilesystemEntry::copyTo (const Path& dest, CopyOptions options) const noexcept
@@ -539,6 +541,8 @@ bool FilesystemEntry::copyTo (const Path& dest, CopyOptions options) const noexc
 	{
 		return false;
 	}
+
+	return true;
 }
 
 bool FilesystemEntry::copyTo (const FilesystemEntry& dest, CopyOptions options) const noexcept

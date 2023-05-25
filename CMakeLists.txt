@@ -5,13 +5,17 @@ project (lfilesystem
 		 LANGUAGES CXX C
 		 DESCRIPTION "C++ filesystem library")
 
+include (CMakeDependentOption)
+
+cmake_dependent_option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}" "NOT IOS" OFF)
+
 include (GNUInstallDirs)
 
 set (LFILE_INSTALL_DEST 
 	 "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem" CACHE STRING 
 	 "Path where package files will be installed, relative to the install prefix")
 
-mark_as_advanced (LFILE_INSTALL_DEST)
+mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS)
 
 add_library (lfilesystem)
 add_library (limes::lfilesystem ALIAS lfilesystem)
@@ -146,3 +150,11 @@ cpack_add_component_group (limes_files
 						   DISPLAY_NAME "Limes filesystem"
 						   DESCRIPTION "Limes filesystem library"
 						   PARENT_GROUP limes)
+
+if(LFILE_TESTS)
+	enable_testing()
+
+	add_subdirectory (tests)
+
+	include (CTest)
+endif()
