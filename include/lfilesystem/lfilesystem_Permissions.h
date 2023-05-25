@@ -18,6 +18,7 @@
 #include <string>
 #include <string_view>
 #include <ostream>
+#include "lfilesystem_Export.h"
 
 /** @file
 	This file defines the Permissions class.

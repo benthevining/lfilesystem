@@ -23,6 +23,7 @@
 #include <fstream>
 #include <memory>
 #include <iterator>
+#include "lfilesystem_Export.h"
 #include "lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
 #include "lfilesystem_CFile.h"
 

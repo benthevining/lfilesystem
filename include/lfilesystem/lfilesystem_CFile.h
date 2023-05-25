@@ -15,6 +15,7 @@
 #pragma once
 
 #include <cstdio>
+#include "lfilesystem_Export.h"
 #include "lfilesystem_FilesystemEntry.h"
 
 /** @file

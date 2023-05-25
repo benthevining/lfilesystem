@@ -22,6 +22,7 @@
 #	include <climits>
 #endif
 
+#include "lfilesystem_Export.h"
 #include <cstdint>
 #include <filesystem>
 

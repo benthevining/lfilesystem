@@ -22,6 +22,7 @@
 #include <string>
 #include <atomic>
 #include <vector>
+#include "lfilesystem_Export.h"
 #include "lfilesystem_FileWatcher.h"
 #include "lfilesystem_File.h"
 

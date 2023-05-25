@@ -15,6 +15,7 @@
 #pragma once
 
 #include <functional>
+#include "lfilesystem_Export.h"
 #include "lfilesystem_FileWatcher.h"
 
 /** @file

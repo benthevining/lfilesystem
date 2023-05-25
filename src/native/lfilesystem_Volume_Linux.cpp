@@ -44,11 +44,11 @@
 #include "lfilesystem_File.h"
 #include "lfilesystem_Volume.h"
 
-#ifndef LIMES_FILES_IMPL_USE_PATHCONF
-#	define LIMES_FILES_IMPL_USE_PATHCONF 0
+#ifndef LFILE_IMPL_USE_PATHCONF
+#	define LFILE_IMPL_USE_PATHCONF 0
 #endif
 
-#if LIMES_FILES_IMPL_USE_PATHCONF
+#if LFILE_IMPL_USE_PATHCONF
 #	include <unistd.h>
 #else
 #	include "lfilesystem_Misc.h"
@@ -198,7 +198,7 @@ bool Volume::isReadOnly() const
 
 bool Volume::isCaseSensitive() const
 {
-#if LIMES_FILES_IMPL_USE_PATHCONF
+#if LFILE_IMPL_USE_PATHCONF
 	return pathconf (rootPath.c_str(), _PC_CASE_SENSITIVE) == 1L;
 #else
 	return filesystemIsCaseSensitive();

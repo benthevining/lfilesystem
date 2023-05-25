@@ -15,6 +15,7 @@
 #pragma once
 
 #include <filesystem>
+#include "lfilesystem_Export.h"
 
 /** @file
 	This file defines some utility functions for working with paths.

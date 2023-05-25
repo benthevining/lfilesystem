@@ -20,6 +20,7 @@
 #include <functional>  // for std::hash
 #include <optional>
 #include <ostream>
+#include "lfilesystem_Export.h"
 #include "lfilesystem_Permissions.h"
 
 /** @file

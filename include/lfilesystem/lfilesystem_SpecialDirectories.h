@@ -15,6 +15,7 @@
 #pragma once
 
 #include <vector>
+#include "lfilesystem_Export.h"
 #include "lfilesystem_Directory.h"
 
 /** @defgroup special_dirs Special directories

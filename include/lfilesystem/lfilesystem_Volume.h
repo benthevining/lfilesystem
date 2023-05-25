@@ -20,6 +20,7 @@
 #include <vector>
 #include <optional>
 #include <ostream>
+#include "lfilesystem_Export.h"
 #include "lfilesystem_SpecialDirectories.h"
 
 /** @file

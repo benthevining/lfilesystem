@@ -1,0 +1,52 @@
+target_sources (limes_filesystem
+	PRIVATE
+		lfilesystem_CFile.cpp
+		lfilesystem_Directory.cpp
+		lfilesystem_DynamicLibrary.cpp
+		lfilesystem_File.cpp
+		lfilesystem_FilesystemEntry.cpp
+		lfilesystem_Paths.cpp
+		lfilesystem_Permissions.cpp
+		lfilesystem_SimpleWatcher.cpp
+		lfilesystem_SpecialDirs_Common.cpp
+		lfilesystem_SymLink.cpp
+		lfilesystem_Volume_Common.cpp
+)
+
+if(IOS OR ANDROID OR EMSCRIPTEN)
+	target_sources (limes_filesystem PRIVATE native/lfilesystem_FileWatcher_Unsupported.cpp)
+elseif(APPLE)
+	target_sources (limes_filesystem PRIVATE native/lfilesystem_FileWatcher_Mac.mm)
+elseif(WIN32)
+	target_sources (limes_filesystem PRIVATE native/lfilesystem_FileWatcher_Windows.cpp)
+else()
+	target_sources (limes_filesystem PRIVATE native/lfilesystem_FileWatcher_Linux.cpp)
+endif()
+
+if(APPLE)
+	target_sources (limes_filesystem
+		PRIVATE
+			native/lfilesystem_Entries_Mac.mm
+			native/lfilesystem_SpecialDirs_Mac.mm
+			native/lfilesystem_Volume_Mac.mm
+	)
+elseif(WIN32)
+	target_sources (limes_filesystem
+		PRIVATE
+			native/lfilesystem_Entries_Windows.cpp
+			native/lfilesystem_SpecialDirs_Windows.cpp
+			native/lfilesystem_Volume_Windows.cpp
+	)
+else()
+	target_sources (limes_filesystem
+		PRIVATE
+			native/lfilesystem_Entries_Linux.cpp
+			native/lfilesystem_Volume_Linux.cpp
+	)
+
+	if(ANDROID)
+		target_sources (limes_filesystem PRIVATE native/lfilesystem_SpecialDirs_Android.cpp)
+	else()
+		target_sources (limes_filesystem PRIVATE native/lfilesystem_SpecialDirs_Linux.cpp)
+	endif()
+endif()
