@@ -1,0 +1,15 @@
+#pragma once
+
+#include "./lfilesystem_CFile.h"
+#include "./lfilesystem_Directory.h"
+#include "./lfilesystem_DynamicLibrary.h"
+#include "./lfilesystem_File.h"
+#include "./lfilesystem_FilesystemEntry.h"
+#include "./lfilesystem_FileWatcher.h"
+#include "./lfilesystem_Misc.h"
+#include "./lfilesystem_Paths.h"
+#include "./lfilesystem_Permissions.h"
+#include "./lfilesystem_SimpleWatcher.h"
+#include "./lfilesystem_SpecialDirectories.h"
+#include "./lfilesystem_SymLink.h"
+#include "./lfilesystem_Volume.h"
