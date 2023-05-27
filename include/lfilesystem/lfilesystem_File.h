@@ -273,6 +273,8 @@ public:
 
 		@returns The new file that was created, or a \c nullopt if duplication fails.
 
+		@note This always returns \c nullopt if the file does not exist when this function is called.
+
 		@todo test coverage
 	 */
 	std::optional<File> duplicate() const noexcept;

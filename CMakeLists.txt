@@ -10,13 +10,19 @@ include (CMakeDependentOption)
 
 cmake_dependent_option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}" "NOT IOS" OFF)
 
+option (LFILE_DOCS "Build the lfilesystem docs" "${lfilesystem_IS_TOP_LEVEL}")
+
 include (GNUInstallDirs)
 
 set (LFILE_INSTALL_DEST 
 	 "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem" CACHE STRING 
 	 "Path where package files will be installed, relative to the install prefix")
 
-mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS)
+mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS LFILE_DOCS)
+
+set_property (DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES 
+	"${CMAKE_CURRENT_LIST_DIR}/logs"
+	"${CMAKE_CURRENT_LIST_DIR}/deploy")
 
 add_library (lfilesystem)
 add_library (limes::lfilesystem ALIAS lfilesystem)
@@ -163,4 +169,8 @@ if(LFILE_TESTS)
 	add_subdirectory (tests)
 
 	include (CTest)
+endif()
+
+if(LFILE_DOCS)
+	add_subdirectory (docs)
 endif()

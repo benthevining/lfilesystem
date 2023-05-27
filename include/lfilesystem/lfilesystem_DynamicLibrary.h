@@ -81,7 +81,7 @@ public:
 	DynamicLibrary (const DynamicLibrary&) = delete;
 	DynamicLibrary& operator= (const DynamicLibrary&) = delete;
 
-#if defined(_WIN32) || defined(WIN32)
+#if (defined(_WIN32) || defined(WIN32)) && ! defined(DOXYGEN)
 	using Handle = HMODULE;
 #else
 	using Handle = void*;

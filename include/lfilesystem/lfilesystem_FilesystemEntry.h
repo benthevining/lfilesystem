@@ -228,7 +228,7 @@ public:
 		limes::files::FilesystemEntry path1 { "a/relative/path" };
 		limes::files::FilesystemEntry path2 { "/an/absolute/path" };
 
-		const limes::files::Path basePath { "some/other/directory" };
+		const limes::files::Path basePath { "/some/other/directory" };
 
 		path1.makeAbsoluteRelativeTo (basePath);
 		path2.makeAbsoluteRelativeTo (basePath);
@@ -538,14 +538,16 @@ public:
 
 	/**	@name Creating copies */
 	///@{
-	/**
-		Creates a copy of this filesystem entry at a new location on disk.
+	/** Creates a copy of this filesystem entry at a new location on disk.
 
 		@returns True if copying was successful.
 	 */
 	bool copyTo (const Path& dest, CopyOptions options = CopyOptions::update_existing) const noexcept;
 
-	/** @copydoc copyTo(const Path&,CopyOptions) */
+	/** Creates a copy of this filesystem entry at a new location on disk.
+
+		@returns True if copying was successful.
+	 */
 	bool copyTo (const FilesystemEntry& dest, CopyOptions options = CopyOptions::update_existing) const noexcept;
 
 	/** Creates a copy of this filesystem object, with the same filename, in a different %directory.
