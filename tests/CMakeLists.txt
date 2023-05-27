@@ -46,3 +46,5 @@ catch_discover_tests (lfilesystem_tests
 add_subdirectory (StructuredTree)
 add_subdirectory (ExecLocation)
 # add_subdirectory (DynamicLibrary)
+
+include (FindPackage/CreateTests.cmake)

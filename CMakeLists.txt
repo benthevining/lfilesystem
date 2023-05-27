@@ -129,6 +129,7 @@ install (TARGETS lfilesystem
 
 install (EXPORT lfilesystem
 		 NAMESPACE limes::
+		 FILE Targets.cmake
 		 DESTINATION "${LFILE_INSTALL_DEST}"
 		 COMPONENT lfilesystem_dev)
 
