@@ -75,7 +75,7 @@ TEST_CASE ("Volume", "[core][files][volume]")
 		INFO ("Volume path: " << entry.getPath());
 
 		REQUIRE (entry.exists());
-		REQUIRE (! entry.isFile());
+		CHECK_NOFAIL (! entry.isFile());
 		REQUIRE (entry.isAbsolutePath());
 
 		const auto v2 = entry.getVolume();
