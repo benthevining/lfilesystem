@@ -13,6 +13,7 @@ var hierarchy =
       [ "limes::files::SymLink", "classlimes_1_1files_1_1SymLink.html", null ]
     ] ],
     [ "limes::files::FileWatcher", "classlimes_1_1files_1_1FileWatcher.html", [
+      [ "JSONWatcher", "structJSONWatcher.html", null ],
       [ "limes::files::DynamicLibrary::Reloader", "classlimes_1_1files_1_1DynamicLibrary_1_1Reloader.html", null ],
       [ "limes::files::SimpleFileWatcher", "classlimes_1_1files_1_1SimpleFileWatcher.html", null ]
     ] ],

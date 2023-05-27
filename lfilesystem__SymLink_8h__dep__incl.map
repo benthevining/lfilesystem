@@ -1,6 +1,9 @@
 <map id="lfilesystem_SymLink.h" name="lfilesystem_SymLink.h">
-<area shape="rect" id="node1" title="This file defines the files::SymLink class." alt="" coords="36,5,205,32"/>
-<area shape="rect" id="node2" href="$lfilesystem__Directory_8h.html" title="This file defines the Directory class." alt="" coords="35,80,206,107"/>
-<area shape="rect" id="node3" href="$lfilesystem__SpecialDirectories_8h.html" title="This file contains utility functions for finding some common directories." alt="" coords="5,155,236,181"/>
-<area shape="rect" id="node4" href="$lfilesystem__Volume_8h.html" title="This file defines the files::Volume class." alt="" coords="39,229,202,256"/>
+<area shape="rect" id="node1" title="This file defines the files::SymLink class." alt="" coords="87,5,257,32"/>
+<area shape="rect" id="node2" href="$lfilesystem_8h.html" title="The main header for the limes_files library." alt="" coords="133,304,240,331"/>
+<area shape="rect" id="node5" href="$lfilesystem__Directory_8h.html" title="This file defines the Directory class." alt="" coords="148,80,319,107"/>
+<area shape="rect" id="node3" href="$files__dir__enumerate_8cpp_source.html" title=" " alt="" coords="5,379,184,405"/>
+<area shape="rect" id="node4" href="$files__dir__listen_8cpp_source.html" title=" " alt="" coords="209,379,351,405"/>
+<area shape="rect" id="node6" href="$lfilesystem__SpecialDirectories_8h.html" title="This file contains utility functions for finding some common directories." alt="" coords="199,155,430,181"/>
+<area shape="rect" id="node7" href="$lfilesystem__Volume_8h.html" title="This file defines the files::Volume class." alt="" coords="249,229,412,256"/>
 </map>

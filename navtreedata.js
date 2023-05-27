@@ -25,14 +25,14 @@
 var NAVTREE =
 [
   [ "lfilesystem", "index.html", [
-    [ "Test List", "test.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -52,14 +52,16 @@ var NAVTREE =
         [ "All", "globals.html", null ],
         [ "Variables", "globals_vars.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"classlimes_1_1files_1_1Permissions.html#ad703e200998d3f2abe534b8dfcc9febe"
+"",
+"classlimes_1_1files_1_1Permissions.html#ae4683c13b8c5641fb7d94ea7c7ff6b8b",
+"structstd_1_1hash_3_01limes_1_1files_1_1File_01_4.html#ad8bab4a58463458d672906cf06e018ce"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,4 +1,4 @@
 var modules =
 [
-    [ "Special directories", "group__special__dirs.html", "group__special__dirs" ]
+    [ "limes_files", "group__limes__files.html", "group__limes__files" ]
 ];

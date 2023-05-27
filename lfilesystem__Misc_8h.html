@@ -83,8 +83,10 @@ $(document).ready(function(){initNavTree('lfilesystem__Misc_8h.html',''); initRe
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">lfilesystem_Misc.h File Reference</div>  </div>
+<div class="title">lfilesystem_Misc.h File Reference<div class="ingroups"><a class="el" href="group__limes__files.html">limes_files</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,158 +104,50 @@ $(document).ready(function(){initNavTree('lfilesystem__Misc_8h.html',''); initRe
 <div class="center"><iframe scrolling="no" frameborder="0" src="lfilesystem__Misc_8h__incl.svg" width="478" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lfilesystem__Misc_8h__dep__incl.svg" width="358" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 </div>
 <p><a href="lfilesystem__Misc_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacelimes_1_1files"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelimes_1_1files.html">limes::files</a></td></tr>
+<tr class="memdesc:namespacelimes_1_1files"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filesystem utilities. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a5d083e90909c89e9b80a51f1160049a3"><td class="memItemLeft" align="right" valign="top">constexpr LFILE_EXPORT char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lfilesystem__Misc_8h.html#a5d083e90909c89e9b80a51f1160049a3">limes::files::dirSeparator</a> () noexcept</td></tr>
-<tr class="memdesc:a5d083e90909c89e9b80a51f1160049a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the platform's preferred directory separator: <code>\</code> on Windows, and <code>/</code> everywhere else.  <a href="lfilesystem__Misc_8h.html#a5d083e90909c89e9b80a51f1160049a3">More...</a><br /></td></tr>
-<tr class="separator:a5d083e90909c89e9b80a51f1160049a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15e6c5f6d2d801e8a75528f343bd84ac"><td class="memItemLeft" align="right" valign="top">LFILE_EXPORT consteval bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lfilesystem__Misc_8h.html#a15e6c5f6d2d801e8a75528f343bd84ac">limes::files::filesystemIsCaseSensitive</a> () noexcept</td></tr>
-<tr class="memdesc:a15e6c5f6d2d801e8a75528f343bd84ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the current platform's filesystem is likely to be case-sensitive.  <a href="lfilesystem__Misc_8h.html#a15e6c5f6d2d801e8a75528f343bd84ac">More...</a><br /></td></tr>
-<tr class="separator:a15e6c5f6d2d801e8a75528f343bd84ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacd02596de7ffa0492c68d72ca951bc6"><td class="memItemLeft" align="right" valign="top">constexpr LFILE_EXPORT std::uintmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lfilesystem__Misc_8h.html#aacd02596de7ffa0492c68d72ca951bc6">limes::files::maxPathLength</a> () noexcept</td></tr>
-<tr class="memdesc:aacd02596de7ffa0492c68d72ca951bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum path length possible on the current operating system.  <a href="lfilesystem__Misc_8h.html#aacd02596de7ffa0492c68d72ca951bc6">More...</a><br /></td></tr>
-<tr class="separator:aacd02596de7ffa0492c68d72ca951bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a766987b27c95660bbd974dd4418f9b28"><td class="memItemLeft" align="right" valign="top">LFILE_EXPORT consteval char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lfilesystem__Misc_8h.html#a766987b27c95660bbd974dd4418f9b28">limes::files::PATHseparator</a> () noexcept</td></tr>
-<tr class="memdesc:a766987b27c95660bbd974dd4418f9b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the platform's separator char for the <code>PATH</code> environment variable: <code></code>; on Windows, and <code></code>: everywhere else.  <a href="lfilesystem__Misc_8h.html#a766987b27c95660bbd974dd4418f9b28">More...</a><br /></td></tr>
-<tr class="separator:a766987b27c95660bbd974dd4418f9b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d083e90909c89e9b80a51f1160049a3"><td class="memItemLeft" align="right" valign="top">constexpr LFILE_EXPORT char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__limes__files.html#ga5d083e90909c89e9b80a51f1160049a3">limes::files::dirSeparator</a> () noexcept</td></tr>
+<tr class="memdesc:ga5d083e90909c89e9b80a51f1160049a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the platform's preferred directory separator: <code>\</code> on Windows, and <code>/</code> everywhere else.  <a href="group__limes__files.html#ga5d083e90909c89e9b80a51f1160049a3">More...</a><br /></td></tr>
+<tr class="separator:ga5d083e90909c89e9b80a51f1160049a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15e6c5f6d2d801e8a75528f343bd84ac"><td class="memItemLeft" align="right" valign="top">LFILE_EXPORT consteval bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__limes__files.html#ga15e6c5f6d2d801e8a75528f343bd84ac">limes::files::filesystemIsCaseSensitive</a> () noexcept</td></tr>
+<tr class="memdesc:ga15e6c5f6d2d801e8a75528f343bd84ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the current platform's filesystem is likely to be case-sensitive.  <a href="group__limes__files.html#ga15e6c5f6d2d801e8a75528f343bd84ac">More...</a><br /></td></tr>
+<tr class="separator:ga15e6c5f6d2d801e8a75528f343bd84ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaacd02596de7ffa0492c68d72ca951bc6"><td class="memItemLeft" align="right" valign="top">constexpr LFILE_EXPORT std::uintmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__limes__files.html#gaacd02596de7ffa0492c68d72ca951bc6">limes::files::maxPathLength</a> () noexcept</td></tr>
+<tr class="memdesc:gaacd02596de7ffa0492c68d72ca951bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum path length possible on the current operating system.  <a href="group__limes__files.html#gaacd02596de7ffa0492c68d72ca951bc6">More...</a><br /></td></tr>
+<tr class="separator:gaacd02596de7ffa0492c68d72ca951bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga766987b27c95660bbd974dd4418f9b28"><td class="memItemLeft" align="right" valign="top">LFILE_EXPORT consteval char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__limes__files.html#ga766987b27c95660bbd974dd4418f9b28">limes::files::PATHseparator</a> () noexcept</td></tr>
+<tr class="memdesc:ga766987b27c95660bbd974dd4418f9b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the platform's separator char for the <code>PATH</code> environment variable: <code></code>; on Windows, and <code></code>: everywhere else.  <a href="group__limes__files.html#ga766987b27c95660bbd974dd4418f9b28">More...</a><br /></td></tr>
+<tr class="separator:ga766987b27c95660bbd974dd4418f9b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file defines miscellaneous filesystem utility functions. </p>
 
 <p class="definition">Definition in file <a class="el" href="lfilesystem__Misc_8h_source.html">lfilesystem_Misc.h</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a5d083e90909c89e9b80a51f1160049a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d083e90909c89e9b80a51f1160049a3">&#9670;&nbsp;</a></span>dirSeparator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr LFILE_EXPORT char limes::files::dirSeparator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the platform's preferred directory separator: <code>\</code> on Windows, and <code>/</code> everywhere else. </p>
-
-<p class="definition">Definition at line <a class="el" href="lfilesystem__Misc_8h_source.html#l00043">43</a> of file <a class="el" href="lfilesystem__Misc_8h_source.html">lfilesystem_Misc.h</a>.</p>
-
-</div>
-</div>
-<a id="a15e6c5f6d2d801e8a75528f343bd84ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15e6c5f6d2d801e8a75528f343bd84ac">&#9670;&nbsp;</a></span>filesystemIsCaseSensitive()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">LFILE_EXPORT consteval bool limes::files::filesystemIsCaseSensitive </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns true if the current platform's filesystem is likely to be case-sensitive. </p>
-<p>This is a compile-time determination based on platform conventions &ndash; this function returns true on Linux, and false everywhere else. For a more accurate runtime query of the actual filesystem, see <code>Volume::isCaseSensitive()</code> and <code><a class="el" href="namespacelimes_1_1files_1_1volume.html#a2da2b94f5307c33d2e8d45c3f9c61c2c" title="Returns true if the current volume is case-sensitive.">volume::caseSensitive()</a></code>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacelimes_1_1files_1_1volume.html#a2da2b94f5307c33d2e8d45c3f9c61c2c" title="Returns true if the current volume is case-sensitive.">volume::caseSensitive()</a>, Volume::isCaseSensitive() </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="lfilesystem__Misc_8h_source.html#l00069">69</a> of file <a class="el" href="lfilesystem__Misc_8h_source.html">lfilesystem_Misc.h</a>.</p>
-
-</div>
-</div>
-<a id="aacd02596de7ffa0492c68d72ca951bc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacd02596de7ffa0492c68d72ca951bc6">&#9670;&nbsp;</a></span>maxPathLength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr LFILE_EXPORT std::uintmax_t limes::files::maxPathLength </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the maximum path length possible on the current operating system. </p>
-<p>This is a compile-time constant defined by platform headers.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000042">Todo:</a></b></dt><dd>query the actual underlying filesystem for this? </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="lfilesystem__Misc_8h_source.html#l00083">83</a> of file <a class="el" href="lfilesystem__Misc_8h_source.html">lfilesystem_Misc.h</a>.</p>
-
-</div>
-</div>
-<a id="a766987b27c95660bbd974dd4418f9b28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a766987b27c95660bbd974dd4418f9b28">&#9670;&nbsp;</a></span>PATHseparator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">LFILE_EXPORT consteval char limes::files::PATHseparator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the platform's separator char for the <code>PATH</code> environment variable: <code></code>; on Windows, and <code></code>: everywhere else. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000041">Todo:</a></b></dt><dd>is there a way to actually query the underlying filesystem for this? </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="lfilesystem__Misc_8h_source.html#l00052">52</a> of file <a class="el" href="lfilesystem__Misc_8h_source.html">lfilesystem_Misc.h</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_1cc279c25484ac97cc746461ad47fcea.html">lfilesystem</a></li><li class="navelem"><a class="el" href="lfilesystem__Misc_8h.html">lfilesystem_Misc.h</a></li>
-    <li class="footer">Generated on Sat May 27 2023 09:07:11 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 18:34:35 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

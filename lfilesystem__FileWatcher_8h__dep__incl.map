@@ -1,5 +1,8 @@
 <map id="lfilesystem_FileWatcher.h" name="lfilesystem_FileWatcher.h">
-<area shape="rect" id="node1" title="This file defines the files::FileWatcher class." alt="" coords="137,5,325,32"/>
-<area shape="rect" id="node2" href="$lfilesystem__DynamicLibrary_8h.html" title="This file defines the DynamicLibrary class." alt="" coords="5,80,220,107"/>
-<area shape="rect" id="node3" href="$lfilesystem__SimpleWatcher_8h.html" title="This file defines the SimpleFileWatcher class." alt="" coords="245,80,455,107"/>
+<area shape="rect" id="node1" title="This file defines the files::FileWatcher class." alt="" coords="93,5,281,32"/>
+<area shape="rect" id="node2" href="$lfilesystem_8h.html" title="The main header for the limes_files library." alt="" coords="133,155,240,181"/>
+<area shape="rect" id="node5" href="$lfilesystem__DynamicLibrary_8h.html" title="This file defines the DynamicLibrary class." alt="" coords="79,80,294,107"/>
+<area shape="rect" id="node6" href="$lfilesystem__SimpleWatcher_8h.html" title="This file defines the SimpleFileWatcher class." alt="" coords="319,80,529,107"/>
+<area shape="rect" id="node3" href="$files__dir__enumerate_8cpp_source.html" title=" " alt="" coords="5,229,184,256"/>
+<area shape="rect" id="node4" href="$files__dir__listen_8cpp_source.html" title=" " alt="" coords="209,229,351,256"/>
 </map>

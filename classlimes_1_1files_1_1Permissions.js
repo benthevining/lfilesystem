@@ -28,5 +28,5 @@ var classlimes_1_1files_1_1Permissions =
     [ "withRead", "classlimes_1_1files_1_1Permissions.html#ae7bee3738c29b819d515d00fb545f236", null ],
     [ "withStickyBit", "classlimes_1_1files_1_1Permissions.html#a2f9fbe990fb7bfb8414209a85f9916ac", null ],
     [ "withWrite", "classlimes_1_1files_1_1Permissions.html#a6f12339d73700b3bbf31b1b7e819530b", null ],
-    [ "operator<<", "classlimes_1_1files_1_1Permissions.html#abaef8f53596494c5ee3a7db464ef30f4", null ]
+    [ "operator<<", "group__limes__files.html#gabaef8f53596494c5ee3a7db464ef30f4", null ]
 ];

@@ -63,5 +63,5 @@ var classlimes_1_1files_1_1FilesystemEntry =
     [ "sizeInBytes", "classlimes_1_1files_1_1FilesystemEntry.html#a35360245811558df87f6362bb979e669", null ],
     [ "touch", "classlimes_1_1files_1_1FilesystemEntry.html#a7fa4cd4b03de7654ad7be7b026e45da6", null ],
     [ "touch_noCreate", "classlimes_1_1files_1_1FilesystemEntry.html#a2e495352f79252fa9ed62845e78c5c99", null ],
-    [ "operator<<", "classlimes_1_1files_1_1FilesystemEntry.html#a0960c647fa240d49cce3fdb95fc10451", null ]
+    [ "operator<<", "group__limes__files.html#ga0960c647fa240d49cce3fdb95fc10451", null ]
 ];

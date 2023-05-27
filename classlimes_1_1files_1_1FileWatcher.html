@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('classlimes_1_1files_1_1FileWatcher.htm
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classlimes_1_1files_1_1FileWatcher__inherit__graph.svg" width="408" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classlimes_1_1files_1_1FileWatcher__inherit__graph.svg" width="540" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -183,8 +183,10 @@ Static Public Member Functions</h2></td></tr>
 <p>The callbacks are asynchronous, and have no guarantee of granularity or regularity. Note that the callbacks may be called from a background thread!</p>
 <p>Each of the callbacks receives a <code><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html" title="The base class for any kind of object on the filesystem.">FilesystemEntry</a></code> argument with the path to which the current event applies. If a directory is being watched, this path may be a child of the watched directory. In some cases, this path may be a parent directory of the watched path, even if the watched path is a file.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1SimpleFileWatcher.html" title="This class implements all of FileWatcher&#39;s virtual methods, and allows you to easily specify a lambda...">SimpleFileWatcher</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>iOS, Android and Emscripten implementations. This class requires platform-specific code, probably JNI for Android and Swift/ObjC for iOS. Is this class possible to implement for Emscripten?</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>how to test this class? A test would basically need to check that the proper callbacks are indeed called when a watched file is mutated. Is this even possible? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>iOS, Android and Emscripten implementations. This class requires platform-specific code, probably JNI for Android and Swift/ObjC for iOS. Is this class possible to implement for Emscripten?</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>how to test this class? A test would basically need to check that the proper callbacks are indeed called when a watched file is mutated. Is this even possible? </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="files_dir_listen_8cpp-example.html#_a1">files_dir_listen.cpp</a>.</dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="lfilesystem__FileWatcher_8h_source.html#l00067">67</a> of file <a class="el" href="lfilesystem__FileWatcher_8h_source.html">lfilesystem_FileWatcher.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -335,6 +337,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Called when a file or subdirectory is created in a watched directory. </p>
 
+<p>Reimplemented in <a class="el" href="structJSONWatcher.html#a8db9fb72a9bb04036f01e61eb08f796f">JSONWatcher</a>.</p>
+
 <p class="definition">Definition at line <a class="el" href="lfilesystem__FileWatcher_8h_source.html#l00110">110</a> of file <a class="el" href="lfilesystem__FileWatcher_8h_source.html">lfilesystem_FileWatcher.h</a>.</p>
 
 </div>
@@ -364,6 +368,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called when a file is deleted. </p>
+
+<p>Reimplemented in <a class="el" href="structJSONWatcher.html#a8892d08939a68ee325ac6e64b3d77c39">JSONWatcher</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="lfilesystem__FileWatcher_8h_source.html#l00113">113</a> of file <a class="el" href="lfilesystem__FileWatcher_8h_source.html">lfilesystem_FileWatcher.h</a>.</p>
 
@@ -488,6 +494,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Called when a file is moved or renamed. </p>
 <p>For directories, this will be called if the watched directory contained the file that was moved from or the file that was moved to. </p>
+
+<p>Reimplemented in <a class="el" href="structJSONWatcher.html#aaf53c62d86cec8308a05d4ad05367c18">JSONWatcher</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="lfilesystem__FileWatcher_8h_source.html#l00128">128</a> of file <a class="el" href="lfilesystem__FileWatcher_8h_source.html">lfilesystem_FileWatcher.h</a>.</p>
 
@@ -698,8 +706,8 @@ Static Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>limes</b></li><li class="navelem"><b>files</b></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1FileWatcher.html">FileWatcher</a></li>
-    <li class="footer">Generated on Sat May 27 2023 09:07:11 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><b>limes</b></li><li class="navelem"><a class="el" href="namespacelimes_1_1files.html">files</a></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1FileWatcher.html">FileWatcher</a></li>
+    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

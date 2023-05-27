@@ -1,26 +1,4 @@
 var searchData=
 [
-  ['dirs_125',['dirs',['../namespacelimes_1_1files_1_1dirs.html',1,'limes::files']]],
-  ['label_126',['label',['../namespacelimes_1_1files_1_1volume.html#ae90982b033117c2fcc1680a0efd746e4',1,'limes::files::volume']]],
-  ['largestcommonprefix_127',['largestCommonPrefix',['../lfilesystem__Paths_8h.html#a8f0df5c54a6835545b04392f2ea82bf9',1,'limes::files']]],
-  ['lfilesystem_5fcfile_2eh_128',['lfilesystem_CFile.h',['../lfilesystem__CFile_8h.html',1,'']]],
-  ['lfilesystem_5fdirectory_2eh_129',['lfilesystem_Directory.h',['../lfilesystem__Directory_8h.html',1,'']]],
-  ['lfilesystem_5fdynamiclibrary_2eh_130',['lfilesystem_DynamicLibrary.h',['../lfilesystem__DynamicLibrary_8h.html',1,'']]],
-  ['lfilesystem_5ffile_2eh_131',['lfilesystem_File.h',['../lfilesystem__File_8h.html',1,'']]],
-  ['lfilesystem_5ffilesystementry_2eh_132',['lfilesystem_FilesystemEntry.h',['../lfilesystem__FilesystemEntry_8h.html',1,'']]],
-  ['lfilesystem_5ffilewatcher_2eh_133',['lfilesystem_FileWatcher.h',['../lfilesystem__FileWatcher_8h.html',1,'']]],
-  ['lfilesystem_5fmisc_2eh_134',['lfilesystem_Misc.h',['../lfilesystem__Misc_8h.html',1,'']]],
-  ['lfilesystem_5fpaths_2eh_135',['lfilesystem_Paths.h',['../lfilesystem__Paths_8h.html',1,'']]],
-  ['lfilesystem_5fpermissions_2eh_136',['lfilesystem_Permissions.h',['../lfilesystem__Permissions_8h.html',1,'']]],
-  ['lfilesystem_5fsimplewatcher_2eh_137',['lfilesystem_SimpleWatcher.h',['../lfilesystem__SimpleWatcher_8h.html',1,'']]],
-  ['lfilesystem_5fspecialdirectories_2eh_138',['lfilesystem_SpecialDirectories.h',['../lfilesystem__SpecialDirectories_8h.html',1,'']]],
-  ['lfilesystem_5fsymlink_2eh_139',['lfilesystem_SymLink.h',['../lfilesystem__SymLink_8h.html',1,'']]],
-  ['lfilesystem_5fvolume_2eh_140',['lfilesystem_Volume.h',['../lfilesystem__Volume_8h.html',1,'']]],
-  ['libraryclosed_141',['libraryClosed',['../classlimes_1_1files_1_1DynamicLibrary_1_1Listener.html#af44a5131546bd5a4735c6c8f4a6356ab',1,'limes::files::DynamicLibrary::Listener']]],
-  ['libraryopened_142',['libraryOpened',['../classlimes_1_1files_1_1DynamicLibrary_1_1Listener.html#a59e1d869ff3146823ad9790600ce01f6',1,'limes::files::DynamicLibrary::Listener']]],
-  ['libraryreloaded_143',['libraryReloaded',['../classlimes_1_1files_1_1DynamicLibrary_1_1Listener.html#ab1a37297f4c4ac02d33d90b87c04f25b',1,'limes::files::DynamicLibrary::Listener']]],
-  ['listener_144',['Listener',['../classlimes_1_1files_1_1DynamicLibrary_1_1Listener.html',1,'limes::files::DynamicLibrary::Listener'],['../classlimes_1_1files_1_1DynamicLibrary_1_1Listener.html#a9b5ceb29a1eff3428e4a8755e436c583',1,'limes::files::DynamicLibrary::Listener::Listener()']]],
-  ['loadaslines_145',['loadAsLines',['../classlimes_1_1files_1_1File.html#a7cb6395e979d5eaac38fa38b509c8966',1,'limes::files::File']]],
-  ['loadasstring_146',['loadAsString',['../classlimes_1_1files_1_1File.html#aa312be5aa8cfb09a0cd1052ec3e0de85',1,'limes::files::File']]],
-  ['volume_147',['volume',['../namespacelimes_1_1files_1_1volume.html',1,'limes::files']]]
+  ['jsonwatcher_125',['JSONWatcher',['../structJSONWatcher.html',1,'']]]
 ];

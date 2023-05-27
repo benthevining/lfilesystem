@@ -39,6 +39,6 @@ var classlimes_1_1files_1_1File =
     [ "prepend", "classlimes_1_1files_1_1File.html#aef7a1e45f76236a9971e2041eeae8d9f", null ],
     [ "replaceFileExtension", "classlimes_1_1files_1_1File.html#abacd3a2f388059417822ba908cde1e17", null ],
     [ "resize", "classlimes_1_1files_1_1File.html#a97f5e727361fef5fdf585515faaf4449", null ],
-    [ "operator<<", "classlimes_1_1files_1_1File.html#aa1d529ddb74f0e8cf7af99b846633531", null ],
-    [ "operator>>", "classlimes_1_1files_1_1File.html#a349811f29d794405dc0e4c6b12d8ec16", null ]
+    [ "operator<<", "group__limes__files.html#gaa1d529ddb74f0e8cf7af99b846633531", null ],
+    [ "operator>>", "group__limes__files.html#ga349811f29d794405dc0e4c6b12d8ec16", null ]
 ];

@@ -116,177 +116,177 @@ $(document).ready(function(){initNavTree('lfilesystem__File_8h_source.html','');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lfilesystem__FilesystemEntry_8h.html">lfilesystem/lfilesystem_FilesystemEntry.h</a>&quot;</span>    <span class="comment">// for FilesystemEntry, Path</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lfilesystem__CFile_8h.html">lfilesystem/lfilesystem_CFile.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span>limes::files</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelimes_1_1files.html">limes::files</a></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#pragma mark   File</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#pragma region File</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html">   63</a></span>&#160;<span class="keyword">class </span>LFILE_EXPORT <a class="code" href="classlimes_1_1files_1_1File.html">File</a> : <span class="keyword">public</span> <a class="code" href="classlimes_1_1files_1_1FilesystemEntry.html">FilesystemEntry</a></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">using</span> <a class="code" href="classlimes_1_1files_1_1FilesystemEntry.html#a6837e96187fad2f1accd6b79a0e3a5cf">FilesystemEntry::FilesystemEntry</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a> (<span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a> (<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a65c9ba797f3ec8f1a135269481319d83">   84</a></span>&#160;    [[nodiscard]] std::string <a class="code" href="classlimes_1_1files_1_1File.html#a65c9ba797f3ec8f1a135269481319d83">getFilename</a> (<span class="keywordtype">bool</span> includeExtension = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a27483cd6bb494a1e390d4579f518d7c7">   89</a></span>&#160;    [[nodiscard]] std::string <a class="code" href="classlimes_1_1files_1_1File.html#a27483cd6bb494a1e390d4579f518d7c7">getFileExtension</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a09fc5b263698be070e44597e5ed46927">   94</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classlimes_1_1files_1_1File.html#a09fc5b263698be070e44597e5ed46927">hasFileExtension</a> (<span class="keyword">const</span> std::string_view&amp; extension) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a2f2e1f4885a35eda86935c0c507701a6">   97</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classlimes_1_1files_1_1File.html#a2f2e1f4885a35eda86935c0c507701a6">hasFileExtension</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#ac5a09b65346d5ab6c1ca13eb75e58100">  104</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classlimes_1_1files_1_1File.html#ac5a09b65346d5ab6c1ca13eb75e58100">isMacOSBundle</a>() const noexcept;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a19e5f202eec001cf6b09ac0adb05341a">  106</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> isFile() const noexcept final;</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a194b4cc7ac6384d10510b4ad20062644">  107</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> isDirectory() const noexcept final;</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a041c85b610a661d98bbaa66176735529">  108</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> isSymLink() const noexcept final;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html">   61</a></span>&#160;<span class="keyword">class </span>LFILE_EXPORT <a class="code" href="classlimes_1_1files_1_1File.html">File</a> : <span class="keyword">public</span> <a class="code" href="classlimes_1_1files_1_1FilesystemEntry.html">FilesystemEntry</a></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">using</span> <a class="code" href="classlimes_1_1files_1_1FilesystemEntry.html#a6837e96187fad2f1accd6b79a0e3a5cf">FilesystemEntry::FilesystemEntry</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a> (<span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a> (<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a65c9ba797f3ec8f1a135269481319d83">   82</a></span>&#160;    [[nodiscard]] std::string <a class="code" href="classlimes_1_1files_1_1File.html#a65c9ba797f3ec8f1a135269481319d83">getFilename</a> (<span class="keywordtype">bool</span> includeExtension = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a27483cd6bb494a1e390d4579f518d7c7">   87</a></span>&#160;    [[nodiscard]] std::string <a class="code" href="classlimes_1_1files_1_1File.html#a27483cd6bb494a1e390d4579f518d7c7">getFileExtension</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a09fc5b263698be070e44597e5ed46927">   92</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classlimes_1_1files_1_1File.html#a09fc5b263698be070e44597e5ed46927">hasFileExtension</a> (<span class="keyword">const</span> std::string_view&amp; extension) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a2f2e1f4885a35eda86935c0c507701a6">   95</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classlimes_1_1files_1_1File.html#a2f2e1f4885a35eda86935c0c507701a6">hasFileExtension</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#ac5a09b65346d5ab6c1ca13eb75e58100">  102</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classlimes_1_1files_1_1File.html#ac5a09b65346d5ab6c1ca13eb75e58100">isMacOSBundle</a>() const noexcept;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a19e5f202eec001cf6b09ac0adb05341a">  104</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> isFile() const noexcept final;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a194b4cc7ac6384d10510b4ad20062644">  105</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> isDirectory() const noexcept final;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a041c85b610a661d98bbaa66176735529">  106</a></span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> isSymLink() const noexcept final;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#abacd3a2f388059417822ba908cde1e17">  130</a></span>&#160;    <span class="keywordtype">bool</span> replaceFileExtension (const std::string_view&amp; newFileExtension,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                               <span class="keywordtype">bool</span>                    renameOnDisk = true);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a223fafd66672d5003d821870036539da">  136</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (const <a class="code" href="lfilesystem__FilesystemEntry_8h.html#af5d6b587d82998a6139e0729490f7c83">Path</a>&amp; newPath);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a52eb39edc95d049e8e83bb1b43f7f017">  141</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (const std::string_view&amp; newPath);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#abacd3a2f388059417822ba908cde1e17">  128</a></span>&#160;    <span class="keywordtype">bool</span> replaceFileExtension (const std::string_view&amp; newFileExtension,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                               <span class="keywordtype">bool</span>                    renameOnDisk = true);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a223fafd66672d5003d821870036539da">  134</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (const <a class="code" href="group__limes__files.html#gaf5d6b587d82998a6139e0729490f7c83">Path</a>&amp; newPath);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a52eb39edc95d049e8e83bb1b43f7f017">  139</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; operator= (const std::string_view&amp; newPath);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa312be5aa8cfb09a0cd1052ec3e0de85">  151</a></span>&#160;    [[nodiscard]] std::<span class="keywordtype">string</span> loadAsString() const noexcept;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a7cb6395e979d5eaac38fa38b509c8966">  157</a></span>&#160;    [[nodiscard]] std::vector&lt;std::<span class="keywordtype">string</span>&gt; loadAsLines() const;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa4cf6351f59c74e3756d0abbcc8cf568">  163</a></span>&#160;    [[nodiscard]] std::unique_ptr&lt;std::ifstream&gt; getInputStream() const;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa312be5aa8cfb09a0cd1052ec3e0de85">  149</a></span>&#160;    [[nodiscard]] std::<span class="keywordtype">string</span> loadAsString() const noexcept;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a7cb6395e979d5eaac38fa38b509c8966">  155</a></span>&#160;    [[nodiscard]] std::vector&lt;std::<span class="keywordtype">string</span>&gt; loadAsLines() const;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa4cf6351f59c74e3756d0abbcc8cf568">  161</a></span>&#160;    [[nodiscard]] std::unique_ptr&lt;std::ifstream&gt; getInputStream() const;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a8e6a359a45514bcebc4c49ae06c3528b">  172</a></span>&#160;    <span class="keywordtype">bool</span> overwrite (const <span class="keywordtype">char</span>* const data, std::<span class="keywordtype">size_t</span> numBytes) const noexcept;</div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa88d052b619925e53f1722487349724a">  173</a></span>&#160;    <span class="keywordtype">bool</span> overwrite (const std::string_view&amp; text) const noexcept;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a9635312c7b4d93ff95b1c1c33b63ea6a">  179</a></span>&#160;    [[nodiscard]] std::unique_ptr&lt;std::ofstream&gt; getOutputStream() const;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a8e6a359a45514bcebc4c49ae06c3528b">  170</a></span>&#160;    <span class="keywordtype">bool</span> overwrite (const <span class="keywordtype">char</span>* const data, std::<span class="keywordtype">size_t</span> numBytes) const noexcept;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa88d052b619925e53f1722487349724a">  171</a></span>&#160;    <span class="keywordtype">bool</span> overwrite (const std::string_view&amp; text) const noexcept;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a9635312c7b4d93ff95b1c1c33b63ea6a">  177</a></span>&#160;    [[nodiscard]] std::unique_ptr&lt;std::ofstream&gt; getOutputStream() const;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#ab540948b17653fb59ce4e0eb684f8968">  193</a></span>&#160;    <span class="keywordtype">bool</span> append (const <span class="keywordtype">char</span>* const data, std::<span class="keywordtype">size_t</span> numBytes) const noexcept;</div>
-<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a3a634c1fd085bc646e86b763b5837eaf">  194</a></span>&#160;    <span class="keywordtype">bool</span> append (const std::string_view&amp; text) const noexcept;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#abcfca3cd7424b8a0bdfe371742767d48">  202</a></span>&#160;    <span class="keywordtype">bool</span> prepend (const <span class="keywordtype">char</span>* const data, std::<span class="keywordtype">size_t</span> numBytes) const noexcept;</div>
-<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aef7a1e45f76236a9971e2041eeae8d9f">  203</a></span>&#160;    <span class="keywordtype">bool</span> prepend (const std::string_view&amp; text) const noexcept;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a97f5e727361fef5fdf585515faaf4449">  220</a></span>&#160;    <span class="keywordtype">bool</span> resize (std::uintmax_t newSizeInBytes, <span class="keywordtype">bool</span> allowTruncation = true, <span class="keywordtype">bool</span> allowIncreasing = true) const noexcept;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa698feb02226f77ebb5258e0998b1c88">  237</a></span>&#160;    std::optional&lt;<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&gt; createHardLink (const <a class="code" href="lfilesystem__FilesystemEntry_8h.html#af5d6b587d82998a6139e0729490f7c83">Path</a>&amp; path) const;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#af939bb66e08a8168223ed3235837a907">  245</a></span>&#160;    [[nodiscard]] std::uintmax_t getHardLinkCount() const noexcept;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#ab540948b17653fb59ce4e0eb684f8968">  191</a></span>&#160;    <span class="keywordtype">bool</span> append (const <span class="keywordtype">char</span>* const data, std::<span class="keywordtype">size_t</span> numBytes) const noexcept;</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a3a634c1fd085bc646e86b763b5837eaf">  192</a></span>&#160;    <span class="keywordtype">bool</span> append (const std::string_view&amp; text) const noexcept;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#abcfca3cd7424b8a0bdfe371742767d48">  200</a></span>&#160;    <span class="keywordtype">bool</span> prepend (const <span class="keywordtype">char</span>* const data, std::<span class="keywordtype">size_t</span> numBytes) const noexcept;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aef7a1e45f76236a9971e2041eeae8d9f">  201</a></span>&#160;    <span class="keywordtype">bool</span> prepend (const std::string_view&amp; text) const noexcept;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a97f5e727361fef5fdf585515faaf4449">  218</a></span>&#160;    <span class="keywordtype">bool</span> resize (std::uintmax_t newSizeInBytes, <span class="keywordtype">bool</span> allowTruncation = true, <span class="keywordtype">bool</span> allowIncreasing = true) const noexcept;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa698feb02226f77ebb5258e0998b1c88">  235</a></span>&#160;    std::optional&lt;<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&gt; createHardLink (const <a class="code" href="group__limes__files.html#gaf5d6b587d82998a6139e0729490f7c83">Path</a>&amp; path) const;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#af939bb66e08a8168223ed3235837a907">  243</a></span>&#160;    [[nodiscard]] std::uintmax_t getHardLinkCount() const noexcept;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a8756d087b7fdc53b85c68ac09154e37d">  280</a></span>&#160;    std::optional&lt;<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&gt; duplicate() const noexcept;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a89ee2d65090e111fb062620a01639296">  287</a></span>&#160;    [[nodiscard]] <a class="code" href="classlimes_1_1files_1_1CFile.html">CFile</a> getCfile (<a class="code" href="classlimes_1_1files_1_1CFile.html">CFile</a>::Mode mode = <a class="code" href="classlimes_1_1files_1_1CFile.html">CFile</a>::Mode::Read) const noexcept;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno"><a class="line" href="structlimes_1_1files_1_1File_1_1Iterator.html">  296</a></span>&#160;    struct LFILE_EXPORT <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> final</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keyword">using</span> iterator_category = std::forward_iterator_tag;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keyword">using</span> value_type        = std::string;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keyword">using</span> difference_type   = std::ptrdiff_t;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keyword">using</span> pointer           = std::string*;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keyword">using</span> reference         = std::string&amp;;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;              operator++();</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        [[nodiscard]] <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> operator++ (<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordtype">bool</span>                   operator== (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> other);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordtype">bool</span>                   operator!= (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> other);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        reference operator*() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        pointer   operator-&gt;() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a8756d087b7fdc53b85c68ac09154e37d">  278</a></span>&#160;    std::optional&lt;<a class="code" href="classlimes_1_1files_1_1File.html">File</a>&gt; duplicate() const noexcept;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a89ee2d65090e111fb062620a01639296">  285</a></span>&#160;    [[nodiscard]] <a class="code" href="classlimes_1_1files_1_1CFile.html">CFile</a> getCfile (<a class="code" href="classlimes_1_1files_1_1CFile.html">CFile</a>::Mode mode = <a class="code" href="classlimes_1_1files_1_1CFile.html">CFile</a>::Mode::Read) const noexcept;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="structlimes_1_1files_1_1File_1_1Iterator.html">  294</a></span>&#160;    struct LFILE_EXPORT <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> final</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keyword">using</span> iterator_category = std::forward_iterator_tag;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keyword">using</span> value_type        = std::string;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keyword">using</span> difference_type   = std::ptrdiff_t;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keyword">using</span> pointer           = std::string*;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keyword">using</span> reference         = std::string&amp;;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;              operator++();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        [[nodiscard]] <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> operator++ (<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordtype">bool</span>                   operator== (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> other);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordtype">bool</span>                   operator!= (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> other);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        reference operator*() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        pointer   operator-&gt;() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>();</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>();</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> (<span class="keyword">const</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp; operator= (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keyword">using</span> VectorType = std::vector&lt;std::string&gt;;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> (<span class="keyword">const</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp; operator= (<a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keyword">using</span> VectorType = std::vector&lt;std::string&gt;;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> (VectorType&amp;&amp; v);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> (VectorType&amp;&amp; v);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        std::shared_ptr&lt;VectorType&gt; lines { <span class="keyword">nullptr</span> };</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        std::shared_ptr&lt;VectorType&gt; lines { <span class="keyword">nullptr</span> };</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        VectorType::size_type idx { 0UL };</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        VectorType::size_type idx { 0UL };</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classlimes_1_1files_1_1File.html">File</a>;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    };</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a6a0a6222aad5b6c730656f369fb83913">  334</a></span>&#160;    [[nodiscard]] <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> <a class="code" href="classlimes_1_1files_1_1File.html#a6a0a6222aad5b6c730656f369fb83913">begin</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a7bb2fd25dc380195ae17c54dc913c048">  337</a></span>&#160;    [[nodiscard]] <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> <a class="code" href="classlimes_1_1files_1_1File.html#a7bb2fd25dc380195ae17c54dc913c048">end</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a59340d0aa6ba49e4d54ec33a24238572">  347</a></span>&#160;    [[nodiscard]] <span class="keyword">static</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a> <a class="code" href="classlimes_1_1files_1_1File.html#a59340d0aa6ba49e4d54ec33a24238572">getCurrentExecutable</a>();</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#afa6800b8f00f81fc02b0402a45896708">  358</a></span>&#160;    [[nodiscard]] <span class="keyword">static</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a> <a class="code" href="classlimes_1_1files_1_1File.html#afa6800b8f00f81fc02b0402a45896708">getCurrentModule</a>();</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> write_data (<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> data, std::size_t numBytes, <span class="keywordtype">bool</span> overwrite) <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;};</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classlimes_1_1files_1_1File.html">File</a>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    };</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a6a0a6222aad5b6c730656f369fb83913">  332</a></span>&#160;    [[nodiscard]] <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> <a class="code" href="classlimes_1_1files_1_1File.html#a6a0a6222aad5b6c730656f369fb83913">begin</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a7bb2fd25dc380195ae17c54dc913c048">  335</a></span>&#160;    [[nodiscard]] <a class="code" href="structlimes_1_1files_1_1File_1_1Iterator.html">Iterator</a> <a class="code" href="classlimes_1_1files_1_1File.html#a7bb2fd25dc380195ae17c54dc913c048">end</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a59340d0aa6ba49e4d54ec33a24238572">  345</a></span>&#160;    [[nodiscard]] <span class="keyword">static</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a> <a class="code" href="classlimes_1_1files_1_1File.html#a59340d0aa6ba49e4d54ec33a24238572">getCurrentExecutable</a>();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#afa6800b8f00f81fc02b0402a45896708">  356</a></span>&#160;    [[nodiscard]] <span class="keyword">static</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a> <a class="code" href="classlimes_1_1files_1_1File.html#afa6800b8f00f81fc02b0402a45896708">getCurrentModule</a>();</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    [[nodiscard]] <span class="keywordtype">bool</span> write_data (<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> data, std::size_t numBytes, <span class="keywordtype">bool</span> overwrite) <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;};</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">/*-------------------------------------------------------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">/*-------------------------------------------------------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">#pragma mark TempFile</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="preprocessor">#pragma endregion</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#pragma region TempFile</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html">  384</a></span>&#160;<span class="keyword">class </span>LFILE_EXPORT <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> final : <span class="keyword">public</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;{</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a31ec3c01951eee4de391a32317ae7b5d">  398</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classlimes_1_1files_1_1TempFile.html#a31ec3c01951eee4de391a32317ae7b5d">TempFile</a> (<span class="keyword">const</span> <a class="code" href="lfilesystem__FilesystemEntry_8h.html#af5d6b587d82998a6139e0729490f7c83">Path</a>&amp; filepath,</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                       <span class="keywordtype">bool</span>        destroyOnDelete = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a9ba2d56f21404eda8552fd28045ffe47">  404</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html#a9ba2d56f21404eda8552fd28045ffe47">~TempFile</a>() final;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> (const <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;) = delete;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp; operator= (const <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;) = delete;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#pragma mark TempFile</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">#pragma region TempFile</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html">  382</a></span>&#160;<span class="keyword">class </span>LFILE_EXPORT <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> final : <span class="keyword">public</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;{</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a31ec3c01951eee4de391a32317ae7b5d">  396</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classlimes_1_1files_1_1TempFile.html#a31ec3c01951eee4de391a32317ae7b5d">TempFile</a> (<span class="keyword">const</span> <a class="code" href="group__limes__files.html#gaf5d6b587d82998a6139e0729490f7c83">Path</a>&amp; filepath,</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                       <span class="keywordtype">bool</span>        destroyOnDelete = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a9ba2d56f21404eda8552fd28045ffe47">  402</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html#a9ba2d56f21404eda8552fd28045ffe47">~TempFile</a>() final;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> (const <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;) = delete;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp; operator= (const <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;) = delete;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a5b6e033362982e36f03a8121f205a454">  410</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> (<a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;&amp; other) noexcept;</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a5b6e033362982e36f03a8121f205a454">  412</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> (<a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;&amp; other) noexcept;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
-<div class="line"><a name="l00415"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a4750cea6719e7f97c4316c59e2305bcf">  415</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp; operator= (<a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;&amp; other) noexcept;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00422"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#ac6cdb5b1a481be665267d8a5a7268852">  422</a></span>&#160;    [[nodiscard]] static <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> getNextFile();</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;private:</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keywordtype">bool</span> shouldDelete { <span class="keyword">true</span> };</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;};</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#aa1d529ddb74f0e8cf7af99b846633531">  433</a></span>&#160;std::ostream&amp; operator&lt;&lt; (std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; file);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
-<div class="line"><a name="l00440"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1File.html#a349811f29d794405dc0e4c6b12d8ec16">  440</a></span>&#160;std::istream&amp; operator&gt;&gt; (std::istream&amp; is, <span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; file);</div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#a4750cea6719e7f97c4316c59e2305bcf">  413</a></span>&#160;    <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp; operator= (<a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a>&amp;&amp; other) noexcept;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno"><a class="line" href="classlimes_1_1files_1_1TempFile.html#ac6cdb5b1a481be665267d8a5a7268852">  420</a></span>&#160;    [[nodiscard]] static <a class="code" href="classlimes_1_1files_1_1TempFile.html">TempFile</a> getNextFile();</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;private:</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordtype">bool</span> shouldDelete { <span class="keyword">true</span> };</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;};</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno"><a class="line" href="group__limes__files.html#gaa1d529ddb74f0e8cf7af99b846633531">  431</a></span>&#160;std::ostream&amp; operator&lt;&lt; (std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; file);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="group__limes__files.html#ga349811f29d794405dc0e4c6b12d8ec16">  438</a></span>&#160;std::istream&amp; operator&gt;&gt; (std::istream&amp; is, <span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">File</a>&amp; file);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;}  <span class="comment">// namespace limes::files</span></div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;}  <span class="comment">// namespace limes::files</span></div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keyword">namespace </span>std</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;{</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00453"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01limes_1_1files_1_1File_01_4.html">  453</a></span>&#160;<span class="keyword">struct </span>LFILE_EXPORT hash&lt;limes::files::File&gt; final</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;{</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordtype">size_t</span> operator() (<span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">limes::files::File</a>&amp; f) <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;};</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;}  <span class="comment">// namespace std</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="keyword">namespace </span>std</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;{</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00451"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01limes_1_1files_1_1File_01_4.html">  451</a></span>&#160;<span class="keyword">struct </span>LFILE_EXPORT hash&lt;limes::files::File&gt; final</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;{</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="keywordtype">size_t</span> operator() (<span class="keyword">const</span> <a class="code" href="classlimes_1_1files_1_1File.html">limes::files::File</a>&amp; f) <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;};</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;}  <span class="comment">// namespace std</span></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1CFile_html"><div class="ttname"><a href="classlimes_1_1files_1_1CFile.html">limes::files::CFile</a></div><div class="ttdoc">This class is a wrapper around a C-style FILE* that takes care of freeing the file when the object is...</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__CFile_8h_source.html#l00050">lfilesystem_CFile.h:51</a></div></div>
-<div class="ttc" id="aclasslimes_1_1files_1_1File_html"><div class="ttname"><a href="classlimes_1_1files_1_1File.html">limes::files::File</a></div><div class="ttdoc">This class represents a file on the filesystem.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00063">lfilesystem_File.h:64</a></div></div>
+<div class="ttc" id="aclasslimes_1_1files_1_1File_html"><div class="ttname"><a href="classlimes_1_1files_1_1File.html">limes::files::File</a></div><div class="ttdoc">This class represents a file on the filesystem.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00061">lfilesystem_File.h:62</a></div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a09fc5b263698be070e44597e5ed46927"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a09fc5b263698be070e44597e5ed46927">limes::files::File::hasFileExtension</a></div><div class="ttdeci">bool hasFileExtension(const std::string_view &amp;extension) const</div><div class="ttdoc">Returns true if this file has the specified file extension.</div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a27483cd6bb494a1e390d4579f518d7c7"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a27483cd6bb494a1e390d4579f518d7c7">limes::files::File::getFileExtension</a></div><div class="ttdeci">std::string getFileExtension() const</div><div class="ttdoc">Returns this file's file extension, if any.</div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a2f2e1f4885a35eda86935c0c507701a6"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a2f2e1f4885a35eda86935c0c507701a6">limes::files::File::hasFileExtension</a></div><div class="ttdeci">bool hasFileExtension() const</div><div class="ttdoc">Returns true if this file has a file extension.</div></div>
@@ -298,20 +298,21 @@ $(document).ready(function(){initNavTree('lfilesystem__File_8h_source.html','');
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_afa6800b8f00f81fc02b0402a45896708"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#afa6800b8f00f81fc02b0402a45896708">limes::files::File::getCurrentModule</a></div><div class="ttdeci">static File getCurrentModule()</div><div class="ttdoc">Returns a file representing the location of the current code module.</div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1FilesystemEntry_html"><div class="ttname"><a href="classlimes_1_1files_1_1FilesystemEntry.html">limes::files::FilesystemEntry</a></div><div class="ttdoc">The base class for any kind of object on the filesystem.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__FilesystemEntry_8h_source.html#l00079">lfilesystem_FilesystemEntry.h:80</a></div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1FilesystemEntry_html_a6837e96187fad2f1accd6b79a0e3a5cf"><div class="ttname"><a href="classlimes_1_1files_1_1FilesystemEntry.html#a6837e96187fad2f1accd6b79a0e3a5cf">limes::files::FilesystemEntry::FilesystemEntry</a></div><div class="ttdeci">FilesystemEntry()=default</div><div class="ttdoc">Creates a FilesystemEntry with an empty path.</div></div>
-<div class="ttc" id="aclasslimes_1_1files_1_1TempFile_html"><div class="ttname"><a href="classlimes_1_1files_1_1TempFile.html">limes::files::TempFile</a></div><div class="ttdoc">Represents a temporary file.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00384">lfilesystem_File.h:385</a></div></div>
+<div class="ttc" id="aclasslimes_1_1files_1_1TempFile_html"><div class="ttname"><a href="classlimes_1_1files_1_1TempFile.html">limes::files::TempFile</a></div><div class="ttdoc">Represents a temporary file.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00382">lfilesystem_File.h:383</a></div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1TempFile_html_a31ec3c01951eee4de391a32317ae7b5d"><div class="ttname"><a href="classlimes_1_1files_1_1TempFile.html#a31ec3c01951eee4de391a32317ae7b5d">limes::files::TempFile::TempFile</a></div><div class="ttdeci">TempFile(const Path &amp;filepath, bool destroyOnDelete=true)</div><div class="ttdoc">Creates a temporary file with the specified path.</div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1TempFile_html_a9ba2d56f21404eda8552fd28045ffe47"><div class="ttname"><a href="classlimes_1_1files_1_1TempFile.html#a9ba2d56f21404eda8552fd28045ffe47">limes::files::TempFile::~TempFile</a></div><div class="ttdeci">~TempFile() final</div><div class="ttdoc">The temporary file will be deleted from the filesystem when this object is destroyed,...</div></div>
+<div class="ttc" id="agroup__limes__files_html_gaf5d6b587d82998a6139e0729490f7c83"><div class="ttname"><a href="group__limes__files.html#gaf5d6b587d82998a6139e0729490f7c83">limes::files::Path</a></div><div class="ttdeci">std::filesystem::path Path</div><div class="ttdoc">Convenience typedef for filesystem paths.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__FilesystemEntry_8h_source.html#l00043">lfilesystem_FilesystemEntry.h:43</a></div></div>
 <div class="ttc" id="alfilesystem__CFile_8h_html"><div class="ttname"><a href="lfilesystem__CFile_8h.html">lfilesystem_CFile.h</a></div><div class="ttdoc">This file defines the CFile class.</div></div>
 <div class="ttc" id="alfilesystem__FilesystemEntry_8h_html"><div class="ttname"><a href="lfilesystem__FilesystemEntry_8h.html">lfilesystem_FilesystemEntry.h</a></div><div class="ttdoc">This file defines the FilesystemEntry class.</div></div>
-<div class="ttc" id="alfilesystem__FilesystemEntry_8h_html_af5d6b587d82998a6139e0729490f7c83"><div class="ttname"><a href="lfilesystem__FilesystemEntry_8h.html#af5d6b587d82998a6139e0729490f7c83">limes::files::Path</a></div><div class="ttdeci">std::filesystem::path Path</div><div class="ttdoc">Convenience typedef for filesystem paths.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__FilesystemEntry_8h_source.html#l00043">lfilesystem_FilesystemEntry.h:43</a></div></div>
-<div class="ttc" id="astructlimes_1_1files_1_1File_1_1Iterator_html"><div class="ttname"><a href="structlimes_1_1files_1_1File_1_1Iterator.html">limes::files::File::Iterator</a></div><div class="ttdoc">An iterator class that allows iterating a file like a standard C++ container.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00296">lfilesystem_File.h:297</a></div></div>
+<div class="ttc" id="anamespacelimes_1_1files_html"><div class="ttname"><a href="namespacelimes_1_1files.html">limes::files</a></div><div class="ttdoc">Filesystem utilities.</div></div>
+<div class="ttc" id="astructlimes_1_1files_1_1File_1_1Iterator_html"><div class="ttname"><a href="structlimes_1_1files_1_1File_1_1Iterator.html">limes::files::File::Iterator</a></div><div class="ttdoc">An iterator class that allows iterating a file like a standard C++ container.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00294">lfilesystem_File.h:295</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_1cc279c25484ac97cc746461ad47fcea.html">lfilesystem</a></li><li class="navelem"><a class="el" href="lfilesystem__File_8h.html">lfilesystem_File.h</a></li>
-    <li class="footer">Generated on Sat May 27 2023 09:07:11 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 18:34:35 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

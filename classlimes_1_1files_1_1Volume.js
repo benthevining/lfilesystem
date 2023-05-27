@@ -22,5 +22,5 @@ var classlimes_1_1files_1_1Volume =
     [ "operator==", "classlimes_1_1files_1_1Volume.html#a37b3b3015fbe8cf1555d3d473c56ec65", null ],
     [ "totalBytes", "classlimes_1_1files_1_1Volume.html#a71abef5794d76708bf752e74bec9affc", null ],
     [ "tryCreate", "classlimes_1_1files_1_1Volume.html#ae2545107c0981181c29662baed47a1ed", null ],
-    [ "operator<<", "classlimes_1_1files_1_1Volume.html#abc51fb984bbc29a8199031765b154693", null ]
+    [ "operator<<", "group__limes__files.html#gabc51fb984bbc29a8199031765b154693", null ]
 ];

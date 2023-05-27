@@ -1,5 +1,8 @@
 var files_dup =
 [
+    [ "files_dir_enumerate.cpp", "files__dir__enumerate_8cpp_source.html", null ],
+    [ "files_dir_listen.cpp", "files__dir__listen_8cpp_source.html", null ],
+    [ "lfilesystem.h", "lfilesystem_8h.html", null ],
     [ "lfilesystem_CFile.h", "lfilesystem__CFile_8h.html", [
       [ "CFile", "classlimes_1_1files_1_1CFile.html", "classlimes_1_1files_1_1CFile" ]
     ] ],
