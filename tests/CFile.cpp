@@ -62,9 +62,8 @@ TEST_CASE ("CFile", TAGS)
 #ifndef _WIN32
 	REQUIRE (file.rename (newPath));
 	REQUIRE (f.getPath() == newPath);
-#endif
-
 	REQUIRE (file.deleteIfExists());
+#endif
 }
 
 #undef TAGS
