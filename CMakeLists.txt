@@ -3,7 +3,8 @@ cmake_minimum_required (VERSION 3.25 FATAL_ERROR)
 project (lfilesystem
 		 VERSION 0.0.1
 		 LANGUAGES CXX C
-		 DESCRIPTION "C++ filesystem library")
+		 DESCRIPTION "C++ filesystem library"
+		 HOMEPAGE_URL "https://github.com/benthevining/lfilesystem/")
 
 include (CMakeDependentOption)
 
@@ -101,6 +102,11 @@ return 0;
 		target_compile_definitions (lfilesystem PRIVATE LFILE_IMPL_USE_PATHCONF=0)
 	endif ()
 
+endif()
+
+if(EMSCRIPTEN)
+	target_compile_options (lfilesystem PRIVATE -sNO_DISABLE_EXCEPTION_CATCHING -fexceptions)
+	target_link_options (lfilesystem PRIVATE -fexceptions)
 endif()
 
 target_link_libraries (lfilesystem PRIVATE ${CMAKE_DL_LIBS})

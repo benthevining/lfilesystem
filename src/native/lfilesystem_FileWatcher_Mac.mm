@@ -15,6 +15,7 @@
 #import <Foundation/Foundation.h>
 #include <stdexcept>
 #include <sstream>
+#include "lfilesystem/lfilesystem_Export.h"
 #include "lfilesystem/lfilesystem_FileWatcher.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"
 

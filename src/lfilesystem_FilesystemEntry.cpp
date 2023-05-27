@@ -492,6 +492,8 @@ bool FilesystemEntry::setPermissions (FSPerms permissions, PermOptions options) 
 	{
 		return false;
 	}
+
+	return true;
 }
 
 Permissions FilesystemEntry::getPermissions() const
@@ -588,6 +590,8 @@ bool FilesystemEntry::copyFrom (const Path& source, CopyOptions options) const n
 	{
 		return false;
 	}
+
+	return true;
 }
 
 bool FilesystemEntry::copyFrom (const FilesystemEntry& source, CopyOptions options) const noexcept

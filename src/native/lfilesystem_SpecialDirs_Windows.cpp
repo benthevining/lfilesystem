@@ -16,6 +16,7 @@
 #include <shtypes.h>
 #include <Knownfolders.h>
 #include <shlobj_core.h>
+#include "lfilesystem/lfilesystem_Export.h"
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Directory.h"
 

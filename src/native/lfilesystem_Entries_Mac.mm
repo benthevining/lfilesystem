@@ -31,6 +31,7 @@
 #include <atomic>
 #include <thread>
 
+#include "lfilesystem/lfilesystem_Export.h"
 #include "lfilesystem/lfilesystem_Misc.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"
 #include "lfilesystem/lfilesystem_File.h"

@@ -23,6 +23,7 @@
 #include <string>
 #include <array>
 #include <atomic>
+#include "lfilesystem/lfilesystem_Export.h"
 #include "lfilesystem/lfilesystem_Misc.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"
 #include "lfilesystem/lfilesystem_File.h"
@@ -167,7 +168,7 @@ LFILE_NO_EXPORT [[nodiscard]] static inline std::string getModulePathInternal (H
 namespace exec_path
 {
 
-[[nodiscard]] LIMES_EXPORT std::string get_impl()
+[[nodiscard]] LFILE_EXPORT std::string get_impl()
 {
 	return getModulePathInternal (nullptr);
 }
@@ -177,7 +178,7 @@ namespace exec_path
 namespace module_path
 {
 
-[[nodiscard]] LIMES_EXPORT std::string get_impl()
+[[nodiscard]] LFILE_EXPORT std::string get_impl()
 {
 #ifdef _MSC_VER
 #	define limes_get_return_address() _ReturnAddress()	 // NOLINT

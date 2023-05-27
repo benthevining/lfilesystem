@@ -12,6 +12,7 @@
  * ======================================================================================
  */
 
+#include "lfilesystem/lfilesystem_Export.h"
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Directory.h"
 
@@ -50,7 +51,7 @@ static inline Directory getAndroidDocumentsDir()
 	// return {};
 }
 
-[[nodiscard]] LIMES_EXPORT Directory android_home()
+[[nodiscard]] LFILE_EXPORT Directory android_home()
 {
 	return getAndroidAppDataDir();
 }
