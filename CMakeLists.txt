@@ -85,6 +85,10 @@ if (APPLE)
 		target_link_libraries (lfilesystem PRIVATE "-framework AppKit")
 	endif ()
 
+elseif (WIN32)
+
+	target_compile_definitions (lfilesystem PRIVATE NOMINMAX)
+
 elseif (LINUX)
 
 	include (CheckCXXSourceCompiles)

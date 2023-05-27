@@ -190,12 +190,10 @@ namespace module_path
 
 	HMODULE module;
 
-	LIMES_DISABLE_ALL_COMPILER_WARNINGS
 	if (GetModuleHandleEx (GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, static_cast<LPCTSTR> (limes_get_return_address()), &module))
 	{
 		return getModulePathInternal (module);
 	}
-	LIMES_REENABLE_ALL_COMPILER_WARNINGS
 
 	return {};
 

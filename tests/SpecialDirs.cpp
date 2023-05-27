@@ -25,6 +25,8 @@ TEST_CASE ("SpecialDirs - temp", TAGS)
 {
 	const auto temp = dirs::temp();
 
+	INFO ("Path: " << temp.getAbsolutePath());
+
 	REQUIRE (temp.isAbsolutePath());
 	REQUIRE (temp.exists());
 	REQUIRE (temp.isDirectory());
@@ -72,6 +74,8 @@ TEST_CASE ("SpecialDirs - home", TAGS)
 {
 	const auto home = dirs::home();
 
+	INFO ("Path: " << home.getAbsolutePath());
+
 	REQUIRE (home.isAbsolutePath());
 	REQUIRE (home.exists());
 	REQUIRE (home.isDirectory());
@@ -81,6 +85,8 @@ TEST_CASE ("SpecialDirs - home", TAGS)
 TEST_CASE ("SpecialDirs - desktop", TAGS)
 {
 	const auto desktop = dirs::desktop();
+
+	INFO ("Path: " << desktop.getAbsolutePath());
 
 	REQUIRE (desktop.isAbsolutePath());
 	REQUIRE (desktop.isDirectory());
@@ -94,6 +100,8 @@ TEST_CASE ("SpecialDirs - user documents", TAGS)
 {
 	const auto userDocuments = dirs::userDocuments();
 
+	INFO ("Path: " << userDocuments.getAbsolutePath());
+
 	REQUIRE (userDocuments.isAbsolutePath());
 	REQUIRE (userDocuments.isDirectory());
 
@@ -105,6 +113,8 @@ TEST_CASE ("SpecialDirs - user documents", TAGS)
 TEST_CASE ("SpecialDirs - common documents", TAGS)
 {
 	const auto commonDocuments = dirs::commonDocuments();
+
+	INFO ("Path: " << commonDocuments.getAbsolutePath());
 
 	REQUIRE (commonDocuments.isAbsolutePath());
 	REQUIRE (commonDocuments.isDirectory());
@@ -118,6 +128,8 @@ TEST_CASE ("SpecialDirs - user app data", TAGS)
 {
 	const auto userAppData = dirs::userAppData();
 
+	INFO ("Path: " << userAppData.getAbsolutePath());
+
 	REQUIRE (userAppData.isAbsolutePath());
 	REQUIRE (userAppData.isDirectory());
 
@@ -129,6 +141,8 @@ TEST_CASE ("SpecialDirs - user app data", TAGS)
 TEST_CASE ("SpecialDirs - common app data", TAGS)
 {
 	const auto commonAppData = dirs::commonAppData();
+
+	INFO ("Path: " << commonAppData.getAbsolutePath());
 
 	REQUIRE (commonAppData.isAbsolutePath());
 	REQUIRE (commonAppData.isDirectory());
@@ -142,6 +156,8 @@ TEST_CASE ("SpecialDirs - apps", TAGS)
 {
 	const auto apps = dirs::apps();
 
+	INFO ("Path: " << apps.getAbsolutePath());
+
 	REQUIRE (apps.isAbsolutePath());
 	REQUIRE (apps.isDirectory());
 
@@ -153,6 +169,8 @@ TEST_CASE ("SpecialDirs - apps", TAGS)
 TEST_CASE ("SpecialDirs - downloads", TAGS)
 {
 	const auto downloads = dirs::downloads();
+
+	INFO ("Path: " << downloads.getAbsolutePath());
 
 	REQUIRE (downloads.isAbsolutePath());
 	REQUIRE (downloads.isDirectory());

@@ -40,22 +40,36 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        preset: [clang, emscripten, gcc]
+        preset: [clang, emscripten, gcc, iOS, tvOS, watchOS]
         config: [Debug, Release]
         exclude:
         - os: windows-latest
           preset: gcc
+        - os: ubuntu-latest
+          preset: iOS
+        - os: windows-latest
+          preset: iOS
+        - os: ubuntu-latest
+          preset: tvOS
+        - os: windows-latest
+          preset: tvOS
+        - os: ubuntu-latest
+          preset: watchOS
+        - os: windows-latest
+          preset: watchOS
         include:
         - os: windows-latest
           preset: vs
-        - os: macos-latest
-          preset: iOS
-        - os: macos-latest
-          preset: tvOS
-        - os: macos-latest
-          preset: watchOS
+          config: Debug
+        - os: windows-latest
+          preset: vs
+          config: Release
         - os: macos-latest
           preset: xcode
+          config: Debug
+        - os: macos-latest
+          preset: xcode
+          config: Release
 
     runs-on: ${{ matrix.os }}
 
@@ -87,6 +101,7 @@ jobs:
       run: cmake --build --preset ${{ matrix.preset }} --config ${{ matrix.config }}
 
     - name: Run tests
+      if: ${{ ! ( matrix.preset == 'iOS' || matrix.preset == 'tvOS' || matrix.preset == 'watchOS' ) }}
       run: ctest --preset ${{ matrix.preset }} -C ${{ matrix.config }}
 
     - name: Generate package
