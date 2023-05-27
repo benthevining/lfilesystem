@@ -105,6 +105,14 @@
 	@todo remove internal dependencies on exceptions (Emscripten tests)
 
 	@todo get all CI builds working
+
+	@todo how to test this library with a NAS / external drives?
+
+	@todo FileList, RecentlyOpenedFilesList classes
+
+	@todo compress/decompress, tarball creator/extractor
+
+	@todo tests on iOS?
  */
 
 /** @file

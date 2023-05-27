@@ -215,7 +215,7 @@ repos:
   rev: 0.21.0
   hooks:
   - id: check-github-workflows
-  # - id: check-dependabot
+  - id: check-dependabot
   - id: check-jsonschema
     name: Validate CMake presets
     args: [--schemafile, 'https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json']
