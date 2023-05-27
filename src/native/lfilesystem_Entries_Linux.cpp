@@ -80,7 +80,7 @@ namespace exec_path
 
 [[nodiscard]] LFILE_EXPORT std::string get_impl()
 {
-	std::array<char, maxPathLength()> buffer;
+	std::array<char, maxPathLength() * 2UL> buffer;
 
 #if defined(__sun)
 	static constexpr auto proc_self_exe = "/proc/self/path/a.out";
