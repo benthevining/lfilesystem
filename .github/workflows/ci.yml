@@ -41,7 +41,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         preset: [clang, emscripten, gcc, iOS, tvOS, watchOS]
-        config: [Debug, Release]
+        shared-libs: ['ON', 'OFF']
         exclude:
         - os: windows-latest
           preset: gcc
@@ -60,16 +60,16 @@ jobs:
         include:
         - os: windows-latest
           preset: vs
-          config: Debug
+          shared-libs: 'ON'
         - os: windows-latest
           preset: vs
-          config: Release
+          shared-libs: 'OFF'
         - os: macos-latest
           preset: xcode
-          config: Debug
+          shared-libs: 'ON'
         - os: macos-latest
           preset: xcode
-          config: Release
+          shared-libs: 'OFF'
 
     runs-on: ${{ matrix.os }}
 
@@ -95,22 +95,29 @@ jobs:
       run: echo "EMSCRIPTEN_ROOT=$(which emcc)/.." >> $GITHUB_ENV
 
     - name: Configure CMake
-      run: cmake --preset ${{ matrix.preset }}
+      run: cmake --preset ${{ matrix.preset }} -D BUILD_SHARED_LIBS=${{ matrix.shared-libs }}
 
-    - name: Run build
-      run: cmake --build --preset ${{ matrix.preset }} --config ${{ matrix.config }}
+    - name: Run Debug build
+      run: cmake --build --preset ${{ matrix.preset }} --config Debug
 
-    - name: Run tests
+    - name: Run Debug tests
       if: ${{ ! ( matrix.preset == 'iOS' || matrix.preset == 'tvOS' || matrix.preset == 'watchOS' ) }}
-      run: ctest --preset ${{ matrix.preset }} -C ${{ matrix.config }}
+      run: ctest --preset ${{ matrix.preset }} -C Debug
+
+    - name: Run Release build
+      run: cmake --build --preset ${{ matrix.preset }} --config Release
+
+    - name: Run Release tests
+      if: ${{ ! ( matrix.preset == 'iOS' || matrix.preset == 'tvOS' || matrix.preset == 'watchOS' ) }}
+      run: ctest --preset ${{ matrix.preset }} -C Release
 
     - name: Generate package
-      run: cpack --preset ${{ matrix.preset }} -C ${{ matrix.config }} -B $GITHUB_WORKSPACE/deploy
+      run: cpack --preset ${{ matrix.preset }} -B $GITHUB_WORKSPACE/deploy
 
     - name: Upload artefact
       uses: actions/upload-artifact@main
       with:
-        name: ${{ matrix.os }}-${{ matrix.preset }}-${{ matrix.config }}
+        name: ${{ matrix.os }}-${{ matrix.preset }}-${{ matrix.shared-libs }}
         path: deploy/**.zip
         if-no-files-found: error
 

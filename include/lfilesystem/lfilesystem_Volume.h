@@ -174,7 +174,7 @@ private:
 	@ingroup limes_files
 	@relates Volume
  */
-std::ostream& operator<< (std::ostream& os, const Volume& value);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const Volume& value);
 
 /** This namespace contains free functions for easily querying properties of the volume that
 	the current working directory is mounted on. The advantage of these functions is that if

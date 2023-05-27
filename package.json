@@ -145,134 +145,134 @@
               "path": "source-code.tar"
             },
             {
-              "label": "Linux Clang (Debug)",
-              "name": "Linux-Clang-Debug.zip",
-              "path": "deploy/ubuntu-latest-clang-Debug.zip"
+              "label": "Linux Clang (Shared)",
+              "name": "Linux-Clang-Shared.zip",
+              "path": "deploy/ubuntu-latest-clang-ON.zip"
             },
             {
-              "label": "Linux Clang (Release)",
-              "name": "Linux-Clang-Release.zip",
-              "path": "deploy/ubuntu-latest-clang-Release.zip"
+              "label": "Linux Clang (Static)",
+              "name": "Linux-Clang-Static.zip",
+              "path": "deploy/ubuntu-latest-clang-OFF.zip"
             },
             {
-              "label": "Linux Emscripten (Debug)",
+              "label": "Linux Emscripten (Shared)",
               "name": "Linux-Emscripten-Debug.zip",
-              "path": "deploy/ubuntu-latest-emscripten-Debug.zip"
+              "path": "deploy/ubuntu-latest-emscripten-ON.zip"
             },
             {
-              "label": "Linux Emscripten (Release)",
-              "name": "Linux-Emscripten-Release.zip",
-              "path": "deploy/ubuntu-latest-emscripten-Release.zip"
+              "label": "Linux Emscripten (Static)",
+              "name": "Linux-Emscripten-Static.zip",
+              "path": "deploy/ubuntu-latest-emscripten-OFF.zip"
             },
             {
-              "label": "Linux GCC (Debug)",
-              "name": "Linux-GCC-Debug.zip",
-              "path": "deploy/ubuntu-latest-gcc-Debug.zip"
+              "label": "Linux GCC (Shared)",
+              "name": "Linux-GCC-Shared.zip",
+              "path": "deploy/ubuntu-latest-gcc-ON.zip"
             },
             {
-              "label": "Linux GCC (Release)",
-              "name": "Linux-GCC-Release.zip",
-              "path": "deploy/ubuntu-latest-gcc-Release.zip"
+              "label": "Linux GCC (Static)",
+              "name": "Linux-GCC-Static.zip",
+              "path": "deploy/ubuntu-latest-gcc-OFF.zip"
             },
             {
-              "label": "Windows Clang (Debug)",
-              "name": "Windows-Clang-Debug.zip",
-              "path": "deploy/windows-latest-clang-Debug.zip"
+              "label": "Windows Clang (Shared)",
+              "name": "Windows-Clang-Shared.zip",
+              "path": "deploy/windows-latest-clang-ON.zip"
             },
             {
-              "label": "Windows Clang (Release)",
-              "name": "Windows-Clang-Release.zip",
-              "path": "deploy/windows-latest-clang-Release.zip"
+              "label": "Windows Clang (Static)",
+              "name": "Windows-Clang-Static.zip",
+              "path": "deploy/windows-latest-clang-OFF.zip"
             },
             {
-              "label": "Windows Emscripten (Debug)",
-              "name": "Windows-Emscripten-Debug.zip",
-              "path": "deploy/windows-latest-emscripten-Debug.zip"
+              "label": "Windows Emscripten (Shared)",
+              "name": "Windows-Emscripten-Shared.zip",
+              "path": "deploy/windows-latest-emscripten-ON.zip"
             },
             {
-              "label": "Windows Emscripten (Release)",
-              "name": "Windows-Emscripten-Release.zip",
-              "path": "deploy/windows-latest-emscripten-Release.zip"
+              "label": "Windows Emscripten (Static)",
+              "name": "Windows-Emscripten-Static.zip",
+              "path": "deploy/windows-latest-emscripten-OFF.zip"
             },
             {
-              "label": "MacOS Clang (Debug)",
-              "name": "MacOS-Clang-Debug.zip",
-              "path": "deploy/macos-latest-clang-Debug.zip"
+              "label": "MacOS Clang (Shared)",
+              "name": "MacOS-Clang-Shared.zip",
+              "path": "deploy/macos-latest-clang-ON.zip"
             },
             {
-              "label": "MacOS Clang (Release)",
-              "name": "MacOS-Clang-Release.zip",
-              "path": "deploy/macos-latest-clang-Release.zip"
+              "label": "MacOS Clang (Static)",
+              "name": "MacOS-Clang-Static.zip",
+              "path": "deploy/macos-latest-clang-OFF.zip"
             },
             {
-              "label": "MacOS Emscripten (Debug)",
-              "name": "MacOS-Emscripten-Debug.zip",
-              "path": "deploy/macos-latest-emscripten-Debug.zip"
+              "label": "MacOS Emscripten (Shared)",
+              "name": "MacOS-Emscripten-Shared.zip",
+              "path": "deploy/macos-latest-emscripten-ON.zip"
             },
             {
-              "label": "MacOS Emscripten (Release)",
-              "name": "MacOS-Emscripten-Release.zip",
-              "path": "deploy/macos-latest-emscripten-Release.zip"
+              "label": "MacOS Emscripten (Static)",
+              "name": "MacOS-Emscripten-Static.zip",
+              "path": "deploy/macos-latest-emscripten-OFF.zip"
             },
             {
-              "label": "MacOS GCC (Debug)",
-              "name": "MacOS-GCC-Debug.zip",
-              "path": "deploy/macos-latest-gcc-Debug.zip"
+              "label": "MacOS GCC (Shared)",
+              "name": "MacOS-GCC-Shared.zip",
+              "path": "deploy/macos-latest-gcc-ON.zip"
             },
             {
-              "label": "MacOS GCC (Release)",
-              "name": "MacOS-GCC-Release.zip",
-              "path": "deploy/macos-latest-gcc-Release.zip"
+              "label": "MacOS GCC (Static)",
+              "name": "MacOS-GCC-Static.zip",
+              "path": "deploy/macos-latest-gcc-OFF.zip"
             },
             {
-              "label": "iOS (Debug)",
-              "name": "iOS-Debug.zip",
-              "path": "deploy/macos-latest-iOS-Debug.zip"
+              "label": "iOS (Shared)",
+              "name": "iOS-Shared.zip",
+              "path": "deploy/macos-latest-iOS-ON.zip"
             },
             {
-              "label": "iOS (Release)",
-              "name": "iOS-Release.zip",
-              "path": "deploy/macos-latest-iOS-Release.zip"
+              "label": "iOS (Static)",
+              "name": "iOS-Static.zip",
+              "path": "deploy/macos-latest-iOS-OFF.zip"
             },
             {
-              "label": "tvOS (Debug)",
-              "name": "tvOS-Debug.zip",
-              "path": "deploy/macos-latest-tvOS-Debug.zip"
+              "label": "tvOS (Shared)",
+              "name": "tvOS-Shared.zip",
+              "path": "deploy/macos-latest-tvOS-ON.zip"
             },
             {
-              "label": "tvOS (Release)",
-              "name": "tvOS-Release.zip",
-              "path": "deploy/macos-latest-tvOS-Release.zip"
+              "label": "tvOS (Static)",
+              "name": "tvOS-Static.zip",
+              "path": "deploy/macos-latest-tvOS-OFF.zip"
             },
             {
-              "label": "watchOS (Debug)",
-              "name": "watchOS-Debug.zip",
-              "path": "deploy/macos-latest-watchOS-Debug.zip"
+              "label": "watchOS (Shared)",
+              "name": "watchOS-Shared.zip",
+              "path": "deploy/macos-latest-watchOS-ON.zip"
             },
             {
-              "label": "watchOS (Release)",
-              "name": "watchOS-Release.zip",
-              "path": "deploy/macos-latest-watchOS-Release.zip"
+              "label": "watchOS (Static)",
+              "name": "watchOS-Static.zip",
+              "path": "deploy/macos-latest-watchOS-OFF.zip"
             },
             {
-              "label": "Windows MSVC (Debug)",
-              "name": "Windows-MSVC-Debug.zip",
-              "path": "deploy/windows-latest-vs-Debug.zip"
+              "label": "Windows MSVC (Shared)",
+              "name": "Windows-MSVC-Shared.zip",
+              "path": "deploy/windows-latest-vs-ON.zip"
             },
             {
-              "label": "Windows MSVC (Release)",
-              "name": "Windows-MSVC-Release.zip",
-              "path": "deploy/windows-latest-vs-Release.zip"
+              "label": "Windows MSVC (Static)",
+              "name": "Windows-MSVC-Static.zip",
+              "path": "deploy/windows-latest-vs-OFF.zip"
             },
             {
-              "label": "MacOS XCode (Debug)",
-              "name": "MacOS-XCode-Debug.zip",
-              "path": "deploy/macos-latest-xcode-Debug.zip"
+              "label": "MacOS XCode (Shared)",
+              "name": "MacOS-XCode-Shared.zip",
+              "path": "deploy/macos-latest-xcode-ON.zip"
             },
             {
-              "label": "MacOS XCode (Release)",
-              "name": "MacOS-XCode-Release.zip",
-              "path": "deploy/macos-latest-xcode-Release.zip"
+              "label": "MacOS XCode (Static)",
+              "name": "MacOS-XCode-Static.zip",
+              "path": "deploy/macos-latest-xcode-OFF.zip"
             }
           ]
         }

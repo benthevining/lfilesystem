@@ -428,14 +428,14 @@ private:
 	@ingroup limes_files
 	@relates File
  */
-std::ostream& operator<< (std::ostream& os, const File& file);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const File& file);
 
 /** Reads content from the input stream, and overwrites the file with it.
 
 	@ingroup limes_files
 	@relates File
  */
-std::istream& operator>> (std::istream& is, const File& file);
+LFILE_EXPORT std::istream& operator>> (std::istream& is, const File& file);
 
 }  // namespace limes::files
 

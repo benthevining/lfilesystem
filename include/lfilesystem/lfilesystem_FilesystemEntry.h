@@ -586,7 +586,7 @@ private:
 	@ingroup limes_files
 	@relates FilesystemEntry
  */
-std::ostream& operator<< (std::ostream& os, const FilesystemEntry& value);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const FilesystemEntry& value);
 
 }  // namespace limes::files
 

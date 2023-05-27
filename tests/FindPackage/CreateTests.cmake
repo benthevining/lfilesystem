@@ -23,13 +23,20 @@ add_test (NAME "${base_name}.install"
 
 set_tests_properties ("${base_name}.install" PROPERTIES FIXTURES_SETUP LimesFilesFindPackageInstall)
 
+# cmake-format: off
 add_test (
 	NAME "${base_name}.configure"
-	COMMAND
-		"${CMAKE_COMMAND}" -S "${CMAKE_CURRENT_LIST_DIR}" -B "${build_dir}" -G "${CMAKE_GENERATOR}"
-		-D "CMAKE_C_COMPILER=${CMAKE_C_COMPILER}" -D "CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}" -D
-		"CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}" -D "CMAKE_PREFIX_PATH=${install_dir}" -D
-		"CMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}")
+	COMMAND "${CMAKE_COMMAND}"
+		-S "${CMAKE_CURRENT_LIST_DIR}"
+		-B "${build_dir}"
+		-G "${CMAKE_GENERATOR}"
+		-D "CMAKE_C_COMPILER=${CMAKE_C_COMPILER}"
+		-D "CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}"
+		-D "CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}"
+		-D "CMAKE_PREFIX_PATH=${install_dir}"
+		-D "CMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}"
+		-D "BUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}")
+# cmake-format: on
 
 set_tests_properties (
 	"${base_name}.configure" PROPERTIES FIXTURES_SETUP LimesFilesFindPackageConfigure

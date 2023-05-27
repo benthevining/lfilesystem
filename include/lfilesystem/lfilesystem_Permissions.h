@@ -256,6 +256,6 @@ private:
 	@ingroup limes_files
 	@relates Permissions
  */
-std::ostream& operator<< (std::ostream& os, const Permissions& value);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const Permissions& value);
 
 }  // namespace limes::files
