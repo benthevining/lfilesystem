@@ -1,6 +1,5 @@
 TODO:
 - CLI app
-- CDash
 - GH actions
 - Write this readme
 - examples
