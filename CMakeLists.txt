@@ -182,3 +182,7 @@ endif ()
 if (LFILE_DOCS)
 	add_subdirectory (docs)
 endif ()
+
+if (lfilesystem_IS_TOP_LEVEL)
+	include (CPack)
+endif ()

@@ -1,0 +1,92 @@
+# ======================================================================================
+#  __    ____  __  __  ____  ___
+# (  )  (_  _)(  \/  )( ___)/ __)
+#  )(__  _)(_  )    (  )__) \__ \
+# (____)(____)(_/\/\_)(____)(___/
+#
+#  This file is part of the Limes open source library and is licensed under the terms of the GNU Public License.
+#
+#  Commercial licenses are available; contact the maintainers at ben.the.vining@gmail.com to inquire for details.
+#
+# ======================================================================================
+
+name: CI
+
+run-name: CI (${{ github.actor }})
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}.${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+
+jobs:
+
+  ci:
+
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        preset: [clang, emscripten, gcc]
+        config: [Debug, Release]
+        exclude:
+        - os: windows-latest
+          preset: gcc
+        include:
+        - os: windows-latest
+          preset: vs
+        - os: macos-latest
+          preset: iOS
+        - os: macos-latest
+          preset: tvOS
+        - os: macos-latest
+          preset: watchOS
+        - os: macos-latest
+          preset: xcode
+
+    runs-on: ${{ matrix.os }}
+
+    name: Build (${{ matrix.os }}, ${{ matrix.preset }}, ${{ matrix.config }})
+
+    timeout-minutes: 10
+
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c   # pin@v3
+      with:
+        fetch-depth: 1
+
+    - uses: seanmiddleditch/gha-setup-ninja@master
+
+    - name: Configure CMake
+      run: cmake --preset ${{ matrix.preset }}
+
+    - name: Run build
+      run: cmake --build --preset ${{ matrix.preset }} --config ${{ matrix.config }}
+
+    - name: Run tests
+      run: ctest --preset ${{ matrix.preset }} -C ${{ matrix.config }}
+
+    - name: Generate package
+      run: cpack --preset ${{ matrix.preset }} -C ${{ matrix.config }} -B $GITHUB_WORKSPACE/deploy
+
+    - name: Upload artefact
+      uses: actions/upload-artifact@main
+      with:
+        name: ${{ matrix.os }}-${{ matrix.preset }}-${{ matrix.config }}
+        path: deploy/**.zip
+        if-no-files-found: error
