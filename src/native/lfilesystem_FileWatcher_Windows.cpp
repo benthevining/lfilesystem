@@ -186,7 +186,7 @@ private:
 		std::unique_ptr<std::jthread> thread;
 	};
 
-	static UpdaterThread updaterThread;  // should be static, but that caused unresolved external symbol errors in MSVC...
+	UpdaterThread updaterThread;  // should be static, but that caused unresolved external symbol errors in MSVC...
 };
 
 /*---------------------------------------------------------------------------------------------------------------------*/

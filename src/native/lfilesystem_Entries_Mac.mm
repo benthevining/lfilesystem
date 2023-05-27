@@ -74,7 +74,7 @@ bool FilesystemEntry::moveToTrash() noexcept
 	if (! exists())
 		return false;
 
-#if ! TARGET_OS_TV
+#if ! (TARGET_OS_WATCH || TARGET_OS_TV)
 	@autoreleasepool
 	{
 		if (@available (macOS 10.8, iOS 11.0, *))
