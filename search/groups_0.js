@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['special_20directories_0',['Special directories',['../group__special__dirs.html',1,'']]]
+  ['special_20directories_472',['Special directories',['../group__special__dirs.html',1,'']]]
 ];

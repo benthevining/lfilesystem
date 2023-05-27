@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['path_0',['Path',['../lfilesystem___filesystem_entry_8h.html#af5d6b587d82998a6139e0729490f7c83',1,'limes::files']]],
-  ['pathseparator_1',['PATHseparator',['../lfilesystem___misc_8h.html#a766987b27c95660bbd974dd4418f9b28',1,'limes::files']]],
-  ['permissions_2',['Permissions',['../classlimes_1_1files_1_1_permissions.html',1,'limes::files::Permissions'],['../classlimes_1_1files_1_1_permissions.html#a7b6ff851c035e4e50c2767e7ea9db2fe',1,'limes::files::Permissions::Permissions()=default'],['../classlimes_1_1files_1_1_permissions.html#a022e4e09469ed391d60b35e2fb946fbb',1,'limes::files::Permissions::Permissions(FSPerms p) noexcept']]],
-  ['permoptions_3',['PermOptions',['../classlimes_1_1files_1_1_filesystem_entry.html#ad8771c79c35d27e4b5f7a8c311866511',1,'limes::files::FilesystemEntry']]],
-  ['prepend_4',['prepend',['../classlimes_1_1files_1_1_file.html#abcfca3cd7424b8a0bdfe371742767d48',1,'limes::files::File::prepend(const char *const data, std::size_t numBytes) const noexcept'],['../classlimes_1_1files_1_1_file.html#aef7a1e45f76236a9971e2041eeae8d9f',1,'limes::files::File::prepend(const std::string_view &amp;text) const noexcept']]]
+  ['path_177',['Path',['../lfilesystem__FilesystemEntry_8h.html#af5d6b587d82998a6139e0729490f7c83',1,'limes::files']]],
+  ['pathseparator_178',['PATHseparator',['../lfilesystem__Misc_8h.html#a766987b27c95660bbd974dd4418f9b28',1,'limes::files']]],
+  ['permissions_179',['Permissions',['../classlimes_1_1files_1_1Permissions.html',1,'limes::files::Permissions'],['../classlimes_1_1files_1_1Permissions.html#a7b6ff851c035e4e50c2767e7ea9db2fe',1,'limes::files::Permissions::Permissions()=default'],['../classlimes_1_1files_1_1Permissions.html#a022e4e09469ed391d60b35e2fb946fbb',1,'limes::files::Permissions::Permissions(FSPerms p) noexcept']]],
+  ['permoptions_180',['PermOptions',['../classlimes_1_1files_1_1FilesystemEntry.html#ad8771c79c35d27e4b5f7a8c311866511',1,'limes::files::FilesystemEntry']]],
+  ['prepend_181',['prepend',['../classlimes_1_1files_1_1File.html#abcfca3cd7424b8a0bdfe371742767d48',1,'limes::files::File::prepend(const char *const data, std::size_t numBytes) const noexcept'],['../classlimes_1_1files_1_1File.html#aef7a1e45f76236a9971e2041eeae8d9f',1,'limes::files::File::prepend(const std::string_view &amp;text) const noexcept']]]
 ];

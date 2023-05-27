@@ -1,0 +1,4 @@
+<map id="limes::files::DynamicLibrary::Reloader" name="limes::files::DynamicLibrary::Reloader">
+<area shape="rect" id="node1" title="This class watches a dynamic library file for changes on disk." alt="" coords="5,80,209,121"/>
+<area shape="rect" id="node2" href="$classlimes_1_1files_1_1FileWatcher.html" title="This class listens for changes to or operations on a certain file, and receives callbacks to be notif..." alt="" coords="19,5,196,32"/>
+</map>

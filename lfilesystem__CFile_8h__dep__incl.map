@@ -1,0 +1,8 @@
+<map id="lfilesystem_CFile.h" name="lfilesystem_CFile.h">
+<area shape="rect" id="node1" title="This file defines the CFile class." alt="" coords="156,5,301,32"/>
+<area shape="rect" id="node2" href="$lfilesystem__File_8h.html" title="This file defines the File and TempFile classes." alt="" coords="161,80,297,107"/>
+<area shape="rect" id="node3" href="$lfilesystem__Directory_8h.html" title="This file defines the Directory class." alt="" coords="35,155,206,181"/>
+<area shape="rect" id="node6" href="$lfilesystem__DynamicLibrary_8h.html" title="This file defines the DynamicLibrary class." alt="" coords="231,155,445,181"/>
+<area shape="rect" id="node4" href="$lfilesystem__SpecialDirectories_8h.html" title="This file contains utility functions for finding some common directories." alt="" coords="5,229,236,256"/>
+<area shape="rect" id="node5" href="$lfilesystem__Volume_8h.html" title="This file defines the files::Volume class." alt="" coords="39,304,202,331"/>
+</map>

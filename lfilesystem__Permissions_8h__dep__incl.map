@@ -1,0 +1,13 @@
+<map id="lfilesystem_Permissions.h" name="lfilesystem_Permissions.h">
+<area shape="rect" id="node1" title="This file defines the Permissions class." alt="" coords="340,5,532,32"/>
+<area shape="rect" id="node2" href="$lfilesystem__FilesystemEntry_8h.html" title="This file defines the FilesystemEntry class." alt="" coords="328,80,544,107"/>
+<area shape="rect" id="node3" href="$lfilesystem__CFile_8h.html" title="This file defines the CFile class." alt="" coords="253,155,398,181"/>
+<area shape="rect" id="node4" href="$lfilesystem__File_8h.html" title="This file defines the File and TempFile classes." alt="" coords="257,229,393,256"/>
+<area shape="rect" id="node5" href="$lfilesystem__Directory_8h.html" title="This file defines the Directory class." alt="" coords="417,304,588,331"/>
+<area shape="rect" id="node9" href="$lfilesystem__FileWatcher_8h.html" title="This file defines the files::FileWatcher class." alt="" coords="34,155,222,181"/>
+<area shape="rect" id="node11" href="$lfilesystem__SymLink_8h.html" title="This file defines the files::SymLink class." alt="" coords="418,229,587,256"/>
+<area shape="rect" id="node8" href="$lfilesystem__DynamicLibrary_8h.html" title="This file defines the DynamicLibrary class." alt="" coords="29,304,243,331"/>
+<area shape="rect" id="node6" href="$lfilesystem__SpecialDirectories_8h.html" title="This file contains utility functions for finding some common directories." alt="" coords="387,379,618,405"/>
+<area shape="rect" id="node7" href="$lfilesystem__Volume_8h.html" title="This file defines the files::Volume class." alt="" coords="421,453,584,480"/>
+<area shape="rect" id="node10" href="$lfilesystem__SimpleWatcher_8h.html" title="This file defines the SimpleFileWatcher class." alt="" coords="23,229,233,256"/>
+</map>

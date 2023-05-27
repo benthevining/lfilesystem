@@ -1,0 +1,5 @@
+<map id="limes::files::FileWatcher" name="limes::files::FileWatcher">
+<area shape="rect" id="node1" title="This class listens for changes to or operations on a certain file, and receives callbacks to be notif..." alt="" coords="124,5,301,32"/>
+<area shape="rect" id="node2" href="$classlimes_1_1files_1_1DynamicLibrary_1_1Reloader.html" title="This class watches a dynamic library file for changes on disk." alt="" coords="5,80,209,121"/>
+<area shape="rect" id="node3" href="$classlimes_1_1files_1_1SimpleFileWatcher.html" title="This class implements all of FileWatcher&#39;s virtual methods, and allows you to easily specify a lambda..." alt="" coords="233,80,403,121"/>
+</map>

@@ -1,9 +1,0 @@
-<map id="lfilesystem_SymLink.h" name="lfilesystem_SymLink.h">
-<area shape="rect" id="Node000001" title="This file defines the files::SymLink class." alt="" coords="33,5,186,31"/>
-<area shape="rect" id="Node000002" href="$lfilesystem___directory_8h.html" title="This file defines the Directory class." alt="" coords="33,79,186,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,46,112,79,107,79,107,46"/>
-<area shape="rect" id="Node000003" href="$lfilesystem___special_directories_8h.html" title="This file contains utility functions for finding some common directories." alt="" coords="5,153,214,178"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,119,112,152,107,152,107,119"/>
-<area shape="rect" id="Node000004" href="$lfilesystem___volume_8h.html" title="This file defines the files::Volume class." alt="" coords="36,226,183,252"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="112,193,112,226,107,226,107,193"/>
-</map>
