@@ -61,9 +61,10 @@ set (DOXYGEN_COLLABORATION_GRAPH NO)
 set (DOXYGEN_TEMPLATE_RELATIONS YES)
 set (DOXYGEN_DOT_IMAGE_FORMAT svg)
 set (DOXYGEN_INTERACTIVE_SVG YES)
+set (DOXYGEN_USE_MDFILE_AS_MAINPAGE "${CMAKE_CURRENT_LIST_DIR}/../README.md")
 
 doxygen_add_docs (
-	lfilesystem_docs ${headers} ${examples} USE_STAMP_FILE
+	lfilesystem_docs ${headers} ${examples} "${DOXYGEN_USE_MDFILE_AS_MAINPAGE}" USE_STAMP_FILE
 	WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/.."
 	COMMENT "Building lfilesystem documentation...")
 

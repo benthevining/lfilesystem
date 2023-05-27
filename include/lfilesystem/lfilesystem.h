@@ -97,6 +97,14 @@
 	@todo FileSearchPath class and/or glob() function
 
 	@todo MemoryMappedFile class
+
+	@todo Android support
+
+	@todo CLI app
+
+	@todo remove internal dependencies on exceptions (Emscripten tests)
+
+	@todo get all CI builds working
  */
 
 /** @file
