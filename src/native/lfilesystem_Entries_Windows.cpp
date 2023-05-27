@@ -63,7 +63,7 @@ bool FilesystemEntry::moveToTrash() noexcept
 
 #define LIMES_LOAD_WIN_DYLIB_FUNC(dll, functionName, localFunctionName, returnType, params) \
 	typedef returnType (WINAPI* type##localFunctionName) params;                            \
-	type##localFunctionName localFunctionName = (type##localFunctionName) dll.findFunction (#functionName);
+	type##localFunctionName localFunctionName = (type##localFunctionName) dll.findFunction (#functionName)
 
 bool FilesystemEntry::revealToUserInFileBrowser() const
 {
@@ -75,9 +75,9 @@ bool FilesystemEntry::revealToUserInFileBrowser() const
 	if (! dll.isOpen())
 		return false;
 
-	LIMES_LOAD_WIN_DYLIB_FUNC (dll, ILCreateFromPathW, ilCreateFromPathW, ITEMIDLIST*, (LPCWSTR))
-	LIMES_LOAD_WIN_DYLIB_FUNC (dll, ILFree, ilFree, void, (ITEMIDLIST*) )
-	LIMES_LOAD_WIN_DYLIB_FUNC (dll, SHOpenFolderAndSelectItems, shOpenFolderAndSelectItems, HRESULT, (ITEMIDLIST*, UINT, void*, DWORD))
+	LIMES_LOAD_WIN_DYLIB_FUNC (dll, ILCreateFromPathW, ilCreateFromPathW, ITEMIDLIST*, (LPCWSTR)); // cppcheck-suppress cstyleCast
+	LIMES_LOAD_WIN_DYLIB_FUNC (dll, ILFree, ilFree, void, (ITEMIDLIST*) ); // cppcheck-suppress cstyleCast
+	LIMES_LOAD_WIN_DYLIB_FUNC (dll, SHOpenFolderAndSelectItems, shOpenFolderAndSelectItems, HRESULT, (ITEMIDLIST*, UINT, void*, DWORD)); // cppcheck-suppress cstyleCast
 
 	if (ilCreateFromPathW == nullptr || shOpenFolderAndSelectItems == nullptr || ilFree == nullptr)
 		return false;

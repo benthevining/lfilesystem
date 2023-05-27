@@ -519,7 +519,7 @@ bool FilesystemEntry::rename (const Path& newPath) noexcept
 		const auto newPath = newEntry.getAbsolutePath();
 		std::filesystem::rename (path, newPath);
 		path = newPath;
-	}	
+	}
 	catch(...)
 	{
 		path = pathBefore;

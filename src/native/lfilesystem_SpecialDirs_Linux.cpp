@@ -79,7 +79,7 @@ static inline std::string fromFirstOccurrenceOf (std::string input, std::string_
 static inline std::string unquotedString (std::string string)
 {
 	auto dropFirstChars = [&string](std::size_t numChars)
-	{ 
+	{
 		string = string.substr (numChars, string.length());
 	};
 

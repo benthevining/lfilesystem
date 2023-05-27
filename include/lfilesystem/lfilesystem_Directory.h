@@ -14,15 +14,15 @@
 
 #pragma once
 
-#include <functional>  
-#include <cstdint>	  
-#include <string>	   
-#include <vector>	   
+#include <functional>
+#include <cstdint>
+#include <string>
+#include <vector>
 #include <memory>
 #include <iterator>
 #include "lfilesystem/lfilesystem_Export.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"
-#include "lfilesystem/lfilesystem_File.h"				
+#include "lfilesystem/lfilesystem_File.h"
 #include "lfilesystem/lfilesystem_SymLink.h"
 
 /** @file

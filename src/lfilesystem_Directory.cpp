@@ -259,8 +259,11 @@ bool Directory::containsSubdirectories() const
 		return false;
 
 	for (const auto& dir_entry : IteratorType<false> { getAbsolutePath() })
-		if (dir_entry.is_directory() && ! dir_entry.is_symlink())  // NB. without this check, the iterator will return symlinks to directories
+	{
+		// NB. without this check, the iterator will return symlinks to directories
+		if (dir_entry.is_directory() && ! dir_entry.is_symlink()) // cppcheck-suppress useStlAlgorithm
 			return true;
+	}
 
 	return false;
 }

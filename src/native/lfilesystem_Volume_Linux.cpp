@@ -266,7 +266,7 @@ std::vector<Volume> Volume::getAll() noexcept
 		if (! mtab.exists())
 			return volumes;
 
-		for (auto& line : mtab.loadAsLines())
+		for (const auto& line : mtab.loadAsLines())
 		{
 			for (const auto& entry : splitAtWhitespace (line))
 			{

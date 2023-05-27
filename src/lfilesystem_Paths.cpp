@@ -151,7 +151,7 @@ static inline void normalizeDoubleDot (std::string& path)
 		before = upToLastOccurrenceOf (before, "/");
 
 		const auto firstPart  = path.substr (0, before.length());
-		const auto secondPart = path.substr (path.length() - after.length(), std::string::npos);
+		//const auto secondPart = path.substr (path.length() - after.length(), std::string::npos);
 
 		path = firstPart + after;
 	}

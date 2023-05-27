@@ -182,20 +182,20 @@ std::vector<Volume> Volume::getAll() noexcept
 
 	try
 	{
-		WCHAR  DeviceName[MAX_PATH] = L"";
-		DWORD  Error				= ERROR_SUCCESS;
-		BOOL   Found				= FALSE;
-		size_t Index				= 0;
-		WCHAR  VolumeName[MAX_PATH] = L"";
+		WCHAR VolumeName[MAX_PATH] = L"";
 
 		auto FindHandle = FindFirstVolumeW (VolumeName, ARRAYSIZE (VolumeName));
 
 		if (FindHandle == INVALID_HANDLE_VALUE)
 			return volumes;
 
+		WCHAR  DeviceName[MAX_PATH] = L"";
+		DWORD  Error				= ERROR_SUCCESS;
+		BOOL   Found				= FALSE;
+
 		for (;;)
 		{
-			Index = wcslen (VolumeName) - 1;
+			auto Index = wcslen (VolumeName) - 1;
 
 			if (VolumeName[0] != L'\\' || VolumeName[1] != L'\\' || VolumeName[2] != L'?' || VolumeName[3] != L'\\' || VolumeName[Index] != L'\\')
 				return volumes;

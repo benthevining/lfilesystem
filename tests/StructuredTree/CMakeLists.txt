@@ -14,9 +14,7 @@ add_executable (limes_files_tree_tester)
 
 target_sources (limes_files_tree_tester PRIVATE main.cpp CreateTree.cmake)
 
-set_target_properties (
-	limes_files_tree_tester
-	PROPERTIES MACOSX_BUNDLE OFF)
+set_target_properties (limes_files_tree_tester PROPERTIES MACOSX_BUNDLE OFF)
 
 target_link_libraries (limes_files_tree_tester PRIVATE Catch2::Catch2WithMain limes::lfilesystem)
 

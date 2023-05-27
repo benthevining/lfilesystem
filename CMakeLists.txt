@@ -1,41 +1,41 @@
 cmake_minimum_required (VERSION 3.25 FATAL_ERROR)
 
-project (lfilesystem
-		 VERSION 0.0.1
-		 LANGUAGES CXX C
-		 DESCRIPTION "C++ filesystem library"
-		 HOMEPAGE_URL "https://github.com/benthevining/lfilesystem/")
+project (
+	lfilesystem
+	VERSION 0.0.1
+	LANGUAGES CXX C
+	DESCRIPTION "C++ filesystem library"
+	HOMEPAGE_URL "https://github.com/benthevining/lfilesystem/")
 
 include (CMakeDependentOption)
 
-cmake_dependent_option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}" "NOT IOS" OFF)
+cmake_dependent_option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}"
+						"NOT IOS" OFF)
 
 option (LFILE_DOCS "Build the lfilesystem docs" "${lfilesystem_IS_TOP_LEVEL}")
 
 include (GNUInstallDirs)
 
-set (LFILE_INSTALL_DEST 
-	 "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem" CACHE STRING 
-	 "Path where package files will be installed, relative to the install prefix")
+set (LFILE_INSTALL_DEST "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem"
+	 CACHE STRING "Path where package files will be installed, relative to the install prefix")
 
 mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS LFILE_DOCS)
 
-set_property (DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES 
-	"${CMAKE_CURRENT_LIST_DIR}/logs"
-	"${CMAKE_CURRENT_LIST_DIR}/deploy")
+set_property (DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${CMAKE_CURRENT_LIST_DIR}/logs"
+										"${CMAKE_CURRENT_LIST_DIR}/deploy")
 
 add_library (lfilesystem)
 add_library (limes::lfilesystem ALIAS lfilesystem)
 
 target_compile_features (lfilesystem PUBLIC cxx_std_20)
 
-set_target_properties (lfilesystem PROPERTIES
-						CXX_VISIBILITY_PRESET hidden
-						VISIBILITY_INLINES_HIDDEN ON)
+set_target_properties (lfilesystem PROPERTIES CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN
+																		   ON)
 
 set (public_header include/lfilesystem/lfilesystem.h)
 
-set (private_headers
+set (
+	private_headers
 	include/lfilesystem/lfilesystem_CFile.h
 	include/lfilesystem/lfilesystem_Directory.h
 	include/lfilesystem/lfilesystem_DynamicLibrary.h
@@ -54,25 +54,28 @@ set (export_header "${CMAKE_CURRENT_BINARY_DIR}/generated/lfilesystem/lfilesyste
 
 include (GenerateExportHeader)
 
-generate_export_header (lfilesystem
-						EXPORT_MACRO_NAME LFILE_EXPORT
-						NO_EXPORT_MACRO_NAME LFILE_NO_EXPORT
-						EXPORT_FILE_NAME "${export_header}")
+generate_export_header (
+	lfilesystem
+	EXPORT_MACRO_NAME
+	LFILE_EXPORT
+	NO_EXPORT_MACRO_NAME
+	LFILE_NO_EXPORT
+	EXPORT_FILE_NAME
+	"${export_header}")
 
-target_sources (lfilesystem
-	#PUBLIC "${public_header}"
-	PRIVATE ${private_headers} "${export_header}")
+target_sources (lfilesystem # PUBLIC "${public_header}"
+				PRIVATE ${private_headers} "${export_header}")
 
-target_include_directories (lfilesystem PUBLIC
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/generated>
-	$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+target_include_directories (
+	lfilesystem
+	PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
+		   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/generated>
+		   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 install (FILES "${public_header}" "${export_header}" ${private_headers}
-		 DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/lfilesystem"
-		 COMPONENT lfilesystem_dev)
+		 DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/lfilesystem" COMPONENT lfilesystem_dev)
 
-if(APPLE)
+if (APPLE)
 
 	enable_language (OBJCXX)
 
@@ -82,7 +85,7 @@ if(APPLE)
 		target_link_libraries (lfilesystem PRIVATE "-framework AppKit")
 	endif ()
 
-elseif(LINUX)
+elseif (LINUX)
 
 	include (CheckCXXSourceCompiles)
 
@@ -108,30 +111,33 @@ return 0;
 		target_compile_definitions (lfilesystem PRIVATE LFILE_IMPL_USE_PATHCONF=0)
 	endif ()
 
-endif()
+endif ()
 
-if(EMSCRIPTEN)
+if (EMSCRIPTEN)
 	target_compile_options (lfilesystem PRIVATE -sNO_DISABLE_EXCEPTION_CATCHING -fexceptions)
 	target_link_options (lfilesystem PRIVATE -fexceptions)
-endif()
+endif ()
 
 target_link_libraries (lfilesystem PRIVATE ${CMAKE_DL_LIBS})
 
 add_subdirectory (src)
 
-install (TARGETS lfilesystem
-		 EXPORT lfilesystem
-		 LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT lfilesystem
-		 NAMELINK_COMPONENT lfilesystem_dev
-		 ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT lfilesystem_dev
-		 RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" COMPONENT lfilesystem
-		 INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
+install (
+	TARGETS lfilesystem
+	EXPORT lfilesystem
+	LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT lfilesystem
+			NAMELINK_COMPONENT lfilesystem_dev
+	ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT lfilesystem_dev
+	RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" COMPONENT lfilesystem
+	INCLUDES
+	DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
 
-install (EXPORT lfilesystem
-		 NAMESPACE limes::
-		 FILE Targets.cmake
-		 DESTINATION "${LFILE_INSTALL_DEST}"
-		 COMPONENT lfilesystem_dev)
+install (
+	EXPORT lfilesystem
+	NAMESPACE limes::
+	FILE Targets.cmake
+	DESTINATION "${LFILE_INSTALL_DEST}"
+	COMPONENT lfilesystem_dev)
 
 include (CMakePackageConfigHelpers)
 
@@ -142,36 +148,37 @@ configure_package_config_file (cmake/lfilesystem-config.in lfilesystem-config.cm
 							   INSTALL_DESTINATION "${LFILE_INSTALL_DEST}" NO_SET_AND_CHECK_MACRO)
 
 install (FILES "${CMAKE_CURRENT_BINARY_DIR}/lfilesystem-config-version.cmake"
-			   "${CMAKE_CURRENT_BINARY_DIR}/lfilesystem-config.cmake" 
-		 DESTINATION "${LFILE_INSTALL_DEST}"
-		 COMPONENT lfilesystem_dev)
+			   "${CMAKE_CURRENT_BINARY_DIR}/lfilesystem-config.cmake"
+		 DESTINATION "${LFILE_INSTALL_DEST}" COMPONENT lfilesystem_dev)
 
 include (CPackComponent)
 
-cpack_add_component (lfilesystem
-					 DISPLAY_NAME "Limes filesystem library"
-					 DESCRIPTION "The Limes C++ filesystem library. This is the runtime component needed by end users."
-					 GROUP limes_files)
+cpack_add_component (
+	lfilesystem
+	DISPLAY_NAME "Limes filesystem library"
+	DESCRIPTION
+		"The Limes C++ filesystem library. This is the runtime component needed by end users."
+	GROUP limes_files)
 
-cpack_add_component (lfilesystem_dev
-					 DISPLAY_NAME "Limes filesystem library headers"
-					 DESCRIPTION "Development package for the Limes C++ filesystem library. This component includes the library's header files and CMake package files."
-					 GROUP limes_files
-					 DEPENDS lfilesystem)
+cpack_add_component (
+	lfilesystem_dev
+	DISPLAY_NAME "Limes filesystem library headers"
+	DESCRIPTION
+		"Development package for the Limes C++ filesystem library. This component includes the library's header files and CMake package files."
+	GROUP limes_files
+	DEPENDS lfilesystem)
 
-cpack_add_component_group (limes_files
-						   DISPLAY_NAME "Limes filesystem"
-						   DESCRIPTION "Limes filesystem library"
-						   PARENT_GROUP limes)
+cpack_add_component_group (limes_files DISPLAY_NAME "Limes filesystem"
+						   DESCRIPTION "Limes filesystem library" PARENT_GROUP limes)
 
-if(LFILE_TESTS)
-	enable_testing()
+if (LFILE_TESTS)
+	enable_testing ()
 
 	add_subdirectory (tests)
 
 	include (CTest)
-endif()
+endif ()
 
-if(LFILE_DOCS)
+if (LFILE_DOCS)
 	add_subdirectory (docs)
-endif()
+endif ()

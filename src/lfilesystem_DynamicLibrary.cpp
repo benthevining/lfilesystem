@@ -314,14 +314,17 @@ using nlist_t			= struct nlist;
 			case LC_SEGMENT :
 				[[fallthrough]];
 			case LC_SEGMENT_64 :
-				if (! std::strcmp (((segment_command_t*) cmd)->segname, SEG_TEXT))			 // NOLINT
-					seg_text = (segment_command_t*) cmd;									 // NOLINT
-				else if (! std::strcmp (((segment_command_t*) cmd)->segname, SEG_LINKEDIT))	 // NOLINT
-					seg_linkedit = (segment_command_t*) cmd;								 // NOLINT
-				break;
+			{
+				auto* seg_cmd = reinterpret_cast<segment_command_t*>(cmd);
 
+				if (! std::strcmp (seg_cmd->segname, SEG_TEXT))			 // NOLINT
+					seg_text = seg_cmd;									 // NOLINT
+				else if (! std::strcmp (seg_cmd->segname, SEG_LINKEDIT))	 // NOLINT
+					seg_linkedit = seg_cmd;								 // NOLINT
+				break;
+			}
 			case LC_SYMTAB :
-				symtab = (struct symtab_command*) cmd;
+				symtab = reinterpret_cast<struct symtab_command*>(cmd);
 				break;
 		}
 	}

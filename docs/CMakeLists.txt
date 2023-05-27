@@ -1,14 +1,24 @@
+# ======================================================================================
+#  __    ____  __  __  ____  ___
+# (  )  (_  _)(  \/  )( ___)/ __)
+#  )(__  _)(_  )    (  )__) \__ \
+# (____)(____)(_/\/\_)(____)(___/
+#
+#  This file is part of the Limes open source library and is licensed under the terms of the GNU Public License.
+#
+#  Commercial licenses are available; contact the maintainers at ben.the.vining@gmail.com to inquire for details.
+#
+# ======================================================================================
+
 find_package (Doxygen OPTIONAL_COMPONENTS dot)
 
-if(NOT DOXYGEN_FOUND)
+if (NOT DOXYGEN_FOUND)
 	message (WARNING "Doxygen not found, cannot build documentation")
-	return()
-endif()
+	return ()
+endif ()
 
-file (GLOB headers
-	  LIST_DIRECTORIES false
-	  CONFIGURE_DEPENDS
-	  "${CMAKE_CURRENT_LIST_DIR}/../include/lfilesystem/lfilesystem_*.h")
+file (GLOB headers LIST_DIRECTORIES false
+	  CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/../include/lfilesystem/lfilesystem_*.h")
 
 set (DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/../doc")
 set (DOXYGEN_WARN_LOGFILE "${CMAKE_CURRENT_LIST_DIR}/../logs/doxygen.log")
@@ -37,12 +47,10 @@ set (DOXYGEN_TEMPLATE_RELATIONS YES)
 set (DOXYGEN_DOT_IMAGE_FORMAT svg)
 set (DOXYGEN_INTERACTIVE_SVG YES)
 
-doxygen_add_docs (lfilesystem_docs
-				  ${headers}
-				  USE_STAMP_FILE
-				  WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/.."
-				  COMMENT "Building lfilesystem documentation...")
+doxygen_add_docs (
+	lfilesystem_docs ${headers} USE_STAMP_FILE WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/.."
+	COMMENT "Building lfilesystem documentation...")
 
-set_property (TARGET lfilesystem_docs APPEND PROPERTY ADDITIONAL_CLEAN_FILES 
-	"${DOXYGEN_OUTPUT_DIRECTORY}"
-	"${DOXYGEN_WARN_LOGFILE}")
+set_property (
+	TARGET lfilesystem_docs APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${DOXYGEN_OUTPUT_DIRECTORY}"
+											"${DOXYGEN_WARN_LOGFILE}")

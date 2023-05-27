@@ -54,7 +54,7 @@ public:
 	Permissions() = default;
 
 	/** Creates a Permissions object holding the specified permissions value. */
-	Permissions (FSPerms p) noexcept;
+	Permissions (FSPerms p) noexcept; // cppcheck-suppress noExplicitConstructor
 
 	///@}
 
