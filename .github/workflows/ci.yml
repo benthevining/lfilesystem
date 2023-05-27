@@ -37,7 +37,7 @@ jobs:
     if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
 
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         preset: [clang, emscripten, gcc]
@@ -71,6 +71,14 @@ jobs:
         fetch-depth: 1
 
     - uses: seanmiddleditch/gha-setup-ninja@master
+
+    - name: Set up Emscripten
+      if: ${{ matrix.preset }} == 'emscripten'
+      uses: mymindstorm/setup-emsdk@v11
+
+    - name: Set Emscripten environment variable
+      if: ${{ matrix.preset }} == 'emscripten'
+      run: echo "EMSCRIPTEN_ROOT=$(which emcc)/.." >> $GITHUB_ENV
 
     - name: Configure CMake
       run: cmake --preset ${{ matrix.preset }}
