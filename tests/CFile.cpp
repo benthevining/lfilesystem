@@ -29,6 +29,7 @@ TEST_CASE ("CFile - null", TAGS)
 	REQUIRE (f.getPath().empty());
 }
 
+#ifndef __EMSCRIPTEN__
 TEST_CASE ("CFile", TAGS)
 {
 	const auto path = files::dirs::cwd().getChild ("temp.txt").getAbsolutePath();
@@ -65,5 +66,6 @@ TEST_CASE ("CFile", TAGS)
 	REQUIRE (file.deleteIfExists());
 #endif
 }
+#endif
 
 #undef TAGS

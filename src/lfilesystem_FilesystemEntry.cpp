@@ -561,10 +561,14 @@ bool FilesystemEntry::copyFrom (const FilesystemEntry& source, CopyOptions optio
 
 std::optional<Volume> FilesystemEntry::getVolume() const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return std::nullopt;
+#else
 	if (exists())
 		return Volume::tryCreate (getAbsolutePath());
 
 	return std::nullopt;
+#endif
 }
 
 bool FilesystemEntry::filenameBeginsWithDot() const

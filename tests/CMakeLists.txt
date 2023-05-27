@@ -61,8 +61,10 @@ catch_discover_tests (
 	TEST_PREFIX
 	"Limes.files.unit.")
 
-add_subdirectory (StructuredTree)
-add_subdirectory (ExecLocation)
-# add_subdirectory (DynamicLibrary)
+if (NOT EMSCRIPTEN)
+	add_subdirectory (StructuredTree)
+	add_subdirectory (ExecLocation)
+	# add_subdirectory (DynamicLibrary)
+endif ()
 
 include (FindPackage/CreateTests.cmake)

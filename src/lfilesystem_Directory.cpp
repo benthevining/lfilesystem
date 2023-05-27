@@ -74,6 +74,9 @@ bool Directory::contains (const std::string_view& childName) const
 
 bool Directory::createIfDoesntExist() const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return false;
+#else
 	if (! isValid())
 		return false;
 
@@ -83,6 +86,7 @@ bool Directory::createIfDoesntExist() const noexcept
 	std::error_code ec;
 
 	return std::filesystem::create_directories (getAbsolutePath(), ec);
+#endif
 }
 
 Path Directory::getRelativePath (const Path& inputPath) const

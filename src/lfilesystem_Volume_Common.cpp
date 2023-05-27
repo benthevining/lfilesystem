@@ -21,7 +21,7 @@
 namespace limes::files
 {
 
-std::optional<Volume> Volume::tryCreate (const Path& path) noexcept
+std::optional<Volume> Volume::tryCreate ([[maybe_unused]] const Path& path) noexcept
 {
 #ifdef __EMSCRIPTEN__
 	// assume this will never work on Emscripten, to avoid having to catch an exception

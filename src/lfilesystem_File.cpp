@@ -122,8 +122,13 @@ bool File::replaceFileExtension (const std::string_view& newFileExtension,
 	return false;
 }
 
-bool File::write_data (const char* const data, std::size_t numBytes, bool overwrite) const noexcept
+bool File::write_data ([[maybe_unused]] const char* const data,
+					   [[maybe_unused]] std::size_t numBytes,
+					   [[maybe_unused]] bool overwrite) const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return false;
+#else
 	if (numBytes == 0)
 		return deleteIfExists();
 
@@ -141,6 +146,7 @@ bool File::write_data (const char* const data, std::size_t numBytes, bool overwr
 	{
 		return false;
 	}
+#endif
 }
 
 bool File::overwrite (const char* const data, std::size_t numBytes) const noexcept
@@ -155,7 +161,11 @@ bool File::overwrite (const std::string_view& text) const noexcept
 
 std::unique_ptr<std::ifstream> File::getInputStream() const
 {
+#ifdef __EMSCRIPTEN__
+	return nullptr;
+#else
 	return std::make_unique<std::ifstream> (getAbsolutePath().c_str());
+#endif
 }
 
 bool File::append (const char* const data, std::size_t numBytes) const noexcept
@@ -168,24 +178,36 @@ bool File::append (const std::string_view& text) const noexcept
 	return write_data (text.data(), text.size(), false);
 }
 
-bool File::prepend (const char* const data, std::size_t numBytes) const noexcept
+bool File::prepend ([[maybe_unused]] const char* const data,
+					[[maybe_unused]] std::size_t numBytes) const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return false;
+#else
 	const std::string_view str { data, numBytes };
 
 	return prepend (str);
+#endif
 }
 
-bool File::prepend (const std::string_view& text) const noexcept
+bool File::prepend ([[maybe_unused]] const std::string_view& text) const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return false;
+#else
 	auto data = loadAsString();
 
 	data = std::string { text } + data;
 
 	return overwrite (data);
+#endif
 }
 
 std::optional<File> File::duplicate() const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return std::nullopt;
+#else
 	if (! exists())
 		return std::nullopt;
 
@@ -231,10 +253,16 @@ std::optional<File> File::duplicate() const noexcept
 	}
 
 	return newFile;
+#endif
 }
 
-bool File::resize (std::uintmax_t newSizeInBytes, bool allowTruncation, bool allowIncreasing) const noexcept
+bool File::resize ([[maybe_unused]] std::uintmax_t newSizeInBytes,
+				   [[maybe_unused]] bool allowTruncation,
+				   [[maybe_unused]] bool allowIncreasing) const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return false;
+#else
 	if (! (allowTruncation || allowIncreasing))
 		return false; // should this return true?
 
@@ -257,10 +285,14 @@ bool File::resize (std::uintmax_t newSizeInBytes, bool allowTruncation, bool all
 	std::filesystem::resize_file (getAbsolutePath(), newSizeInBytes, ec);
 
 	return true;
+#endif
 }
 
-std::optional<File> File::createHardLink (const Path& path) const noexcept
+std::optional<File> File::createHardLink ([[maybe_unused]] const Path& path) const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return std::nullopt;
+#else
 	if (! exists())
 		return std::nullopt;
 
@@ -273,6 +305,7 @@ std::optional<File> File::createHardLink (const Path& path) const noexcept
 	std::filesystem::create_hard_link (getAbsolutePath(), link.getAbsolutePath(), ec);
 
 	return link;
+#endif
 }
 
 std::uintmax_t File::getHardLinkCount() const noexcept
@@ -289,6 +322,9 @@ std::uintmax_t File::getHardLinkCount() const noexcept
 
 std::string File::loadAsString() const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return {};
+#else
 	try
 	{
 		std::ifstream stream { getAbsolutePath().c_str() };
@@ -301,11 +337,12 @@ std::string File::loadAsString() const noexcept
 	{
 		return {};
 	}
+#endif
 }
 
-static inline std::vector<std::string> splitString (std::string_view stringToSplit,
-													std::string_view delimiter,
-													bool			 includeDelimiterInResults)
+[[maybe_unused]] static inline std::vector<std::string> splitString (std::string_view stringToSplit,
+																	 std::string_view delimiter,
+																	 bool			  includeDelimiterInResults)
 {
 	const auto delimiterStartChar = delimiter.front();
 
@@ -342,6 +379,9 @@ static inline std::vector<std::string> splitString (std::string_view stringToSpl
 
 std::vector<std::string> File::loadAsLines() const
 {
+#ifdef __EMSCRIPTEN__
+	return {};
+#else
 	auto tokens = splitString (loadAsString(), "\n", false);
 
 	// if the newline char was \r\n, then strings will now end with \r
@@ -355,15 +395,23 @@ std::vector<std::string> File::loadAsLines() const
 	});
 
 	return tokens;
+#endif
 }
 
 std::unique_ptr<std::ofstream> File::getOutputStream() const
 {
+#ifdef __EMSCRIPTEN__
+	return nullptr;
+#else
 	return std::make_unique<std::ofstream> (getAbsolutePath().c_str());
+#endif
 }
 
 CFile File::getCfile (CFile::Mode mode) const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return {};
+#else
 	if (! exists())
 		return {};
 
@@ -375,6 +423,7 @@ CFile File::getCfile (CFile::Mode mode) const noexcept
 	{
 		return {};
 	}
+#endif
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------*/

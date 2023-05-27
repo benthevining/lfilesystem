@@ -103,7 +103,8 @@ bool SymLink::isDangling() const noexcept
 	return ! follow().exists();
 }
 
-std::optional<SymLink> SymLink::create (const Path& linkPath, const FilesystemEntry& target) noexcept
+std::optional<SymLink> SymLink::create (const Path& linkPath,
+										const FilesystemEntry& target) noexcept
 {
 	if (! target.exists())
 		return std::nullopt;

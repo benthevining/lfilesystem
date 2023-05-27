@@ -22,6 +22,7 @@
 
 namespace files = limes::files;
 
+#ifndef __EMSCRIPTEN__
 TEST_CASE ("Directory - getChildFile()", TAGS)
 {
 	const auto cwd = files::dirs::cwd();
@@ -53,6 +54,7 @@ TEST_CASE ("Directory - getChildFile()", TAGS)
 	REQUIRE (cwd.getChildFile ("a1/a2/a3/../../a4") == cwd.getChildFile ("a1/a4"));
 	REQUIRE (cwd.getChildFile ("a1/a2/a3/./.././../a4") == cwd.getChildFile ("a1/a4"));
 }
+#endif
 
 TEST_CASE ("Directory", TAGS)
 {

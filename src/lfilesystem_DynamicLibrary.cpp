@@ -198,7 +198,7 @@ void* DynamicLibrary::findFunction (const std::string_view& functionName) noexce
 [[nodiscard]] static const char* pathname_for_handle (void* handle) noexcept;
 #endif
 
-// TODO: Emscripten implementation
+
 File DynamicLibrary::getFile() const
 {
 #ifdef __EMSCRIPTEN__
