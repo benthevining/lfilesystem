@@ -1,0 +1,27 @@
+<map id="lfilesystem_Permissions.h" name="lfilesystem_Permissions.h">
+<area shape="rect" id="Node000001" title="This file defines the Permissions class." alt="" coords="314,5,488,31"/>
+<area shape="rect" id="Node000002" href="$lfilesystem___filesystem_entry_8h.html" title="This file defines the FilesystemEntry class." alt="" coords="303,79,499,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="404,46,404,79,398,79,398,46"/>
+<area shape="rect" id="Node000003" href="$lfilesystem___c_file_8h.html" title="This file defines the CFile class." alt="" coords="230,153,364,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="373,115,316,154,313,150,370,111"/>
+<area shape="rect" id="Node000004" href="$lfilesystem___file_8h.html" title="This file defines the File and TempFile classes." alt="" coords="235,226,359,252"/>
+<area shape="poly" id="edge9_Node000002_Node000004" title=" " alt="" coords="400,120,392,150,378,180,351,208,322,228,319,223,347,204,373,177,387,148,395,118"/>
+<area shape="rect" id="Node000005" href="$lfilesystem___directory_8h.html" title="This file defines the Directory class." alt="" coords="383,300,536,326"/>
+<area shape="poly" id="edge8_Node000002_Node000005" title=" " alt="" coords="437,110,467,130,499,156,529,188,551,225,554,238,553,250,539,271,516,289,492,302,489,297,513,284,535,268,548,248,549,238,546,227,524,191,495,160,464,134,434,115"/>
+<area shape="rect" id="Node000009" href="$lfilesystem___file_watcher_8h.html" title="This file defines the files::FileWatcher class." alt="" coords="32,153,202,178"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="339,111,166,155,165,149,338,106"/>
+<area shape="rect" id="Node000011" href="$lfilesystem___sym_link_8h.html" title="This file defines the files::SymLink class." alt="" coords="383,226,536,252"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="414,118,457,225,452,227,409,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,193,300,226,294,226,294,193"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="339,256,433,297,431,302,337,261"/>
+<area shape="rect" id="Node000008" href="$lfilesystem___dynamic_library_8h.html" title="This file defines the DynamicLibrary class." alt="" coords="29,300,221,326"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="255,261,155,302,153,297,253,256"/>
+<area shape="rect" id="Node000006" href="$lfilesystem___special_directories_8h.html" title="This file contains utility functions for finding some common directories." alt="" coords="355,374,564,399"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="462,340,462,373,457,373,457,340"/>
+<area shape="rect" id="Node000007" href="$lfilesystem___volume_8h.html" title="This file defines the files::Volume class." alt="" coords="386,447,533,473"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="462,414,462,447,457,447,457,414"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="66,187,40,199,19,214,9,232,9,241,13,251,25,266,41,279,78,297,76,302,38,284,21,270,8,253,3,242,4,230,16,211,37,195,64,182"/>
+<area shape="rect" id="Node000010" href="$lfilesystem___simple_watcher_8h.html" title="This file defines the SimpleFileWatcher class." alt="" coords="22,226,212,252"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="120,193,120,226,114,226,114,193"/>
+<area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="462,267,462,300,457,300,457,267"/>
+</map>

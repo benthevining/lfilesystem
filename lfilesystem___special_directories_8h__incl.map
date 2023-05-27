@@ -1,0 +1,68 @@
+<map id="lfilesystem_SpecialDirectories.h" name="lfilesystem_SpecialDirectories.h">
+<area shape="rect" id="Node000001" title="This file contains utility functions for finding some common directories." alt="" coords="5,5,214,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="148,264,205,290"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,31,172,249,167,250,110,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="366,522,517,563"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,33,72,59,44,95,20,139,13,162,11,187,11,367,15,402,26,428,47,450,76,472,124,492,195,509,352,531,351,536,194,514,123,497,74,477,43,454,22,431,9,403,6,367,6,187,8,161,16,137,39,92,68,55,94,30"/>
+<area shape="rect" id="Node000004" href="$lfilesystem___directory_8h.html" title="This file defines the Directory class." alt="" coords="762,79,913,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,28,747,86,747,91,214,33"/>
+<area shape="poly" id="edge7_Node000004_Node000002" title=" " alt="" coords="762,116,654,137,516,168,366,209,217,259,214,260,212,255,215,254,364,204,515,163,652,132,761,111"/>
+<area shape="poly" id="edge10_Node000004_Node000003" title=" " alt="" coords="762,104,569,113,453,124,337,139,230,161,142,191,108,209,83,229,67,251,61,276,61,367,63,389,69,409,91,444,123,473,164,495,210,511,258,523,351,536,351,541,257,528,208,516,161,499,120,477,87,448,64,411,58,390,56,367,56,275,62,249,79,225,105,204,140,186,229,156,336,134,453,118,569,108,761,99"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="312,441,390,467"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="762,108,603,121,412,149,321,169,240,193,176,223,153,240,137,258,126,286,130,312,146,338,171,362,202,384,237,403,304,433,302,438,234,408,199,388,167,366,141,341,125,314,121,285,133,255,150,236,174,218,238,188,319,163,411,144,603,116,761,102"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1050,441,1110,467"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="914,104,994,112,1082,125,1160,142,1191,153,1214,165,1246,194,1266,224,1272,259,1261,298,1232,344,1195,382,1154,413,1118,436,1115,432,1151,409,1191,378,1228,340,1256,296,1266,258,1261,226,1242,197,1211,170,1189,158,1159,148,1081,130,994,117,913,109"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="1094,530,1147,556"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="914,105,1100,127,1190,144,1253,165,1295,186,1328,206,1341,218,1351,234,1357,252,1359,275,1359,367,1353,401,1337,432,1314,458,1285,480,1221,513,1162,534,1160,529,1219,508,1283,475,1310,454,1333,429,1348,400,1354,366,1354,275,1352,253,1346,236,1337,222,1325,210,1292,190,1251,170,1189,149,1100,132,913,110"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="1063,264,1132,290"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="868,118,1069,253,1066,258,865,122"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1156,264,1218,290"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="884,118,988,165,1154,254,1151,258,986,170,882,122"/>
+<area shape="rect" id="Node000010" href="$lfilesystem___filesystem_entry_8h.html" title="This file defines the FilesystemEntry class." alt="" coords="773,345,924,386"/>
+<area shape="poly" id="edge11_Node000004_Node000010" title=" " alt="" coords="914,107,1035,129,1100,146,1160,166,1209,191,1228,206,1242,222,1250,239,1251,258,1245,278,1231,299,1212,314,1184,327,1109,346,1022,358,939,364,938,358,1021,352,1108,341,1182,322,1209,310,1228,295,1241,275,1246,257,1245,240,1237,225,1224,210,1206,196,1158,171,1099,151,1034,134,913,113"/>
+<area shape="rect" id="Node000016" href="$lfilesystem___file_8h.html" title="This file defines the File and TempFile classes." alt="" coords="762,168,913,208"/>
+<area shape="poly" id="edge25_Node000004_Node000016" title=" " alt="" coords="840,120,840,153,835,153,835,120"/>
+<area shape="rect" id="Node000021" href="$lfilesystem___sym_link_8h.html" title="This file defines the files::SymLink class." alt="" coords="229,256,380,297"/>
+<area shape="poly" id="edge41_Node000004_Node000021" title=" " alt="" coords="779,123,378,254,377,249,777,118"/>
+<area shape="poly" id="edge18_Node000010_Node000003" title=" " alt="" coords="807,389,609,477,506,519,504,514,607,472,805,384"/>
+<area shape="poly" id="edge15_Node000010_Node000005" title=" " alt="" coords="773,382,404,446,403,441,772,377"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="902,384,1037,434,1035,439,900,389"/>
+<area shape="poly" id="edge14_Node000010_Node000007" title=" " alt="" coords="880,384,1091,519,1088,524,877,388"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="790,530,872,556"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="810,388,783,408,763,435,757,454,763,473,779,499,801,519,798,523,775,502,758,475,752,454,758,432,779,404,807,384"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="530,441,596,467"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="775,389,616,436,609,438,607,433,614,431,774,384"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="666,530,734,556"/>
+<area shape="poly" id="edge17_Node000010_Node000013" title=" " alt="" coords="811,388,780,409,752,435,726,476,710,517,705,515,721,474,747,432,777,405,808,384"/>
+<area shape="rect" id="Node000014" href="$lfilesystem___permissions_8h.html" title="This file defines the Permissions class." alt="" coords="773,434,924,474"/>
+<area shape="poly" id="edge19_Node000010_Node000014" title=" " alt="" coords="851,386,851,419,846,419,846,386"/>
+<area shape="poly" id="edge24_Node000014_Node000003" title=" " alt="" coords="773,474,532,525,531,520,772,469"/>
+<area shape="poly" id="edge21_Node000014_Node000007" title=" " alt="" coords="911,472,1080,526,1079,531,909,477"/>
+<area shape="poly" id="edge20_Node000014_Node000011" title=" " alt="" coords="847,475,839,516,833,515,842,474"/>
+<area shape="poly" id="edge23_Node000014_Node000013" title=" " alt="" coords="816,477,735,524,732,520,813,473"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="939,530,1027,556"/>
+<area shape="poly" id="edge22_Node000014_Node000015" title=" " alt="" coords="880,473,953,519,951,524,877,477"/>
+<area shape="poly" id="edge29_Node000016_Node000002" title=" " alt="" coords="761,192,653,196,516,206,366,226,290,241,217,259,212,260,211,255,215,254,289,235,365,221,516,201,653,190,761,187"/>
+<area shape="poly" id="edge35_Node000016_Node000003" title=" " alt="" coords="762,197,687,205,608,217,539,235,513,246,495,258,474,286,458,317,447,351,440,385,436,453,439,507,434,508,431,453,435,385,442,349,453,315,469,283,492,254,511,241,537,230,607,212,686,199,761,192"/>
+<area shape="poly" id="edge30_Node000016_Node000005" title=" " alt="" coords="761,197,678,205,587,218,505,235,474,246,451,259,431,276,414,296,388,342,369,388,359,427,354,426,364,387,383,340,410,293,428,272,448,254,472,241,504,230,586,212,677,200,761,192"/>
+<area shape="poly" id="edge27_Node000016_Node000007" title=" " alt="" coords="880,206,940,240,1010,290,1045,320,1076,354,1104,392,1125,433,1131,454,1133,476,1129,515,1124,515,1128,476,1126,455,1120,435,1099,395,1072,358,1041,324,1007,294,937,245,877,211"/>
+<area shape="poly" id="edge33_Node000016_Node000008" title=" " alt="" coords="900,206,1045,254,1052,256,1050,261,1043,259,899,211"/>
+<area shape="poly" id="edge34_Node000016_Node000009" title=" " alt="" coords="914,199,1024,221,1145,254,1149,255,1148,260,1143,259,1023,226,913,204"/>
+<area shape="poly" id="edge36_Node000016_Node000010" title=" " alt="" coords="861,207,880,229,895,255,899,277,895,298,876,334,872,332,890,296,894,277,890,257,876,232,857,210"/>
+<area shape="poly" id="edge31_Node000016_Node000012" title=" " alt="" coords="848,208,858,251,857,275,849,299,599,436,596,431,845,295,852,274,853,251,843,209"/>
+<area shape="poly" id="edge28_Node000016_Node000015" title=" " alt="" coords="869,207,894,228,916,255,934,289,948,324,968,397,980,464,984,515,979,515,974,465,963,398,943,326,929,291,911,258,890,232,866,211"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="681,264,746,290"/>
+<area shape="poly" id="edge26_Node000016_Node000017" title=" " alt="" coords="811,211,744,257,741,253,808,207"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="770,264,836,290"/>
+<area shape="poly" id="edge32_Node000016_Node000018" title=" " alt="" coords="832,210,815,251,810,249,827,208"/>
+<area shape="rect" id="Node000019" href="$lfilesystem___c_file_8h.html" title="This file defines the CFile class." alt="" coords="506,256,657,297"/>
+<area shape="poly" id="edge37_Node000016_Node000019" title=" " alt="" coords="780,211,654,254,653,249,779,206"/>
+<area shape="poly" id="edge39_Node000019_Node000003" title=" " alt="" coords="574,299,461,510,456,508,569,296"/>
+<area shape="poly" id="edge40_Node000019_Node000010" title=" " alt="" coords="643,295,775,338,773,343,642,300"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="580,353,636,378"/>
+<area shape="poly" id="edge38_Node000019_Node000020" title=" " alt="" coords="590,297,603,338,598,339,585,298"/>
+<area shape="poly" id="edge44_Node000021_Node000003" title=" " alt="" coords="300,298,290,333,284,379,286,428,292,451,302,473,325,497,354,515,351,520,321,501,298,476,287,453,280,429,278,379,285,332,295,296"/>
+<area shape="poly" id="edge42_Node000021_Node000005" title=" " alt="" coords="312,297,347,426,341,428,307,298"/>
+<area shape="poly" id="edge45_Node000021_Node000010" title=" " alt="" coords="381,287,758,347,757,352,380,293"/>
+<area shape="poly" id="edge43_Node000021_Node000012" title=" " alt="" coords="334,295,535,431,532,435,331,300"/>
+</map>

@@ -1,0 +1,30 @@
+<map id="lfilesystem_SymLink.h" name="lfilesystem_SymLink.h">
+<area shape="rect" id="Node000001" title="This file defines the files::SymLink class." alt="" coords="62,5,216,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="30,175,107,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,33,82,163,77,160,132,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="131,175,198,201"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,31,163,160,158,161,138,32"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="155,256,307,297"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="123,33,81,65,37,109,20,133,10,158,9,183,20,207,44,231,74,249,107,261,141,268,140,274,106,266,72,254,41,235,16,210,4,184,5,157,16,131,33,105,78,61,119,29"/>
+<area shape="rect" id="Node000005" href="$lfilesystem___filesystem_entry_8h.html" title="This file defines the FilesystemEntry class." alt="" coords="210,79,361,120"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="163,29,238,69,236,74,160,34"/>
+<area shape="poly" id="edge8_Node000005_Node000002" title=" " alt="" coords="237,123,113,172,111,167,236,118"/>
+<area shape="poly" id="edge9_Node000005_Node000003" title=" " alt="" coords="260,122,195,168,192,164,257,118"/>
+<area shape="poly" id="edge11_Node000005_Node000004" title=" " alt="" coords="282,121,244,243,239,241,277,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="324,175,384,201"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="303,119,338,162,334,165,299,122"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="330,264,412,290"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="290,119,297,161,314,207,330,231,348,252,344,255,325,234,309,210,292,162,285,120"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="547,264,600,290"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="362,106,423,114,486,127,539,144,559,154,573,166,584,186,588,208,584,249,579,249,582,208,579,187,569,169,556,159,537,149,484,132,422,119,362,111"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="625,264,693,290"/>
+<area shape="poly" id="edge10_Node000005_Node000009" title=" " alt="" coords="362,98,418,103,479,114,541,134,598,166,618,184,633,206,654,249,649,251,629,208,614,187,595,170,539,139,478,119,417,108,361,103"/>
+<area shape="rect" id="Node000010" href="$lfilesystem___permissions_8h.html" title="This file defines the Permissions class." alt="" coords="407,168,559,208"/>
+<area shape="poly" id="edge12_Node000005_Node000010" title=" " alt="" coords="332,118,426,159,424,164,330,123"/>
+<area shape="poly" id="edge17_Node000010_Node000004" title=" " alt="" coords="427,211,303,254,301,249,425,206"/>
+<area shape="poly" id="edge13_Node000010_Node000007" title=" " alt="" coords="459,211,400,257,396,253,456,207"/>
+<area shape="poly" id="edge14_Node000010_Node000008" title=" " alt="" coords="506,207,553,252,549,255,502,211"/>
+<area shape="poly" id="edge16_Node000010_Node000009" title=" " alt="" coords="524,206,623,255,621,259,522,211"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="435,264,523,290"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="485,209,483,249,478,249,480,209"/>
+</map>

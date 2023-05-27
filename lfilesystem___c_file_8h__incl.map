@@ -1,0 +1,30 @@
+<map id="lfilesystem_CFile.h" name="lfilesystem_CFile.h">
+<area shape="rect" id="Node000001" title="This file defines the CFile class." alt="" coords="260,5,393,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="170,87,226,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="308,34,232,81,229,76,305,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="573,256,725,297"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="369,29,423,48,487,77,551,116,581,140,608,166,631,203,645,241,640,243,626,205,604,169,578,144,548,120,484,82,421,53,368,34"/>
+<area shape="rect" id="Node000004" href="$lfilesystem___filesystem_entry_8h.html" title="This file defines the FilesystemEntry class." alt="" coords="251,79,402,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="329,31,329,64,324,64,324,31"/>
+<area shape="poly" id="edge10_Node000004_Node000003" title=" " alt="" coords="403,106,487,126,530,143,570,165,590,182,608,202,635,242,630,245,604,205,587,186,567,170,528,148,485,131,402,111"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,175,66,201"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="251,122,86,170,80,172,78,167,84,165,249,117"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="468,264,550,290"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="403,99,442,105,482,117,519,137,550,166,558,188,554,212,544,234,531,254,527,251,539,232,549,210,552,189,545,169,516,141,480,122,441,111,402,104"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="124,264,177,290"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="263,123,206,145,183,157,168,169,158,188,152,208,150,249,145,249,147,208,153,186,164,166,180,153,203,140,261,118"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="192,175,269,201"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="306,122,256,167,252,163,303,118"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="293,175,359,201"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="329,120,329,161,324,161,324,120"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="244,264,312,290"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="251,120,212,139,195,153,182,169,175,188,182,207,205,235,235,255,232,259,201,239,177,210,170,188,177,166,192,149,209,135,249,115"/>
+<area shape="rect" id="Node000011" href="$lfilesystem___permissions_8h.html" title="This file defines the Permissions class." alt="" coords="384,168,535,208"/>
+<area shape="poly" id="edge11_Node000004_Node000011" title=" " alt="" coords="358,118,419,157,416,162,355,122"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="504,206,594,247,592,252,501,211"/>
+<area shape="poly" id="edge12_Node000011_Node000006" title=" " alt="" coords="473,208,497,250,493,252,468,210"/>
+<area shape="poly" id="edge13_Node000011_Node000007" title=" " alt="" coords="390,212,192,267,190,261,388,206"/>
+<area shape="poly" id="edge15_Node000011_Node000010" title=" " alt="" coords="419,211,318,259,316,255,417,206"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="357,264,445,290"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="448,210,419,253,415,250,444,207"/>
+</map>

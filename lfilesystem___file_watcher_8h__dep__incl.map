@@ -1,0 +1,7 @@
+<map id="lfilesystem_FileWatcher.h" name="lfilesystem_FileWatcher.h">
+<area shape="rect" id="Node000001" title="This file defines the files::FileWatcher class." alt="" coords="123,5,293,31"/>
+<area shape="rect" id="Node000002" href="$lfilesystem___dynamic_library_8h.html" title="This file defines the DynamicLibrary class." alt="" coords="5,79,197,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,42,121,81,118,76,176,37"/>
+<area shape="rect" id="Node000003" href="$lfilesystem___simple_watcher_8h.html" title="This file defines the SimpleFileWatcher class." alt="" coords="221,79,410,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,37,299,76,296,81,237,42"/>
+</map>

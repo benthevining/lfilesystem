@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classlimes_1_1files_1_1_filesystem_entry.html" title="The base class for any kind of object on the filesystem." alt="" coords="5,47,162,88"/>
+<area shape="rect" id="Node000001" href="$classlimes_1_1files_1_1_directory.html" title="This class represents a directory on the filesystem." alt="" coords="210,5,355,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="175,42,227,29,229,34,177,47"/>
+<area shape="rect" id="Node000002" href="$classlimes_1_1files_1_1_file.html" title="This class represents a file on the filesystem." alt="" coords="226,55,339,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="176,65,225,65,225,70,176,70"/>
+<area shape="rect" id="Node000004" href="$classlimes_1_1files_1_1_sym_link.html" title="This class represents a symbolic link on the filesystem." alt="" coords="211,104,354,130"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="177,88,229,101,227,106,175,93"/>
+<area shape="rect" id="Node000003" href="$classlimes_1_1files_1_1_temp_file.html" title="Represents a temporary file." alt="" coords="403,55,548,80"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="354,65,403,65,403,70,354,70"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="lfilesystem_FilesystemEntry.h" name="lfilesystem_FilesystemEntry.h">
+<area shape="rect" id="Node000001" title="This file defines the FilesystemEntry class." alt="" coords="226,5,421,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,87,66,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,34,181,55,86,82,80,84,78,78,84,76,180,50,266,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="40,175,122,201"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,34,214,52,162,81,142,100,123,121,96,163,91,160,119,118,138,96,159,77,212,48,266,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="146,175,200,201"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,34,214,52,196,64,182,81,173,99,168,120,170,160,165,160,163,119,167,97,177,77,193,60,212,47,253,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="469,87,546,112"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="353,29,467,78,465,83,351,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="570,87,637,112"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="382,29,466,49,559,76,564,78,562,83,557,82,465,54,380,34"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="335,175,403,201"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="334,30,347,52,358,78,367,121,371,161,366,161,362,122,353,80,342,54,329,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="427,168,578,208"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="338,30,473,156,469,159,335,33"/>
+<area shape="rect" id="Node000009" href="$lfilesystem___permissions_8h.html" title="This file defines the Permissions class." alt="" coords="192,79,343,120"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="317,33,292,68,288,65,313,30"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="226,123,121,171,119,166,224,118"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="248,122,198,167,195,163,244,118"/>
+<area shape="poly" id="edge12_Node000009_Node000007" title=" " alt="" coords="292,118,346,164,342,168,289,122"/>
+<area shape="poly" id="edge13_Node000009_Node000008" title=" " alt="" coords="322,118,436,160,434,165,320,123"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="224,175,311,201"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="270,120,270,161,265,161,265,120"/>
+</map>

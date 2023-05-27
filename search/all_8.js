@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['isabsolutepath_0',['isAbsolutePath',['../classlimes_1_1files_1_1_filesystem_entry.html#ae2f76345dd51a0711685dcabf4281222',1,'limes::files::FilesystemEntry']]],
+  ['isbelow_1',['isBelow',['../classlimes_1_1files_1_1_filesystem_entry.html#a6ce64ccf21db3fd3dc466400f1f43007',1,'limes::files::FilesystemEntry']]],
+  ['iscasesensitive_2',['isCaseSensitive',['../classlimes_1_1files_1_1_volume.html#af0c01342cbcd45b9500e81dfcec52103',1,'limes::files::Volume']]],
+  ['iscurrentworkingdirectory_3',['isCurrentWorkingDirectory',['../classlimes_1_1files_1_1_directory.html#aacee8c5bf83b5cb2e4a75b480062d57f',1,'limes::files::Directory']]],
+  ['isdangling_4',['isDangling',['../classlimes_1_1files_1_1_sym_link.html#ab24ccd2e6f3ef978946297a7b7a95106',1,'limes::files::SymLink']]],
+  ['isdirectory_5',['isDirectory',['../classlimes_1_1files_1_1_directory.html#a7987a4523d7bde0cad8479032bbe2bf1',1,'limes::files::Directory::isDirectory()'],['../classlimes_1_1files_1_1_file.html#a194b4cc7ac6384d10510b4ad20062644',1,'limes::files::File::isDirectory()'],['../classlimes_1_1files_1_1_filesystem_entry.html#a6f73690984df905d656349d1cb7b2d9b',1,'limes::files::FilesystemEntry::isDirectory()'],['../classlimes_1_1files_1_1_sym_link.html#aef0eb2cbbdf804f114dc4952935d0ba1',1,'limes::files::SymLink::isDirectory()']]],
+  ['isempty_6',['isEmpty',['../classlimes_1_1files_1_1_directory.html#a4df651c6e70ed0f994c000f43e9f9049',1,'limes::files::Directory']]],
+  ['isfile_7',['isFile',['../classlimes_1_1files_1_1_directory.html#a97d0aa9ab028f0c04876306651174876',1,'limes::files::Directory::isFile()'],['../classlimes_1_1files_1_1_file.html#a19e5f202eec001cf6b09ac0adb05341a',1,'limes::files::File::isFile()'],['../classlimes_1_1files_1_1_filesystem_entry.html#a690fa1255ae392a197f791a12e8bfbf9',1,'limes::files::FilesystemEntry::isFile()'],['../classlimes_1_1files_1_1_sym_link.html#a4701c180745c1d9de3fa3b7d0b80f6cc',1,'limes::files::SymLink::isFile()']]],
+  ['ishidden_8',['isHidden',['../classlimes_1_1files_1_1_filesystem_entry.html#ab600bc5b74ee21dcb468400172ea0c96',1,'limes::files::FilesystemEntry']]],
+  ['ismacosbundle_9',['isMacOSBundle',['../classlimes_1_1files_1_1_file.html#ac5a09b65346d5ab6c1ca13eb75e58100',1,'limes::files::File']]],
+  ['isopen_10',['isOpen',['../classlimes_1_1files_1_1_c_file.html#ad2e13c3e72a605f8075f877c8b6567e9',1,'limes::files::CFile::isOpen()'],['../classlimes_1_1files_1_1_dynamic_library.html#acc45045af56c00758e333f5316839036',1,'limes::files::DynamicLibrary::isOpen()']]],
+  ['isreadonly_11',['isReadOnly',['../classlimes_1_1files_1_1_volume.html#a5c76c0f0a26d15cbf710b91c0ad6cb19',1,'limes::files::Volume']]],
+  ['isrelativepath_12',['isRelativePath',['../classlimes_1_1files_1_1_filesystem_entry.html#a6e6b908424d03bb59bd865f7a3b2ae48',1,'limes::files::FilesystemEntry']]],
+  ['isrunning_13',['isRunning',['../classlimes_1_1files_1_1_file_watcher.html#aa4d56e482c07101b244a976179f4af0e',1,'limes::files::FileWatcher']]],
+  ['issymlink_14',['isSymLink',['../classlimes_1_1files_1_1_directory.html#a4f3ebfa728222d3278141d3bd59f16f2',1,'limes::files::Directory::isSymLink()'],['../classlimes_1_1files_1_1_file.html#a041c85b610a661d98bbaa66176735529',1,'limes::files::File::isSymLink()'],['../classlimes_1_1files_1_1_filesystem_entry.html#aadcd3420e98bf216f6142f280f135fa7',1,'limes::files::FilesystemEntry::isSymLink()'],['../classlimes_1_1files_1_1_sym_link.html#a2e299b9720db242cd966cf7a90d169ba',1,'limes::files::SymLink::isSymLink()']]],
+  ['isunknownorempty_15',['isUnknownOrEmpty',['../classlimes_1_1files_1_1_permissions.html#a98b7fe08889e07ac4b8662dbff2ad6de',1,'limes::files::Permissions']]],
+  ['isvalid_16',['isValid',['../classlimes_1_1files_1_1_filesystem_entry.html#a63f9049d6ded60b90d39705a248c43be',1,'limes::files::FilesystemEntry']]],
+  ['isvalidpath_17',['isValidPath',['../lfilesystem___paths_8h.html#ae8a5e2994c137fa4fd8e7543c9dc5e41',1,'limes::files']]],
+  ['iterateallchildren_18',['iterateAllChildren',['../classlimes_1_1files_1_1_directory.html#ad3d713efbbad04df7645b199f4df7a03',1,'limes::files::Directory::iterateAllChildren(FileCallback &amp;&amp;fileCallback, DirectoryCallback &amp;&amp;directoryCallback, SymLinkCallback &amp;&amp;symLinkCallback, bool recurse=true, bool includeHiddenFiles=true) const'],['../classlimes_1_1files_1_1_directory.html#ad42263532873ab0dfe18fb7ef7191cfb',1,'limes::files::Directory::iterateAllChildren(FilesystemEntryCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const']]],
+  ['iteratedirectories_19',['iterateDirectories',['../classlimes_1_1files_1_1_directory.html#a7404c01dacf9257361d30ad4411bd325',1,'limes::files::Directory']]],
+  ['iteratefiles_20',['iterateFiles',['../classlimes_1_1files_1_1_directory.html#a1118a5d28ff49662ab733e01907ff956',1,'limes::files::Directory']]],
+  ['iteratesymlinks_21',['iterateSymLinks',['../classlimes_1_1files_1_1_directory.html#aa36ca291d40b3934dbef904380dd14da',1,'limes::files::Directory']]],
+  ['iterator_22',['Iterator',['../structlimes_1_1files_1_1_directory_1_1_iterator.html',1,'limes::files::Directory::Iterator'],['../structlimes_1_1files_1_1_file_1_1_iterator.html',1,'limes::files::File::Iterator']]]
+];

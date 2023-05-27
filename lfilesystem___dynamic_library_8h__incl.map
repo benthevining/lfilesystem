@@ -1,0 +1,61 @@
+<map id="lfilesystem_DynamicLibrary.h" name="lfilesystem_DynamicLibrary.h">
+<area shape="rect" id="Node000001" title="This file defines the DynamicLibrary class." alt="" coords="340,5,532,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="916,441,1004,467"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="533,27,660,46,802,74,869,93,927,114,973,138,1003,166,1020,199,1028,235,1028,272,1022,309,1000,378,976,430,971,427,996,376,1017,308,1022,272,1022,236,1015,201,999,169,970,143,925,119,867,98,801,80,660,51,532,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="1031,441,1084,467"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="532,20,706,33,805,44,902,60,990,81,1063,109,1091,125,1112,143,1126,164,1131,186,1131,278,1125,322,1111,363,1094,400,1076,430,1072,427,1089,398,1106,361,1120,320,1125,278,1125,187,1121,166,1108,147,1088,130,1061,114,989,87,901,65,804,49,705,38,532,25"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="277,87,337,112"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="418,34,340,81,338,76,415,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="43,175,101,201"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="395,34,333,55,265,81,177,127,104,169,102,165,174,122,263,77,331,50,394,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="134,434,285,474"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="367,34,259,57,141,92,89,113,46,136,18,161,11,174,8,187,8,278,11,304,21,327,35,349,53,368,97,401,143,425,140,430,94,405,49,372,31,352,16,330,6,305,3,278,3,186,6,172,14,157,43,131,86,108,139,87,258,52,366,29"/>
+<area shape="rect" id="Node000007" href="$lfilesystem___file_watcher_8h.html" title="This file defines the files::FileWatcher class." alt="" coords="360,79,512,120"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="439,31,439,64,433,64,433,31"/>
+<area shape="rect" id="Node000016" href="$lfilesystem___file_8h.html" title="This file defines the File and TempFile classes." alt="" coords="592,79,744,120"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="473,29,597,71,596,76,471,34"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="361,121,234,151,166,170,149,199,142,231,141,265,146,300,167,367,193,420,188,422,162,369,141,302,136,266,136,230,144,197,162,166,233,146,359,116"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="177,175,245,201"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="386,123,257,172,255,167,384,118"/>
+<area shape="rect" id="Node000009" href="$lfilesystem___filesystem_entry_8h.html" title="This file defines the FilesystemEntry class." alt="" coords="447,256,598,297"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="454,119,486,166,503,205,516,241,511,243,498,207,482,169,450,122"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="586,295,639,316,693,343,719,364,729,374,744,383,783,398,817,407,877,412,940,415,976,421,1017,431,1021,433,1020,438,1015,436,975,426,939,420,877,418,816,412,781,403,741,388,726,378,715,368,691,347,637,321,584,300"/>
+<area shape="poly" id="edge16_Node000009_Node000006" title=" " alt="" coords="484,300,392,347,254,428,251,424,389,343,481,295"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="619,353,680,378"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="553,295,621,342,618,346,550,300"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="331,441,413,467"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="484,300,452,320,423,347,398,388,382,428,377,426,393,385,419,343,449,316,481,295"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="755,353,832,378"/>
+<area shape="poly" id="edge13_Node000009_Node000012" title=" " alt="" coords="587,295,737,342,744,345,742,350,735,348,585,300"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="856,353,923,378"/>
+<area shape="poly" id="edge14_Node000009_Node000013" title=" " alt="" coords="599,287,716,309,845,342,850,344,848,349,843,348,714,314,598,292"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="454,441,522,467"/>
+<area shape="poly" id="edge15_Node000009_Node000014" title=" " alt="" coords="483,300,455,320,434,346,430,368,436,390,449,411,465,429,461,432,445,414,432,392,425,368,430,344,452,316,480,295"/>
+<area shape="rect" id="Node000015" href="$lfilesystem___permissions_8h.html" title="This file defines the Permissions class." alt="" coords="444,345,596,386"/>
+<area shape="poly" id="edge17_Node000009_Node000015" title=" " alt="" coords="525,298,524,330,518,330,519,297"/>
+<area shape="poly" id="edge20_Node000015_Node000002" title=" " alt="" coords="597,381,607,383,902,440,901,445,606,388,596,386"/>
+<area shape="poly" id="edge19_Node000015_Node000003" title=" " alt="" coords="596,381,607,383,722,396,813,400,903,407,956,416,1017,431,1022,433,1021,438,1015,436,955,421,903,412,813,405,722,402,606,388,596,386"/>
+<area shape="poly" id="edge22_Node000015_Node000006" title=" " alt="" coords="450,389,295,432,293,427,448,384"/>
+<area shape="poly" id="edge18_Node000015_Node000011" title=" " alt="" coords="488,388,406,436,404,431,485,384"/>
+<area shape="poly" id="edge21_Node000015_Node000014" title=" " alt="" coords="515,387,500,428,495,427,510,385"/>
+<area shape="poly" id="edge26_Node000016_Node000002" title=" " alt="" coords="701,118,753,154,817,206,882,270,912,306,937,344,953,386,961,425,956,426,948,387,932,346,907,309,878,273,814,210,750,158,698,122"/>
+<area shape="poly" id="edge25_Node000016_Node000003" title=" " alt="" coords="744,104,816,112,893,124,959,142,985,153,1003,166,1027,195,1044,229,1055,265,1062,302,1067,372,1064,426,1058,426,1061,372,1057,303,1050,266,1039,231,1022,198,999,170,982,157,958,147,891,129,816,117,744,109"/>
+<area shape="poly" id="edge27_Node000016_Node000005" title=" " alt="" coords="592,113,164,170,116,180,115,174,164,165,591,108"/>
+<area shape="poly" id="edge33_Node000016_Node000006" title=" " alt="" coords="592,113,421,140,348,156,309,170,284,196,264,227,248,261,235,296,220,363,213,419,208,418,214,363,230,294,243,259,259,224,280,193,307,165,347,150,420,135,592,108"/>
+<area shape="poly" id="edge31_Node000016_Node000008" title=" " alt="" coords="592,114,414,142,265,170,256,173,254,168,263,165,413,137,592,109"/>
+<area shape="poly" id="edge34_Node000016_Node000009" title=" " alt="" coords="689,119,703,138,716,162,720,186,713,210,693,231,668,248,641,260,614,268,612,263,639,255,666,243,689,227,708,207,715,186,711,163,699,141,684,122"/>
+<area shape="poly" id="edge28_Node000016_Node000012" title=" " alt="" coords="693,118,715,140,734,166,756,211,773,258,792,337,786,338,768,260,751,213,730,169,711,144,690,122"/>
+<area shape="poly" id="edge29_Node000016_Node000013" title=" " alt="" coords="702,118,732,139,762,166,799,210,832,258,879,338,875,341,828,261,795,214,758,170,729,144,699,122"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="925,175,990,201"/>
+<area shape="poly" id="edge24_Node000016_Node000017" title=" " alt="" coords="745,118,907,165,914,167,912,172,906,170,744,123"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="547,175,613,201"/>
+<area shape="poly" id="edge30_Node000016_Node000018" title=" " alt="" coords="650,122,604,167,600,163,646,118"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="637,175,699,201"/>
+<area shape="poly" id="edge32_Node000016_Node000019" title=" " alt="" coords="671,120,671,161,665,161,665,120"/>
+<area shape="rect" id="Node000020" href="$lfilesystem___c_file_8h.html" title="This file defines the CFile class." alt="" coords="320,168,472,208"/>
+<area shape="poly" id="edge35_Node000016_Node000020" title=" " alt="" coords="607,123,473,165,471,160,605,118"/>
+<area shape="poly" id="edge37_Node000020_Node000006" title=" " alt="" coords="384,210,234,423,229,420,380,207"/>
+<area shape="poly" id="edge38_Node000020_Node000009" title=" " alt="" coords="426,207,484,246,481,250,423,211"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="367,264,423,290"/>
+<area shape="poly" id="edge36_Node000020_Node000021" title=" " alt="" coords="398,209,398,249,392,249,393,209"/>
+</map>

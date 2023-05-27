@@ -1,0 +1,28 @@
+var classlimes_1_1files_1_1_permissions =
+[
+    [ "Permissions", "classlimes_1_1files_1_1_permissions.html#a7b6ff851c035e4e50c2767e7ea9db2fe", null ],
+    [ "Permissions", "classlimes_1_1files_1_1_permissions.html#a022e4e09469ed391d60b35e2fb946fbb", null ],
+    [ "all", "classlimes_1_1files_1_1_permissions.html#a973bf027f6204fc8eba929d19bfcc9f0", null ],
+    [ "fromString", "classlimes_1_1files_1_1_permissions.html#a6911f862ed6f70631a0f328b6a23bdeb", null ],
+    [ "getStdPerms", "classlimes_1_1files_1_1_permissions.html#af6f5cfc215283c5f995c97426b6aa70d", null ],
+    [ "groupAll", "classlimes_1_1files_1_1_permissions.html#a92fab3bff37ac1c650a6a27b37409fc3", null ],
+    [ "hasAll", "classlimes_1_1files_1_1_permissions.html#a6075e0cbe7cae75324caf7588c13a32d", null ],
+    [ "hasExecute", "classlimes_1_1files_1_1_permissions.html#a5723851af3ed0114821a51f9529a034a", null ],
+    [ "hasRead", "classlimes_1_1files_1_1_permissions.html#ae4683c13b8c5641fb7d94ea7c7ff6b8b", null ],
+    [ "hasStickyBit", "classlimes_1_1files_1_1_permissions.html#a01b6cb878f82333313c30a49579ee481", null ],
+    [ "hasWrite", "classlimes_1_1files_1_1_permissions.html#a24d43b91347bfb24092fd551a7cf6059", null ],
+    [ "isUnknownOrEmpty", "classlimes_1_1files_1_1_permissions.html#a98b7fe08889e07ac4b8662dbff2ad6de", null ],
+    [ "operator FSPerms", "classlimes_1_1files_1_1_permissions.html#af1dbf0428fb4606a37722868c3ce6662", null ],
+    [ "operator=", "classlimes_1_1files_1_1_permissions.html#aea6a113ea0e27eb8585d75f0141c34ec", null ],
+    [ "operator==", "classlimes_1_1files_1_1_permissions.html#a71e2c6a1583853a90ae4ee9a5f8ee3d8", null ],
+    [ "operator==", "classlimes_1_1files_1_1_permissions.html#ae1de8c552b97224d02872ff37ed2f7aa", null ],
+    [ "othersAll", "classlimes_1_1files_1_1_permissions.html#abebe318f8c605ef5bdef9bbe4f4675c1", null ],
+    [ "ownerAll", "classlimes_1_1files_1_1_permissions.html#ab43011ba50abe8cf23d088cec5d54fdf", null ],
+    [ "toString", "classlimes_1_1files_1_1_permissions.html#a01baa7d01f18afd7475ad5c33844c6b7", null ],
+    [ "withAll", "classlimes_1_1files_1_1_permissions.html#a218cfe92b4692c24fed54ec80553e80d", null ],
+    [ "withExecute", "classlimes_1_1files_1_1_permissions.html#abb0a8fa1292d3d629c712b77809c0fea", null ],
+    [ "withRead", "classlimes_1_1files_1_1_permissions.html#ae7bee3738c29b819d515d00fb545f236", null ],
+    [ "withStickyBit", "classlimes_1_1files_1_1_permissions.html#a2f9fbe990fb7bfb8414209a85f9916ac", null ],
+    [ "withWrite", "classlimes_1_1files_1_1_permissions.html#a6f12339d73700b3bbf31b1b7e819530b", null ],
+    [ "operator<<", "classlimes_1_1files_1_1_permissions.html#abaef8f53596494c5ee3a7db464ef30f4", null ]
+];
