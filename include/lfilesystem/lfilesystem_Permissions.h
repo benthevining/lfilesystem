@@ -22,14 +22,14 @@
 
 /** @file
 	This file defines the Permissions class.
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
 {
 
 /** A typedef for the standard library permissions type.
-	@ingroup files
+	@ingroup limes_files
  */
 using FSPerms = std::filesystem::perms;
 
@@ -40,9 +40,7 @@ using FSPerms = std::filesystem::perms;
 	This class is incredibly light, as it holds only a single integral value,
 	so don't be afraid to copy them around.
 
-	@test This class is covered by unit tests.
-
-	@ingroup files
+	@ingroup limes_files
  */
 class LFILE_EXPORT Permissions final
 {
@@ -255,7 +253,7 @@ private:
 
 /** Writes a Permissions object's string representation to the output stream.
 
-	@ingroup files
+	@ingroup limes_files
 	@relates Permissions
  */
 std::ostream& operator<< (std::ostream& os, const Permissions& value);

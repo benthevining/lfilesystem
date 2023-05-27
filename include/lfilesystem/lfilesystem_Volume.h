@@ -26,7 +26,7 @@
 /** @file
 	This file defines the files::Volume class.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -49,9 +49,7 @@ class FilesystemEntry;
 	FilesystemEntry provides.
 	@endinternal
 
-	@ingroup files
-
-	@test This class is covered by unit tests.
+	@ingroup limes_files
 
 	@todo ConstructionError custom exception type? This could allow more specific
 	error checking. The error could contain the original passed path.
@@ -173,7 +171,7 @@ private:
 
 /** Writes the Volume object's path to the output stream.
 
-	@ingroup files
+	@ingroup limes_files
 	@relates Volume
  */
 std::ostream& operator<< (std::ostream& os, const Volume& value);
@@ -184,7 +182,7 @@ std::ostream& operator<< (std::ostream& os, const Volume& value);
 	If you need to know whether the actual volume can be queried, you can call
 	\c Volume::tryCreate() .
 
-	@ingroup files
+	@ingroup limes_files
  */
 namespace volume
 {

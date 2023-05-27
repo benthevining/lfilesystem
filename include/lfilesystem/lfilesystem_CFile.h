@@ -21,7 +21,7 @@
 /** @file
 	This file defines the CFile class.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -44,7 +44,7 @@ class File;
 	call_some_c_api (cFile.get());
 	@endcode
 
-	@ingroup files
+	@ingroup limes_files
 	@see File
  */
 class LFILE_EXPORT CFile final

@@ -22,7 +22,7 @@
 /** @file
 	This file defines the files::SymLink class.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -35,9 +35,7 @@ class Directory;
 	This class provides static methods for creating symbolic links, and can follow links recursively or
 	non-recursively.
 
-	@ingroup files
-
-	@test This class is covered by unit tests.
+	@ingroup limes_files
  */
 class LFILE_EXPORT SymLink final : public FilesystemEntry
 {
@@ -144,7 +142,7 @@ namespace std
 /** A specialization of \c std::hash for SymLink objects.
 	The hash value is computed using both the link's path and the path of the target object.
 
-	@ingroup files
+	@ingroup limes_files
  */
 template <>
 struct LFILE_EXPORT hash<limes::files::SymLink> final

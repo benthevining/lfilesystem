@@ -10,6 +10,21 @@
 #
 # ======================================================================================
 
+set (DOXYGEN_EXAMPLE_PATH "${CMAKE_CURRENT_LIST_DIR}/examples")
+
+file (GLOB examples LIST_DIRECTORIES false CONFIGURE_DEPENDS "${DOXYGEN_EXAMPLE_PATH}/*.cpp")
+
+if (LFILE_TESTS)
+	add_library (lfilesystem_examples STATIC EXCLUDE_FROM_ALL )
+
+	target_sources (lfilesystem_examples PRIVATE ${examples})
+
+	target_link_libraries (lfilesystem_examples PRIVATE limes::lfilesystem)
+
+	add_test (NAME "Limes.files.examples" COMMAND "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}"
+												  --config $<CONFIG> --target lfilesystem_examples)
+endif ()
+
 find_package (Doxygen OPTIONAL_COMPONENTS dot)
 
 if (NOT DOXYGEN_FOUND)
@@ -17,8 +32,8 @@ if (NOT DOXYGEN_FOUND)
 	return ()
 endif ()
 
-file (GLOB headers LIST_DIRECTORIES false
-	  CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/../include/lfilesystem/lfilesystem_*.h")
+file (GLOB headers LIST_DIRECTORIES false CONFIGURE_DEPENDS
+										  "${CMAKE_CURRENT_LIST_DIR}/../include/lfilesystem/*.h")
 
 set (DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/../doc")
 set (DOXYGEN_WARN_LOGFILE "${CMAKE_CURRENT_LIST_DIR}/../logs/doxygen.log")
@@ -48,7 +63,8 @@ set (DOXYGEN_DOT_IMAGE_FORMAT svg)
 set (DOXYGEN_INTERACTIVE_SVG YES)
 
 doxygen_add_docs (
-	lfilesystem_docs ${headers} USE_STAMP_FILE WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/.."
+	lfilesystem_docs ${headers} ${examples} USE_STAMP_FILE
+	WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/.."
 	COMMENT "Building lfilesystem documentation...")
 
 set_property (

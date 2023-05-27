@@ -19,7 +19,7 @@
 
 /** @file
 	This file defines some utility functions for working with paths.
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -32,7 +32,7 @@ using Path = std::filesystem::path;
 	than \c maxPathLength() . This returns false if the passed path is empty.
 
 	@see normalizePath()
-	@ingroup files
+	@ingroup limes_files
  */
 [[nodiscard]] LFILE_EXPORT bool isValidPath (const Path& path);
 
@@ -49,7 +49,7 @@ using Path = std::filesystem::path;
 	\c username 's home directory.
 
 	@see isValidPath()
-	@ingroup files
+	@ingroup limes_files
  */
 [[nodiscard]] LFILE_EXPORT Path normalizePath (const Path& path);
 
@@ -59,7 +59,7 @@ using Path = std::filesystem::path;
 	then this will return \c a/b . Both paths will be normalized via
 	\c normalizePath() before computing the common prefix.
 
-	@ingroup files
+	@ingroup limes_files
  */
 [[nodiscard]] LFILE_EXPORT Path largestCommonPrefix (const Path& path1, const Path& path2);
 

@@ -26,7 +26,7 @@
 /** @file
 	This file defines the FilesystemEntry class.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -38,7 +38,7 @@ class SymLink;
 class Volume;
 
 /** Convenience typedef for filesystem paths.
-	@ingroup files
+	@ingroup limes_files
  */
 using Path = std::filesystem::path;
 
@@ -69,7 +69,7 @@ using Path = std::filesystem::path;
 		std::cout << file.getFileObject()->loadAsString();
 	@endcode
 
-	@ingroup files
+	@ingroup limes_files
 	@see File, Directory, SymLink
 
 	@todo getNonexistentSibling()
@@ -583,7 +583,7 @@ private:
 
 /** Writes a FilesystemEntry's path to the output stream.
 
-	@ingroup files
+	@ingroup limes_files
 	@relates FilesystemEntry
  */
 std::ostream& operator<< (std::ostream& os, const FilesystemEntry& value);
@@ -596,7 +596,7 @@ namespace std
 /** A specialization of \c std::hash for filesystem entries.
 	The hash value is computed based on the absolute path of the filesystem entry.
 
-	@ingroup files
+	@ingroup limes_files
 	@relates FilesystemEntry
  */
 template <>

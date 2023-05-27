@@ -30,7 +30,7 @@
 /** @file
 	This file defines the File and TempFile classes.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -52,10 +52,8 @@ namespace limes::files
 	file.overwrite ("New file content...");
 	@endcode
 
-	@ingroup files
+	@ingroup limes_files
 	@see CFile
-
-	@test This class is covered by unit tests.
 
 	@todo start as process
 	@todo get user/group ID of owner?
@@ -376,7 +374,7 @@ private:
 
 	If you don't care about filenames and just need a temporary %file to work with, use the static method \c getNextFile() .
 
-	@ingroup files
+	@ingroup limes_files
 	@see dirs::temp(), CFile::createTempFile()
 
 	@todo unit tests
@@ -427,14 +425,14 @@ private:
 
 /** Writes the file's contents to the output stream.
 
-	@ingroup files
+	@ingroup limes_files
 	@relates File
  */
 std::ostream& operator<< (std::ostream& os, const File& file);
 
 /** Reads content from the input stream, and overwrites the file with it.
 
-	@ingroup files
+	@ingroup limes_files
 	@relates File
  */
 std::istream& operator>> (std::istream& is, const File& file);
@@ -447,7 +445,7 @@ namespace std
 /** A specialization of \c std::hash for File objects.
 	The hash value is computed using the file's contents.
 
-	@ingroup files
+	@ingroup limes_files
  */
 template <>
 struct LFILE_EXPORT hash<limes::files::File> final

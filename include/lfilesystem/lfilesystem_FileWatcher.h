@@ -21,7 +21,7 @@
 /** @file
 	This file defines the files::FileWatcher class.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -52,7 +52,7 @@ namespace limes::files
 	this path may be a parent directory of the watched path, even if the
 	watched path is a file.
 
-	@ingroup files
+	@ingroup limes_files
 
 	@see SimpleFileWatcher
 

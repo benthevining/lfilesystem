@@ -18,13 +18,10 @@
 #include "lfilesystem/lfilesystem_Export.h"
 #include "lfilesystem/lfilesystem_Directory.h"
 
-/** @defgroup special_dirs Special directories
+/** @defgroup limes_files_special_dirs Special directories
 	Utility functions for finding some common directory locations.
 
-	@test These functions are executed in unit tests. Each of these functions is known to return
-	a valid, existing directory on all of Limes's targeted platforms.
-
-	@ingroup files
+	@ingroup limes_files
 
 	@todo more special dirs
 
@@ -35,19 +32,19 @@
 /** @file
 	This file contains utility functions for finding some common directories.
 
-	@ingroup special_dirs
+	@ingroup limes_files_special_dirs
 	@see directory.h
  */
 
 /** This namespace contains utility functions for finding some common directories.
 
 	@see files::Directory
-	@ingroup special_dirs
+	@ingroup limes_files_special_dirs
  */
 namespace limes::files::dirs
 {
 
-/** @ingroup special_dirs
+/** @ingroup limes_files_special_dirs
 	@{
  */
 

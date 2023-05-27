@@ -29,13 +29,13 @@
 /** @file
 	This file defines miscellaneous filesystem utility functions.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
 {
 
-/** @ingroup files
+/** @ingroup limes_files
 	@{
  */
 

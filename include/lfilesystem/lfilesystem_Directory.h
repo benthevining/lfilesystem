@@ -28,7 +28,7 @@
 /** @file
 	This file defines the Directory class.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -46,9 +46,7 @@ namespace limes::files
 	dir.iterateFiles ([](const limes::files::File& f){ std::cout << f.getFilename() });
 	@endcode
 
-	@test This class is covered by unit tests.
-
-	@ingroup files
+	@ingroup limes_files
 
 	@todo getNonexistentChild()
  */

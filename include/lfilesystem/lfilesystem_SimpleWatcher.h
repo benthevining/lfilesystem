@@ -20,7 +20,7 @@
 
 /** @file
 	This file defines the SimpleFileWatcher class.
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -30,7 +30,7 @@ namespace limes::files
 	you to easily specify a lambda function that will be called for any event
 	type.
 
-	@ingroup files
+	@ingroup limes_files
 
 	@see FileWatcher
  */

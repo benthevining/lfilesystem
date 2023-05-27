@@ -29,7 +29,7 @@
 /** @file
 	This file defines the DynamicLibrary class.
 
-	@ingroup files
+	@ingroup limes_files
  */
 
 namespace limes::files
@@ -43,7 +43,7 @@ namespace limes::files
 
 	All functions of this class are thread-safe; the library handle is stored atomically.
 
-	@ingroup files
+	@ingroup limes_files
 
 	@todo double check iOS. I've heard that iOS disallows calling \c dlopen() .
 
@@ -157,8 +157,6 @@ public:
 		\c DynamicLibrary::reload() .
 
 		@see DynamicLibrary::reload()
-
-		@ingroup files
 	 */
 	class LFILE_EXPORT Reloader final : public FileWatcher
 	{
@@ -178,8 +176,6 @@ public:
 
 		Note that all callbacks may be called from any thread! You need to ensure
 		thread safety in your callbacks.
-
-		@ingroup files
 	 */
 	class LFILE_EXPORT Listener
 	{
@@ -235,7 +231,7 @@ namespace std
 /** A specialization of \c std::hash for dynamic libraries.
 	The hash value is computed based on the path of the file containing the dynamic library code.
 
-	@ingroup files
+	@ingroup limes_files
  */
 template <>
 struct LFILE_EXPORT hash<limes::files::DynamicLibrary> final
