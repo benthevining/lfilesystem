@@ -87,11 +87,11 @@ jobs:
     - uses: seanmiddleditch/gha-setup-ninja@master
 
     - name: Set up Emscripten
-      if: ${{ matrix.preset }} == 'emscripten'
+      if: ${{ matrix.preset == 'emscripten' }}
       uses: mymindstorm/setup-emsdk@v11
 
     - name: Set Emscripten environment variable
-      if: ${{ matrix.preset }} == 'emscripten'
+      if: ${{ matrix.preset == 'emscripten' }}
       run: echo "EMSCRIPTEN_ROOT=$(which emcc)/.." >> $GITHUB_ENV
 
     - name: Configure CMake

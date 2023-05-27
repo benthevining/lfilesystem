@@ -225,5 +225,3 @@ std::vector<Volume> Volume::getAll() noexcept
 }
 
 }  // namespace files
-
-LIMES_END_NAMESPACE

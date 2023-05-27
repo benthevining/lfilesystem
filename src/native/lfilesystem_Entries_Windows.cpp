@@ -105,7 +105,7 @@ LFILE_NO_EXPORT [[nodiscard]] static inline std::string getModulePathInternal (H
 
 	if (size == 0)
 	{
-		if (path != d)
+		if (path != buffer1.data())
 			std::free (path);
 
 		return {};
@@ -132,7 +132,7 @@ LFILE_NO_EXPORT [[nodiscard]] static inline std::string getModulePathInternal (H
 
 		if (size == size_)
 		{
-			if (path != d)
+			if (path != buffer1.data())
 				std::free (path);
 
 			return {};
@@ -141,14 +141,14 @@ LFILE_NO_EXPORT [[nodiscard]] static inline std::string getModulePathInternal (H
 
 	if (! _wfullpath (buffer2.data(), path, maxPathLength()))
 	{
-		if (path != d)
+		if (path != buffer1.data())
 			std::free (path);
 
 		return {};
 	}
 
-	if (path != d)
-				std::free (path);
+	if (path != buffer1.data())
+		std::free (path);
 
 	const auto length = static_cast<int> (wcslen (buffer2.data()));
 

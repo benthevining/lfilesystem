@@ -161,7 +161,8 @@ TEST_CASE ("SpecialDirs - apps", TAGS)
 	REQUIRE (apps.isAbsolutePath());
 	REQUIRE (apps.isDirectory());
 
-#ifndef __EMSCRIPTEN__
+// this directory seems to not exist on MacOS GitHub Actions runners, for some reason
+#if ! (defined(__EMSCRIPTEN__) || defined(__APPLE__))
 	REQUIRE (apps.exists());
 #endif
 }
