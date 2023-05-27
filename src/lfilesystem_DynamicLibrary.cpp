@@ -51,13 +51,7 @@ DynamicLibrary::DynamicLibrary (const std::string_view& nameOrPath) noexcept
 
 DynamicLibrary::~DynamicLibrary()
 {
-	try
-	{
-		close();
-	}
-	catch (...)
-	{
-	}
+	close();
 }
 
 DynamicLibrary::DynamicLibrary (DynamicLibrary&& other) noexcept
@@ -116,7 +110,7 @@ bool DynamicLibrary::reload()
 	return result;
 }
 
-[[nodiscard]] static inline std::string formatLibraryName (const std::string_view& input)
+[[nodiscard]] static inline std::string formatLibraryName (const std::string_view& input) noexcept
 {
 	auto result = std::string { input };
 
@@ -137,33 +131,25 @@ bool DynamicLibrary::open (const std::string_view& nameOrPath) noexcept
 {
 	const auto result = [this, nameOrPath]
 	{
-		try
-		{
-			close();
+		close();
 
-			if (nameOrPath.empty())
-				return false;
+		if (nameOrPath.empty())
+			return false;
 
 #if defined(_WIN32) || defined(WIN32)
-			const auto newHandle = ::LoadLibraryA (formatLibraryName (nameOrPath).c_str());
+		const auto newHandle = ::LoadLibraryA (formatLibraryName (nameOrPath).c_str());
 // #elif defined(__EMSCRIPTEN__)
 // TODO: use emscripten_dlopen
 #else
-			const auto newHandle = ::dlopen (formatLibraryName (nameOrPath).c_str(), RTLD_LOCAL | RTLD_NOW);
+		const auto newHandle = ::dlopen (formatLibraryName (nameOrPath).c_str(), RTLD_LOCAL | RTLD_NOW);
 #endif
 
-			if (newHandle == nullptr)
-				return false;
-
-			handle.store (newHandle);
-
-			return true;
-		}
-		catch (...)
-		{
-			close();
+		if (newHandle == nullptr)
 			return false;
-		}
+
+		handle.store (newHandle);
+
+		return true;
 	}();
 
 	if (! suppressNotifs)
@@ -173,7 +159,7 @@ bool DynamicLibrary::open (const std::string_view& nameOrPath) noexcept
 	return result;
 }
 
-void DynamicLibrary::close()
+void DynamicLibrary::close() noexcept
 {
 	const auto h = handle.load();
 
@@ -195,23 +181,16 @@ void DynamicLibrary::close()
 
 void* DynamicLibrary::findFunction (const std::string_view& functionName) noexcept
 {
-	try
-	{
-		const auto h = handle.load();
+	const auto h = handle.load();
 
-		if (h == nullptr || functionName.empty())
-			return nullptr;
+	if (h == nullptr || functionName.empty())
+		return nullptr;
 
 #if defined(_WIN32) || defined(WIN32)
-		return reinterpret_cast<void*> (::GetProcAddress (h, functionName.data()));
+	return reinterpret_cast<void*> (::GetProcAddress (h, functionName.data()));
 #else
-		return ::dlsym (h, functionName.data());
+	return ::dlsym (h, functionName.data());
 #endif
-	}
-	catch (...)
-	{
-		return nullptr;
-	}
 }
 
 // This takes some ugly code on Apple, which is in this file down below...
@@ -292,7 +271,7 @@ using segment_command_t = segment_command;
 using nlist_t			= struct nlist;
 #	  endif
 
-[[nodiscard]] static inline const char* first_external_symbol_for_image (const mach_header_t* header)
+[[nodiscard]] static inline const char* first_external_symbol_for_image (const mach_header_t* header) noexcept
 {
 	Dl_info info;
 
@@ -349,38 +328,31 @@ using nlist_t			= struct nlist;
 
 [[nodiscard]] static const char* pathname_for_handle (void* handle) noexcept
 {
-	try
+	for (auto i = ::_dyld_image_count(); i > 0; --i)
 	{
-		for (auto i = ::_dyld_image_count(); i > 0; --i)
+		if (const auto* first_symbol = first_external_symbol_for_image (reinterpret_cast<const mach_header_t*> (::_dyld_get_image_header (i))))
 		{
-			if (const auto* first_symbol = first_external_symbol_for_image (reinterpret_cast<const mach_header_t*> (::_dyld_get_image_header (i))))
-			{
-				if (std::strlen (first_symbol) <= 1)
-					continue;
+			if (std::strlen (first_symbol) <= 1)
+				continue;
 
-				// in order to trigger findExportedSymbol instead of findExportedSymbolInImageOrDependentImages.
-				// See `dlsym` implementation at http://opensource.apple.com/source/dyld/dyld-239.3/src/dyldAPIs.cpp
-				// note that this is not a member function of DynamicLibrary, so this doesn't change the actual
-				// held by the calling object
-				handle = reinterpret_cast<void*> ((intptr_t) handle | 1);
+			// in order to trigger findExportedSymbol instead of findExportedSymbolInImageOrDependentImages.
+			// See `dlsym` implementation at http://opensource.apple.com/source/dyld/dyld-239.3/src/dyldAPIs.cpp
+			// note that this is not a member function of DynamicLibrary, so this doesn't change the actual
+			// held by the calling object
+			handle = reinterpret_cast<void*> ((intptr_t) handle | 1);
 
-				first_symbol++;	 // in order to remove the leading underscore
+			first_symbol++;	 // in order to remove the leading underscore
 
-				auto* address = ::dlsym (handle, first_symbol);
+			auto* address = ::dlsym (handle, first_symbol);
 
-				Dl_info info;
+			Dl_info info;
 
-				if (::dladdr (address, &info) != 0)
-					return info.dli_fname;
-			}
+			if (::dladdr (address, &info) != 0)
+				return info.dli_fname;
 		}
+	}
 
-		return nullptr;
-	}
-	catch (...)
-	{
-		return nullptr;
-	}
+	return nullptr;
 }
 
 #endif /* __APPLE__ */

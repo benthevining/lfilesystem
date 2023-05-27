@@ -22,6 +22,7 @@
 #include <atomic>
 #include <mutex>
 #include <algorithm>
+#include <system_error>
 #include "lfilesystem/lfilesystem_File.h"
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Directory.h"		// for Directory
@@ -251,36 +252,27 @@ bool File::resize (std::uintmax_t newSizeInBytes, bool allowTruncation, bool all
 	if (initialSize < newSizeInBytes && ! allowIncreasing)
 		return false;
 
-	try
-	{
-		std::filesystem::resize_file (getAbsolutePath(), newSizeInBytes);
-		return true;
-	}
-	catch (...)
-	{
-		return false;
-	}
+	std::error_code ec;
+
+	std::filesystem::resize_file (getAbsolutePath(), newSizeInBytes, ec);
+
+	return true;
 }
 
-std::optional<File> File::createHardLink (const Path& path) const
+std::optional<File> File::createHardLink (const Path& path) const noexcept
 {
 	if (! exists())
 		return std::nullopt;
 
-	try
-	{
-		File link { path };
+	File link { path };
 
-		link.makeAbsoluteRelativeToCWD();
+	link.makeAbsoluteRelativeToCWD();
 
-		std::filesystem::create_hard_link (getAbsolutePath(), link.getAbsolutePath());
+	std::error_code ec;
 
-		return link;
-	}
-	catch (...)
-	{
-		return std::nullopt;
-	}
+	std::filesystem::create_hard_link (getAbsolutePath(), link.getAbsolutePath(), ec);
+
+	return link;
 }
 
 std::uintmax_t File::getHardLinkCount() const noexcept
@@ -290,14 +282,9 @@ std::uintmax_t File::getHardLinkCount() const noexcept
 	if (! exists())
 		return error;
 
-	try
-	{
-		return std::filesystem::hard_link_count (getAbsolutePath());
-	}
-	catch (...)
-	{
-		return error;
-	}
+	std::error_code ec;
+
+	return std::filesystem::hard_link_count (getAbsolutePath(), ec);
 }
 
 std::string File::loadAsString() const noexcept
@@ -557,15 +544,7 @@ TempFile::TempFile (const Path& filepath, bool destroyOnDelete)
 TempFile::~TempFile()
 {
 	if (shouldDelete)
-	{
-		try
-		{
-			deleteIfExists();
-		}
-		catch (...)
-		{
-		}
-	}
+		deleteIfExists();
 }
 
 TempFile::TempFile (TempFile&& other) noexcept

@@ -16,6 +16,7 @@
 #include <algorithm>
 #include <catch2/catch_test_macros.hpp>
 
+#ifndef __EMSCRIPTEN__
 TEST_CASE ("Volume", "[core][files][volume]")
 {
 	namespace lf = limes::files;
@@ -84,3 +85,4 @@ TEST_CASE ("Volume", "[core][files][volume]")
 		REQUIRE (*v2 == v);
 	}
 }
+#endif

@@ -232,7 +232,7 @@ public:
 
 		@see getHardLinkCount()
 	 */
-	std::optional<File> createHardLink (const Path& path) const;
+	std::optional<File> createHardLink (const Path& path) const noexcept;
 
 	/** Returns the number of hard links referring to this underlying filesystem object.
 

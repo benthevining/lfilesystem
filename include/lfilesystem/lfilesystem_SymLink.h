@@ -130,8 +130,8 @@ public:
 	///@}
 
 private:
-	[[nodiscard]] FilesystemEntry follow_recurse (std::size_t counter, std::size_t limit) const;
-	[[nodiscard]] bool			  references_recurse (const FilesystemEntry& entry, std::size_t counter, std::size_t limit) const;
+	[[nodiscard]] FilesystemEntry follow_recurse (std::size_t counter, std::size_t limit) const noexcept;
+	[[nodiscard]] bool			  references_recurse (const FilesystemEntry& entry, std::size_t counter, std::size_t limit) const noexcept;
 };
 
 }  // namespace limes::files

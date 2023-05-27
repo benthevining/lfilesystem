@@ -24,13 +24,21 @@ mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS LFILE_DOCS)
 set_property (DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${CMAKE_CURRENT_LIST_DIR}/logs"
 										"${CMAKE_CURRENT_LIST_DIR}/deploy")
 
+# use the directory-scoped commands so that Catch2 gets these flags too
+if (EMSCRIPTEN)
+	add_compile_options (-sNO_DISABLE_EXCEPTION_CATCHING -fexceptions)
+	add_link_options (-fexceptions)
+endif ()
+
+set (CMAKE_CXX_VISIBILITY_PRESET hidden)
+set (CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+
 add_library (lfilesystem)
 add_library (limes::lfilesystem ALIAS lfilesystem)
 
 target_compile_features (lfilesystem PUBLIC cxx_std_20)
 
-set_target_properties (lfilesystem PROPERTIES CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN
-																		   ON)
+set_target_properties (lfilesystem PROPERTIES DEBUG_POSTFIX -d)
 
 set (public_header include/lfilesystem/lfilesystem.h)
 
@@ -115,11 +123,6 @@ return 0;
 		target_compile_definitions (lfilesystem PRIVATE LFILE_IMPL_USE_PATHCONF=0)
 	endif ()
 
-endif ()
-
-if (EMSCRIPTEN)
-	target_compile_options (lfilesystem PRIVATE -sNO_DISABLE_EXCEPTION_CATCHING -fexceptions)
-	target_link_options (lfilesystem PRIVATE -fexceptions)
 endif ()
 
 target_link_libraries (lfilesystem PRIVATE ${CMAKE_DL_LIBS})

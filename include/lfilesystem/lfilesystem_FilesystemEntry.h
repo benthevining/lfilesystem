@@ -108,7 +108,7 @@ public:
 		an error if the passed path doesn't actually exist on disk. The path will be normalized using the
 		\c normalizePath() function.
 	 */
-	explicit FilesystemEntry (const Path& pathToUse);
+	explicit FilesystemEntry (const Path& pathToUse) noexcept;
 
 	///@}
 

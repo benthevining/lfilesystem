@@ -27,13 +27,13 @@
 namespace limes::files
 {
 
-static inline bool stringContains (std::string_view string, std::string_view substringToFind)
+static inline bool stringContains (std::string_view string, std::string_view substringToFind) noexcept
 {
 	return string.find (substringToFind) != std::string_view::npos;
 }
 
 [[nodiscard]] static inline std::string upToFirstOccurrenceOf (std::string input,
-															   std::string_view stringToFind)
+															   std::string_view stringToFind) noexcept
 {
 	const auto pos = input.find (stringToFind);
 
@@ -44,7 +44,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 }
 
 [[nodiscard]] static inline std::string upToLastOccurrenceOf (std::string input,
-															  std::string_view stringToFind)
+															  std::string_view stringToFind) noexcept
 {
 	const auto pos = input.rfind (stringToFind);
 
@@ -55,7 +55,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 }
 
 [[nodiscard]] static inline std::string fromFirstOccurrenceOf (std::string input,
-															   std::string_view stringToFind)
+															   std::string_view stringToFind) noexcept
 {
 	const auto pos = input.find (stringToFind);
 
@@ -67,7 +67,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 
 [[nodiscard]] static inline std::string replaceInString (std::string input,
 														 std::string_view stringToReplace,
-														 std::string_view replaceWith)
+														 std::string_view replaceWith) noexcept
 {
 	std::size_t pos = 0;
 
@@ -81,7 +81,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 	return input;
 }
 
-bool isValidPath (const Path& path)
+bool isValidPath (const Path& path) noexcept
 {
 	if (path.empty())
 		return false;
@@ -99,7 +99,7 @@ bool isValidPath (const Path& path)
 
 #if ! (defined(_WIN32) || defined(WIN32))
 
-[[nodiscard]] static inline Path expandTilde (const std::string& path)
+[[nodiscard]] static inline Path expandTilde (const std::string& path) noexcept
 {
 	const auto homePath = dirs::home().getAbsolutePath();
 
@@ -130,7 +130,7 @@ bool isValidPath (const Path& path)
 
 #endif /* ! Windows */
 
-static inline void normalizeDoubleDot (std::string& path)
+static inline void normalizeDoubleDot (std::string& path) noexcept
 {
 	if (path == std::string { ".." })
 		return;
@@ -150,14 +150,13 @@ static inline void normalizeDoubleDot (std::string& path)
 		before = upToLastOccurrenceOf (before, "/");
 		before = upToLastOccurrenceOf (before, "/");
 
-		const auto firstPart  = path.substr (0, before.length());
-		//const auto secondPart = path.substr (path.length() - after.length(), std::string::npos);
+		const auto len = before.length();
 
-		path = firstPart + after;
+		path.replace (len, path.length() - len, after);
 	}
 }
 
-static inline void removeTrailingDirSeparators (std::string& path)
+static inline void removeTrailingDirSeparators (std::string& path) noexcept
 {
 	while (path.ends_with ('/'))
 		path.pop_back();
@@ -168,7 +167,7 @@ static inline void removeTrailingDirSeparators (std::string& path)
 #endif
 }
 
-static inline void normalizeSlashDotSlash (std::string& path)
+static inline void normalizeSlashDotSlash (std::string& path) noexcept
 {
 	path = replaceInString (path, "/./", "/");
 
@@ -177,7 +176,7 @@ static inline void normalizeSlashDotSlash (std::string& path)
 #endif
 }
 
-static inline void normalizeDotSlash (std::string& path)
+static inline void normalizeDotSlash (std::string& path) noexcept
 {
 	if (path == std::string { "./" })
 	{
@@ -200,7 +199,7 @@ static inline void normalizeDotSlash (std::string& path)
 #endif
 }
 
-[[nodiscard]] static inline bool isOnlyDirectorySeparator (const std::string& path)
+[[nodiscard]] static inline bool isOnlyDirectorySeparator (const std::string& path) noexcept
 {
 #if defined(_WIN32) || defined(WIN32)
 	if (path == std::string { '\\' })
@@ -217,7 +216,7 @@ static inline void normalizeDotSlash (std::string& path)
 // replace all \.\ with \ (Windows only)
 // resolve /../
 // expand a leading ~ (non-Windows only)
-Path normalizePath (const Path& path)
+Path normalizePath (const Path& path) noexcept
 {
 	if (! isValidPath (path))
 		return Path {};
@@ -250,8 +249,7 @@ Path normalizePath (const Path& path)
 }
 
 [[nodiscard]] static inline std::vector<std::string> splitString (std::string_view stringToSplit,
-																  std::string_view delimiter,
-																  bool			 includeDelimiterInResults)
+																  std::string_view delimiter) noexcept
 {
 	const auto delimiterStartChar = delimiter.front();
 
@@ -270,7 +268,7 @@ Path normalizePath (const Path& path)
 				++pos;
 
 			if (pos != stringToSplit.begin())
-				tokens.push_back ({ tokenStart, includeDelimiterInResults ? pos : delimiterStart });
+				tokens.push_back ({ tokenStart, delimiterStart });
 
 			tokenStart = pos;
 		}
@@ -286,7 +284,7 @@ Path normalizePath (const Path& path)
 	return tokens;
 }
 
-Path largestCommonPrefix (const Path& path1, const Path& path2)
+Path largestCommonPrefix (const Path& path1, const Path& path2) noexcept
 {
 	const auto a = normalizePath (path1);
 	const auto b = normalizePath (path2);
@@ -301,8 +299,8 @@ Path largestCommonPrefix (const Path& path1, const Path& path2)
 	const auto bStr = b.string();
 
 	// TODO: support \ on Windows
-	const auto aChunks = splitString (aStr, "/", false);
-	const auto bChunks = splitString (bStr, "/", false);
+	const auto aChunks = splitString (aStr, "/");
+	const auto bChunks = splitString (bStr, "/");
 
 	Path result;
 

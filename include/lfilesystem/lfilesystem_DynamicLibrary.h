@@ -129,7 +129,7 @@ public:
 
 		@see Listener::libraryClosed()
 	 */
-	void close();
+	void close() noexcept;
 
 	/** Closes and reloads the library.
 		This locates the file on disk from which the library was loaded, then closes the library and reopens it

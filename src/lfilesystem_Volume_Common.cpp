@@ -23,6 +23,10 @@ namespace limes::files
 
 std::optional<Volume> Volume::tryCreate (const Path& path) noexcept
 {
+#ifdef __EMSCRIPTEN__
+	// assume this will never work on Emscripten, to avoid having to catch an exception
+	return std::nullopt;
+#else
 	try
 	{
 		return Volume { path };
@@ -31,6 +35,7 @@ std::optional<Volume> Volume::tryCreate (const Path& path) noexcept
 	{
 		return std::nullopt;
 	}
+#endif
 }
 
 std::uintmax_t Volume::bytesFree() const

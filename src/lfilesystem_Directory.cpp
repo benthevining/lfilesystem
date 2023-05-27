@@ -18,6 +18,7 @@
 #include <vector>		// for vector
 #include <string>		// for string
 #include <algorithm>
+#include <system_error>
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
 #include "lfilesystem/lfilesystem_File.h"				// for File
 #include "lfilesystem/lfilesystem_SymLink.h"			// for SymLink
@@ -79,14 +80,9 @@ bool Directory::createIfDoesntExist() const noexcept
 	if (exists())
 		return false;
 
-	try
-	{
-		return std::filesystem::create_directories (getAbsolutePath());
-	}
-	catch(...)
-	{
-		return false;
-	}
+	std::error_code ec;
+
+	return std::filesystem::create_directories (getAbsolutePath(), ec);
 }
 
 Path Directory::getRelativePath (const Path& inputPath) const

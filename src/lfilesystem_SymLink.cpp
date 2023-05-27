@@ -14,6 +14,7 @@
 
 #include <filesystem>	 // for create_directory_symlink, create_...
 #include <stdexcept>
+#include <system_error>
 #include "lfilesystem/lfilesystem_Directory.h"
 #include "lfilesystem/lfilesystem_SymLink.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
@@ -47,19 +48,14 @@ SymLink::SymLink (const Path& symLinkPath, const FilesystemEntry& linkTarget)
 
 FilesystemEntry SymLink::follow (std::size_t recursionDepth) const noexcept
 {
-	try
-	{
-		return follow_recurse (0UL, recursionDepth);
-	}
-	catch (...)
-	{
-		return {};
-	}
+	return follow_recurse (0UL, recursionDepth);
 }
 
-FilesystemEntry SymLink::follow_recurse (std::size_t counter, std::size_t limit) const
+FilesystemEntry SymLink::follow_recurse (std::size_t counter, std::size_t limit) const noexcept
 {
-	const FilesystemEntry target { std::filesystem::read_symlink (getAbsolutePath()) };
+	std::error_code ec;
+
+	const FilesystemEntry target { std::filesystem::read_symlink (getAbsolutePath(), ec) };
 
 	if (counter >= limit)
 		return target;
@@ -72,19 +68,14 @@ FilesystemEntry SymLink::follow_recurse (std::size_t counter, std::size_t limit)
 
 bool SymLink::references (const FilesystemEntry& entry, std::size_t recursionDepth) const noexcept
 {
-	try
-	{
-		return references_recurse (entry, 0UL, recursionDepth);
-	}
-	catch (...)
-	{
-		return false;
-	}
+	return references_recurse (entry, 0UL, recursionDepth);
 }
 
-bool SymLink::references_recurse (const FilesystemEntry& entry, std::size_t counter, std::size_t limit) const
+bool SymLink::references_recurse (const FilesystemEntry& entry, std::size_t counter, std::size_t limit) const noexcept
 {
-	const FilesystemEntry target { std::filesystem::read_symlink (getAbsolutePath()) };
+	std::error_code ec;
+
+	const FilesystemEntry target { std::filesystem::read_symlink (getAbsolutePath(), ec) };
 
 	if (target == entry)
 		return true;
@@ -117,28 +108,23 @@ std::optional<SymLink> SymLink::create (const Path& linkPath, const FilesystemEn
 	if (! target.exists())
 		return std::nullopt;
 
-	try
-	{
-		SymLink link { linkPath };
+	SymLink link { linkPath };
 
-		link.makeAbsoluteRelativeToCWD();
+	link.makeAbsoluteRelativeToCWD();
 
-		// the functions below will fail if the link path already exists as a file
-		link.deleteIfExists();
+	// the functions below will fail if the link path already exists as a file
+	link.deleteIfExists();
 
-		const auto targetPath = target.getAbsolutePath();
+	const auto targetPath = target.getAbsolutePath();
 
-		if (target.isDirectory())
-			std::filesystem::create_directory_symlink (targetPath, link.getAbsolutePath());
-		else
-			std::filesystem::create_symlink (targetPath, link.getAbsolutePath());
+	std::error_code ec;
 
-		return link;
-	}
-	catch (...)
-	{
-		return std::nullopt;
-	}
+	if (target.isDirectory())
+		std::filesystem::create_directory_symlink (targetPath, link.getAbsolutePath(), ec);
+	else
+		std::filesystem::create_symlink (targetPath, link.getAbsolutePath(), ec);
+
+	return link;
 }
 
 std::optional<SymLink> SymLink::create (const Path& linkPath, const Path& target) noexcept
