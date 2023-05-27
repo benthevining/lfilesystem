@@ -1,5 +1,7 @@
 var NAVTREEINDEX0 =
 {
+"":[6,0,0],
+"":[6,0,1],
 "annotated.html":[7,0],
 "classes.html":[7,1],
 "classlimes_1_1files_1_1CFile.html":[7,0,0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "classlimes_1_1files_1_1Permissions.html#abb0a8fa1292d3d629c712b77809c0fea":[7,0,0,0,6,24],
 "classlimes_1_1files_1_1Permissions.html#abebe318f8c605ef5bdef9bbe4f4675c1":[7,0,0,0,6,20],
 "classlimes_1_1files_1_1Permissions.html#ad703e200998d3f2abe534b8dfcc9febe":[7,0,0,0,6,16],
-"classlimes_1_1files_1_1Permissions.html#ae1de8c552b97224d02872ff37ed2f7aa":[7,0,0,0,6,19],
-"classlimes_1_1files_1_1Permissions.html#ae4683c13b8c5641fb7d94ea7c7ff6b8b":[7,0,0,0,6,10],
-"classlimes_1_1files_1_1Permissions.html#ae7bee3738c29b819d515d00fb545f236":[7,0,0,0,6,25]
+"classlimes_1_1files_1_1Permissions.html#ae1de8c552b97224d02872ff37ed2f7aa":[7,0,0,0,6,19]
 };
