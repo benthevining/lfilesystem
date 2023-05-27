@@ -61,9 +61,8 @@ TEST_CASE ("CFile", TAGS)
 	// TODO: this only fails on Windows
 #ifndef _WIN32
 	REQUIRE (file.rename (newPath));
-#endif
-
 	REQUIRE (f.getPath() == newPath);
+#endif
 
 	REQUIRE (file.deleteIfExists());
 }

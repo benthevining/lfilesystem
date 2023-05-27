@@ -67,9 +67,8 @@ TEST_CASE ("SpecialDirs - appendToPATH()", TAGS)
 		// TODO: this only fails on Windows
 #ifndef _WIN32
 		REQUIRE (std::find (newPATH.begin(), newPATH.end(), newDir) != newPATH.end());
-#endif
-
 		REQUIRE (newPATH.size() == origPath.size() + 1);
+#endif
 	}
 }
 
