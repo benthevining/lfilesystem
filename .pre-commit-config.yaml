@@ -214,7 +214,7 @@ repos:
 - repo: https://github.com/sirosen/check-jsonschema
   rev: 0.21.0
   hooks:
-  # - id: check-github-workflows
+  - id: check-github-workflows
   # - id: check-dependabot
   - id: check-jsonschema
     name: Validate CMake presets
