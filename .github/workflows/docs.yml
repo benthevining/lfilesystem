@@ -77,7 +77,7 @@ jobs:
       working-directory: tmp
 
     - name: Copy generated docs to docs branch
-      run: cp -a doc/html/. /tmp/
+      run: cp -a doc/html/. tmp/
 
     - name: Create empty nojekyll file
       run: touch tmp/.nojekyll
