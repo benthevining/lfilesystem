@@ -336,7 +336,7 @@ Related Functions</h2></td></tr>
 <div class="line">    std::cout &lt;&lt; file.getFileObject()-&gt;loadAsString();</div>
 <div class="ttc" id="aclasslimes_1_1files_1_1FilesystemEntry_html"><div class="ttname"><a href="classlimes_1_1files_1_1FilesystemEntry.html">limes::files::FilesystemEntry</a></div><div class="ttdoc">The base class for any kind of object on the filesystem.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__FilesystemEntry_8h_source.html#l00079">lfilesystem_FilesystemEntry.h:80</a></div></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1File.html" title="This class represents a file on the filesystem.">File</a>, <a class="el" href="classlimes_1_1files_1_1Directory.html" title="This class represents a directory on the filesystem.">Directory</a>, <a class="el" href="classlimes_1_1files_1_1SymLink.html" title="This class represents a symbolic link on the filesystem.">SymLink</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Todo:</a></b></dt><dd><p class="startdd">getNonexistentSibling() </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo:</a></b></dt><dd><p class="startdd">getNonexistentSibling() </p>
 <p class="interdd">getCreationTime(), getLastAccessTime() </p>
 <p class="enddd">tests for getModificationTime(), getCreationTime(), getLastAccessTime() </p>
 </dd></dl>
@@ -516,7 +516,7 @@ Related Functions</h2></td></tr>
 
 <p>Assigns the path this filesystem entry represents. </p>
 <dl class="section note"><dt>Note</dt><dd>This has no effect on disk contents, this only updates the semantic path this object holds. To change the path on disk, see the <code><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0b0f7cd6712487a341837b36576b8222" title="Renames this filesystem object to a new path.">rename()</a></code> function. The path will be normalized using the <code><a class="el" href="group__limes__files.html#gaba30c294dcb67f9fce9ecf09905d8b65" title="This function takes an input path and does some linting and transformations to create a consistent,...">normalizePath()</a></code> function.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>test coverage (for all 3) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo:</a></b></dt><dd>test coverage (for all 3) </dd></dl>
 
 </div>
 </div>
@@ -729,7 +729,7 @@ Related Functions</h2></td></tr>
 
 <p>Creates the filesystem entry this object refers to, if it doesn't already exist. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if the filesystem object needed to be created, and was successfully created. False if it already existed or if creation fails.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000041">Todo:</a></b></dt><dd>test coverage for directories and symlinks </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo:</a></b></dt><dd>test coverage for directories and symlinks </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classlimes_1_1files_1_1Directory.html#a48c3c4d086f8638b3c8d82528975a185">limes::files::Directory</a>.</p>
 
@@ -825,7 +825,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0773027fdfe1edd5a1819a60cbe61dda" title="Returns the current path held by this object.">getPath()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo:</a></b></dt><dd>test coverage for makePreferred=true </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000038">Todo:</a></b></dt><dd>test coverage for makePreferred=true </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="files_dir_listen_8cpp-example.html#a8">files_dir_listen.cpp</a>.</dd>
 </dl>
 
@@ -886,7 +886,7 @@ Related Functions</h2></td></tr>
 
 <p>If this object refers to a directory, constructs a <a class="el" href="classlimes_1_1files_1_1Directory.html" title="This class represents a directory on the filesystem.">Directory</a> object referring to the same directory. </p>
 <p>Otherwise, returns a <code>nullopt</code>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0ef12f8a853867aebb787084c81d7fc3" title="If this object refers to a file, constructs a File object referring to the same file.">getFileObject()</a>, <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a5c4521a2c67413b4488753b84fe3c770" title="If this object refers to a symbolic link, constructs a SymLink object referring to the same link.">getSymLinkObject()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo:</a></b></dt><dd>test coverage for nullopt case </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000043">Todo:</a></b></dt><dd>test coverage for nullopt case </dd></dl>
 
 </div>
 </div>
@@ -915,7 +915,7 @@ Related Functions</h2></td></tr>
 
 <p>If this object refers to a file, constructs a <a class="el" href="classlimes_1_1files_1_1File.html" title="This class represents a file on the filesystem.">File</a> object referring to the same file. </p>
 <p>Otherwise, returns a <code>nullopt</code>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a8403ef93ef33239a73bcdad8a533ca67" title="If this object refers to a directory, constructs a Directory object referring to the same directory.">getDirectoryObject()</a>, <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a5c4521a2c67413b4488753b84fe3c770" title="If this object refers to a symbolic link, constructs a SymLink object referring to the same link.">getSymLinkObject()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000038">Todo:</a></b></dt><dd>test coverage for nullopt case </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000042">Todo:</a></b></dt><dd>test coverage for nullopt case </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="files_dir_listen_8cpp-example.html#a6">files_dir_listen.cpp</a>.</dd>
 </dl>
 
@@ -945,7 +945,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the last modification time of the filesystem entry. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000037">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000041">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1040,7 +1040,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0eae45ce1561bf72e33ec75ab53a232f" title="Returns the full, absolute path of this filesystem entry.">getAbsolutePath()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>test coverage for makePreferred=true </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000037">Todo:</a></b></dt><dd>test coverage for makePreferred=true </dd></dl>
 
 </div>
 </div>
@@ -1109,7 +1109,7 @@ Related Functions</h2></td></tr>
 
 <p>If this object refers to a symbolic link, constructs a <a class="el" href="classlimes_1_1files_1_1SymLink.html" title="This class represents a symbolic link on the filesystem.">SymLink</a> object referring to the same link. </p>
 <p>Otherwise, returns a <code>nullopt</code>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0ef12f8a853867aebb787084c81d7fc3" title="If this object refers to a file, constructs a File object referring to the same file.">getFileObject()</a>, <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a8403ef93ef33239a73bcdad8a533ca67" title="If this object refers to a directory, constructs a Directory object referring to the same directory.">getDirectoryObject()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo:</a></b></dt><dd>better test coverage for function's internal branches </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000044">Todo:</a></b></dt><dd>better test coverage for function's internal branches </dd></dl>
 
 </div>
 </div>
@@ -1204,7 +1204,7 @@ Related Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000035">Todo:</a></b></dt><dd>test coverage for false case </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo:</a></b></dt><dd>test coverage for false case </dd></dl>
 
 </div>
 </div>
@@ -1417,7 +1417,7 @@ Related Functions</h2></td></tr>
 <div class="ttc" id="agroup__limes__files_html_gaf5d6b587d82998a6139e0729490f7c83"><div class="ttname"><a href="group__limes__files.html#gaf5d6b587d82998a6139e0729490f7c83">limes::files::Path</a></div><div class="ttdeci">std::filesystem::path Path</div><div class="ttdoc">Convenience typedef for filesystem paths.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__FilesystemEntry_8h_source.html#l00043">lfilesystem_FilesystemEntry.h:43</a></div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if this function changed the path this object refers to. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a389035084450a378047d413054b56eeb" title="Similar to makeAbsoluteRelativeTo(), but uses the current working directory as the base path.">makeAbsoluteRelativeToCWD()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo:</a></b></dt><dd>test coverage &ndash; should return false if basePath is not absolute </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo:</a></b></dt><dd>test coverage &ndash; should return false if basePath is not absolute </dd></dl>
 
 </div>
 </div>
@@ -1504,7 +1504,7 @@ Related Functions</h2></td></tr>
 
 <p>Returns true if this filesystem object exists. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0c87f867a75ee2330072e9e91895af16" title="Returns true if the filesystem object this object refers to exists on disk.">exists()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1562,7 +1562,7 @@ Related Functions</h2></td></tr>
 
 <p>Compares this filesystem entry's absolute path with the other one's for equality. </p>
 <p>Note that this is a path comparison, and does not compare the contents of files. This comparison attempts to respect the case sensitivity of the underlying filesystem.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
 
 </div>
 </div>
@@ -1592,7 +1592,7 @@ Related Functions</h2></td></tr>
 
 <p>Compares this filesystem entry's absolute path with the other one's for equality. </p>
 <p>Note that this is a path comparison, and does not compare the contents of files. This comparison attempts to respect the case sensitivity of the underlying filesystem.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
 
 </div>
 </div>
@@ -1619,7 +1619,7 @@ Related Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">assert (child.getAbsolutePath() == <span class="stringliteral">&quot;/path/to/directory/file.txt&quot;</span>);</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>This has no effect on disk contents, this only updates the semantic path this object holds. To change the path on disk, see the <code><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0b0f7cd6712487a341837b36576b8222" title="Renames this filesystem object to a new path.">rename()</a></code> function.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1647,7 +1647,7 @@ Related Functions</h2></td></tr>
 <div class="line">assert (dir.<a class="code" href="classlimes_1_1files_1_1FilesystemEntry.html#a0eae45ce1561bf72e33ec75ab53a232f">getAbsolutePath</a>() == <span class="stringliteral">&quot;/path/to/directory/file.txt&quot;</span>);</div>
 <div class="ttc" id="aclasslimes_1_1files_1_1FilesystemEntry_html_a0eae45ce1561bf72e33ec75ab53a232f"><div class="ttname"><a href="classlimes_1_1files_1_1FilesystemEntry.html#a0eae45ce1561bf72e33ec75ab53a232f">limes::files::FilesystemEntry::getAbsolutePath</a></div><div class="ttdeci">Path getAbsolutePath(bool makePreferred=false) const noexcept</div><div class="ttdoc">Returns the full, absolute path of this filesystem entry.</div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>This has no effect on disk contents, this only updates the semantic path this object holds. To change the path on disk, see the <code><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0b0f7cd6712487a341837b36576b8222" title="Renames this filesystem object to a new path.">rename()</a></code> function.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000035">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1677,7 +1677,7 @@ Related Functions</h2></td></tr>
 
 <p>Lexicographically compares this filesystem entry's absolute path with another path. </p>
 <p>Directories will always be sorted before other types of filesystem objects; other than this, <code>std::filesystem::path</code> 's built-in lexicographic sort is used.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1707,7 +1707,7 @@ Related Functions</h2></td></tr>
 
 <p>Lexicographically compares this filesystem entry's absolute path with another path. </p>
 <p>Directories will always be sorted before other types of filesystem objects; other than this, <code>std::filesystem::path</code> 's built-in lexicographic sort is used.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1729,7 +1729,7 @@ Related Functions</h2></td></tr>
 
 <p>Assigns the path this filesystem entry represents. </p>
 <dl class="section note"><dt>Note</dt><dd>This has no effect on disk contents, this only updates the semantic path this object holds. To change the path on disk, see the <code><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0b0f7cd6712487a341837b36576b8222" title="Renames this filesystem object to a new path.">rename()</a></code> function. The path will be normalized using the <code><a class="el" href="group__limes__files.html#gaba30c294dcb67f9fce9ecf09905d8b65" title="This function takes an input path and does some linting and transformations to create a consistent,...">normalizePath()</a></code> function.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>test coverage (for all 3) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo:</a></b></dt><dd>test coverage (for all 3) </dd></dl>
 
 </div>
 </div>
@@ -1751,7 +1751,7 @@ Related Functions</h2></td></tr>
 
 <p>Assigns the path this filesystem entry represents. </p>
 <dl class="section note"><dt>Note</dt><dd>This has no effect on disk contents, this only updates the semantic path this object holds. To change the path on disk, see the <code><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0b0f7cd6712487a341837b36576b8222" title="Renames this filesystem object to a new path.">rename()</a></code> function. The path will be normalized using the <code><a class="el" href="group__limes__files.html#gaba30c294dcb67f9fce9ecf09905d8b65" title="This function takes an input path and does some linting and transformations to create a consistent,...">normalizePath()</a></code> function.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>test coverage (for all 3) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo:</a></b></dt><dd>test coverage (for all 3) </dd></dl>
 
 </div>
 </div>
@@ -1781,7 +1781,7 @@ Related Functions</h2></td></tr>
 
 <p>Compares this filesystem entry's absolute path with the other one's for equality. </p>
 <p>Note that this is a path comparison, and does not compare the contents of files. This comparison attempts to respect the case sensitivity of the underlying filesystem.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
 
 </div>
 </div>
@@ -1811,7 +1811,7 @@ Related Functions</h2></td></tr>
 
 <p>Compares this filesystem entry's absolute path with the other one's for equality. </p>
 <p>Note that this is a path comparison, and does not compare the contents of files. This comparison attempts to respect the case sensitivity of the underlying filesystem.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo:</a></b></dt><dd>test coverage for overloads accepting a Path argument </dd></dl>
 
 </div>
 </div>
@@ -1841,7 +1841,7 @@ Related Functions</h2></td></tr>
 
 <p>Lexicographically compares this filesystem entry's absolute path with another path. </p>
 <p>Directories will always be sorted before other types of filesystem objects; other than this, <code>std::filesystem::path</code> 's built-in lexicographic sort is used.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1871,7 +1871,7 @@ Related Functions</h2></td></tr>
 
 <p>Lexicographically compares this filesystem entry's absolute path with another path. </p>
 <p>Directories will always be sorted before other types of filesystem objects; other than this, <code>std::filesystem::path</code> 's built-in lexicographic sort is used.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -2014,7 +2014,7 @@ Related Functions</h2></td></tr>
 
 <p>If the filesystem entry this object refers do doesn't exist, this function creates it. </p>
 <p>If it did already exist, this function updates its modification time to the current system time. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a2e495352f79252fa9ed62845e78c5c99" title="The same as touch() , except this function does not create the filesystem entry if it didn&#39;t already ...">touch_noCreate()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000042">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000046">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -2048,7 +2048,7 @@ Related Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>limes</b></li><li class="navelem"><a class="el" href="namespacelimes_1_1files.html">files</a></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html">FilesystemEntry</a></li>
-    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

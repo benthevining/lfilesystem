@@ -174,7 +174,7 @@ Related Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents a logical filesystem volume. </p>
 <p>You can construct a <a class="el" href="classlimes_1_1files_1_1Volume.html" title="This class represents a logical filesystem volume.">Volume</a> object from any path, and the resulting <a class="el" href="classlimes_1_1files_1_1Volume.html" title="This class represents a logical filesystem volume.">Volume</a> object will refer to the logical volume where the passed path was mounted at the time of the <a class="el" href="classlimes_1_1files_1_1Volume.html" title="This class represents a logical filesystem volume.">Volume</a> object's construction.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000055">Todo:</a></b></dt><dd><p class="startdd">ConstructionError custom exception type? This could allow more specific error checking. The error could contain the original passed path. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000059">Todo:</a></b></dt><dd><p class="startdd">ConstructionError custom exception type? This could allow more specific error checking. The error could contain the original passed path. </p>
 <p class="enddd">supportsHardLinks()? </p>
 </dd></dl>
 
@@ -352,7 +352,7 @@ Related Functions</h2></td></tr>
 <p>Returns this volume's label. </p>
 <p>This will always return an empty string on iOS/watchOS/tvOS.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacelimes_1_1files_1_1volume.html#ae90982b033117c2fcc1680a0efd746e4" title="Returns the current volume&#39;s label.">volume::label()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000057">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000061">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -402,7 +402,7 @@ Related Functions</h2></td></tr>
 <p>Returns this volume's serial number. </p>
 <p>If the serial number cannot be retrieved, this will return 0. This will always return 0 on Apple systems. Note than on Linux systems, this may fail (and return 0) if the calling process does not have root privileges.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacelimes_1_1files_1_1volume.html#a7f04821bdefcf503edafe7a18524be7d" title="Returns the current volume&#39;s serial number.">volume::serialNumber()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000058">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000062">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -423,8 +423,8 @@ Related Functions</h2></td></tr>
 
 <p>Returns the type of this volume. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacelimes_1_1files_1_1volume.html#a389225716ef1cdd2484ba415668fead2" title="Returns the type of the current volume.">volume::type()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000059">Todo:</a></b></dt><dd>Linux: detect RAM type</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000060">Todo:</a></b></dt><dd>Mac: detect RAM &amp; Network types </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000063">Todo:</a></b></dt><dd>Linux: detect RAM type</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000064">Todo:</a></b></dt><dd>Mac: detect RAM &amp; Network types </dd></dl>
 
 </div>
 </div>
@@ -491,7 +491,7 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000056">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000060">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -518,7 +518,7 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000056">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000060">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -580,7 +580,7 @@ Related Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>limes</b></li><li class="navelem"><a class="el" href="namespacelimes_1_1files.html">files</a></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1Volume.html">Volume</a></li>
-    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

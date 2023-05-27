@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lfilesystem: Main Page</title>
+<title>lfilesystem: lfilesystem</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,17 +82,34 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">lfilesystem Documentation</div>  </div>
+<div class="title">lfilesystem </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> A C++ filesystem library built on top of std::filesystem</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<p>This library provides object-oriented approaches to working with different kinds of filesystem objects. Highlights include the <code>Volume</code> and <code>FileWatcher</code> classes.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Portability</h1>
+<p>This library is tested on Mac, Windows, and Linux (with GCC, Clang, and MSVC), as well as cross-compiled for iOS, tvOS, watchOS, and Emscripten (WebAssembly). All APIs are available on all platforms, with availability introspection functions for features not supported on all platforms.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Building</h1>
+<p>This library is built with CMake. CMake presets are provided for each of the toolchains we target. This library supports being added to other CMake projects via <code>find_package()</code>, <code>FetchContent</code>, or a plain <code>add_subdirectory()</code>. In all cases, you should link against the target <code>limes::lfilesystem</code> and include the main header this way: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="lfilesystem_8h.html">lfilesystem/lfilesystem.h</a>&gt;</span></div>
+<div class="ttc" id="alfilesystem_8h_html"><div class="ttname"><a href="lfilesystem_8h.html">lfilesystem.h</a></div><div class="ttdoc">The main header for the limes_files library.</div></div>
+</div><!-- fragment --><p> All of this library's headers can be individually included, but including <code><a class="el" href="lfilesystem_8h.html" title="The main header for the limes_files library.">lfilesystem.h</a></code> is the easiest way to bring in the entire library.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Links</h1>
+<p><a href="https://my.cdash.org/index.php?project=lfilesystem">CDash testing dashboard</a></p>
+<p><a href="https://benthevining.github.io/lfilesystem/">Documentation</a> </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

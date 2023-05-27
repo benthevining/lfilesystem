@@ -353,7 +353,11 @@ Examples</h1>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a7cb6395e979d5eaac38fa38b509c8966"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a7cb6395e979d5eaac38fa38b509c8966">limes::files::File::loadAsLines</a></div><div class="ttdeci">std::vector&lt; std::string &gt; loadAsLines() const</div><div class="ttdoc">Loads the file's contents as a vector of strings, with each string containing the contents of one lin...</div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a8e6a359a45514bcebc4c49ae06c3528b"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a8e6a359a45514bcebc4c49ae06c3528b">limes::files::File::overwrite</a></div><div class="ttdeci">bool overwrite(const char *const data, std::size_t numBytes) const noexcept</div><div class="ttdoc">Replaces the file's contents with the given data.</div></div>
 </div><!-- fragment --><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>FileSearchPath class and/or glob() function</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>MemoryMappedFile class </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>MemoryMappedFile class</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Android support</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>CLI app</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>remove internal dependencies on exceptions (Emscripten tests)</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>get all CI builds working </dd></dl>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga06f5d5ede80da878f99302d066c91f93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga06f5d5ede80da878f99302d066c91f93">&#9670;&nbsp;</a></span>FSPerms</h2>
@@ -530,7 +534,7 @@ Examples</h1>
 
 <p>Returns the maximum path length possible on the current operating system. </p>
 <p>This is a compile-time constant defined by platform headers.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000044">Todo:</a></b></dt><dd>query the actual underlying filesystem for this? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000048">Todo:</a></b></dt><dd>query the actual underlying filesystem for this? </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="lfilesystem__Misc_8h_source.html#l00083">83</a> of file <a class="el" href="lfilesystem__Misc_8h_source.html">lfilesystem_Misc.h</a>.</p>
 
@@ -774,7 +778,7 @@ Examples</h1>
 </div><div class="memdoc">
 
 <p>Returns the platform's separator char for the <code>PATH</code> environment variable: <code></code>; on Windows, and <code></code>: everywhere else. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000043">Todo:</a></b></dt><dd>is there a way to actually query the underlying filesystem for this? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000047">Todo:</a></b></dt><dd>is there a way to actually query the underlying filesystem for this? </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="lfilesystem__Misc_8h_source.html#l00052">52</a> of file <a class="el" href="lfilesystem__Misc_8h_source.html">lfilesystem_Misc.h</a>.</p>
 
@@ -785,7 +789,7 @@ Examples</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat May 27 2023 18:34:35 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

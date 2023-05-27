@@ -443,7 +443,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclasslimes_1_1files_1_1Directory_html_a1118a5d28ff49662ab733e01907ff956"><div class="ttname"><a href="classlimes_1_1files_1_1Directory.html#a1118a5d28ff49662ab733e01907ff956">limes::files::Directory::iterateFiles</a></div><div class="ttdeci">void iterateFiles(FileCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const</div><div class="ttdoc">Calls a function for each child file that exists in this directory.</div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html"><div class="ttname"><a href="classlimes_1_1files_1_1File.html">limes::files::File</a></div><div class="ttdoc">This class represents a file on the filesystem.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00061">lfilesystem_File.h:62</a></div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a65c9ba797f3ec8f1a135269481319d83"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a65c9ba797f3ec8f1a135269481319d83">limes::files::File::getFilename</a></div><div class="ttdeci">std::string getFilename(bool includeExtension=false) const</div><div class="ttdoc">Returns this file's filename.</div></div>
-</div><!-- fragment --><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>getNonexistentChild() </dd></dl>
+</div><!-- fragment --><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>getNonexistentChild() </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="files_dir_listen_8cpp-example.html#_a2">files_dir_listen.cpp</a>.</dd>
 </dl>
 
@@ -1200,7 +1200,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Iterates through all child objects of this directory, calling different callbacks for each object depending on if it is a file, directory, or symbolic link. </p>
 <p>It is not an error for any of these callbacks to be <code>nullptr</code> . </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Directory.html#a471cc92247033c8c7453d7d93e448329" title="Returns all child filesystem entries that exist in this directory.">getAllChildren()</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1238,7 +1238,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Iterates through all child objects of this directory, calling a single type-erased callback for each one. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Directory.html#a471cc92247033c8c7453d7d93e448329" title="Returns all child filesystem entries that exist in this directory.">getAllChildren()</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1276,7 +1276,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Calls a function for each child directory that exists in this directory. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Directory.html#ab961bd37f3027fa3a0485b55c0949bdf" title="Returns all child directories that exist in this directory.">getChildDirectories()</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1314,7 +1314,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Calls a function for each child file that exists in this directory. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Directory.html#ad700db421d5e3cab31f29851a6e208e9" title="Returns all child files that exist in this directory.">getChildFiles()</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>test coverage </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="files_dir_enumerate_8cpp-example.html#a0">files_dir_enumerate.cpp</a>.</dd>
 </dl>
 
@@ -1354,7 +1354,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Calls a function for each child symbolic link that exists in this directory. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Directory.html#abc6558fd395d68129453c61f9bf3c382" title="Returns all child symbolic links that exist in this directory.">getChildSymLinks()</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1375,7 +1375,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Assigns this object to refer to a new path. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1396,7 +1396,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Assigns this object to refer to a new path. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1417,7 +1417,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Sets this directory as the current working directory. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Directory.html#aacee8c5bf83b5cb2e4a75b480062d57f" title="Returns true if this directory is the system&#39;s current working directory.">isCurrentWorkingDirectory()</a>, dirs::setCWD() </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1459,7 +1459,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>limes</b></li><li class="navelem"><a class="el" href="namespacelimes_1_1files.html">files</a></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1Directory.html">Directory</a></li>
-    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

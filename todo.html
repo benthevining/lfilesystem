@@ -89,127 +89,131 @@ $(document).ready(function(){initNavTree('todo.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt>Class <a class="el" href="classlimes_1_1files_1_1Directory.html">limes::files::Directory</a>  </dt>
-<dd><a class="anchor" id="_todo000003"></a>getNonexistentChild()  </dd>
+<dd><a class="anchor" id="_todo000007"></a>getNonexistentChild()  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#ad3d713efbbad04df7645b199f4df7a03">limes::files::Directory::iterateAllChildren</a>  (FileCallback &amp;&amp;fileCallback, DirectoryCallback &amp;&amp;directoryCallback, SymLinkCallback &amp;&amp;symLinkCallback, bool recurse=true, bool includeHiddenFiles=true) const</dt>
-<dd><a class="anchor" id="_todo000008"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000012"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#ad42263532873ab0dfe18fb7ef7191cfb">limes::files::Directory::iterateAllChildren</a>  (FilesystemEntryCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const</dt>
-<dd><a class="anchor" id="_todo000009"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000013"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#a7404c01dacf9257361d30ad4411bd325">limes::files::Directory::iterateDirectories</a>  (DirectoryCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const</dt>
-<dd><a class="anchor" id="_todo000006"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#a1118a5d28ff49662ab733e01907ff956">limes::files::Directory::iterateFiles</a>  (FileCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const</dt>
-<dd><a class="anchor" id="_todo000005"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#aa36ca291d40b3934dbef904380dd14da">limes::files::Directory::iterateSymLinks</a>  (SymLinkCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const</dt>
-<dd><a class="anchor" id="_todo000007"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#a3019832824cd0fbd324e23825af214b5">limes::files::Directory::operator=</a>  (const Path &amp;newPath)</dt>
-<dd><a class="anchor" id="_todo000004"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#a434d2a0866882ab06e70839908754001">limes::files::Directory::setAsWorkingDirectory</a>  () const</dt>
 <dd><a class="anchor" id="_todo000010"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#a1118a5d28ff49662ab733e01907ff956">limes::files::Directory::iterateFiles</a>  (FileCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const</dt>
+<dd><a class="anchor" id="_todo000009"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#aa36ca291d40b3934dbef904380dd14da">limes::files::Directory::iterateSymLinks</a>  (SymLinkCallback &amp;&amp;callback, bool recurse=true, bool includeHiddenFiles=true) const</dt>
+<dd><a class="anchor" id="_todo000011"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#a3019832824cd0fbd324e23825af214b5">limes::files::Directory::operator=</a>  (const Path &amp;newPath)</dt>
+<dd><a class="anchor" id="_todo000008"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Directory.html#a434d2a0866882ab06e70839908754001">limes::files::Directory::setAsWorkingDirectory</a>  () const</dt>
+<dd><a class="anchor" id="_todo000014"></a>test coverage  </dd>
 <dt>Class <a class="el" href="classlimes_1_1files_1_1DynamicLibrary.html">limes::files::DynamicLibrary</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000011"></a>double check iOS. I've heard that iOS disallows calling <code>dlopen()</code> .</p>
-<p class="interdd"><a class="anchor" id="_todo000012"></a>use emscripten_dlopen when building with Emscripten. Note that this function is asynchronous, however.</p>
-<p class="interdd"><a class="anchor" id="_todo000013"></a>function to add a directory to the search paths for DLLs?</p>
-<p class="enddd"><a class="anchor" id="_todo000014"></a>function to check if dynamic libraries are supported by the current system  </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000018"></a>function to check if dynamic libraries are supported by the current system </p>
+<p class="interdd"><a class="anchor" id="_todo000017"></a>function to add a directory to the search paths for DLLs?</p>
+<p class="interdd"><a class="anchor" id="_todo000016"></a>use emscripten_dlopen when building with Emscripten. Note that this function is asynchronous, however.</p>
+<p class="enddd"><a class="anchor" id="_todo000015"></a>double check iOS. I've heard that iOS disallows calling <code>dlopen()</code> . </p>
 </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1DynamicLibrary.html#a98a8101632dc7eb026b1dd6a284b2630">limes::files::DynamicLibrary::getFile</a>  () const</dt>
-<dd><a class="anchor" id="_todo000015"></a>Emscripten implementation  </dd>
+<dd><a class="anchor" id="_todo000019"></a>Emscripten implementation  </dd>
 <dt>Class <a class="el" href="classlimes_1_1files_1_1File.html">limes::files::File</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000016"></a>start as process </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000020"></a>start as process </p>
 <p class="enddd">get user/group ID of owner?  </p>
 </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1File.html#a8756d087b7fdc53b85c68ac09154e37d">limes::files::File::duplicate</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000023"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000027"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1File.html#aa4cf6351f59c74e3756d0abbcc8cf568">limes::files::File::getInputStream</a>  () const</dt>
-<dd><a class="anchor" id="_todo000021"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000025"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1File.html#a9635312c7b4d93ff95b1c1c33b63ea6a">limes::files::File::getOutputStream</a>  () const</dt>
-<dd><a class="anchor" id="_todo000022"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1File.html#a223fafd66672d5003d821870036539da">limes::files::File::operator=</a>  (const Path &amp;newPath)</dt>
-<dd><a class="anchor" id="_todo000019"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000026"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1File.html#a52eb39edc95d049e8e83bb1b43f7f017">limes::files::File::operator=</a>  (const std::string_view &amp;newPath)</dt>
-<dd><a class="anchor" id="_todo000020"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000024"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1File.html#a223fafd66672d5003d821870036539da">limes::files::File::operator=</a>  (const Path &amp;newPath)</dt>
+<dd><a class="anchor" id="_todo000023"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1File.html#abacd3a2f388059417822ba908cde1e17">limes::files::File::replaceFileExtension</a>  (const std::string_view &amp;newFileExtension, bool renameOnDisk=true)</dt>
-<dd><a class="anchor" id="_todo000018"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000022"></a>test coverage  </dd>
 <dt>Class <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html">limes::files::FilesystemEntry</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000026"></a>getNonexistentSibling() </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000030"></a>getNonexistentSibling() </p>
 <p class="interdd">getCreationTime(), getLastAccessTime() </p>
 <p class="enddd">tests for getModificationTime(), getCreationTime(), getLastAccessTime()  </p>
 </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#aff5e5220c7afa6ba6a8a0c37d439bcb0">limes::files::FilesystemEntry::createIfDoesntExist</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000041"></a>test coverage for directories and symlinks  </dd>
+<dd><a class="anchor" id="_todo000045"></a>test coverage for directories and symlinks  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0eae45ce1561bf72e33ec75ab53a232f">limes::files::FilesystemEntry::getAbsolutePath</a>  (bool makePreferred=false) const noexcept</dt>
-<dd><a class="anchor" id="_todo000034"></a>test coverage for makePreferred=true  </dd>
+<dd><a class="anchor" id="_todo000038"></a>test coverage for makePreferred=true  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a8403ef93ef33239a73bcdad8a533ca67">limes::files::FilesystemEntry::getDirectoryObject</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000039"></a>test coverage for nullopt case  </dd>
+<dd><a class="anchor" id="_todo000043"></a>test coverage for nullopt case  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0ef12f8a853867aebb787084c81d7fc3">limes::files::FilesystemEntry::getFileObject</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000038"></a>test coverage for nullopt case  </dd>
+<dd><a class="anchor" id="_todo000042"></a>test coverage for nullopt case  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a375a839bcea91f01997e1e8355870695">limes::files::FilesystemEntry::getLastModificationTime</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000037"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000041"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0773027fdfe1edd5a1819a60cbe61dda">limes::files::FilesystemEntry::getPath</a>  (bool makePreferred=false) const noexcept</dt>
-<dd><a class="anchor" id="_todo000033"></a>test coverage for makePreferred=true  </dd>
+<dd><a class="anchor" id="_todo000037"></a>test coverage for makePreferred=true  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a5c4521a2c67413b4488753b84fe3c770">limes::files::FilesystemEntry::getSymLinkObject</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000040"></a>better test coverage for function's internal branches  </dd>
+<dd><a class="anchor" id="_todo000044"></a>better test coverage for function's internal branches  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a6ce64ccf21db3fd3dc466400f1f43007">limes::files::FilesystemEntry::isBelow</a>  (const <a class="el" href="classlimes_1_1files_1_1Directory.html" title="This class represents a directory on the filesystem.">Directory</a> &amp;directory, std::size_t depthLimit=50) const</dt>
-<dd><a class="anchor" id="_todo000035"></a>test coverage for false case  </dd>
+<dd><a class="anchor" id="_todo000039"></a>test coverage for false case  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a8edaa47b3ec229af6f96ee2457e633d2">limes::files::FilesystemEntry::makeAbsoluteRelativeTo</a>  (const Path &amp;basePath) noexcept</dt>
-<dd><a class="anchor" id="_todo000032"></a>test coverage &ndash; should return false if basePath is not absolute  </dd>
+<dd><a class="anchor" id="_todo000036"></a>test coverage &ndash; should return false if basePath is not absolute  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a2ad73e4002faf0fb2095c501cc98a977">limes::files::FilesystemEntry::operator bool</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000036"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000040"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a6d38b6b295518d14632f03457276e9a5">limes::files::FilesystemEntry::operator/</a>  (const std::string_view &amp;subpathName) const</dt>
-<dd><a class="anchor" id="_todo000030"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000034"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0b9079d111f9f6dc0bf1e450bbbce052">limes::files::FilesystemEntry::operator/=</a>  (const std::string_view &amp;subpathName)</dt>
-<dd><a class="anchor" id="_todo000031"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000035"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a3fe23b8c2c82839d273f9c685873a188">limes::files::FilesystemEntry::operator&lt;</a>  (const <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html" title="The base class for any kind of object on the filesystem.">FilesystemEntry</a> &amp;other) const noexcept</dt>
-<dd><a class="anchor" id="_todo000029"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000033"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a5c18b0e61674dcfc66c586f5635b3e4c">limes::files::FilesystemEntry::operator=</a>  (const Path &amp;newPath)</dt>
-<dd><a class="anchor" id="_todo000027"></a>test coverage (for all 3)  </dd>
+<dd><a class="anchor" id="_todo000031"></a>test coverage (for all 3)  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a9769e7f27fea1f1b437c6b4ae1517a7f">limes::files::FilesystemEntry::operator==</a>  (const <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html" title="The base class for any kind of object on the filesystem.">FilesystemEntry</a> &amp;other) const noexcept</dt>
-<dd><a class="anchor" id="_todo000028"></a>test coverage for overloads accepting a Path argument  </dd>
+<dd><a class="anchor" id="_todo000032"></a>test coverage for overloads accepting a Path argument  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a7fa4cd4b03de7654ad7be7b026e45da6">limes::files::FilesystemEntry::touch</a>  () const</dt>
-<dd><a class="anchor" id="_todo000042"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000046"></a>test coverage  </dd>
 <dt>Class <a class="el" href="classlimes_1_1files_1_1FileWatcher.html">limes::files::FileWatcher</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000025"></a>how to test this class? A test would basically need to check that the proper callbacks are indeed called when a watched file is mutated. Is this even possible? </p>
-<p class="enddd"><a class="anchor" id="_todo000024"></a>iOS, Android and Emscripten implementations. This class requires platform-specific code, probably JNI for Android and Swift/ObjC for iOS. Is this class possible to implement for Emscripten? </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000029"></a>how to test this class? A test would basically need to check that the proper callbacks are indeed called when a watched file is mutated. Is this even possible? </p>
+<p class="enddd"><a class="anchor" id="_todo000028"></a>iOS, Android and Emscripten implementations. This class requires platform-specific code, probably JNI for Android and Swift/ObjC for iOS. Is this class possible to implement for Emscripten? </p>
 </dd>
 <dt>Member <a class="el" href="group__limes__files.html#gaacd02596de7ffa0492c68d72ca951bc6">limes::files::maxPathLength</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000044"></a>query the actual underlying filesystem for this?  </dd>
+<dd><a class="anchor" id="_todo000048"></a>query the actual underlying filesystem for this?  </dd>
 <dt>Member <a class="el" href="group__limes__files.html#ga766987b27c95660bbd974dd4418f9b28">limes::files::PATHseparator</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000043"></a>is there a way to actually query the underlying filesystem for this?  </dd>
+<dd><a class="anchor" id="_todo000047"></a>is there a way to actually query the underlying filesystem for this?  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#af6f5cfc215283c5f995c97426b6aa70d">limes::files::Permissions::getStdPerms</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000045"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a01b6cb878f82333313c30a49579ee481">limes::files::Permissions::hasStickyBit</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000047"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#abebe318f8c605ef5bdef9bbe4f4675c1">limes::files::Permissions::othersAll</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000051"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a01baa7d01f18afd7475ad5c33844c6b7">limes::files::Permissions::toString</a>  () const</dt>
-<dd><a class="anchor" id="_todo000050"></a>test coverage for unknown/empty case  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a218cfe92b4692c24fed54ec80553e80d">limes::files::Permissions::withAll</a>  (Scope s=Scope::All) const noexcept</dt>
-<dd><a class="anchor" id="_todo000048"></a>test coverage  </dd>
-<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a2f9fbe990fb7bfb8414209a85f9916ac">limes::files::Permissions::withStickyBit</a>  () const noexcept</dt>
 <dd><a class="anchor" id="_todo000049"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a01b6cb878f82333313c30a49579ee481">limes::files::Permissions::hasStickyBit</a>  () const noexcept</dt>
+<dd><a class="anchor" id="_todo000051"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#abebe318f8c605ef5bdef9bbe4f4675c1">limes::files::Permissions::othersAll</a>  () noexcept</dt>
+<dd><a class="anchor" id="_todo000055"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a01baa7d01f18afd7475ad5c33844c6b7">limes::files::Permissions::toString</a>  () const</dt>
+<dd><a class="anchor" id="_todo000054"></a>test coverage for unknown/empty case  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a218cfe92b4692c24fed54ec80553e80d">limes::files::Permissions::withAll</a>  (Scope s=Scope::All) const noexcept</dt>
+<dd><a class="anchor" id="_todo000052"></a>test coverage  </dd>
+<dt>Member <a class="el" href="classlimes_1_1files_1_1Permissions.html#a2f9fbe990fb7bfb8414209a85f9916ac">limes::files::Permissions::withStickyBit</a>  () const noexcept</dt>
+<dd><a class="anchor" id="_todo000053"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1SymLink.html#a6dc274ce8db515e4aa7878992145a266">limes::files::SymLink::follow</a>  (std::size_t recursionDepth=50) const noexcept</dt>
-<dd><a class="anchor" id="_todo000054"></a>protection from cycles? The recursion depth helps, but we could throw an exception if a cycle begins (one of the targets is the same as one of the previous targets). This would require storing the previously visited targets in memory, so the question becomes if this is worth it.  </dd>
+<dd><a class="anchor" id="_todo000058"></a>protection from cycles? The recursion depth helps, but we could throw an exception if a cycle begins (one of the targets is the same as one of the previous targets). This would require storing the previously visited targets in memory, so the question becomes if this is worth it.  </dd>
 <dt>Class <a class="el" href="classlimes_1_1files_1_1TempFile.html">limes::files::TempFile</a>  </dt>
-<dd><a class="anchor" id="_todo000017"></a>unit tests  </dd>
+<dd><a class="anchor" id="_todo000021"></a>unit tests  </dd>
 <dt>Class <a class="el" href="classlimes_1_1files_1_1Volume.html">limes::files::Volume</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000055"></a>ConstructionError custom exception type? This could allow more specific error checking. The error could contain the original passed path. </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000059"></a>ConstructionError custom exception type? This could allow more specific error checking. The error could contain the original passed path. </p>
 <p class="enddd">supportsHardLinks()?  </p>
 </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Volume.html#af3e0f5ca00312c156efeb054570df2c3">limes::files::Volume::getLabel</a>  () const</dt>
-<dd><a class="anchor" id="_todo000057"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000061"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Volume.html#a4494fd02f010a642105440441c9b5f99">limes::files::Volume::getSerialNumber</a>  () const</dt>
-<dd><a class="anchor" id="_todo000058"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000062"></a>test coverage  </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Volume.html#a5bcbce934175e8c2d8b61bc35c8ae2b0">limes::files::Volume::getType</a>  () const</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000059"></a>Linux: detect RAM type</p>
-<p class="enddd"><a class="anchor" id="_todo000060"></a>Mac: detect RAM &amp; Network types  </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000063"></a>Linux: detect RAM type</p>
+<p class="enddd"><a class="anchor" id="_todo000064"></a>Mac: detect RAM &amp; Network types  </p>
 </dd>
 <dt>Member <a class="el" href="classlimes_1_1files_1_1Volume.html#abaee59efe2bd3bffebbaab740636061c">limes::files::Volume::operator!=</a>  (const <a class="el" href="classlimes_1_1files_1_1Volume.html" title="This class represents a logical filesystem volume.">Volume</a> &amp;other) const noexcept</dt>
-<dd><a class="anchor" id="_todo000056"></a>test coverage  </dd>
+<dd><a class="anchor" id="_todo000060"></a>test coverage  </dd>
 <dt>Module <a class="el" href="group__limes__files.html">limes_files</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000002"></a>MemoryMappedFile class </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000006"></a>get all CI builds working </p>
+<p class="interdd"><a class="anchor" id="_todo000005"></a>remove internal dependencies on exceptions (Emscripten tests)</p>
+<p class="interdd"><a class="anchor" id="_todo000004"></a>CLI app</p>
+<p class="interdd"><a class="anchor" id="_todo000003"></a>Android support</p>
+<p class="interdd"><a class="anchor" id="_todo000002"></a>MemoryMappedFile class</p>
 <p class="enddd"><a class="anchor" id="_todo000001"></a>FileSearchPath class and/or glob() function </p>
 </dd>
 <dt>Module <a class="el" href="group__limes__files__special__dirs.html">limes_files_special_dirs</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000053"></a>Android implementations. None of these functions are implemented for Android, it will probably require some native JNI code. </p>
-<p class="enddd"><a class="anchor" id="_todo000052"></a>more special dirs</p>
+<dd><p class="startdd"><a class="anchor" id="_todo000056"></a>more special dirs</p>
+<p class="enddd"><a class="anchor" id="_todo000057"></a>Android implementations. None of these functions are implemented for Android, it will probably require some native JNI code. </p>
 </dd>
 </dl>
 </div></div><!-- contents -->
@@ -218,7 +222,7 @@ $(document).ready(function(){initNavTree('todo.html',''); initResizable(); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat May 27 2023 18:34:35 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

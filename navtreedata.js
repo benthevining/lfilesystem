@@ -25,6 +25,10 @@
 var NAVTREE =
 [
   [ "lfilesystem", "index.html", [
+    [ "Features", "index.html#autotoc_md1", null ],
+    [ "Portability", "index.html#autotoc_md2", null ],
+    [ "Building", "index.html#autotoc_md3", null ],
+    [ "Links", "index.html#autotoc_md4", null ],
     [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
@@ -59,9 +63,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"classlimes_1_1files_1_1Permissions.html#ae4683c13b8c5641fb7d94ea7c7ff6b8b",
-"structstd_1_1hash_3_01limes_1_1files_1_1File_01_4.html#ad8bab4a58463458d672906cf06e018ce"
+"annotated.html",
+"classlimes_1_1files_1_1Permissions.html#ae9fbf9c01b86e8196d0ad2e70963c940",
+"structstd_1_1hash_3_01limes_1_1files_1_1DynamicLibrary_01_4.html#a19e4b64db8fcf84b7b296ede8269bec2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

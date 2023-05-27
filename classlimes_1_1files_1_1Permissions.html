@@ -346,7 +346,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the standard library permissions bitmask this object holds. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000049">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -490,7 +490,7 @@ Related Functions</h2></td></tr>
 <p>Returns true if these permissions have the sticky bit set. </p>
 <p>This bit's effect is implementation-defined, but POSIX XSI specifies that when set on a directory, only file owners may delete files even if the directory is writeable to others (used with <code>/tmp</code> ).</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Permissions.html#a2f9fbe990fb7bfb8414209a85f9916ac" title="Returns a new permissions object that adds the sticky bit to this object&#39;s existing permissions.">withStickyBit()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000047">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000051">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -686,7 +686,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a <a class="el" href="classlimes_1_1files_1_1Permissions.html" title="This class encapsulates the standard library&#39;s permissions bitmask type, and provides some higher-lev...">Permissions</a> object with read, write, and execution access for all users not in the file owner's user group. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000051">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000055">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -736,7 +736,7 @@ Related Functions</h2></td></tr>
 <p>Each set of three characters consists of <code>rwx</code> , representing "read", "write", and "execute", and these characters will be replaced with a <code>-</code> if that permission is not present scope.</p>
 <p>For example, if the only permissions set are read and write permission for the file owner, this function will return <code>rw----&mdash;</code> . If all other users can read the file, but not write to it, this function will return <code>rw-r&ndash;r&ndash;</code> . A file with all permissions set globally will return <code>rwxrwxrwx</code> .</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Permissions.html#a6911f862ed6f70631a0f328b6a23bdeb" title="This function parses a string in the format returned by toString() .">fromString()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000050">Todo:</a></b></dt><dd>test coverage for unknown/empty case </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000054">Todo:</a></b></dt><dd>test coverage for unknown/empty case </dd></dl>
 
 </div>
 </div>
@@ -766,7 +766,7 @@ Related Functions</h2></td></tr>
 
 <p>Returns a new permissions object that adds read, write, and execution access in the specified scope to this object's existing permissions. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Permissions.html#a6075e0cbe7cae75324caf7588c13a32d" title="Returns true if these permissions include read, write, and execution access for the specified scope.">hasAll()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000048">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000052">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -854,7 +854,7 @@ Related Functions</h2></td></tr>
 <p>Returns a new permissions object that adds the sticky bit to this object's existing permissions. </p>
 <p>This bit's effect is implementation-defined, but POSIX XSI specifies that when set on a directory, only file owners may delete files even if the directory is writeable to others (used with <code>/tmp</code> ).</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1Permissions.html#a01b6cb878f82333313c30a49579ee481" title="Returns true if these permissions have the sticky bit set.">hasStickyBit()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000049">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000053">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -896,7 +896,7 @@ Related Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>limes</b></li><li class="navelem"><a class="el" href="namespacelimes_1_1files.html">files</a></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1Permissions.html">Permissions</a></li>
-    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

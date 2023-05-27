@@ -452,7 +452,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html"><div class="ttname"><a href="classlimes_1_1files_1_1File.html">limes::files::File</a></div><div class="ttdoc">This class represents a file on the filesystem.</div><div class="ttdef"><b>Definition:</b> <a href="lfilesystem__File_8h_source.html#l00061">lfilesystem_File.h:62</a></div></div>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a8e6a359a45514bcebc4c49ae06c3528b"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a8e6a359a45514bcebc4c49ae06c3528b">limes::files::File::overwrite</a></div><div class="ttdeci">bool overwrite(const char *const data, std::size_t numBytes) const noexcept</div><div class="ttdoc">Replaces the file's contents with the given data.</div></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1CFile.html" title="This class is a wrapper around a C-style FILE* that takes care of freeing the file when the object is...">CFile</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Todo:</a></b></dt><dd><p class="startdd">start as process </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd><p class="startdd">start as process </p>
 <p class="enddd">get user/group ID of owner? </p>
 </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="files_dir_enumerate_8cpp-example.html#_a1">files_dir_enumerate.cpp</a>, and <a class="el" href="files_dir_listen_8cpp-example.html#_a9">files_dir_listen.cpp</a>.</dd>
@@ -615,7 +615,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclasslimes_1_1files_1_1File_html_a8756d087b7fdc53b85c68ac09154e37d"><div class="ttname"><a href="classlimes_1_1files_1_1File.html#a8756d087b7fdc53b85c68ac09154e37d">limes::files::File::duplicate</a></div><div class="ttdeci">std::optional&lt; File &gt; duplicate() const noexcept</div><div class="ttdoc">Duplicates this file within its directory.</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>The new file that was created, or a <code>nullopt</code> if duplication fails.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This always returns <code>nullopt</code> if the file does not exist when this function is called.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -875,7 +875,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns a standard input stream for reading from this file. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1File.html#a9635312c7b4d93ff95b1c1c33b63ea6a" title="Returns a standard output stream for writing to this file.">getOutputStream()</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -896,7 +896,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns a standard output stream for writing to this file. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1File.html#aa4cf6351f59c74e3756d0abbcc8cf568" title="Returns a standard input stream for reading from this file.">getInputStream()</a> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1143,7 +1143,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Assigns this object to refer to a new path. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1164,7 +1164,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Assigns this object to refer to a new path. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1343,7 +1343,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the file was actually renamed on disk successfully. If the <code>renameOnDisk</code> parameter is false, this function always returns false.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classlimes_1_1files_1_1FilesystemEntry.html#a0b0f7cd6712487a341837b36576b8222" title="Renames this filesystem object to a new path.">FilesystemEntry::rename()</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Todo:</a></b></dt><dd>test coverage </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>test coverage </dd></dl>
 
 </div>
 </div>
@@ -1403,7 +1403,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>limes</b></li><li class="navelem"><a class="el" href="namespacelimes_1_1files.html">files</a></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1File.html">File</a></li>
-    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

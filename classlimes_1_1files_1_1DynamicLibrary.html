@@ -173,10 +173,10 @@ Public Member Functions</h2></td></tr>
 <p>On Unixes, this is the equivalent of using <code>dlopen()</code> , but wrapped in an RAII class that frees the library handle when it is destroyed.</p>
 <p>This class can also locate the file on disk that the library was loaded from, and "reload" itself.</p>
 <p>All functions of this class are thread-safe; the library handle is stored atomically.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>double check iOS. I've heard that iOS disallows calling <code>dlopen()</code> .</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>use emscripten_dlopen when building with Emscripten. Note that this function is asynchronous, however.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo:</a></b></dt><dd>function to add a directory to the search paths for DLLs?</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Todo:</a></b></dt><dd>function to check if dynamic libraries are supported by the current system </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Todo:</a></b></dt><dd>double check iOS. I've heard that iOS disallows calling <code>dlopen()</code> .</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Todo:</a></b></dt><dd>use emscripten_dlopen when building with Emscripten. Note that this function is asynchronous, however.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Todo:</a></b></dt><dd>function to add a directory to the search paths for DLLs?</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Todo:</a></b></dt><dd>function to check if dynamic libraries are supported by the current system </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="lfilesystem__DynamicLibrary_8h_source.html#l00057">57</a> of file <a class="el" href="lfilesystem__DynamicLibrary_8h_source.html">lfilesystem_DynamicLibrary.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -345,7 +345,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Attempts to locate the file on disk where the code for the current shared library is actually located. </p>
 <p>If the library isn't open, returns a null file.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Todo:</a></b></dt><dd>Emscripten implementation </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>Emscripten implementation </dd></dl>
 
 </div>
 </div>
@@ -543,7 +543,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>limes</b></li><li class="navelem"><a class="el" href="namespacelimes_1_1files.html">files</a></li><li class="navelem"><a class="el" href="classlimes_1_1files_1_1DynamicLibrary.html">DynamicLibrary</a></li>
-    <li class="footer">Generated on Sat May 27 2023 18:34:36 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 27 2023 19:38:37 for lfilesystem by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
