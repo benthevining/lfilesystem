@@ -17,6 +17,7 @@ run-name: CI (${{ github.actor }})
 on:
   workflow_dispatch:
   push:
+    branches: [main]
   pull_request:
 
 concurrency:
@@ -73,7 +74,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-    name: Build (${{ matrix.os }}, ${{ matrix.preset }}, ${{ matrix.config }})
+    name: Build (${{ matrix.os }}, ${{ matrix.preset }}, ${{ matrix.shared-libs }})
 
     timeout-minutes: 10
 

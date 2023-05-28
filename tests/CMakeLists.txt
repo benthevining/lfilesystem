@@ -49,17 +49,15 @@ target_link_libraries (lfilesystem_tests PRIVATE Catch2::Catch2WithMain limes::l
 target_compile_definitions (lfilesystem_tests
 							PRIVATE "LIMES_TEST_DATA_DIR=\"${CMAKE_CURRENT_LIST_DIR}/data\"")
 
+# cmake-format: off
 catch_discover_tests (
 	lfilesystem_tests
 	EXTRA_ARGS
-	--warn
-	NoAssertions
-	--order
-	rand
-	--verbosity
-	high
-	TEST_PREFIX
-	"Limes.files.unit.")
+		--warn NoAssertions
+		--order rand
+		--verbosity high
+	TEST_PREFIX "Limes.files.unit.")
+# cmake-format: on
 
 if (NOT EMSCRIPTEN)
 	add_subdirectory (StructuredTree)

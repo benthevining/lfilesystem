@@ -62,14 +62,13 @@ set (export_header "${CMAKE_CURRENT_BINARY_DIR}/generated/lfilesystem/lfilesyste
 
 include (GenerateExportHeader)
 
+# cmake-format: off
 generate_export_header (
 	lfilesystem
-	EXPORT_MACRO_NAME
-	LFILE_EXPORT
-	NO_EXPORT_MACRO_NAME
-	LFILE_NO_EXPORT
-	EXPORT_FILE_NAME
-	"${export_header}")
+	EXPORT_MACRO_NAME LFILE_EXPORT
+	NO_EXPORT_MACRO_NAME LFILE_NO_EXPORT
+	EXPORT_FILE_NAME "${export_header}")
+# cmake-format: on
 
 target_sources (lfilesystem # PUBLIC "${public_header}"
 				PRIVATE ${private_headers} "${export_header}")
