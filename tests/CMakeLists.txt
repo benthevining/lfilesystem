@@ -29,7 +29,27 @@ include (Catch)
 
 add_executable (lfilesystem_tests)
 
-set_target_properties (lfilesystem_tests PROPERTIES MACOSX_BUNDLE OFF)
+if (IOS)
+	set (BUNDLE_ID "Limes.lfilesystem.tests")
+
+	set (generated_plist "${CMAKE_CURRENT_BINARY_DIR}/Info.plist")
+
+	configure_file (Info.plist "${generated_plist}" @ONLY NEWLINE_STYLE UNIX)
+
+	set_target_properties (
+		lfilesystem_tests
+		PROPERTIES BUNDLE TRUE
+				   MACOSX_BUNDLE TRUE
+				   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${BUNDLE_ID}"
+				   XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO"
+				   XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO"
+				   XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
+				   MACOSX_FRAMEWORK_BUNDLE_VERSION "${lfilesystem_VERSION}"
+				   MACOSX_FRAMEWORK_SHORT_VERSION_STRING "${lfilesystem_VERSION_MAJOR}"
+				   MACOSX_BUNDLE_INFO_PLIST "${generated_plist}")
+else ()
+	set_target_properties (lfilesystem_tests PROPERTIES MACOSX_BUNDLE OFF)
+endif ()
 
 target_sources (
 	lfilesystem_tests
@@ -49,17 +69,19 @@ target_link_libraries (lfilesystem_tests PRIVATE Catch2::Catch2WithMain limes::l
 target_compile_definitions (lfilesystem_tests
 							PRIVATE "LIMES_TEST_DATA_DIR=\"${CMAKE_CURRENT_LIST_DIR}/data\"")
 
-# cmake-format: off
-catch_discover_tests (
-	lfilesystem_tests
-	EXTRA_ARGS
-		--warn NoAssertions
-		--order rand
-		--verbosity high
-	TEST_PREFIX "Limes.files.unit.")
-# cmake-format: on
+if (NOT IOS)
+	# cmake-format: off
+	catch_discover_tests (
+		lfilesystem_tests
+		EXTRA_ARGS
+			--warn NoAssertions
+			--order rand
+			--verbosity high
+		TEST_PREFIX "Limes.files.unit.")
+	# cmake-format: on
+endif ()
 
-if (NOT EMSCRIPTEN)
+if (NOT (EMSCRIPTEN OR IOS))
 	add_subdirectory (StructuredTree)
 	add_subdirectory (ExecLocation)
 	# add_subdirectory (DynamicLibrary)

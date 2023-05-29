@@ -7,10 +7,9 @@ project (
 	DESCRIPTION "C++ filesystem library"
 	HOMEPAGE_URL "https://github.com/benthevining/lfilesystem/")
 
-include (CMakeDependentOption)
+set_property (DIRECTORY APPEND PROPERTY LABELS lfilesystem)
 
-cmake_dependent_option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}"
-						"NOT IOS" OFF)
+option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}")
 
 option (LFILE_DOCS "Build the lfilesystem docs" "${lfilesystem_IS_TOP_LEVEL}")
 
@@ -38,7 +37,8 @@ add_library (limes::lfilesystem ALIAS lfilesystem)
 
 target_compile_features (lfilesystem PUBLIC cxx_std_20)
 
-set_target_properties (lfilesystem PROPERTIES DEBUG_POSTFIX -d)
+set_target_properties (lfilesystem PROPERTIES DEBUG_POSTFIX -d VERSION "${lfilesystem_VERSION}"
+											  SOVERSION "${lfilesystem_VERSION_MAJOR}")
 
 set (public_header include/lfilesystem/lfilesystem.h)
 
