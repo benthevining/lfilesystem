@@ -20,6 +20,8 @@ set_target_properties (limes_files_exec_location_printer PROPERTIES MACOSX_BUNDL
 
 add_executable (limes::limes_files_exec_location_printer ALIAS limes_files_exec_location_printer)
 
+lfilesystem_copy_dlls (limes_files_exec_location_printer)
+
 # Need to send the correct path as an argument to the test so that we can use generator expressions
 add_test (NAME Limes.files.ExecLocation COMMAND limes::limes_files_exec_location_printer
 												"$<TARGET_FILE:limes_files_exec_location_printer>")

@@ -10,6 +10,17 @@
 #
 # ======================================================================================
 
+function (lfilesystem_copy_dlls target)
+	if (WIN32)
+		add_custom_command (
+			TARGET "${target}" POST_BUILD
+			COMMAND "${CMAKE_COMMAND}" -E copy -t $<TARGET_FILE_DIR:${target}>
+					$<TARGET_RUNTIME_DLLS:${target}> USES_TERMINAL COMMAND_EXPAND_LISTS)
+	endif ()
+endfunction ()
+
+#
+
 set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO")
 set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO")
 set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "")
@@ -72,6 +83,8 @@ target_link_libraries (lfilesystem_tests PRIVATE Catch2::Catch2WithMain limes::l
 
 target_compile_definitions (lfilesystem_tests
 							PRIVATE "LIMES_TEST_DATA_DIR=\"${CMAKE_CURRENT_LIST_DIR}/data\"")
+
+lfilesystem_copy_dlls (lfilesystem_tests)
 
 if (NOT IOS)
 	# cmake-format: off
