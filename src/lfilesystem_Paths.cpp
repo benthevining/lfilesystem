@@ -32,7 +32,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 	return string.find (substringToFind) != std::string_view::npos;
 }
 
-[[nodiscard]] static inline std::string upToFirstOccurrenceOf (std::string input,
+[[nodiscard]] static inline std::string upToFirstOccurrenceOf (std::string		input,
 															   std::string_view stringToFind) noexcept
 {
 	const auto pos = input.find (stringToFind);
@@ -43,7 +43,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 	return input.substr (0, pos);
 }
 
-[[nodiscard]] static inline std::string upToLastOccurrenceOf (std::string input,
+[[nodiscard]] static inline std::string upToLastOccurrenceOf (std::string	   input,
 															  std::string_view stringToFind) noexcept
 {
 	const auto pos = input.rfind (stringToFind);
@@ -54,7 +54,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 	return input.substr (0, pos);
 }
 
-[[nodiscard]] static inline std::string fromFirstOccurrenceOf (std::string input,
+[[nodiscard]] static inline std::string fromFirstOccurrenceOf (std::string		input,
 															   std::string_view stringToFind) noexcept
 {
 	const auto pos = input.find (stringToFind);
@@ -65,7 +65,7 @@ static inline bool stringContains (std::string_view string, std::string_view sub
 	return input.substr (pos + stringToFind.length(), input.length());
 }
 
-[[nodiscard]] static inline std::string replaceInString (std::string input,
+[[nodiscard]] static inline std::string replaceInString (std::string	  input,
 														 std::string_view stringToReplace,
 														 std::string_view replaceWith) noexcept
 {
@@ -320,4 +320,4 @@ Path largestCommonPrefix (const Path& path1, const Path& path2) noexcept
 	return normalizePath (result);
 }
 
-}  // namespace files
+}  // namespace limes::files

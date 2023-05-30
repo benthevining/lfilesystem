@@ -25,8 +25,8 @@
 #include <system_error>
 #include "lfilesystem/lfilesystem_File.h"
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
-#include "lfilesystem/lfilesystem_Directory.h"		// for Directory
-#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for Path
+#include "lfilesystem/lfilesystem_Directory.h"		  // for Directory
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"  // for Path
 
 #ifdef __APPLE__
 #	include <TargetConditionals.h>
@@ -123,8 +123,8 @@ bool File::replaceFileExtension (const std::string_view& newFileExtension,
 }
 
 bool File::write_data ([[maybe_unused]] const char* const data,
-					   [[maybe_unused]] std::size_t numBytes,
-					   [[maybe_unused]] bool overwrite) const noexcept
+					   [[maybe_unused]] std::size_t		  numBytes,
+					   [[maybe_unused]] bool			  overwrite) const noexcept
 {
 #ifdef __EMSCRIPTEN__
 	return false;
@@ -142,7 +142,7 @@ bool File::write_data ([[maybe_unused]] const char* const data,
 
 		return true;
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}
@@ -179,7 +179,7 @@ bool File::append (const std::string_view& text) const noexcept
 }
 
 bool File::prepend ([[maybe_unused]] const char* const data,
-					[[maybe_unused]] std::size_t numBytes) const noexcept
+					[[maybe_unused]] std::size_t	   numBytes) const noexcept
 {
 #ifdef __EMSCRIPTEN__
 	return false;
@@ -257,14 +257,14 @@ std::optional<File> File::duplicate() const noexcept
 }
 
 bool File::resize ([[maybe_unused]] std::uintmax_t newSizeInBytes,
-				   [[maybe_unused]] bool allowTruncation,
-				   [[maybe_unused]] bool allowIncreasing) const noexcept
+				   [[maybe_unused]] bool		   allowTruncation,
+				   [[maybe_unused]] bool		   allowIncreasing) const noexcept
 {
 #ifdef __EMSCRIPTEN__
 	return false;
 #else
 	if (! (allowTruncation || allowIncreasing))
-		return false; // should this return true?
+		return false;  // should this return true?
 
 	if (! exists())
 		return false;
@@ -388,11 +388,11 @@ std::vector<std::string> File::loadAsLines() const
 	std::transform (tokens.begin(), tokens.end(), tokens.begin(),
 					[] (auto str)
 					{
-		if (str.ends_with ('\r'))
-			return str.substr (0, str.length() - 1);
+						if (str.ends_with ('\r'))
+							return str.substr (0, str.length() - 1);
 
-		return str;
-	});
+						return str;
+					});
 
 	return tokens;
 #endif

@@ -59,4 +59,4 @@ FilesystemEntry FileWatcher::getWatchedPath() const noexcept
 	return watchedPath;
 }
 
-}  // namespace files
+}  // namespace limes::files

@@ -115,10 +115,10 @@ public:
 	/** Destructor. */
 	virtual ~FilesystemEntry() = default;
 
-	FilesystemEntry (const FilesystemEntry&) = default;
+	FilesystemEntry (const FilesystemEntry&)			= default;
 	FilesystemEntry& operator= (const FilesystemEntry&) = default;
 
-	FilesystemEntry (FilesystemEntry&&) = default;
+	FilesystemEntry (FilesystemEntry&&)			   = default;
 	FilesystemEntry& operator= (FilesystemEntry&&) = default;
 
 	/** @name Path assignment */

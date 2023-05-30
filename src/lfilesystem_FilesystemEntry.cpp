@@ -12,15 +12,15 @@
  * ======================================================================================
  */
 
-#include <ctime>		  // for tm
-#include <exception>	  // for exception
-#include <filesystem>	  // for path, copy, operator/, absolute, cera...
-#include <fstream>		  // for string, ofstream
-#include <string>		  // for operator<, operator>
+#include <ctime>	   // for tm
+#include <exception>   // for exception
+#include <filesystem>  // for path, copy, operator/, absolute, cera...
+#include <fstream>	   // for string, ofstream
+#include <string>	   // for operator<, operator>
 #include <system_error>
-#include "lfilesystem/lfilesystem_Directory.h"  // for Directory
-#include "lfilesystem/lfilesystem_File.h"		  // for File
-#include "lfilesystem/lfilesystem_SymLink.h"	  // for SymLink
+#include "lfilesystem/lfilesystem_Directory.h"	// for Directory
+#include "lfilesystem/lfilesystem_File.h"		// for File
+#include "lfilesystem/lfilesystem_SymLink.h"	// for SymLink
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Volume.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"
@@ -91,8 +91,8 @@ static inline bool areSameIgnoringCase (const std::string_view& lhs, const std::
 					   rhs.begin(), rhs.end(),
 					   [] (char a, char b)
 					   {
-		return std::tolower (static_cast<unsigned char> (a)) == std::tolower (static_cast<unsigned char> (b));
-	});
+						   return std::tolower (static_cast<unsigned char> (a)) == std::tolower (static_cast<unsigned char> (b));
+					   });
 }
 
 bool FilesystemEntry::operator== (const FilesystemEntry& other) const noexcept
@@ -412,7 +412,7 @@ bool FilesystemEntry::createIfDoesntExist() const noexcept
 	{
 		[[maybe_unused]] std::ofstream output { getAbsolutePath() };
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}

@@ -78,7 +78,7 @@ static inline std::string fromFirstOccurrenceOf (std::string input, std::string_
 
 static inline std::string unquotedString (std::string string) noexcept
 {
-	auto dropFirstChars = [&string](std::size_t numChars)
+	auto dropFirstChars = [&string] (std::size_t numChars)
 	{
 		string = string.substr (numChars, string.length());
 	};
@@ -92,7 +92,7 @@ static inline std::string unquotedString (std::string string) noexcept
 	else if (string.starts_with ('\''))
 		dropFirstChars (1UL);
 
-	auto dropLastChars = [&string](std::size_t numChars)
+	auto dropLastChars = [&string] (std::size_t numChars)
 	{
 		for (auto i = 0UL; i < numChars; ++i)
 		{

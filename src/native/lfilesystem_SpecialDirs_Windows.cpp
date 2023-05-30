@@ -56,11 +56,11 @@ Directory commonDocuments()
 Directory apps()
 {
 	// TODO - ??
-//#if LIMES_32BIT
-//	return getWinFolderPath (FOLDERID_ProgramFiles);
-//#else
+	//#if LIMES_32BIT
+	//	return getWinFolderPath (FOLDERID_ProgramFiles);
+	//#else
 	return getWinFolderPath (FOLDERID_ProgramFilesX86);
-//#endif
+	//#endif
 }
 
 Directory desktop()
@@ -83,4 +83,4 @@ Directory downloads()
 	return getWinFolderPath (FOLDERID_Downloads);
 }
 
-}  // namespace files::dirs
+}  // namespace limes::files::dirs

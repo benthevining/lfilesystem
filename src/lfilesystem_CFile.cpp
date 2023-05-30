@@ -109,7 +109,7 @@ CFile::operator std::FILE*() const noexcept
 }
 
 bool CFile::open ([[maybe_unused]] const Path& filepath,
-				  [[maybe_unused]] Mode mode) noexcept
+				  [[maybe_unused]] Mode		   mode) noexcept
 {
 #ifdef __EMSCRIPTEN__
 	return false;
