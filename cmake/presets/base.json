@@ -59,7 +59,7 @@
       },
       "filter": {
         "include": {
-          "name": "^Limes.files.+"
+          "name": "^limes.files.+"
         }
       },
       "hidden": true,

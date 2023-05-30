@@ -94,7 +94,7 @@ if (NOT IOS)
 			--warn NoAssertions
 			--order rand
 			--verbosity high
-		TEST_PREFIX "Limes.files.unit.")
+		TEST_PREFIX "limes.files.unit.")
 	# cmake-format: on
 endif ()
 

@@ -12,7 +12,7 @@
 
 include_guard (GLOBAL)
 
-set (base_name "Limes.files.FindPackage")
+set (base_name "limes.files.FindPackage")
 
 set (install_dir "${CMAKE_CURRENT_BINARY_DIR}/install_tree")
 set (build_dir "${CMAKE_CURRENT_BINARY_DIR}/FindPackage")

@@ -22,7 +22,7 @@ add_executable (limes::limes_files_tree_tester ALIAS limes_files_tree_tester)
 
 lfilesystem_copy_dlls (limes_files_tree_tester)
 
-set (base_name "Limes.files.StructuredTree")
+set (base_name "limes.files.StructuredTree")
 
 set (tree_root "${CMAKE_CURRENT_BINARY_DIR}/FileTree")
 
