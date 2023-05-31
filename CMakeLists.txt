@@ -13,12 +13,17 @@ option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}")
 
 option (LFILE_DOCS "Build the lfilesystem docs" "${lfilesystem_IS_TOP_LEVEL}")
 
+include (CMakeDependentOption)
+
+cmake_dependent_option (LFILE_CLI "Build the lfilesystem CLI app" "${lfilesystem_IS_TOP_LEVEL}"
+						"NOT IOS" OFF)
+
 include (GNUInstallDirs)
 
 set (LFILE_INSTALL_DEST "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem"
 	 CACHE STRING "Path where package files will be installed, relative to the install prefix")
 
-mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS LFILE_DOCS)
+mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS LFILE_DOCS LFILE_CLI)
 
 set_property (DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${CMAKE_CURRENT_LIST_DIR}/logs"
 										"${CMAKE_CURRENT_LIST_DIR}/deploy")
@@ -131,6 +136,10 @@ endif ()
 target_link_libraries (lfilesystem PRIVATE ${CMAKE_DL_LIBS})
 
 add_subdirectory (src)
+
+if (LFILE_CLI)
+	add_subdirectory (cli)
+endif ()
 
 install (
 	TARGETS lfilesystem

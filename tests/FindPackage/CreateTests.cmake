@@ -19,7 +19,7 @@ set (build_dir "${CMAKE_CURRENT_BINARY_DIR}/FindPackage")
 
 add_test (NAME "${base_name}.install"
 		  COMMAND "${CMAKE_COMMAND}" --install "${lfilesystem_BINARY_DIR}" --config $<CONFIG>
-				  --prefix "${install_dir}" --component lfilesystem_dev)
+				  --prefix "${install_dir}")
 
 set_tests_properties ("${base_name}.install" PROPERTIES FIXTURES_SETUP LimesFilesFindPackageInstall)
 
