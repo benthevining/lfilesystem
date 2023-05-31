@@ -23,7 +23,6 @@ namespace limes::files::cli
 class Mode
 {
 public:
-
 	virtual ~Mode() = default;
 
 	[[nodiscard]] virtual std::string_view getName() = 0;
@@ -39,4 +38,4 @@ private:
 
 [[nodiscard]] std::vector<std::unique_ptr<Mode>> getAllModes();
 
-} // namespace limes::files::cli
+}  // namespace limes::files::cli

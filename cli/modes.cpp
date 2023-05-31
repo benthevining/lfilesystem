@@ -54,12 +54,10 @@ namespace limes::files::cli
 
 std::unique_ptr<Mode> getMode (std::string_view mode)
 {
-
 }
 
 std::vector<std::unique_ptr<Mode>> getAllModes()
 {
-
 }
 
-}
+}  // namespace limes::files::cli
