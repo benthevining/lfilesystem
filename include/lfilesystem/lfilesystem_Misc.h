@@ -82,7 +82,9 @@ namespace limes::files
  */
 [[nodiscard]] LFILE_EXPORT constexpr std::uintmax_t maxPathLength() noexcept
 {
-#if defined(_WIN32) || defined(WIN32)
+#ifdef __ANDROID__
+	return static_cast<std::uintmax_t>(PATH_MAX);
+#elif defined(_WIN32) || defined(WIN32)
 	return static_cast<std::uintmax_t> (MAX_PATH);
 #elif defined(NAME_MAX)
 	return static_cast<std::uintmax_t> (NAME_MAX);

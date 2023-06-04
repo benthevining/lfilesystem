@@ -201,7 +201,7 @@ void* DynamicLibrary::findFunction (const std::string_view& functionName) noexce
 
 File DynamicLibrary::getFile() const
 {
-#ifdef __EMSCRIPTEN__
+#if defined(__EMSCRIPTEN__) || defined(__ANDROID__)
 	return File {};
 
 #else

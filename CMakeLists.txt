@@ -110,19 +110,19 @@ elseif (LINUX)
 	include (CheckCXXSourceCompiles)
 
 	check_cxx_source_compiles (
-		"
+		[=[
 #include <unistd.h>
 #include <string>
 
 int main (int, char**)
 {
-const std::string path { \"/some/file/path.txt\" };
+const std::string path { "/some/file/path.txt" };
 
 [[maybe_unused]] auto result = pathconf (path.data(), _PC_CASE_SENSITIVE);
 
 return 0;
 }
-"
+]=]
 		limes_files_can_use_pathconf)
 
 	if (limes_files_can_use_pathconf)
