@@ -21,6 +21,10 @@
   "configurePresets": [
     {
       "cacheVariables": {
+        "CMAKE_OSX_ARCHITECTURES": {
+          "type": "STRING",
+          "value": "arm64_32;armv7k"
+        },
         "CMAKE_SYSTEM_NAME": {
           "type": "STRING",
           "value": "watchOS"

@@ -27,6 +27,10 @@ set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "")
 
 include (FetchContent)
 
+if ("${CMAKE_SYSTEM_NAME}" MATCHES "tvOS" OR "${CMAKE_SYSTEM_NAME}" MATCHES "watchOS")
+	set (CATCH_CONFIG_NO_POSIX_SIGNALS ON)
+endif ()
+
 FetchContent_Declare (
 	Catch2
 	GIT_REPOSITORY https://github.com/catchorg/Catch2.git
@@ -35,6 +39,10 @@ FetchContent_Declare (
 	FIND_PACKAGE_ARGS 3 GLOBAL)
 
 FetchContent_MakeAvailable (Catch2)
+
+if (TARGET Catch2 AND "${CMAKE_SYSTEM_NAME}" MATCHES "watchOS")
+	target_compile_options (Catch2 PRIVATE -fgnu-inline-asm)
+endif ()
 
 if (catch2_SOURCE_DIR)
 	list (APPEND CMAKE_MODULE_PATH "${catch2_SOURCE_DIR}/extras")
