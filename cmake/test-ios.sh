@@ -12,9 +12,15 @@
 #
 # ======================================================================================
 
-# usage: test-ios.sh <device-id> <foo.app> [<args...>]
+# usage: test-ios.sh <device-id> <executable> [<args...>]
 
-# note that the .app needs to be built with the simulator SDK, not the device SDK
+# CMake will send us the actual executable path that's inside the .app bundle,
+# for example foo.app/foo
+
+# note that you need to build with the simulator SDK, not the device SDK,
+# and the global property XCODE_EMIT_EFFECTIVE_PLATFORM_NAME must be OFF
+
+# TODO: we're not correctly capturing the exit code of the launch command
 
 set -euxo pipefail
 
@@ -22,11 +28,13 @@ DEVICE_ID="$1"
 readonly DEVICE_ID
 
 APP_PATH="$2"
+
+APP_PATH=$(dirname "$APP_PATH")
 readonly APP_PATH
 
 shift 2
 
-if [ ! -f "$APP_PATH" ]; then
+if [ ! -d "$APP_PATH" ]; then
 	echo App does not exist at path '$APP_PATH'!
 	exit 1
 fi
@@ -34,18 +42,29 @@ fi
 APP_BUNDLE_ID=$(mdls -name kMDItemCFBundleIdentifier -r "$APP_PATH")
 readonly APP_BUNDLE_ID
 
+if [ -z "$APP_BUNDLE_ID" ]; then
+	echo Unable to retrieve app bundle ID!
+	exit 1
+fi
+
 # TODO: ideally check if this device is already booted...
-xcrun simctl boot "$DEVICE_ID"
+set +e
+boot_result=$(xcrun simctl boot "$DEVICE_ID")
+set -e
+
+readonly boot_result
+
+if [ "$boot_result" -eq 149 ]; then
+	echo Device aready booted.
+elif [ "$boot_result" -ne 0 ]; then
+	echo "Unable to boot device $DEVICE_ID - error code $boot_result"
+	exit $boot_result
+fi
 
 xcrun simctl install "$DEVICE_ID" "$APP_PATH"
 
 xcrun simctl launch --console-pty --terminate-running-process "$DEVICE_ID" "$APP_BUNDLE_ID" "$@"
 
 readonly success=$?
-
-# clean up
-
-xcrun simctl shutdown "$DEVICE_ID"
-xcrun simctl erase "$DEVICE_ID"
 
 exit $success

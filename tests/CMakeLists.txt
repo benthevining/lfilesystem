@@ -52,10 +52,9 @@ include (Catch)
 
 add_executable (lfilesystem_tests)
 
+# TODO: remove this condiditonal?
 if (IOS)
-	set (generated_plist "${CMAKE_CURRENT_BINARY_DIR}/Info.plist")
-
-	configure_file (Info.plist "${generated_plist}" @ONLY NEWLINE_STYLE UNIX)
+	set (bundle_id "Limes.lfilesystem.tests")
 
 	set_target_properties (
 		lfilesystem_tests
@@ -64,10 +63,11 @@ if (IOS)
 				   XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO"
 				   XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO"
 				   XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
-				   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "Limes.lfilesystem.tests"
-				   MACOSX_FRAMEWORK_BUNDLE_VERSION "${lfilesystem_VERSION}"
-				   MACOSX_FRAMEWORK_SHORT_VERSION_STRING "${lfilesystem_VERSION_MAJOR}"
-				   MACOSX_BUNDLE_INFO_PLIST "${generated_plist}")
+				   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${bundle_id}"
+				   MACOSX_BUNDLE_GUI_IDENTIFIER "${bundle_id}"
+				   MACOSX_BUNDLE_BUNDLE_VERSION "${lfilesystem_VERSION}"
+				   MACOSX_BUNDLE_LONG_VERSION_STRING "${lfilesystem_VERSION}"
+				   MACOSX_BUNDLE_SHORT_VERSION_STRING "${lfilesystem_VERSION_MAJOR}")
 else ()
 	set_target_properties (lfilesystem_tests PROPERTIES MACOSX_BUNDLE OFF)
 endif ()

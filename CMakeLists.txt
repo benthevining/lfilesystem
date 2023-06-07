@@ -34,6 +34,11 @@ if (EMSCRIPTEN)
 	add_link_options (-fexceptions)
 endif ()
 
+if (lfilesystem_IS_TOP_LEVEL AND IOS AND LFILE_TESTS)
+	# iOS tests won't work if this property is ON
+	set_property (GLOBAL PROPERTY XCODE_EMIT_EFFECTIVE_PLATFORM_NAME OFF)
+endif ()
+
 set (CMAKE_CXX_VISIBILITY_PRESET hidden)
 set (CMAKE_VISIBILITY_INLINES_HIDDEN ON)
 
