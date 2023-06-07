@@ -45,6 +45,10 @@
   "configurePresets": [
     {
       "cacheVariables": {
+        "CMAKE_CROSSCOMPILING_EMULATOR": {
+          "type": "STRING",
+          "value": "${sourceDir}/cmake/test-ios.sh;$env{IOS_SIMULATOR_DEVICE_ID}"
+        },
         "CMAKE_SYSTEM_NAME": {
           "type": "STRING",
           "value": "iOS"
@@ -63,6 +67,7 @@
         "rhs": "Darwin",
         "type": "equals"
       },
+      "description": "Note that you should define the IOS_SIMULATOR_DEVICE_ID environment variable to initialize the crosscompiling emulator.",
       "displayName": "iOS",
       "generator": "Xcode",
       "inherits": "base",
@@ -83,6 +88,20 @@
       "displayName": "iOS",
       "inherits": "base",
       "name": "iOS"
+    }
+  ],
+  "testPresets": [
+    {
+      "configurePreset": "iOS",
+      "displayName": "iOS (simulator - debug)",
+      "inherits": "base",
+      "name": "iOS"
+    },
+    {
+      "configuration": "Release",
+      "displayName": "iOS (simulator - release)",
+      "inherits": "iOS",
+      "name": "iOS-r"
     }
   ],
   "version": 6,
@@ -110,6 +129,14 @@
         {
           "name": "iOS-dev-r",
           "type": "build"
+        },
+        {
+          "name": "iOS",
+          "type": "test"
+        },
+        {
+          "name": "iOS-r",
+          "type": "test"
         },
         {
           "name": "iOS",

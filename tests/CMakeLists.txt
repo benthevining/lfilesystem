@@ -53,8 +53,6 @@ include (Catch)
 add_executable (lfilesystem_tests)
 
 if (IOS)
-	set (BUNDLE_ID "Limes.lfilesystem.tests")
-
 	set (generated_plist "${CMAKE_CURRENT_BINARY_DIR}/Info.plist")
 
 	configure_file (Info.plist "${generated_plist}" @ONLY NEWLINE_STYLE UNIX)
@@ -66,7 +64,7 @@ if (IOS)
 				   XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO"
 				   XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO"
 				   XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
-				   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${BUNDLE_ID}"
+				   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "Limes.lfilesystem.tests"
 				   MACOSX_FRAMEWORK_BUNDLE_VERSION "${lfilesystem_VERSION}"
 				   MACOSX_FRAMEWORK_SHORT_VERSION_STRING "${lfilesystem_VERSION_MAJOR}"
 				   MACOSX_BUNDLE_INFO_PLIST "${generated_plist}")
@@ -94,17 +92,15 @@ target_compile_definitions (lfilesystem_tests
 
 lfilesystem_copy_dlls (lfilesystem_tests)
 
-if (NOT IOS)
-	# cmake-format: off
-	catch_discover_tests (
-		lfilesystem_tests
-		EXTRA_ARGS
-			--warn NoAssertions
-			--order rand
-			--verbosity high
-		TEST_PREFIX "limes.files.unit.")
-	# cmake-format: on
-endif ()
+# cmake-format: off
+catch_discover_tests (
+	lfilesystem_tests
+	EXTRA_ARGS
+		--warn NoAssertions
+		--order rand
+		--verbosity high
+	TEST_PREFIX "limes.files.unit.")
+# cmake-format: on
 
 if (NOT (EMSCRIPTEN OR IOS))
 	add_subdirectory (StructuredTree)
@@ -112,4 +108,4 @@ if (NOT (EMSCRIPTEN OR IOS))
 	# add_subdirectory (DynamicLibrary)
 endif ()
 
-include (FindPackage/CreateTests.cmake)
+# include (FindPackage/CreateTests.cmake)
