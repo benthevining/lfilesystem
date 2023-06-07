@@ -14,8 +14,7 @@
 
 # usage: test-ios.sh <device-id> <executable> [<args...>]
 
-# CMake will send us the actual executable path that's inside the .app bundle,
-# for example foo.app/foo
+# CMake will send us the actual executable path that's inside the .app bundle, for example foo.app/foo
 
 # note that you need to build with the simulator SDK, not the device SDK,
 # and the global property XCODE_EMIT_EFFECTIVE_PLATFORM_NAME must be OFF
@@ -47,9 +46,9 @@ if [ -z "$APP_BUNDLE_ID" ]; then
 	exit 1
 fi
 
-# TODO: ideally check if this device is already booted...
 set +e
-boot_result=$(xcrun simctl boot "$DEVICE_ID")
+xcrun simctl boot "$DEVICE_ID"
+boot_result=$?
 set -e
 
 readonly boot_result
@@ -63,7 +62,7 @@ fi
 
 xcrun simctl install "$DEVICE_ID" "$APP_PATH"
 
-xcrun simctl launch --console-pty --terminate-running-process "$DEVICE_ID" "$APP_BUNDLE_ID" "$@"
+xcrun simctl launch --console-pty "$DEVICE_ID" "$APP_BUNDLE_ID" "$@"
 
 readonly success=$?
 
