@@ -14,13 +14,11 @@ add_executable (limes_files_tree_tester)
 
 target_sources (limes_files_tree_tester PRIVATE main.cpp CreateTree.cmake)
 
-set_target_properties (limes_files_tree_tester PROPERTIES MACOSX_BUNDLE OFF)
+limes_configure_app_bundle (
+	limes_files_tree_tester BUNDLE_ID Limes.lfilesystem.treeTester
+	VERSION_MAJOR "${lfilesystem_VERSION_MAJOR}" FULL_VERSION "${lfilesystem_VERSION}")
 
 target_link_libraries (limes_files_tree_tester PRIVATE Catch2::Catch2WithMain limes::lfilesystem)
-
-add_executable (limes::limes_files_tree_tester ALIAS limes_files_tree_tester)
-
-lfilesystem_copy_dlls (limes_files_tree_tester)
 
 set (base_name "limes.files.StructuredTree")
 
@@ -35,7 +33,6 @@ add_test (NAME "${base_name}.cleanup" COMMAND "${CMAKE_COMMAND}" -E rm -rf "${tr
 
 set_tests_properties ("${base_name}.cleanup" PROPERTIES FIXTURES_CLEANUP LimesFilesTree)
 
-add_test (NAME "${base_name}.test" COMMAND limes::limes_files_tree_tester
-		  WORKING_DIRECTORY "${tree_root}")
+add_test (NAME "${base_name}.test" COMMAND limes_files_tree_tester WORKING_DIRECTORY "${tree_root}")
 
 set_tests_properties ("${base_name}.test" PROPERTIES FIXTURES_REQUIRED LimesFilesTree)

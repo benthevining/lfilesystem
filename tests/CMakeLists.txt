@@ -39,10 +39,8 @@ target_link_libraries (lfilesystem_tests PRIVATE limes::lfilesystem)
 target_compile_definitions (lfilesystem_tests
 							PRIVATE "LIMES_TEST_DATA_DIR=\"${CMAKE_CURRENT_LIST_DIR}/data\"")
 
-if (NOT (EMSCRIPTEN OR IOS))
-	add_subdirectory (StructuredTree)
-	add_subdirectory (ExecLocation)
-	# add_subdirectory (DynamicLibrary)
-endif ()
+add_subdirectory (StructuredTree)
+add_subdirectory (ExecLocation)
+# add_subdirectory (DynamicLibrary)
 
 # include (FindPackage/CreateTests.cmake)

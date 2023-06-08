@@ -19,12 +19,7 @@ target_link_libraries (lfile PRIVATE limes::lfilesystem)
 
 target_include_directories (lfile PRIVATE "${CMAKE_CURRENT_LIST_DIR}")
 
-if (WIN32)
-	add_custom_command (
-		TARGET lfile POST_BUILD COMMAND "${CMAKE_COMMAND}" -E copy -t $<TARGET_FILE_DIR:lfile>
-										$<TARGET_RUNTIME_DLLS:lfile> USES_TERMINAL
-																	 COMMAND_EXPAND_LISTS)
-endif ()
+limes_copy_dlls (lfile)
 
 install (
 	TARGETS lfile

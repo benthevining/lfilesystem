@@ -16,12 +16,10 @@ target_sources (limes_files_exec_location_printer PRIVATE main.cpp)
 
 target_link_libraries (limes_files_exec_location_printer PRIVATE limes::lfilesystem)
 
-set_target_properties (limes_files_exec_location_printer PROPERTIES MACOSX_BUNDLE OFF)
-
-add_executable (limes::limes_files_exec_location_printer ALIAS limes_files_exec_location_printer)
-
-lfilesystem_copy_dlls (limes_files_exec_location_printer)
+limes_configure_app_bundle (
+	limes_files_exec_location_printer BUNDLE_ID Limes.lfilesystem.execLocationPrinter
+	VERSION_MAJOR "${lfilesystem_VERSION_MAJOR}" FULL_VERSION "${lfilesystem_VERSION}")
 
 # Need to send the correct path as an argument to the test so that we can use generator expressions
-add_test (NAME limes.files.ExecLocation COMMAND limes::limes_files_exec_location_printer
+add_test (NAME limes.files.ExecLocation COMMAND limes_files_exec_location_printer
 												"$<TARGET_FILE:limes_files_exec_location_printer>")
