@@ -7,6 +7,8 @@ project (
 	DESCRIPTION "C++ filesystem library"
 	HOMEPAGE_URL "https://github.com/benthevining/lfilesystem/")
 
+add_subdirectory (linfra)
+
 limes_default_project_options ()
 
 option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}")
