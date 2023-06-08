@@ -45,3 +45,5 @@ doxygen_add_docs (
 set_property (
 	TARGET lfilesystem_docs APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${DOXYGEN_OUTPUT_DIRECTORY}"
 											"${DOXYGEN_WARN_LOGFILE}" "${DOXYGEN_GENERATE_TAGFILE}")
+
+limes_add_docs_coverage (lfilesystem_docs)
