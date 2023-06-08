@@ -7,7 +7,7 @@ project (
 	DESCRIPTION "C++ filesystem library"
 	HOMEPAGE_URL "https://github.com/benthevining/lfilesystem/")
 
-set_property (DIRECTORY APPEND PROPERTY LABELS lfilesystem)
+limes_default_project_options ()
 
 option (LFILE_TESTS "Build the lfilesystem tests" "${lfilesystem_IS_TOP_LEVEL}")
 
@@ -24,27 +24,6 @@ set (LFILE_INSTALL_DEST "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem"
 	 CACHE STRING "Path where package files will be installed, relative to the install prefix")
 
 mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS LFILE_DOCS LFILE_CLI)
-
-set_property (DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${CMAKE_CURRENT_LIST_DIR}/logs"
-										"${CMAKE_CURRENT_LIST_DIR}/deploy")
-
-# use the directory-scoped commands so that Catch2 gets these flags too
-if (EMSCRIPTEN)
-	add_compile_options (-sNO_DISABLE_EXCEPTION_CATCHING -fexceptions)
-	add_link_options (-fexceptions)
-endif ()
-
-if (lfilesystem_IS_TOP_LEVEL AND IOS AND LFILE_TESTS)
-	# iOS tests won't work if this property is ON
-	set_property (GLOBAL PROPERTY XCODE_EMIT_EFFECTIVE_PLATFORM_NAME OFF)
-endif ()
-
-set (CMAKE_CXX_VISIBILITY_PRESET hidden)
-set (CMAKE_VISIBILITY_INLINES_HIDDEN ON)
-
-set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO")
-set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO")
-set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "")
 
 add_library (lfilesystem)
 add_library (limes::lfilesystem ALIAS lfilesystem)

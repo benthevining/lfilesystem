@@ -10,68 +10,9 @@
 #
 # ======================================================================================
 
-function (lfilesystem_copy_dlls target)
-	if (WIN32)
-		add_custom_command (
-			TARGET "${target}" POST_BUILD
-			COMMAND "${CMAKE_COMMAND}" -E copy -t $<TARGET_FILE_DIR:${target}>
-					$<TARGET_RUNTIME_DLLS:${target}> USES_TERMINAL COMMAND_EXPAND_LISTS)
-	endif ()
-endfunction ()
-
-#
-
-set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO")
-set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO")
-set (CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "")
-
-include (FetchContent)
-
-if ("${CMAKE_SYSTEM_NAME}" MATCHES "tvOS" OR "${CMAKE_SYSTEM_NAME}" MATCHES "watchOS")
-	set (CATCH_CONFIG_NO_POSIX_SIGNALS ON)
-endif ()
-
-FetchContent_Declare (
-	Catch2
-	GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-	GIT_TAG origin/devel
-	GIT_SHALLOW ON
-	FIND_PACKAGE_ARGS 3 GLOBAL)
-
-FetchContent_MakeAvailable (Catch2)
-
-if (TARGET Catch2 AND "${CMAKE_SYSTEM_NAME}" MATCHES "watchOS")
-	target_compile_options (Catch2 PRIVATE -fgnu-inline-asm)
-endif ()
-
-if (catch2_SOURCE_DIR)
-	list (APPEND CMAKE_MODULE_PATH "${catch2_SOURCE_DIR}/extras")
-endif ()
-
-include (Catch)
+limes_get_catch2 ()
 
 add_executable (lfilesystem_tests)
-
-if ("${CMAKE_SYSTEM_NAME}" MATCHES "watchOS")
-
-endif ()
-
-set (bundle_id "Limes.lfilesystem.tests")
-
-# TODO: on WatchOS: WatchKit app being installed is missing either the WKWatchKitApp or
-# WKApplication key set to true in its Info.plist
-set_target_properties (
-	lfilesystem_tests
-	PROPERTIES BUNDLE TRUE
-			   MACOSX_BUNDLE TRUE
-			   XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO"
-			   XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO"
-			   XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
-			   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${bundle_id}"
-			   MACOSX_BUNDLE_GUI_IDENTIFIER "${bundle_id}"
-			   MACOSX_BUNDLE_BUNDLE_VERSION "${lfilesystem_VERSION}"
-			   MACOSX_BUNDLE_LONG_VERSION_STRING "${lfilesystem_VERSION}"
-			   MACOSX_BUNDLE_SHORT_VERSION_STRING "${lfilesystem_VERSION_MAJOR}")
 
 target_sources (
 	lfilesystem_tests
@@ -86,22 +27,17 @@ target_sources (
 			SymLink.cpp
 			Volume.cpp)
 
-target_link_libraries (lfilesystem_tests PRIVATE Catch2::Catch2WithMain limes::lfilesystem)
+limes_configure_test_target (
+	lfilesystem_tests
+	BUNDLE_ID Limes.lfilesystem.tests
+	VERSION_MAJOR "${lfilesystem_VERSION_MAJOR}"
+	FULL_VERSION "${lfilesystem_VERSION}"
+	TEST_CATEGORY files)
+
+target_link_libraries (lfilesystem_tests PRIVATE limes::lfilesystem)
 
 target_compile_definitions (lfilesystem_tests
 							PRIVATE "LIMES_TEST_DATA_DIR=\"${CMAKE_CURRENT_LIST_DIR}/data\"")
-
-lfilesystem_copy_dlls (lfilesystem_tests)
-
-# cmake-format: off
-catch_discover_tests (
-	lfilesystem_tests
-	EXTRA_ARGS
-		--warn NoAssertions
-		--order rand
-		--verbosity high
-	TEST_PREFIX "limes.files.unit.")
-# cmake-format: on
 
 if (NOT (EMSCRIPTEN OR IOS))
 	add_subdirectory (StructuredTree)
