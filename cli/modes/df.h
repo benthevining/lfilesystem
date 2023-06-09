@@ -14,32 +14,32 @@
 
 #pragma once
 
-#include <string>
+#include "../modes.h"
+#include <lfilesystem/lfilesystem.h>
 #include <string_view>
-#include <memory>
+#include <iostream>
 #include <vector>
 
-namespace limes::files::cli
+namespace limes::files::cli::modes
 {
 
-class Mode
+class DF final : public Mode
 {
 public:
-	virtual ~Mode() = default;
+	[[nodiscard]] std::string_view getName() const final
+	{
+		return "df";
+	}
 
-	[[nodiscard]] virtual std::string_view getName() const = 0;
+	void outputHelp() const final
+	{
 
-	virtual void outputHelp() const = 0;
+	}
 
-	[[nodiscard]] virtual bool execute (int argc, char** argv) const = 0;
+	[[nodiscard]] bool execute (int argc, char** argv) const final
+	{
 
-private:
+	}
 };
 
-using Modes = std::vector<std::unique_ptr<Mode>>;
-
-[[nodiscard]] const Mode* getMode (std::string_view mode);
-
-[[nodiscard]] const Modes& getAllModes();
-
-}  // namespace limes::files::cli
+}

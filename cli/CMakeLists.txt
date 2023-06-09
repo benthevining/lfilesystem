@@ -13,7 +13,15 @@
 add_executable (lfile)
 add_executable (limes::lfile ALIAS lfile)
 
-target_sources (lfile PRIVATE main.cpp modes.cpp modes.h)
+target_sources (
+	lfile
+	PRIVATE main.cpp
+			modes.cpp
+			modes.h
+			modes/cat.h
+			modes/basename.h
+			modes/cp.h
+			modes/df.h)
 
 target_link_libraries (lfile PRIVATE limes::lfilesystem)
 

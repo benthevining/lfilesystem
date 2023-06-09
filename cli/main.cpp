@@ -15,19 +15,26 @@
 #include "./modes.h"
 #include <cstdlib>
 #include <iostream>
+#include <string_view>
 
 // TODO: add --version
 
-void printUsage()
+static void printUsage()
 {
-	std::cout << "lfile <mode> [<args...>]\n"
+	std::cout << "Usage:\n\n"
+			  << "lfile <mode> [<args...>]\n\n"
 			  << "You can run lfile <mode> help for detailed help for a specific subcommand.\n"
-			  << "Available modes:\n";
+			  << "Available modes:\n\n";
 
 	for (const auto& mode : limes::files::cli::getAllModes())
-		std::cout << mode->getName() << '\n';
+		std::cout << "  * " << mode->getName() << '\n';
 
 	std::cout << std::endl;
+}
+
+static inline bool isHelpSubcommand (std::string_view subcmd) noexcept
+{
+	return subcmd == "help" || subcmd == "Help" || subcmd == "--help" || subcmd == "-h" || subcmd == "-help";
 }
 
 int main (int argc, char** argv)
@@ -38,36 +45,44 @@ int main (int argc, char** argv)
 		return EXIT_FAILURE;
 	}
 
-	const std::string_view modeStr { argv[2] };
+	const std::string_view modeStr { argv[1] };
 
-	if (modeStr == "help" || modeStr == "Help")
+	if (isHelpSubcommand (modeStr))
 	{
 		printUsage();
 		return EXIT_SUCCESS;
 	}
 
-	auto mode = limes::files::cli::getMode (modeStr);
+	const auto* mode = limes::files::cli::getMode (modeStr);
 
-	if (mode.get() == nullptr)
+	if (mode == nullptr)
 	{
-		std::cout << "Unknown mode requested: '" << mode << "'";
+		std::cout << "Unknown mode requested: '" << modeStr << "'\n\n";
 		printUsage();
 		return EXIT_FAILURE;
 	}
 
 	if (argc > 2)
 	{
-		const std::string_view subcmd { argv[3] };
+		const std::string_view subcmd { argv[2] };
 
-		if (subcmd == "help" || subcmd == "Help")
+		if (isHelpSubcommand (subcmd))
 		{
-			std::cout << mode->getHelpString() << std::endl;
+			mode->outputHelp();
 			return EXIT_SUCCESS;
 		}
 	}
 
-	if (mode->execute (argc, argv))
-		return EXIT_SUCCESS;
+	try
+	{
+		// consume the 'lfile' from the command line argument list
+		if (mode->execute (argc - 1, argv + 1))
+			return EXIT_SUCCESS;
 
-	return EXIT_FAILURE;
+		return EXIT_FAILURE;
+	}
+	catch(...)
+	{
+		return EXIT_FAILURE;
+	}
 }

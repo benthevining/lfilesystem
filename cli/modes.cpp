@@ -13,10 +13,13 @@
  */
 
 #include "./modes.h"
+#include <algorithm>
+#include "./modes/cat.h"
+#include "./modes/basename.h"
+#include "./modes/cp.h"
+#include "./modes/df.h"
 
 /*
-basename
-cat
 cd (cd + run command)
 chgrp
 chmod
@@ -24,9 +27,7 @@ chown
 cksum
 cmp
 compress
-cp
 dd
-df
 dirname
 du
 file
@@ -52,14 +53,43 @@ unlink
 namespace limes::files::cli
 {
 
-std::unique_ptr<Mode> getMode (std::string_view mode)
+const Mode* getMode (std::string_view mode)
 {
-	return nullptr;
+	const auto& allModes = getAllModes();
+
+	const auto result = std::find_if (std::begin (allModes),
+								std::end (allModes),
+								[mode](const auto& m)
+								{
+		return m->getName() == mode;
+	});
+
+	if (result == std::end (allModes))
+		return nullptr;
+
+	return result->get();
 }
 
-std::vector<std::unique_ptr<Mode>> getAllModes()
+struct AllModes final
 {
-	return {};
+	Modes modes;
+
+	AllModes()
+	{
+		modes.reserve (4);
+
+		modes.emplace_back (std::make_unique<modes::Cat>());
+		modes.emplace_back (std::make_unique<modes::Basename>());
+		modes.emplace_back (std::make_unique<modes::CP>());
+		modes.emplace_back (std::make_unique<modes::DF>());
+	}
+};
+
+const Modes& getAllModes()
+{
+	static AllModes holder;
+
+	return holder.modes;
 }
 
 }  // namespace limes::files::cli
