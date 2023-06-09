@@ -40,5 +40,5 @@ install (
 	DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
 
 if (LFILE_TESTS)
-	# TODO
+	add_subdirectory (test)
 endif ()

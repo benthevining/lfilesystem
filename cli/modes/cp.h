@@ -35,8 +35,8 @@ public:
 	void outputHelp() const final
 	{
 		std::cout << "Usage:\n\n"
-				  << "cp [options] <sourceFile> <targetFile>\n"
-				  << "cp [options] <sourceFile...> <targetDirectory>\n\n"
+				  << "lfile cp [options] <sourceFile> <targetFile>\n"
+				  << "lfile cp [options] <sourceFile...> <targetDirectory>\n\n"
 				  << "In the second synopsis form, <targetDirectory> must exist."
 				  << std::endl;
 	}

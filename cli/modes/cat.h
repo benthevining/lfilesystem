@@ -54,7 +54,7 @@ public:
 	void outputHelp() const final
 	{
 		std::cout << "Usage:\n\n"
-				  << "cat <file...>\n\n"
+				  << "lfile cat <file...>\n\n"
 				  << "Prints contents of files to standard output.\n"
 				  << "Relative filepaths will be interpreted relative to the current working directory."
 				  << std::endl;

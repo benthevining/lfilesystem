@@ -36,7 +36,7 @@ public:
 	void outputHelp() const final
 	{
 		std::cout << "Usage:\n\n"
-				  << "basename <path>\n\n"
+				  << "lfile basename <path>\n\n"
 				  << "Prints the directory portion of the given path."
 				  << std::endl;
 	}

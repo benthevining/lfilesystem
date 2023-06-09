@@ -27,6 +27,10 @@ set (LFILE_INSTALL_DEST "${CMAKE_INSTALL_LIBDIR}/cmake/lfilesystem"
 
 mark_as_advanced (LFILE_INSTALL_DEST LFILE_TESTS LFILE_DOCS LFILE_CLI)
 
+if (LFILE_TESTS)
+	enable_testing ()
+endif ()
+
 add_library (lfilesystem)
 add_library (limes::lfilesystem ALIAS lfilesystem)
 
