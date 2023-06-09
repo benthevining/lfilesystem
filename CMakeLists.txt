@@ -18,7 +18,7 @@ option (LFILE_DOCS "Build the lfilesystem docs" "${lfilesystem_IS_TOP_LEVEL}")
 include (CMakeDependentOption)
 
 cmake_dependent_option (LFILE_CLI "Build the lfilesystem CLI app" "${lfilesystem_IS_TOP_LEVEL}"
-						"NOT IOS" OFF)
+						"NOT IOS;NOT EMSCRIPTEN" OFF)
 
 include (GNUInstallDirs)
 
