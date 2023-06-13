@@ -13,7 +13,7 @@
 include_guard (GLOBAL)
 
 add_test (NAME limes.files.cli.basename COMMAND limes::lfile basename
-												"${CMAKE_CURRENT_LIST_DIR}/foo")
+                                                "${CMAKE_CURRENT_LIST_DIR}/foo")
 
 set_tests_properties (limes.files.cli.basename PROPERTIES PASS_REGULAR_EXPRESSION
-														  "${CMAKE_CURRENT_LIST_DIR}")
+                                                          "${CMAKE_CURRENT_LIST_DIR}")

@@ -15,8 +15,8 @@ add_executable (limes_files_tree_tester)
 target_sources (limes_files_tree_tester PRIVATE main.cpp CreateTree.cmake)
 
 limes_configure_app_bundle (
-	limes_files_tree_tester BUNDLE_ID Limes.lfilesystem.treeTester
-	VERSION_MAJOR "${lfilesystem_VERSION_MAJOR}" FULL_VERSION "${lfilesystem_VERSION}")
+    limes_files_tree_tester BUNDLE_ID Limes.lfilesystem.treeTester
+    VERSION_MAJOR "${lfilesystem_VERSION_MAJOR}" FULL_VERSION "${lfilesystem_VERSION}")
 
 target_link_libraries (limes_files_tree_tester PRIVATE Catch2::Catch2WithMain limes::lfilesystem)
 
@@ -25,7 +25,7 @@ set (base_name "limes.files.StructuredTree")
 set (tree_root "${CMAKE_CURRENT_BINARY_DIR}/FileTree")
 
 add_test (NAME "${base_name}.setup" COMMAND "${CMAKE_COMMAND}" -D "TREE_ROOT=${tree_root}" -P
-											"${CMAKE_CURRENT_LIST_DIR}/CreateTree.cmake")
+                                            "${CMAKE_CURRENT_LIST_DIR}/CreateTree.cmake")
 
 set_tests_properties ("${base_name}.setup" PROPERTIES FIXTURES_SETUP LimesFilesTree)
 

@@ -18,8 +18,8 @@ set (install_dir "${CMAKE_CURRENT_BINARY_DIR}/install_tree")
 set (build_dir "${CMAKE_CURRENT_BINARY_DIR}/FindPackage")
 
 add_test (NAME "${base_name}.install"
-		  COMMAND "${CMAKE_COMMAND}" --install "${lfilesystem_BINARY_DIR}" --config $<CONFIG>
-				  --prefix "${install_dir}")
+          COMMAND "${CMAKE_COMMAND}" --install "${lfilesystem_BINARY_DIR}" --config $<CONFIG>
+                  --prefix "${install_dir}")
 
 set_tests_properties ("${base_name}.install" PROPERTIES FIXTURES_SETUP LimesFilesFindPackageInstall)
 
@@ -39,18 +39,18 @@ add_test (
 # cmake-format: on
 
 set_tests_properties (
-	"${base_name}.configure" PROPERTIES FIXTURES_SETUP LimesFilesFindPackageConfigure
-										FIXTURES_REQUIRED LimesFilesFindPackageInstall)
+    "${base_name}.configure" PROPERTIES FIXTURES_SETUP LimesFilesFindPackageConfigure
+                                        FIXTURES_REQUIRED LimesFilesFindPackageInstall)
 
 add_test (NAME "${base_name}.build" COMMAND "${CMAKE_COMMAND}" --build "${build_dir}" --config
-											$<CONFIG>)
+                                            $<CONFIG>)
 
 set_tests_properties ("${base_name}.build" PROPERTIES FIXTURES_REQUIRED
-													  LimesFilesFindPackageConfigure)
+                                                      LimesFilesFindPackageConfigure)
 
 add_test (NAME "${base_name}.clean" COMMAND "${CMAKE_COMMAND}" -E rm -rf "${build_dir}"
-											"${install_dir}")
+                                            "${install_dir}")
 
 set_tests_properties (
-	"${base_name}.clean" PROPERTIES FIXTURES_CLEANUP
-									"LimesFilesFindPackageConfigure;LimesFilesFindPackageInstall")
+    "${base_name}.clean" PROPERTIES FIXTURES_CLEANUP
+                                    "LimesFilesFindPackageConfigure;LimesFilesFindPackageInstall")

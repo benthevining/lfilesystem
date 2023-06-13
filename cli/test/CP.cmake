@@ -21,7 +21,7 @@ set (dest_file "${CMAKE_CURRENT_BINARY_DIR}/copied.cmake")
 file (REMOVE "${dest_file}")
 
 add_test (NAME "${base_name}.simple-copy" COMMAND limes::lfile cp "${CMAKE_CURRENT_LIST_FILE}"
-												  "${dest_file}")
+                                                  "${dest_file}")
 
 #
 
@@ -30,9 +30,9 @@ set (dest_dir "${CMAKE_CURRENT_BINARY_DIR}/copy-test-dest-directory")
 file (REMOVE_RECURSE "${dest_dir}")
 
 add_test (NAME "${base_name}.nonexist-dest-dir"
-		  COMMAND limes::lfile cp "${CMAKE_CURRENT_LIST_FILE}" "${CMAKE_PARENT_LIST_FILE}"
-				  "${dest_dir}")
+          COMMAND limes::lfile cp "${CMAKE_CURRENT_LIST_FILE}" "${CMAKE_PARENT_LIST_FILE}"
+                  "${dest_dir}")
 
 set_tests_properties (
-	"${base_name}.nonexist-dest-dir"
-	PROPERTIES PASS_REGULAR_EXPRESSION "Destination directory \"${dest_dir}\" does not exist!")
+    "${base_name}.nonexist-dest-dir"
+    PROPERTIES PASS_REGULAR_EXPRESSION "Destination directory \"${dest_dir}\" does not exist!")
