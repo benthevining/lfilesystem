@@ -42,20 +42,21 @@ set_target_properties (lfilesystem PROPERTIES DEBUG_POSTFIX -d VERSION "${lfiles
 set (public_header include/lfilesystem/lfilesystem.h)
 
 set (
-    private_headers
-    include/lfilesystem/lfilesystem_CFile.h
-    include/lfilesystem/lfilesystem_Directory.h
-    include/lfilesystem/lfilesystem_DynamicLibrary.h
-    include/lfilesystem/lfilesystem_File.h
-    include/lfilesystem/lfilesystem_FilesystemEntry.h
-    include/lfilesystem/lfilesystem_FileWatcher.h
-    include/lfilesystem/lfilesystem_Misc.h
-    include/lfilesystem/lfilesystem_Paths.h
-    include/lfilesystem/lfilesystem_Permissions.h
-    include/lfilesystem/lfilesystem_SimpleWatcher.h
-    include/lfilesystem/lfilesystem_SpecialDirectories.h
-    include/lfilesystem/lfilesystem_SymLink.h
-    include/lfilesystem/lfilesystem_Volume.h)
+    util_headers
+    include/lfilesystem/lfilesystem_CFile.h include/lfilesystem/lfilesystem_DynamicLibrary.h
+    include/lfilesystem/lfilesystem_Misc.h include/lfilesystem/lfilesystem_Paths.h
+    include/lfilesystem/lfilesystem_Permissions.h)
+
+set (entries_headers
+     include/lfilesystem/lfilesystem_Directory.h include/lfilesystem/lfilesystem_File.h
+     include/lfilesystem/lfilesystem_FilesystemEntry.h include/lfilesystem/lfilesystem_SymLink.h)
+
+set (watcher_headers include/lfilesystem/lfilesystem_FileWatcher.h
+                     include/lfilesystem/lfilesystem_SimpleWatcher.h)
+
+set (specialdir_headers include/lfilesystem/lfilesystem_SpecialDirectories.h)
+
+set (volume_headers include/lfilesystem/lfilesystem_Volume.h)
 
 set (generated_headers_dir "${CMAKE_CURRENT_BINARY_DIR}/generated/lfilesystem")
 
@@ -76,8 +77,15 @@ set (version_header "${generated_headers_dir}/lfilesystem_Version.h")
 configure_file ("${CMAKE_CURRENT_LIST_DIR}/cmake/version.in" "${version_header}" @ONLY
                 NEWLINE_STYLE UNIX)
 
-target_sources (lfilesystem # PUBLIC "${public_header}"
-                PRIVATE ${private_headers} "${export_header}" "${version_header}")
+target_sources (
+    lfilesystem # PUBLIC "${public_header}"
+    PRIVATE ${util_headers}
+            ${entries_headers}
+            ${watcher_headers}
+            ${specialdir_headers}
+            ${volume_headers}
+            "${export_header}"
+            "${version_header}")
 
 target_include_directories (
     lfilesystem
@@ -85,8 +93,17 @@ target_include_directories (
            $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/generated>
            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-install (FILES "${public_header}" "${export_header}" "${version_header}" ${private_headers}
-         DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/lfilesystem" COMPONENT lfilesystem_dev)
+install (
+    FILES "${public_header}"
+          "${export_header}"
+          "${version_header}"
+          ${util_headers}
+          ${entries_headers}
+          ${watcher_headers}
+          ${specialdir_headers}
+          ${volume_headers}
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/lfilesystem"
+    COMPONENT lfilesystem_dev)
 
 if (APPLE)
 
@@ -132,7 +149,55 @@ endif ()
 
 target_link_libraries (lfilesystem PRIVATE ${CMAKE_DL_LIBS})
 
-add_subdirectory (src)
+set (util_sources src/lfilesystem_CFile.cpp src/lfilesystem_DynamicLibrary.cpp
+                  src/lfilesystem_Paths.cpp src/lfilesystem_Permissions.cpp)
+
+set (entries_sources src/lfilesystem_Directory.cpp src/lfilesystem_File.cpp
+                     src/lfilesystem_FilesystemEntry.cpp src/lfilesystem_SymLink.cpp)
+
+set (specialdir_sources src/lfilesystem_SpecialDirs_Common.cpp)
+
+set (volume_sources src/lfilesystem_Volume_Common.cpp)
+
+if (APPLE)
+    list (APPEND entries_sources src/native/lfilesystem_Entries_Mac.mm)
+    list (APPEND specialdir_sources src/native/lfilesystem_SpecialDirs_Mac.mm)
+    list (APPEND volume_sources src/native/lfilesystem_Volume_Mac.mm)
+elseif (WIN32)
+    list (APPEND entries_sources src/native/lfilesystem_Entries_Windows.cpp)
+    list (APPEND specialdir_sources src/native/lfilesystem_SpecialDirs_Windows.cpp)
+    list (APPEND volume_sources src/native/lfilesystem_Volume_Windows.cpp)
+else ()
+    list (APPEND entries_sources src/native/lfilesystem_Entries_Linux.cpp)
+    list (APPEND volume_sources src/native/lfilesystem_Volume_Linux.cpp)
+
+    if (ANDROID)
+        list (APPEND specialdir_sources src/native/lfilesystem_SpecialDirs_Android.cpp)
+    else ()
+        list (APPEND specialdir_sources src/native/lfilesystem_SpecialDirs_Linux.cpp)
+    endif ()
+endif ()
+
+set (watcher_sources src/lfilesystem_SimpleWatcher.cpp)
+
+if (IOS OR ANDROID OR EMSCRIPTEN)
+    list (APPEND watcher_sources src/native/lfilesystem_FileWatcher_Unsupported.cpp)
+elseif (APPLE)
+    list (APPEND watcher_sources src/native/lfilesystem_FileWatcher_Mac.mm)
+elseif (WIN32)
+    list (APPEND watcher_sources src/native/lfilesystem_FileWatcher_Windows.cpp)
+else ()
+    list (APPEND watcher_sources src/native/lfilesystem_FileWatcher_Linux.cpp)
+endif ()
+
+target_sources (lfilesystem PRIVATE ${util_sources} ${entries_sources} ${watcher_sources}
+                                    ${specialdir_sources} ${volume_sources})
+
+source_group (util FILES ${util_headers} ${util_sources})
+source_group (entries FILES ${entries_headers} ${entries_sources})
+source_group (watcher FILES ${watcher_headers} ${watcher_sources})
+source_group (special-dirs FILES ${specialdir_headers} ${specialdir_sources})
+source_group (volumes FILES ${volume_headers} ${volume_sources})
 
 if (LFILE_CLI)
     add_subdirectory (cli)
