@@ -10,6 +10,8 @@
 #
 # ======================================================================================
 
+set (CMAKE_FOLDER tests)
+
 limes_get_catch2 ()
 
 add_executable (lfilesystem_tests)
