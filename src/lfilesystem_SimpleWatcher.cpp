@@ -72,4 +72,4 @@ void SimpleFileWatcher::otherEventType (const FilesystemEntry& f)
 	callback (f);
 }
 
-}  // namespace files
+}  // namespace limes::files

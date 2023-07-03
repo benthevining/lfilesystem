@@ -17,4 +17,4 @@ target_sources (limes_test_shared_lib PRIVATE shared_lib.cpp)
 target_link_libraries (limes_test_shared_lib PUBLIC Limes::limes_files)
 
 target_compile_definitions (
-	limes_files_tests PRIVATE "LIMES_TEST_DYLIB_PATH=\"$<TARGET_FILE:limes_test_shared_lib>\"")
+    limes_files_tests PRIVATE "LIMES_TEST_DYLIB_PATH=\"$<TARGET_FILE:limes_test_shared_lib>\"")

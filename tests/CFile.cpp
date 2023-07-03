@@ -29,6 +29,7 @@ TEST_CASE ("CFile - null", TAGS)
 	REQUIRE (f.getPath().empty());
 }
 
+#ifndef __EMSCRIPTEN__
 TEST_CASE ("CFile", TAGS)
 {
 	const auto path = files::dirs::cwd().getChild ("temp.txt").getAbsolutePath();
@@ -59,11 +60,12 @@ TEST_CASE ("CFile", TAGS)
 	const files::Path newPath { files::dirs::cwd().getChild ("another_file.omg").getAbsolutePath() };
 
 	// TODO: this only fails on Windows
-#ifndef _WIN32
+#	ifndef _WIN32
 	REQUIRE (file.rename (newPath));
 	REQUIRE (f.getPath() == newPath);
 	REQUIRE (file.deleteIfExists());
-#endif
+#	endif
 }
+#endif
 
 #undef TAGS

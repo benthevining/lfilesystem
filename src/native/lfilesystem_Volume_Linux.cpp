@@ -65,6 +65,10 @@ namespace limes::files
 
 static inline Path findMountPath (const Path& inputPath)
 {
+#ifdef __ANDROID__
+	// TODO
+	throwError (inputPath);
+#else
 	struct stat s;
 
 	if (stat (inputPath.c_str(), &s) != 0)
@@ -94,6 +98,7 @@ static inline Path findMountPath (const Path& inputPath)
 	}
 
 	throwError (inputPath);
+#endif
 }
 
 Volume::Volume (const Path& path)
@@ -286,4 +291,4 @@ std::vector<Volume> Volume::getAll() noexcept
 	return volumes;
 }
 
-}  // namespace files
+}  // namespace limes::files

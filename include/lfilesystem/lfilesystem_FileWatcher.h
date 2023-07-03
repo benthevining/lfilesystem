@@ -84,10 +84,10 @@ public:
 	/** Destructor. */
 	virtual ~FileWatcher();
 
-	FileWatcher (const FileWatcher&) = delete;
+	FileWatcher (const FileWatcher&)			= delete;
 	FileWatcher& operator= (const FileWatcher&) = delete;
 
-	FileWatcher (FileWatcher&&) = delete;
+	FileWatcher (FileWatcher&&)			   = delete;
 	FileWatcher& operator= (FileWatcher&&) = delete;
 
 	/** Called when a file's content is accessed.
@@ -178,4 +178,4 @@ private:
 	[[maybe_unused]] FilesystemEntry watchedPath;
 };
 
-}  // namespace files
+}  // namespace limes::files

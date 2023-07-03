@@ -52,7 +52,7 @@ public:
 	Permissions() = default;
 
 	/** Creates a Permissions object holding the specified permissions value. */
-	Permissions (FSPerms p) noexcept; // cppcheck-suppress noExplicitConstructor
+	Permissions (FSPerms p) noexcept;  // cppcheck-suppress noExplicitConstructor
 
 	///@}
 
@@ -73,10 +73,10 @@ public:
 
 	///@}
 
-	Permissions (const Permissions&) = default;
+	Permissions (const Permissions&)			= default;
 	Permissions& operator= (const Permissions&) = default;
 
-	Permissions (Permissions&&) = default;
+	Permissions (Permissions&&)			   = default;
 	Permissions& operator= (Permissions&&) = default;
 
 	/** Assigns a new permissions bitmask to this object. */
@@ -256,6 +256,6 @@ private:
 	@ingroup limes_files
 	@relates Permissions
  */
-std::ostream& operator<< (std::ostream& os, const Permissions& value);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const Permissions& value);
 
 }  // namespace limes::files

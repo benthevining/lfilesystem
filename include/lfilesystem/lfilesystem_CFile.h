@@ -92,8 +92,8 @@ public:
 	/** Move assignment operator. */
 	CFile& operator= (CFile&& other) noexcept;
 
-	CFile (const CFile&) = delete;
-	CFile& operator=(const CFile&) = delete;
+	CFile (const CFile&)			= delete;
+	CFile& operator= (const CFile&) = delete;
 
 	/** @name Accessors */
 	///@{

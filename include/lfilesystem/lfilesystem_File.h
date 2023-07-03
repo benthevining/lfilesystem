@@ -24,7 +24,7 @@
 #include <memory>
 #include <iterator>
 #include "lfilesystem/lfilesystem_Export.h"
-#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"  // for FilesystemEntry, Path
 #include "lfilesystem/lfilesystem_CFile.h"
 
 /** @file
@@ -63,10 +63,10 @@ class LFILE_EXPORT File : public FilesystemEntry
 public:
 	using FilesystemEntry::FilesystemEntry;
 
-	File (const File&) = default;
+	File (const File&)			  = default;
 	File& operator= (const File&) = default;
 
-	File (File&&) = default;
+	File (File&&)			 = default;
 	File& operator= (File&&) = default;
 
 	/** @name Path queries */
@@ -232,7 +232,7 @@ public:
 
 		@see getHardLinkCount()
 	 */
-	std::optional<File> createHardLink (const Path& path) const;
+	std::optional<File> createHardLink (const Path& path) const noexcept;
 
 	/** Returns the number of hard links referring to this underlying filesystem object.
 
@@ -310,10 +310,10 @@ public:
 
 		explicit Iterator();
 
-		Iterator (const Iterator&) = default;
+		Iterator (const Iterator&)			  = default;
 		Iterator& operator= (const Iterator&) = default;
 
-		Iterator (Iterator&&) = default;
+		Iterator (Iterator&&)			 = default;
 		Iterator& operator= (Iterator&&) = default;
 
 	private:
@@ -401,7 +401,7 @@ public:
 	 */
 	~TempFile() final;
 
-	TempFile (const TempFile&) = delete;
+	TempFile (const TempFile&)			  = delete;
 	TempFile& operator= (const TempFile&) = delete;
 
 	/** @name Moving */
@@ -428,14 +428,14 @@ private:
 	@ingroup limes_files
 	@relates File
  */
-std::ostream& operator<< (std::ostream& os, const File& file);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const File& file);
 
 /** Reads content from the input stream, and overwrites the file with it.
 
 	@ingroup limes_files
 	@relates File
  */
-std::istream& operator>> (std::istream& is, const File& file);
+LFILE_EXPORT std::istream& operator>> (std::istream& is, const File& file);
 
 }  // namespace limes::files
 

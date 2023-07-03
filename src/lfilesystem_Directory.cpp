@@ -18,10 +18,11 @@
 #include <vector>		// for vector
 #include <string>		// for string
 #include <algorithm>
-#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for FilesystemEntry, Path
-#include "lfilesystem/lfilesystem_File.h"				// for File
-#include "lfilesystem/lfilesystem_SymLink.h"			// for SymLink
-#include "lfilesystem/lfilesystem_Misc.h"		// for PATHseparator
+#include <system_error>
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"  // for FilesystemEntry, Path
+#include "lfilesystem/lfilesystem_File.h"			  // for File
+#include "lfilesystem/lfilesystem_SymLink.h"		  // for SymLink
+#include "lfilesystem/lfilesystem_Misc.h"			  // for PATHseparator
 #include "lfilesystem/lfilesystem_Directory.h"
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 
@@ -68,25 +69,24 @@ bool Directory::contains (const std::string_view& childName) const
 						 std::end (children),
 						 [&childName] (const FilesystemEntry& e)
 						 { return e.getName() == childName; })
-			!= std::end (children);
+		!= std::end (children);
 }
 
 bool Directory::createIfDoesntExist() const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return false;
+#else
 	if (! isValid())
 		return false;
 
 	if (exists())
 		return false;
 
-	try
-	{
-		return std::filesystem::create_directories (getAbsolutePath());
-	}
-	catch(...)
-	{
-		return false;
-	}
+	std::error_code ec;
+
+	return std::filesystem::create_directories (getAbsolutePath(), ec);
+#endif
 }
 
 Path Directory::getRelativePath (const Path& inputPath) const
@@ -261,7 +261,7 @@ bool Directory::containsSubdirectories() const
 	for (const auto& dir_entry : IteratorType<false> { getAbsolutePath() })
 	{
 		// NB. without this check, the iterator will return symlinks to directories
-		if (dir_entry.is_directory() && ! dir_entry.is_symlink()) // cppcheck-suppress useStlAlgorithm
+		if (dir_entry.is_directory() && ! dir_entry.is_symlink())  // cppcheck-suppress useStlAlgorithm
 			return true;
 	}
 
@@ -437,4 +437,4 @@ Directory::Iterator::pointer Directory::Iterator::operator->() const
 	return &entries->at (idx);
 }
 
-}  // namespace files
+}  // namespace limes::files

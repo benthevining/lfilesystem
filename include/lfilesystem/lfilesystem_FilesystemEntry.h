@@ -108,17 +108,17 @@ public:
 		an error if the passed path doesn't actually exist on disk. The path will be normalized using the
 		\c normalizePath() function.
 	 */
-	explicit FilesystemEntry (const Path& pathToUse);
+	explicit FilesystemEntry (const Path& pathToUse) noexcept;
 
 	///@}
 
 	/** Destructor. */
 	virtual ~FilesystemEntry() = default;
 
-	FilesystemEntry (const FilesystemEntry&) = default;
+	FilesystemEntry (const FilesystemEntry&)			= default;
 	FilesystemEntry& operator= (const FilesystemEntry&) = default;
 
-	FilesystemEntry (FilesystemEntry&&) = default;
+	FilesystemEntry (FilesystemEntry&&)			   = default;
 	FilesystemEntry& operator= (FilesystemEntry&&) = default;
 
 	/** @name Path assignment */
@@ -586,7 +586,7 @@ private:
 	@ingroup limes_files
 	@relates FilesystemEntry
  */
-std::ostream& operator<< (std::ostream& os, const FilesystemEntry& value);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const FilesystemEntry& value);
 
 }  // namespace limes::files
 
