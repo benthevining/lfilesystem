@@ -203,7 +203,7 @@ repos:
 
   # various other formatters
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks.git
-  rev: v2.9.0
+  rev: v2.10.0
   hooks:
   - id: pretty-format-ini
     args: [--autofix]
@@ -212,7 +212,7 @@ repos:
 
   # validate JSON/YAML schemas
 - repo: https://github.com/sirosen/check-jsonschema
-  rev: 0.23.2
+  rev: 0.23.3
   hooks:
   - id: check-github-workflows
   # - id: check-dependabot
