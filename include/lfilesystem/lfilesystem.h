@@ -110,6 +110,8 @@
 
 	@todo FileList, RecentlyOpenedFilesList classes
 
+	@todo mounted volume listener (reference juce::MountedVolumeListChangeDetector)
+
 	@todo compress/decompress, tarball creator/extractor
 
 	@todo tests on iOS?

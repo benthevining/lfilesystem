@@ -54,6 +54,7 @@ class FilesystemEntry;
 	@todo ConstructionError custom exception type? This could allow more specific
 	error checking. The error could contain the original passed path.
 	@todo supportsHardLinks()?
+	@todo get root path as Directory
  */
 class LFILE_EXPORT Volume final
 {

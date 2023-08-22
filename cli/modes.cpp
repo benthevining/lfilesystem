@@ -19,6 +19,8 @@
 #include "./modes/cp.h"
 #include "./modes/df.h"
 
+// TODO: check if file/directory exists
+// TODO: get mount path of file
 /*
 cd (cd + run command)
 chgrp
