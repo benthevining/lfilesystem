@@ -37,7 +37,7 @@ static inline Directory getAndroidAppDataDir()
 	// 	return { juceString ((jstring) jString.get()) };
 	// }
 
-	// return {};
+	return {};
 }
 
 static inline Directory getAndroidDocumentsDir()
@@ -48,7 +48,7 @@ static inline Directory getAndroidDocumentsDir()
 	// if (auto* env = getEnv())
 	// 	return resolveAndroidDir (LocalRef<jobject> (env->CallStaticObjectMethod (AndroidEnvironment, AndroidEnvironment.getDataDirectory)));
 
-	// return {};
+	return {};
 }
 
 [[nodiscard]] LFILE_EXPORT Directory android_home()
@@ -83,7 +83,7 @@ Directory userAppData()
 
 Directory downloads()
 {
-	// TODO
+	return {};
 }
 
 }  // namespace limes::files::dirs

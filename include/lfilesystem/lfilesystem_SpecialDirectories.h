@@ -23,7 +23,7 @@
 
 	@ingroup limes_files
 
-	@todo more special dirs
+	@todo more dirs: cache, pictures, music, video
 
 	@todo Android implementations. None of these functions are implemented for Android, it will
 	probably require some native JNI code.

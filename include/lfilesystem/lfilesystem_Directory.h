@@ -55,10 +55,10 @@ class LFILE_EXPORT Directory final : public FilesystemEntry
 public:
 	using FilesystemEntry::FilesystemEntry;
 
-	Directory (const Directory&) = default;
+	Directory (const Directory&)			= default;
 	Directory& operator= (const Directory&) = default;
 
-	Directory (Directory&&) = default;
+	Directory (Directory&&)			   = default;
 	Directory& operator= (Directory&&) = default;
 
 	/** @name Typedefs
@@ -274,10 +274,10 @@ public:
 
 		explicit Iterator();
 
-		Iterator (const Iterator&) = default;
+		Iterator (const Iterator&)			  = default;
 		Iterator& operator= (const Iterator&) = default;
 
-		Iterator (Iterator&&) = default;
+		Iterator (Iterator&&)			 = default;
 		Iterator& operator= (Iterator&&) = default;
 
 	private:

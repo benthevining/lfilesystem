@@ -1,0 +1,9 @@
+#pragma once
+
+#define LFILE_VERSION_MAJOR @lfilesystem_VERSION_MAJOR@
+
+#define LFILE_VERSION_MINOR @lfilesystem_VERSION_MINOR@
+
+#define LFILE_VERSION_PATCH @lfilesystem_VERSION_PATCH@
+
+#define LFILE_VERSION "@lfilesystem_VERSION@"

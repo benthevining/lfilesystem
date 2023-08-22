@@ -34,7 +34,7 @@ using Path = std::filesystem::path;
 	@see normalizePath()
 	@ingroup limes_files
  */
-[[nodiscard]] LFILE_EXPORT bool isValidPath (const Path& path);
+[[nodiscard]] LFILE_EXPORT bool isValidPath (const Path& path) noexcept;
 
 /** This function takes an input path and does some linting and transformations
 	to create a consistent, canonical form of the path. If \c isValidPath()
@@ -51,7 +51,7 @@ using Path = std::filesystem::path;
 	@see isValidPath()
 	@ingroup limes_files
  */
-[[nodiscard]] LFILE_EXPORT Path normalizePath (const Path& path);
+[[nodiscard]] LFILE_EXPORT Path normalizePath (const Path& path) noexcept;
 
 /** Returns the largest prefix path fragment common to \c path1 and \c path2 .
 
@@ -61,6 +61,6 @@ using Path = std::filesystem::path;
 
 	@ingroup limes_files
  */
-[[nodiscard]] LFILE_EXPORT Path largestCommonPrefix (const Path& path1, const Path& path2);
+[[nodiscard]] LFILE_EXPORT Path largestCommonPrefix (const Path& path1, const Path& path2) noexcept;
 
 }  // namespace limes::files

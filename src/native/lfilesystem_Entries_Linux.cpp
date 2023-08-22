@@ -157,12 +157,12 @@ namespace module_path
 				&& buffer[length - 3] == 'a'
 				&& buffer[length - 4] == '.')
 			{
-				const auto fd = open (path, O_RDONLY);
+				const auto fd = open (path.data(), O_RDONLY);
 
 				if (fd == -1)
 					continue;
 
-				const auto* const begin = static_cast<char*> (mmap (0, offset, PROT_READ, MAP_SHARED, fd, 0));
+				auto* const begin = static_cast<char*> (mmap (0, offset, PROT_READ, MAP_SHARED, fd, 0));
 
 				if (begin == MAP_FAILED)
 				{
@@ -174,9 +174,9 @@ namespace module_path
 					 p >= begin;
 					 --p)
 				{
-					if (*reinterpret_cast<std::uint32_t*> (p) == 0x04034b50UL)	// local file header signature found
+					if (*reinterpret_cast<const std::uint32_t*> (p) == 0x04034b50UL)	// local file header signature found
 					{
-						const auto length_ = *(reinterpret_cast<std::uint32_t*> (p + 26));
+						const auto length_ = *(reinterpret_cast<const std::uint32_t*> (p + 26));
 
 						if (length + 2 + length_ < static_cast<std::uint32_t> (sizeof (buffer)))
 						{
@@ -189,7 +189,7 @@ namespace module_path
 					}
 				}
 
-				munmap (begin, offset);
+				munmap (static_cast<void*>(begin), offset);
 				close (fd);
 			}
 #	endif /* __ANDROID__ */
@@ -209,4 +209,4 @@ namespace module_path
 
 }  // namespace module_path
 
-}  // namespace files
+}  // namespace limes::files

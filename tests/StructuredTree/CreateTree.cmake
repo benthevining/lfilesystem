@@ -11,7 +11,7 @@
 # ======================================================================================
 
 if (NOT DEFINED TREE_ROOT)
-	message (FATAL_ERROR "TREE_ROOT must be defined!")
+    message (FATAL_ERROR "TREE_ROOT must be defined!")
 endif ()
 
 file (REMOVE_RECURSE "${TREE_ROOT}")
@@ -19,7 +19,7 @@ file (REMOVE_RECURSE "${TREE_ROOT}")
 file (MAKE_DIRECTORY "${TREE_ROOT}")
 
 foreach (filename IN ITEMS example.txt sample.omg .trial)
-	file (TOUCH "${TREE_ROOT}/${filename}")
+    file (TOUCH "${TREE_ROOT}/${filename}")
 endforeach ()
 
 set (subdirs Foo Bar Baz)
@@ -30,13 +30,13 @@ set (Baz_children "")
 
 foreach (subdirName IN LISTS subdirs)
 
-	set (subdirPath "${TREE_ROOT}/${subdirName}")
+    set (subdirPath "${TREE_ROOT}/${subdirName}")
 
-	file (MAKE_DIRECTORY "${subdirPath}")
+    file (MAKE_DIRECTORY "${subdirPath}")
 
-	foreach (filename IN LISTS ${subdirName}_children)
-		file (TOUCH "${subdirPath}/${filename}")
-	endforeach ()
+    foreach (filename IN LISTS ${subdirName}_children)
+        file (TOUCH "${subdirPath}/${filename}")
+    endforeach ()
 
 endforeach ()
 

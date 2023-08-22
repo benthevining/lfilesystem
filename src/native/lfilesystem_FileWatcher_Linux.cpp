@@ -227,7 +227,7 @@ private:
 		std::unique_ptr<std::jthread> thread;
 	};
 
-	UpdaterThread updaterThread; // should be static, but that caused unresolved external symbol errors in MSVC...
+	UpdaterThread updaterThread;  // should be static, but that caused unresolved external symbol errors in MSVC...
 };
 
 /*---------------------------------------------------------------------------------------------------------------------*/
@@ -304,4 +304,4 @@ FilesystemEntry FileWatcher::getWatchedPath() const noexcept
 	return watchedPath;
 }
 
-}  // namespace files
+}  // namespace limes::files

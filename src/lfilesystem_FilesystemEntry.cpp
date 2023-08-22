@@ -12,14 +12,15 @@
  * ======================================================================================
  */
 
-#include <ctime>		  // for tm
-#include <exception>	  // for exception
-#include <filesystem>	  // for path, copy, operator/, absolute, cera...
-#include <fstream>		  // for string, ofstream
-#include <string>		  // for operator<, operator>
-#include "lfilesystem/lfilesystem_Directory.h"  // for Directory
-#include "lfilesystem/lfilesystem_File.h"		  // for File
-#include "lfilesystem/lfilesystem_SymLink.h"	  // for SymLink
+#include <ctime>	   // for tm
+#include <exception>   // for exception
+#include <filesystem>  // for path, copy, operator/, absolute, cera...
+#include <fstream>	   // for string, ofstream
+#include <string>	   // for operator<, operator>
+#include <system_error>
+#include "lfilesystem/lfilesystem_Directory.h"	// for Directory
+#include "lfilesystem/lfilesystem_File.h"		// for File
+#include "lfilesystem/lfilesystem_SymLink.h"	// for SymLink
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Volume.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"
@@ -40,7 +41,7 @@
 namespace limes::files
 {
 
-FilesystemEntry::FilesystemEntry (const Path& pathToUse)
+FilesystemEntry::FilesystemEntry (const Path& pathToUse) noexcept
 	: path (normalizePath (pathToUse))
 {
 }
@@ -84,25 +85,27 @@ FilesystemEntry& FilesystemEntry::changeName (const std::string_view& newName)
 	return *this;
 }
 
-static inline bool areSameIgnoringCase (const std::string_view& lhs, const std::string_view& rhs)
+static inline bool areSameIgnoringCase (const std::string_view& lhs, const std::string_view& rhs) noexcept
 {
 	return std::equal (lhs.begin(), lhs.end(),
 					   rhs.begin(), rhs.end(),
 					   [] (char a, char b)
 					   {
-		return std::tolower (static_cast<unsigned char> (a)) == std::tolower (static_cast<unsigned char> (b));
-	});
+						   return std::tolower (static_cast<unsigned char> (a)) == std::tolower (static_cast<unsigned char> (b));
+					   });
 }
 
 bool FilesystemEntry::operator== (const FilesystemEntry& other) const noexcept
 {
+	std::error_code ec;
+
 	// std::filesystem::equivalent can only be used if both paths exist
 	if (exists() && other.exists())
 	{
 		if (isRelativePath() && other.isRelativePath())
-			return std::filesystem::equivalent (path, other.path);
+			return std::filesystem::equivalent (path, other.path, ec);
 
-		return std::filesystem::equivalent (getAbsolutePath(), other.getAbsolutePath());
+		return std::filesystem::equivalent (getAbsolutePath(), other.getAbsolutePath(), ec);
 	}
 
 	const auto caseSensitive = [p = getAbsolutePath()]
@@ -313,14 +316,7 @@ std::optional<File> FilesystemEntry::getFileObject() const noexcept
 	if (! isFile())
 		return std::nullopt;
 
-	try
-	{
-		return File { path };
-	}
-	catch (...)
-	{
-		return std::nullopt;
-	}
+	return File { path };
 }
 
 std::optional<Directory> FilesystemEntry::getDirectoryObject() const noexcept
@@ -331,14 +327,7 @@ std::optional<Directory> FilesystemEntry::getDirectoryObject() const noexcept
 	if (! isDirectory())
 		return std::nullopt;
 
-	try
-	{
-		return Directory { path };
-	}
-	catch (...)
-	{
-		return std::nullopt;
-	}
+	return Directory { path };
 }
 
 std::optional<SymLink> FilesystemEntry::getSymLinkObject() const noexcept
@@ -349,14 +338,7 @@ std::optional<SymLink> FilesystemEntry::getSymLinkObject() const noexcept
 	if (! isSymLink())
 		return std::nullopt;
 
-	try
-	{
-		return SymLink { path };
-	}
-	catch (...)
-	{
-		return std::nullopt;
-	}
+	return SymLink { path };
 }
 
 bool FilesystemEntry::isAbsolutePath() const noexcept
@@ -421,19 +403,21 @@ bool FilesystemEntry::createIfDoesntExist() const noexcept
 	if (isSymLink())
 		return false;
 
+	std::error_code ec;
+
+	if (isDirectory())
+		return std::filesystem::create_directories (getAbsolutePath(), ec);
+
 	try
 	{
-		if (isDirectory())
-			return std::filesystem::create_directories (getAbsolutePath());
-
 		[[maybe_unused]] std::ofstream output { getAbsolutePath() };
-
-		return exists();
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}
+
+	return exists();
 }
 
 bool FilesystemEntry::deleteIfExists() const noexcept
@@ -441,16 +425,11 @@ bool FilesystemEntry::deleteIfExists() const noexcept
 	if (! exists() || ! isValid())
 		return false;
 
-	try
-	{
-		const auto filesRemoved = std::filesystem::remove_all (getAbsolutePath());
+	std::error_code ec;
 
-		return filesRemoved > 0 && ! exists();
-	}
-	catch (...)
-	{
-		return false;
-	}
+	const auto filesRemoved = std::filesystem::remove_all (getAbsolutePath(), ec);
+
+	return filesRemoved > 0 && ! exists();
 }
 
 void FilesystemEntry::touch() const
@@ -484,14 +463,9 @@ std::uintmax_t FilesystemEntry::sizeInBytes() const
 
 bool FilesystemEntry::setPermissions (FSPerms permissions, PermOptions options) const noexcept
 {
-	try
-	{
-		std::filesystem::permissions (getAbsolutePath(), permissions, options);
-	}
-	catch(...)
-	{
-		return false;
-	}
+	std::error_code ec;
+
+	std::filesystem::permissions (getAbsolutePath(), permissions, options, ec);
 
 	return true;
 }
@@ -514,17 +488,13 @@ bool FilesystemEntry::rename (const Path& newPath) noexcept
 
 	const auto pathBefore = path;
 
-	try
-	{
-		const auto newPath = newEntry.getAbsolutePath();
-		std::filesystem::rename (path, newPath);
-		path = newPath;
-	}
-	catch(...)
-	{
-		path = pathBefore;
-		return false;
-	}
+	const auto newResolvedPath = newEntry.getAbsolutePath();
+
+	std::error_code ec;
+
+	std::filesystem::rename (path, newResolvedPath, ec);
+
+	path = newResolvedPath;
 
 	return true;
 }
@@ -535,14 +505,9 @@ bool FilesystemEntry::copyTo (const Path& dest, CopyOptions options) const noexc
 
 	newEntry.makeAbsoluteRelativeTo (getDirectory());
 
-	try
-	{
-		std::filesystem::copy (getAbsolutePath(), newEntry.getAbsolutePath(), options);
-	}
-	catch(...)
-	{
-		return false;
-	}
+	std::error_code ec;
+
+	std::filesystem::copy (getAbsolutePath(), newEntry.getAbsolutePath(), options, ec);
 
 	return true;
 }
@@ -582,14 +547,9 @@ bool FilesystemEntry::copyFrom (const Path& source, CopyOptions options) const n
 
 	sourceEntry.makeAbsoluteRelativeTo (getDirectory());
 
-	try
-	{
-		std::filesystem::copy (sourceEntry.getAbsolutePath(), getAbsolutePath(), options);
-	}
-	catch(...)
-	{
-		return false;
-	}
+	std::error_code ec;
+
+	std::filesystem::copy (sourceEntry.getAbsolutePath(), getAbsolutePath(), options, ec);
 
 	return true;
 }
@@ -601,10 +561,14 @@ bool FilesystemEntry::copyFrom (const FilesystemEntry& source, CopyOptions optio
 
 std::optional<Volume> FilesystemEntry::getVolume() const noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return std::nullopt;
+#else
 	if (exists())
 		return Volume::tryCreate (getAbsolutePath());
 
 	return std::nullopt;
+#endif
 }
 
 bool FilesystemEntry::filenameBeginsWithDot() const

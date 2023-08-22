@@ -54,6 +54,7 @@ class FilesystemEntry;
 	@todo ConstructionError custom exception type? This could allow more specific
 	error checking. The error could contain the original passed path.
 	@todo supportsHardLinks()?
+	@todo get root path as Directory
  */
 class LFILE_EXPORT Volume final
 {
@@ -174,7 +175,7 @@ private:
 	@ingroup limes_files
 	@relates Volume
  */
-std::ostream& operator<< (std::ostream& os, const Volume& value);
+LFILE_EXPORT std::ostream& operator<< (std::ostream& os, const Volume& value);
 
 /** This namespace contains free functions for easily querying properties of the volume that
 	the current working directory is mounted on. The advantage of these functions is that if
@@ -231,4 +232,4 @@ namespace volume
 
 }  // namespace volume
 
-}  // namespace files
+}  // namespace limes::files
