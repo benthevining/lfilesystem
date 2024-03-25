@@ -140,4 +140,4 @@ bool caseSensitive()
 
 }  // namespace volume
 
-}  // namespace files
+}  // namespace limes::files

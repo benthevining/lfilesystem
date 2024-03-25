@@ -79,4 +79,4 @@ Directory userDocuments()
 	}
 }
 
-}
+}  // namespace limes::files::dirs

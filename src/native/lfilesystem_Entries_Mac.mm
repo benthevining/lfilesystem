@@ -157,7 +157,7 @@ namespace exec_path
 	return {};
 }
 
-}
+}  // namespace exec_path
 
 namespace module_path
 {
@@ -193,6 +193,6 @@ namespace module_path
 #endif
 }
 
-}
+}  // namespace module_path
 
-}  // namespace files
+}  // namespace limes::files
