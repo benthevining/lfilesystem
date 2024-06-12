@@ -36,7 +36,7 @@ TEST_CASE ("FileWatcher", "[core][files][watcher]")
 
 	const auto file = cwd.getChildFile ("watcher_test.txt");
 
-#if (defined(__ANDROID__) || (defined(__APPLE__) && TARGET_OS_IPHONE))
+#if (defined(__ANDROID__) || defined(__EMSCRIPTEN__) || (defined(__APPLE__) && TARGET_OS_IPHONE))
 
 	REQUIRE (! lf::FileWatcher::supportedBySystem());
 

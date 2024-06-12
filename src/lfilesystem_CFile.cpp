@@ -108,8 +108,12 @@ CFile::operator std::FILE*() const noexcept
 	return pathCopy.make_preferred().string();
 }
 
-bool CFile::open (const Path& filepath, Mode mode) noexcept
+bool CFile::open ([[maybe_unused]] const Path& filepath,
+				  [[maybe_unused]] Mode		   mode) noexcept
 {
+#ifdef __EMSCRIPTEN__
+	return false;
+#else
 	close();
 
 	try
@@ -124,6 +128,7 @@ bool CFile::open (const Path& filepath, Mode mode) noexcept
 
 		return false;
 	}
+#endif
 }
 
 void CFile::close() noexcept

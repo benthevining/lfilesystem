@@ -78,7 +78,7 @@ public:
 	DynamicLibrary (DynamicLibrary&& other) noexcept;
 	DynamicLibrary& operator= (DynamicLibrary&& other) noexcept;
 
-	DynamicLibrary (const DynamicLibrary&) = delete;
+	DynamicLibrary (const DynamicLibrary&)			  = delete;
 	DynamicLibrary& operator= (const DynamicLibrary&) = delete;
 
 #if (defined(_WIN32) || defined(WIN32)) && ! defined(DOXYGEN)
@@ -129,7 +129,7 @@ public:
 
 		@see Listener::libraryClosed()
 	 */
-	void close();
+	void close() noexcept;
 
 	/** Closes and reloads the library.
 		This locates the file on disk from which the library was loaded, then closes the library and reopens it

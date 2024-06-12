@@ -26,6 +26,7 @@
 
 # For conformance with .editorconfig
 LICENSE           space_indent
+CITATION.cff      2_space_indent
 *.yml             2_space_indent
 *.yaml            2_space_indent
 *.json            2_space_indent

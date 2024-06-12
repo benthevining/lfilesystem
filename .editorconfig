@@ -31,6 +31,6 @@ trim_trailing_whitespace = false
 [LICENSE]
 indent_style = space
 
-[*.{yml,yaml,json,clang-*}]
+[*.{yml,yaml,json,cff,clang-*}]
 indent_style = space
 indent_size = 2
