@@ -225,4 +225,4 @@ std::vector<Volume> Volume::getAll() noexcept
 	return volumes;
 }
 
-}
+}  // namespace limes::files

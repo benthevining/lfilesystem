@@ -18,9 +18,7 @@
 namespace limes::files
 {
 
-class LFILE_NO_EXPORT FileWatcher::Impl
-{
-};
+class LFILE_NO_EXPORT FileWatcher::Impl {};
 
 FileWatcher::FileWatcher (const FilesystemEntry&)
 {
@@ -59,4 +57,4 @@ FilesystemEntry FileWatcher::getWatchedPath() const noexcept
 	return watchedPath;
 }
 
-}  // namespace files
+}  // namespace limes::files

@@ -286,4 +286,4 @@ std::vector<Volume> Volume::getAll() noexcept
 	return volumes;
 }
 
-}  // namespace files
+}  // namespace limes::files

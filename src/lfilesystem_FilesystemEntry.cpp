@@ -12,14 +12,14 @@
  * ======================================================================================
  */
 
-#include <ctime>		  // for tm
-#include <exception>	  // for exception
-#include <filesystem>	  // for path, copy, operator/, absolute, cera...
-#include <fstream>		  // for string, ofstream
-#include <string>		  // for operator<, operator>
-#include "lfilesystem/lfilesystem_Directory.h"  // for Directory
-#include "lfilesystem/lfilesystem_File.h"		  // for File
-#include "lfilesystem/lfilesystem_SymLink.h"	  // for SymLink
+#include <ctime>								// for tm
+#include <exception>							// for exception
+#include <filesystem>							// for path, copy, operator/, absolute, cera...
+#include <fstream>								// for string, ofstream
+#include <string>								// for operator<, operator>
+#include "lfilesystem/lfilesystem_Directory.h"	// for Directory
+#include "lfilesystem/lfilesystem_File.h"		// for File
+#include "lfilesystem/lfilesystem_SymLink.h"	// for SymLink
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
 #include "lfilesystem/lfilesystem_Volume.h"
 #include "lfilesystem/lfilesystem_FilesystemEntry.h"
@@ -90,8 +90,8 @@ static inline bool areSameIgnoringCase (const std::string_view& lhs, const std::
 					   rhs.begin(), rhs.end(),
 					   [] (char a, char b)
 					   {
-		return std::tolower (static_cast<unsigned char> (a)) == std::tolower (static_cast<unsigned char> (b));
-	});
+						   return std::tolower (static_cast<unsigned char> (a)) == std::tolower (static_cast<unsigned char> (b));
+					   });
 }
 
 bool FilesystemEntry::operator== (const FilesystemEntry& other) const noexcept
@@ -156,7 +156,7 @@ bool FilesystemEntry::operator!= (const Path& other) const noexcept
 	return ! (*this == other);
 }
 
-bool FilesystemEntry::operator<(const FilesystemEntry& other) const noexcept
+bool FilesystemEntry::operator< (const FilesystemEntry& other) const noexcept
 {
 	const auto isDir	  = isDirectory();
 	const auto otherIsDir = other.isDirectory();
@@ -184,7 +184,7 @@ bool FilesystemEntry::operator> (const FilesystemEntry& other) const noexcept
 	return getAbsolutePath() > other.getAbsolutePath();
 }
 
-bool FilesystemEntry::operator<(const Path& other) const noexcept
+bool FilesystemEntry::operator< (const Path& other) const noexcept
 {
 	return *this < FilesystemEntry { other };
 }
@@ -430,7 +430,7 @@ bool FilesystemEntry::createIfDoesntExist() const noexcept
 
 		return exists();
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}
@@ -488,7 +488,7 @@ bool FilesystemEntry::setPermissions (FSPerms permissions, PermOptions options) 
 	{
 		std::filesystem::permissions (getAbsolutePath(), permissions, options);
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}
@@ -520,7 +520,7 @@ bool FilesystemEntry::rename (const Path& newPath) noexcept
 		std::filesystem::rename (path, newPath);
 		path = newPath;
 	}
-	catch(...)
+	catch (...)
 	{
 		path = pathBefore;
 		return false;
@@ -539,7 +539,7 @@ bool FilesystemEntry::copyTo (const Path& dest, CopyOptions options) const noexc
 	{
 		std::filesystem::copy (getAbsolutePath(), newEntry.getAbsolutePath(), options);
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}
@@ -586,7 +586,7 @@ bool FilesystemEntry::copyFrom (const Path& source, CopyOptions options) const n
 	{
 		std::filesystem::copy (sourceEntry.getAbsolutePath(), getAbsolutePath(), options);
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}

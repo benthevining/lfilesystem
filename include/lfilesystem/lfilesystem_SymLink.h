@@ -42,10 +42,10 @@ class LFILE_EXPORT SymLink final : public FilesystemEntry
 public:
 	using FilesystemEntry::FilesystemEntry;
 
-	SymLink (const SymLink&) = default;
+	SymLink (const SymLink&)			= default;
 	SymLink& operator= (const SymLink&) = default;
 
-	SymLink (SymLink&&) = default;
+	SymLink (SymLink&&)			   = default;
 	SymLink& operator= (SymLink&&) = default;
 
 	/** Creates a symbolic link object (the link itself will also be created on the filesystem).
