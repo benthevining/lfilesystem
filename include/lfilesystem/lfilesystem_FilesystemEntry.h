@@ -115,10 +115,10 @@ public:
 	/** Destructor. */
 	virtual ~FilesystemEntry() = default;
 
-	FilesystemEntry (const FilesystemEntry&) = default;
+	FilesystemEntry (const FilesystemEntry&)			= default;
 	FilesystemEntry& operator= (const FilesystemEntry&) = default;
 
-	FilesystemEntry (FilesystemEntry&&) = default;
+	FilesystemEntry (FilesystemEntry&&)			   = default;
 	FilesystemEntry& operator= (FilesystemEntry&&) = default;
 
 	/** @name Path assignment */
@@ -157,9 +157,9 @@ public:
 
 		@todo test coverage
 	 */
-	[[nodiscard]] bool operator<(const FilesystemEntry& other) const noexcept;
+	[[nodiscard]] bool operator< (const FilesystemEntry& other) const noexcept;
 	[[nodiscard]] bool operator> (const FilesystemEntry& other) const noexcept;
-	[[nodiscard]] bool operator<(const Path& other) const noexcept;
+	[[nodiscard]] bool operator< (const Path& other) const noexcept;
 	[[nodiscard]] bool operator> (const Path& other) const noexcept;
 	///@}
 

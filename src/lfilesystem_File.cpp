@@ -24,8 +24,8 @@
 #include <algorithm>
 #include "lfilesystem/lfilesystem_File.h"
 #include "lfilesystem/lfilesystem_SpecialDirectories.h"
-#include "lfilesystem/lfilesystem_Directory.h"		// for Directory
-#include "lfilesystem/lfilesystem_FilesystemEntry.h"	// for Path
+#include "lfilesystem/lfilesystem_Directory.h"		  // for Directory
+#include "lfilesystem/lfilesystem_FilesystemEntry.h"  // for Path
 
 #ifdef __APPLE__
 #	include <TargetConditionals.h>
@@ -41,7 +41,7 @@
 namespace limes::files
 {
 
-#pragma mark   File
+#pragma mark File
 #pragma region File
 
 bool File::isFile() const noexcept
@@ -136,7 +136,7 @@ bool File::write_data (const char* const data, std::size_t numBytes, bool overwr
 
 		return true;
 	}
-	catch(...)
+	catch (...)
 	{
 		return false;
 	}
@@ -235,7 +235,7 @@ std::optional<File> File::duplicate() const noexcept
 bool File::resize (std::uintmax_t newSizeInBytes, bool allowTruncation, bool allowIncreasing) const noexcept
 {
 	if (! (allowTruncation || allowIncreasing))
-		return false; // should this return true?
+		return false;  // should this return true?
 
 	if (! exists())
 		return false;
@@ -361,11 +361,11 @@ std::vector<std::string> File::loadAsLines() const
 	std::transform (tokens.begin(), tokens.end(), tokens.begin(),
 					[] (auto str)
 					{
-		if (str.ends_with ('\r'))
-			return str.substr (0, str.length() - 1);
+						if (str.ends_with ('\r'))
+							return str.substr (0, str.length() - 1);
 
-		return str;
-	});
+						return str;
+					});
 
 	return tokens;
 }

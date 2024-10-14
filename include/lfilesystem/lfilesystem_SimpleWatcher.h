@@ -70,4 +70,4 @@ private:
 	const Callback callback;
 };
 
-}  // namespace files
+}  // namespace limes::files

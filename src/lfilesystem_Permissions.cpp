@@ -247,4 +247,4 @@ std::ostream& operator<< (std::ostream& os, const Permissions& value)
 	return os;
 }
 
-}  // namespace files
+}  // namespace limes::files

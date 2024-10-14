@@ -97,4 +97,4 @@ namespace limes::files
 
 /** @}*/
 
-}  // namespace files
+}  // namespace limes::files

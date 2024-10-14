@@ -189,9 +189,9 @@ std::vector<Volume> Volume::getAll() noexcept
 		if (FindHandle == INVALID_HANDLE_VALUE)
 			return volumes;
 
-		WCHAR  DeviceName[MAX_PATH] = L"";
-		DWORD  Error				= ERROR_SUCCESS;
-		BOOL   Found				= FALSE;
+		WCHAR DeviceName[MAX_PATH] = L"";
+		DWORD Error				   = ERROR_SUCCESS;
+		BOOL  Found				   = FALSE;
 
 		for (;;)
 		{
@@ -224,4 +224,4 @@ std::vector<Volume> Volume::getAll() noexcept
 	return volumes;
 }
 
-}  // namespace files
+}  // namespace limes::files
